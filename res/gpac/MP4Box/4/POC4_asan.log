@@ -1,0 +1,38 @@
+IsoMedia import 4_poc.mp4 - track ID 1 - media type "odsm:mp4s"
+[ISOM import] Incomplete file detected, aborting track #1 import after 1 / 1 samples                                                                                                                                                        
+IsoMedia import 4_poc.mp4 - track ID 2 - media type "sdsm:mp4s"                                                                                                                                                                             
+[ISOM import] Incomplete file detected, aborting track #2 import after 1 / 1 samples                                                                                                                                                        
+IsoMedia import 4_poc.mp4 - track ID 201 - Video (size 128 x 96)                                                                                                                                                                            
+[ISOM import] Incomplete file detected, aborting track #3 import after 1 / 1741 samples                                                                                                                                                     
+IsoMedia import 4_poc.mp4 - track ID 65737 - media type "hint:rtp "                                                                                                                                                                         
+[ISOM import] Incomplete file detected, aborting track #4 import after 1 / 1741 samples                                                                                                                                                     
+IsoMedia import 4_poc.mp4 - track ID 101 - Audio (SR 22050 - 1 channels)                                                                                                                                                                    
+[ISOM import] Incomplete file detected, aborting track #5 import after 1 / 1514 samples                                                                                                                                                     
+IsoMedia import 4_poc.mp4 - track ID 65637 - media type "hint:rtp "                                                                                                                                                                         
+[ISOM import] Incomplete file detected, aborting track #6 import after 1 / 1514 samples                                                                                                                                                     
+IsoMedia import 4_poc.mp4 - track ID 65536 - media type "hint:rtp "                                                                                                                                                                         
+[ISOM import] Incomplete file detected, aborting track #7 import after 1 / 1 samples                                                                                                                                                        
+IsoMedia import 4_poc.mp4 - track ID 65537 - media type "hint:rtp "                                                                                                                                                                         
+[ISOM import] Incomplete file detected, aborting track #8 import after 1 / 1 samples                                                                                                                                                        
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                                                                                               
+=================================================================
+==37461==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f113ed946fc bp 0x7f113be5fd00 sp 0x7ffef7913440 T0)
+==37461==The signal is caused by a READ memory access.                                                                                                                                                                                      
+==37461==Hint: address points to the zero page.
+    #0 0x7f113ed946fc in gf_isom_get_user_data_count isomedia/isom_read.c:2754
+    #1 0x7f113f6ff701 in isor_setup_channel filters/isoffin_load.c:731
+    #2 0x7f113f70c220 in isor_declare_track filters/isoffin_load.c:1180
+    #3 0x7f113f718c31 in isor_declare_objects filters/isoffin_load.c:1949
+    #4 0x7f113f71b987 in isoffin_initialize filters/isoffin_read.c:534
+    #5 0x7f113f4eeebe in gf_filter_new_finalize filter_core/filter.c:573
+    #6 0x7f113f4f0073 in gf_filter_new filter_core/filter.c:479
+    #7 0x7f113f4ad850 in gf_fs_load_filter_internal filter_core/filter_session.c:1373
+    #8 0x55736be9eca7 in split_isomedia_file /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/fileimport.c:2316
+    #9 0x55736be6ad8f in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6681
+    #10 0x7f113e433d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f113e433e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55736be4a000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: 14c8916a6b6ae2a1b7f22e8b127252d3742b4fae)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_read.c:2754 in gf_isom_get_user_data_count
+==37461==ABORTING
