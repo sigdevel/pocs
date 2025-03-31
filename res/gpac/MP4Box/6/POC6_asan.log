@@ -1,0 +1,47 @@
+[iso file] Unknown box type vvc16 in parent stsd
+[iso file] Box 00000000 size 1835427940 is larger than remaining parent size 176                                                                                                                                                            
+[iso file] TFDT timing 9 higher than cumulated timing 6 (last sample got extended in duration)                                                                                                                                              
+[iso file] TFDT timing 6144 higher than cumulated timing 5120 (last sample got extended in duration)                                                                                                                                        
+[iso file] TFDT timing 12 higher than cumulated timing 9 (last sample got extended in duration)                                                                                                                                             
+[iso file] TFDT timing 8192 higher than cumulated timing 7168 (last sample got extended in duration)                                                                                                                                        
+[iso file] TFDT timing 15 higher than cumulated timing 12 (last sample got extended in duration)                                                                                                                                            
+[iso file] TFDT timing 10240 higher than cumulated timing 9216 (last sample got extended in duration)                                                                                                                                       
+[iso file] Unknown top-level box type E36¯                                                                                                                                                                                                  
+[iso file] Incomplete box E36¯ - start 20694 size 2274080481                                                                                                                                                                                
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                                                                                                        
+[iso file] Missing handler in META!                                                                                                                                                                                                         
+[iso file] Unknown box type vvc16 in parent stsd                                                                                                                                                                                            
+[iso file] Box 00000000 size 1835427940 is larger than remaining parent size 176                                                                                                                                                            
+[iso file] TFDT timing 9 higher than cumulated timing 6 (last sample got extended in duration)                                                                                                                                              
+[iso file] TFDT timing 6144 higher than cumulated timing 5120 (last sample got extended in duration)                                                                                                                                        
+[iso file] TFDT timing 12 higher than cumulated timing 9 (last sample got extended in duration)                                                                                                                                             
+[iso file] TFDT timing 8192 higher than cumulated timing 7168 (last sample got extended in duration)                                                                                                                                        
+[iso file] TFDT timing 15 higher than cumulated timing 12 (last sample got extended in duration)                                                                                                                                            
+[iso file] TFDT timing 10240 higher than cumulated timing 9216 (last sample got extended in duration)                                                                                                                                       
+[iso file] Unknown top-level box type E36¯                                                                                                                                                                                                  
+[iso file] Unknown box type vvc16 in parent stsd                                                                                                                                                                                            
+Track Importing VVC - Width 320 Height 180 FPS 25/1                                                                                                                                                                                         
+Track Importing AAC  - SampleRate 16000 Num Channels 2                                                                                                                                                                                      
+Split by size but output not a template, using ./test_$num$.mp4 as output                                                                                                                                                                   
+[Reframer] split computed using previous estimation of file size (3622)                                                                                                                                                                     
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                                                                                               
+=================================================================
+==1913270==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f04ff48fdda bp 0x511000011fc0 sp 0x7ffe2aad65b0 T0)
+==1913270==The signal is caused by a READ memory access.                                                                                                                                                                                    
+==1913270==Hint: address points to the zero page.
+    #0 0x7f04ff48fdda in gf_odf_vvc_cfg_write_bs odf/descriptors.c:1267
+    #1 0x7f04ff49094b in gf_odf_vvc_cfg_write odf/descriptors.c:1284
+    #2 0x7f04ffd3a75d in isor_reader_check_config filters/isoffin_read_ch.c:1114
+    #3 0x7f04ffd29a72 in isoffin_process filters/isoffin_read.c:1611
+    #4 0x7f04ffae4c91 in gf_filter_process_task filter_core/filter.c:3201
+    #5 0x7f04ffab9285 in gf_fs_thread_proc filter_core/filter_session.c:2172
+    #6 0x7f04ffabe4e4 in gf_fs_run filter_core/filter_session.c:2479
+    #7 0x557d5846f038 in split_isomedia_file /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/fileimport.c:2530
+    #8 0x557d5843ad8f in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6681
+    #9 0x7f04fea33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f04fea33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x557d5841a000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: d2f04c8b841841ddd5245085ee9970b9b031e048)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV odf/descriptors.c:1267 in gf_odf_vvc_cfg_write_bs
+==1913270==ABORTING
