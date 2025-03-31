@@ -1,0 +1,56 @@
+[iso file] Unknown top-level box type 00E10000
+[iso file] Unknown top-level box type 00E10000                                                                                                                                                                                              
+[avc-h264] invalid SPS: pic_order_cnt_type shall be less than 2, but is 67                                                                                                                                                                  
+[Core] exp-golomb read failed, not enough bits in bitstream !                                                                                                                                                                               
+[Core] exp-golomb read failed, not enough bits in bitstream !                                                                                                                                                                               
+=================================================================                                                                                                                                                                           
+==26920==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000001a13 at pc 0x7efd1656ed0b bp 0x7ffcecc3c420 sp 0x7ffcecc3c418
+READ of size 1 at 0x502000001a13 thread T0                                                                                                                                                                                                  
+    #0 0x7efd1656ed0a in gf_opus_parse_packet_header media_tools/av_parsers.c:11326
+    #1 0x7efd16cce40f in gf_inspect_dump_opus_internal filters/inspect.c:1830
+    #2 0x55836b659b66 in dump_isom_opus /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:1501
+    #3 0x55836b66de0e in dump_isom_xml /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:2167
+    #4 0x55836b6539c0 in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6619
+    #5 0x7efd15a33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #6 0x7efd15a33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #7 0x55836b633000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: d2f04c8b841841ddd5245085ee9970b9b031e048)
+
+0x502000001a13 is located 0 bytes after 3-byte region [0x502000001a10,0x502000001a13)
+allocated by thread T0 here:                                                                                                                                                                                                                
+    #0 0x7efd17af4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7efd16404b9a in Media_GetSample isomedia/media.c:629
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow media_tools/av_parsers.c:11326 in gf_opus_parse_packet_header
+Shadow bytes around the buggy address:
+  0x502000001780: fa fa 04 fa fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x502000001800: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x502000001880: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x502000001900: fa fa 00 00 fa fa 02 fa fa fa 00 00 fa fa 00 00
+  0x502000001980: fa fa 00 00 fa fa fd fd fa fa fd fd fa fa fd fa
+=>0x502000001a00: fa fa[03]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000001a80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000001b00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000001b80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000001c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000001c80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==26920==ABORTING
+                                                                                                                                                                                                                                            
