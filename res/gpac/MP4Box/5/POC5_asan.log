@@ -1,0 +1,118 @@
+[iso file] Incomplete box mdat - start 15788 size 13914521
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                                                                                                        
+IsoMedia import 5_poc.mp4 - track ID 1 - Video (size 1920 x 1080)                                                                                                                                                                           
+[ISOM import] Incomplete file detected, aborting track #1 import after 72 / 760 samples                                                                                                                                                     
+IsoMedia import 5_poc.mp4 - track ID 2 - Audio (SR 48000 - 2 channels)                                                                                                                                                                      
+[ISOM import] Incomplete file detected, aborting track #2 import after 56 / 593 samples                                                                                                                                                     
+Split by size but output not a template, using ./test_$num$.mp4 as output                                                                                                                                                                   
+[Reframer] split computed using previous estimation of file size (27424)                                                                                                                                                                    
+[Reframer] split computed using current estimation of file size (902318)                                                                                                                                                                    
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+[Reframer] Negative TS while splitting, something went wrong during range estimation, forcing to 0                                                                                                                                          
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                                                                                               
+=================================================================
+==1926241==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7faf284d6c18 bp 0x511000015bc0 sp 0x7fff5c0b2210 T0)
+==1926241==The signal is caused by a READ memory access.                                                                                                                                                                                    
+==1926241==Hint: address points to the zero page.
+    #0 0x7faf284d6c18 in ctts_box_write isomedia/box_code_base.c:464
+    #1 0x7faf28565469 in gf_isom_box_write_listing isomedia/box_funcs.c:2154
+    #2 0x7faf28565469 in gf_isom_box_write isomedia/box_funcs.c:2204
+    #3 0x7faf2856575c in gf_isom_box_array_write isomedia/box_funcs.c:558
+    #4 0x7faf2856549f in gf_isom_box_write isomedia/box_funcs.c:2207
+    #5 0x7faf2856575c in gf_isom_box_array_write isomedia/box_funcs.c:558
+    #6 0x7faf2856549f in gf_isom_box_write isomedia/box_funcs.c:2207
+    #7 0x7faf2856575c in gf_isom_box_array_write isomedia/box_funcs.c:558
+    #8 0x7faf2856549f in gf_isom_box_write isomedia/box_funcs.c:2207
+    #9 0x7faf2856575c in gf_isom_box_array_write isomedia/box_funcs.c:558
+    #10 0x7faf2856549f in gf_isom_box_write isomedia/box_funcs.c:2207
+    #11 0x7faf2856575c in gf_isom_box_array_write isomedia/box_funcs.c:558
+    #12 0x7faf2856549f in gf_isom_box_write isomedia/box_funcs.c:2207
+    #13 0x7faf285b26fc in WriteMoovAndMeta isomedia/isom_store.c:481
+    #14 0x7faf285bf90b in WriteInterleaved isomedia/isom_store.c:2058
+    #15 0x7faf285c0923 in WriteToFile isomedia/isom_store.c:2715
+    #16 0x7faf2858da0e in gf_isom_write isomedia/isom_read.c:605
+    #17 0x7faf2858da0e in gf_isom_close isomedia/isom_read.c:629
+    #18 0x7faf28fa9e3b in mp4_mux_done filters/mux_isom.c:8391
+    #19 0x7faf28fdeaa1 in mp4mx_reload_output filters/mux_isom.c:6456
+    #20 0x7faf28fe7c59 in mp4_mux_process filters/mux_isom.c:7662
+    #21 0x7faf28ce4c91 in gf_filter_process_task filter_core/filter.c:3201
+    #22 0x7faf28cb9285 in gf_fs_thread_proc filter_core/filter_session.c:2172
+    #23 0x7faf28cbe4e4 in gf_fs_run filter_core/filter_session.c:2479
+    #24 0x560d847d1038 in split_isomedia_file /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/fileimport.c:2530
+    #25 0x560d8479cd8f in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6681
+    #26 0x7faf27c33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #27 0x7faf27c33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #28 0x560d8477c000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: d2f04c8b841841ddd5245085ee9970b9b031e048)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/box_code_base.c:464 in ctts_box_write
+==1926241==ABORTING
