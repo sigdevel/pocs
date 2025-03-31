@@ -1,0 +1,63 @@
+[iso file] Box "stsz" (start 44241) has 204 extra bytes
+[iso file] Unknown top-level box type 00E10000                                                                                                                                                                                              
+[iso file] Box "stsz" (start 44241) has 204 extra bytes                                                                                                                                                                                     
+[iso file] Unknown top-level box type 00E10000                                                                                                                                                                                              
+Size of non-self-delimited Opus packet with code 2 must be even but is 1023                                                                                                                                                                 
+Size of non-self-delimited Opus packet with code 2 must be even but is 1023                                                                                                                                                                 
+Size of non-self-delimited Opus packet with code 2 must be even but is 1023                                                                                                                                                                 
+Size of non-self-delimited Opus packet with code 2 must be even but is 1023                                                                                                                                                                 
+Size of non-self-delimited Opus packet with code 2 must be even but is 1023                                                                                                                                                                 
+Sum of frame lengths is not a multiple of the number of frames                                                                                                                                                                              
+=================================================================                                                                                                                                                                           
+==24222==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7efe3c106638 at pc 0x7efe3ef07226 bp 0x7fff9e395ff0 sp 0x7fff9e395fe8
+WRITE of size 2 at 0x7efe3c106638 thread T0                                                                                                                                                                                                 
+    #0 0x7efe3ef07225 in gf_opus_read_length media_tools/av_parsers.c:11140
+    #1 0x7efe3ef6e128 in gf_opus_parse_packet_header media_tools/av_parsers.c:11411
+    #2 0x7efe3f6ce40f in gf_inspect_dump_opus_internal filters/inspect.c:1830
+    #3 0x55f299608b66 in dump_isom_opus /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:1501
+    #4 0x55f29961ce0e in dump_isom_xml /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:2167
+    #5 0x55f2996029c0 in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6619
+    #6 0x7efe3e433d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x7efe3e433e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #8 0x55f2995e2000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: d2f04c8b841841ddd5245085ee9970b9b031e048)
+
+Address 0x7efe3c106638 is located in stack of thread T0 at offset 568 in frame
+    #0 0x7efe3f6ce2bf in gf_inspect_dump_opus_internal filters/inspect.c:1819
+
+  This frame has 1 object(s):
+    [32, 568) 'pckh' (line 1827) <== Memory access at offset 568 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow media_tools/av_parsers.c:11140 in gf_opus_read_length
+Shadow bytes around the buggy address:
+  0x7efe3c106380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106400: f1 f1 f1 f1 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7efe3c106600: 00 00 00 00 00 00 00[f3]f3 f3 f3 f3 f3 f3 f3 f3
+  0x7efe3c106680: f3 f3 f3 f3 f3 f3 f3 f3 00 00 00 00 00 00 00 00
+  0x7efe3c106700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7efe3c106880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==24222==ABORTING
