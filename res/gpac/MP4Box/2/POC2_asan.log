@@ -1,0 +1,30 @@
+[iso file] Unknown box type tinf in parent minf
+[iso file] Unknown box type stCo in parent stbl                                                                                                                                                                                             
+[iso file] Missing DataInformationBox                                                                                                                                                                                                       
+[iso file] Track with no sample description box !                                                                                                                                                                                           
+[iso file] Unknown top-level box type 00E10000                                                                                                                                                                                              
+[iso file] Unknown box type tinf in parent minf                                                                                                                                                                                             
+[iso file] Unknown box type stCo in parent stbl                                                                                                                                                                                             
+[iso file] Missing DataInformationBox                                                                                                                                                                                                       
+[iso file] Track with no sample description box !                                                                                                                                                                                           
+[iso file] Unknown top-level box type 00E10000                                                                                                                                                                                              
+[IsoMedia] Failed to create pid for track 1, could not extract codec/streamtype info                                                                                                                                                        
+Filters not connected:                                                                                                                                                                                                                      
+nhmlw (exporter:name=:pckp:nhmlonly:payload:filep=0x515000001c00) (idx=1)                                                                                                                                                                   
+reframer (SID=1#PID=1:exporter) (idx=2)                                                                                                                                                                                                     
+Not enough data to parse TOC code 3 length        | (09/100)                                                                                                                                                                                
+AddressSanitizer:DEADLYSIGNAL|==                  | (11/100)                                                                                                                                                                                
+=================================================================
+==21635==ERROR: AddressSanitizer: FPE on unknown address 0x7ff46116e8f9 (pc 0x7ff46116e8f9 bp 0x502000002b10 sp 0x7ffc49282d60 T0)
+    #0 0x7ff46116e8f9 in gf_opus_parse_packet_header media_tools/av_parsers.c:11479                                                                                                                                                         
+    #1 0x7ff4618ce40f in gf_inspect_dump_opus_internal filters/inspect.c:1830
+    #2 0x5610acd70b66 in dump_isom_opus /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:1501
+    #3 0x5610acd84e0e in dump_isom_xml /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/filedump.c:2167
+    #4 0x5610acd6a9c0 in mp4box_main /home/user/target/mp4box_dyn/gpac_asan/gpac/applications/mp4box/mp4box.c:6619
+    #5 0x7ff460633d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #6 0x7ff460633e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #7 0x5610acd4a000 in _start (/home/user/target/mp4box_dyn/gpac_asan/gpac/bin/gcc/MP4Box+0x4c000) (BuildId: d2f04c8b841841ddd5245085ee9970b9b031e048)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE media_tools/av_parsers.c:11479 in gf_opus_parse_packet_header
+==21635==ABORTING
