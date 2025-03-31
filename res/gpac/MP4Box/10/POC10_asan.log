@@ -1,0 +1,70 @@
+[iso file] Unknown box type jtbl in parent minf
+[iso file] Track with no sample table !                                                                                                                     
+[iso file] Track with no sample description box !                                                                                                           
+[iso file] Box "stsz" (start 1698) has 204 extra bytes                                                                                                      
+[iso file] Incomplete box mdat - start 3023 size 66217                                                                                                      
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                        
+[iso file] Unknown box type jtbl in parent minf                                                                                                             
+[iso file] Track with no sample table !                                                                                                                     
+[iso file] Track with no sample description box !                                                                                                           
+[iso file] Box "stsz" (start 1698) has 204 extra bytes                                                                                                      
+[iso file] Incomplete box mdat - start 3023 size 66217                                                                                                      
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                        
+MPEG-4 LASeR Scene Parsing                                                                                                                                  
+[MP4 Loading] decoding sample 1 from track ID 3 failed                                                                                                      
+=================================================================                                                                                           
+==2845096==ERROR: AddressSanitizer: heap-use-after-free on address 0x503000003b50 at pc 0x7f6fa85be002 bp 0x7ffc5f00fac0 sp 0x7ffc5f00fab8
+READ of size 8 at 0x503000003b50 thread T0                                                                                                                  
+    #0 0x7f6fa85be001 in gf_svg_node_del scenegraph/svg_types.c:107
+    #1 0x7f6fa844f47c in gf_node_unregister scenegraph/base_scenegraph.c:759
+    #2 0x7f6fa8452a05 in gf_sg_reset scenegraph/base_scenegraph.c:481
+    #3 0x7f6fa8452a05 in gf_sg_reset scenegraph/base_scenegraph.c:328
+    #4 0x7f6fa845336d in gf_sg_del scenegraph/base_scenegraph.c:164
+    #5 0x55ab869b4e64 in dump_isom_scene /home/user/targets/gpac/gpac_asan/applications/mp4box/filedump.c:227
+    #6 0x55ab869a7845 in mp4box_main /home/user/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6591
+    #7 0x7f6fa7e33d67  (/lib/x86_64-linux-gnu/libc.so.6+0x29d67) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #8 0x7f6fa7e33e24 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e24) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #9 0x55ab86987000 in _start (/home/user/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: 63679aa5f9f224a64438ff39f0a161859d47cca3)
+
+0x503000003b50 is located 0 bytes inside of 24-byte region [0x503000003b50,0x503000003b68)
+freed by thread T0 here:                                                                                                                                    
+    #0 0x7f6fa9ef3918 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7f6fa85bde09 in gf_svg_node_del scenegraph/svg_types.c:126
+
+previously allocated by thread T0 here:
+    #0 0x7f6fa9ef4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f6fa85bd9c9 in gf_svg_create_node scenegraph/svg_types.c:65
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/svg_types.c:107 in gf_svg_node_del
+Shadow bytes around the buggy address:
+  0x503000003880: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x503000003900: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa fd fd
+  0x503000003980: fd fd fa fa 00 00 00 fa fa fa 00 00 00 06 fa fa
+  0x503000003a00: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x503000003a80: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+=>0x503000003b00: 00 fa fa fa 00 00 00 fa fa fa[fd]fd fd fa fa fa
+  0x503000003b80: fd fd fd fd fa fa fd fd fd fa fa fa fd fd fd fa
+  0x503000003c00: fa fa fd fd fd fa fa fa fd fd fd fa fa fa fd fd
+  0x503000003c80: fd fd fa fa fd fd fd fa fa fa fd fd fd fa fa fa
+  0x503000003d00: fd fd fd fd fa fa fd fd fd fa fa fa fd fd fd fa
+  0x503000003d80: fa fa fd fd fd fa fa fa fd fd fd fa fa fa fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2845096==ABORTING
