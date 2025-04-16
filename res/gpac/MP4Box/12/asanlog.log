@@ -1,0 +1,61 @@
+[iso file] Unknown box type urU  in parent dref
+[iso file] Box "dOps" (start 44118) has 4 extra bytes                                                                                                                                                                                       
+[iso file] Read Box type 0001w00 (0x00017700) at position 44145 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !                                                                                           
+[iso file] Box "Opus" (start 44082) has 4 extra bytes                                                                                                                                                                                       
+[iso file] Box "stsz" (start 44241) has 204 extra bytes                                                                                                                                                                                     
+[iso file] Unknown box type urU  in parent dref                                                                                                                                                                                             
+[iso file] Box "dOps" (start 44118) has 4 extra bytes                                                                                                                                                                                       
+[iso file] Read Box type 0001w00 (0x00017700) at position 44145 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !                                                                                           
+[iso file] Box "Opus" (start 44082) has 4 extra bytes                                                                                                                                                                                       
+[iso file] Box "stsz" (start 44241) has 204 extra bytes                                                                                                                                                                                     
+[Opus] Not enough data to parse next self-delimited packet!                                                                                                                                                                                 
+=================================================================                                                                                                                                                                           
+==42406==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50300001124a at pc 0x7f5055796721 bp 0x7ffe52d66880 sp 0x7ffe52d66878
+READ of size 1 at 0x50300001124a thread T0                                                                                                                                                                                                  
+    #0 0x7f5055796720 in gf_opus_parse_packet_header media_tools/av_parsers.c:11297
+    #1 0x7f5055f1257f in gf_inspect_dump_opus_internal filters/inspect.c:1884
+    #2 0x56348a506b66 in dump_isom_opus /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:1501
+    #3 0x56348a51adfe in dump_isom_xml /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:2167
+    #4 0x56348a5009c0 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6622
+    #5 0x7f5054c33d67  (/lib/x86_64-linux-gnu/libc.so.6+0x29d67) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #6 0x7f5054c33e24 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e24) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #7 0x56348a4e0000 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: 04d65344188c22047cf1251924e412ef92a32888)
+
+0x50300001124a is located 1242 bytes after 32-byte region [0x503000010d50,0x503000010d70)
+allocated by thread T0 here:                                                                                                                                                                                                                
+    #0 0x7f5056cf4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f505562c1da in Media_GetSample isomedia/media.c:629
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow media_tools/av_parsers.c:11297 in gf_opus_parse_packet_header
+Shadow bytes around the buggy address:
+  0x503000010f80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x503000011200: fa fa fa fa fa fa fa fa fa[fa]fa fa fa fa fa fa
+  0x503000011280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000011480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==42406==ABORTING
