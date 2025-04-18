@@ -1,0 +1,33 @@
+[iso file] Unknown box type a0010p in parent encv
+[iso file] Unknown box type sca00 in parent sinf                                                                                                                                                                                            
+[iso file] Unknown box type dath in parent ©too                                                                                                                                                                                             
+[iso file] Box "sidx" (start 1948) has 24 extra bytes                                                                                                                                                                                       
+[iso file] Box "saiz" (start 2100) has 13 extra bytes                                                                                                                                                                                       
+[iso file] Read Box type 00000000 (0x00000000) at position 2759 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !                                                                                           
+[iso file] Box "traf" (start 2634) has 700 extra bytes                                                                                                                                                                                      
+[isobmf] Failed to merge sai data: Out Of Memory                                                                                                                                                                                            
+[isobmf] Number of SAI samples 1836253208 greater than samples in traf 0, skipping merge SAI clnc aux info type 0                                                                                                                           
+[iso file] Unknown top-level box type U_ce                                                                                                                                                                                                  
+[iso file] Incomplete box U_ce - start 3467 size 4290469699                                                                                                                                                                                 
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                                                                                                        
+[iso file] Unknown box type a0010p in parent encv                                                                                                                                                                                           
+IsoMedia import 13_poc.mp4 - track ID 1 - Video (size 560 x 320)                                                                                                                                                                            
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                                                                                               
+=================================================================
+==2426338==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f87d7424e25 bp 0x0a240000006f sp 0x7fff7cd96ae0 T0)
+==2426338==The signal is caused by a READ memory access.                                                                                                                                                                                    
+==2426338==Hint: address points to the zero page.
+    #0 0x7f87d7424e25 in gf_isom_copy_sample_info isomedia/isom_write.c:8164
+    #1 0x7f87d75c3a94 in gf_import_isomedia_track media_tools/media_import.c:708
+    #2 0x7f87d75c9baf in gf_import_isomedia media_tools/media_import.c:806
+    #3 0x7f87d75c9baf in gf_media_import media_tools/media_import.c:1233
+    #4 0x5625d0fa4be6 in import_file /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1693
+    #5 0x5625d0f62716 in do_add_cat /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4603
+    #6 0x5625d0f64c42 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6309
+    #7 0x7f87d6a33d67  (/lib/x86_64-linux-gnu/libc.so.6+0x29d67) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #8 0x7f87d6a33e24 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e24) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #9 0x5625d0f45000 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: 04d65344188c22047cf1251924e412ef92a32888)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_write.c:8164 in gf_isom_copy_sample_info
+==2426338==ABORTING
