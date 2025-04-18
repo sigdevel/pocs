@@ -1,0 +1,21 @@
+[avilib] Uh? Some frames seems missing (0/256)
+[AVIDmx] Video format VMP4 not natively supported, signaling as is
+[Dasher] No template assigned, using $File$_dash$FS$$Number$
+[Dasher] No bitrate property assigned to PID id_000005_sig_08_src_001337_006397_time_3420832_execs_177952_op_havoc_rep_5, computing from bitstream
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1594231==ERROR: AddressSanitizer: FPE on unknown address 0x7f0e52c11a6e (pc 0x7f0e52c11a6e bp 0x51900001ff40 sp 0x7ffce1d5c110 T0)
+    #0 0x7f0e52c11a6e in avidmx_process filters/dmx_avi.c:639
+    #1 0x7f0e52b0e0a1 in gf_filter_process_task filter_core/filter.c:3179
+    #2 0x7f0e52ae2375 in gf_fs_thread_proc filter_core/filter_session.c:2174
+    #3 0x7f0e52ae75d4 in gf_fs_run filter_core/filter_session.c:2481
+    #4 0x7f0e52525501 in gf_dasher_process media_tools/dash_segmenter.c:1273
+    #5 0x55b4250b9aa9 in do_dash /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4894
+    #6 0x55b4250d5557 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6358
+    #7 0x7f0e51a33d67  (/lib/x86_64-linux-gnu/libc.so.6+0x29d67) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #8 0x7f0e51a33e24 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e24) (BuildId: 522aec690df2798fac29fc4608b2c28fd5968271)
+    #9 0x55b4250b5000 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: 04d65344188c22047cf1251924e412ef92a32888)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE filters/dmx_avi.c:639 in avidmx_process
+==1594231==ABORTING
