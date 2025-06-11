@@ -3,3 +3,46 @@
 https://github.com/gpac/gpac/issues/3255
 
 https://github.com/gpac/gpac/commit/4bbb6e5f7cb827e56f32b2f7a5918b0b8e395eb8
+
+```
+
+1. Vulnerability type: Buffer Overflow
+
+2. Vendor of the product(s):
+GPAC Multimedia Open Source Project
+
+3. Vendor of the product(s) version:
+GPAC 2.4
+
+4. Affected product(s)/code base:
+MP4Box (filters/in_file.c)
+
+5. Impact:
+Code Execution
+
+6. Attack type:
+Local
+
+7. Affected component(s):
+applications/mp4box/filedump.c ; DumpMovieInfo() ; L:4230 (fputs(tag->value, stderr)
+
+8. Attack vector(s):
+Attacker crafts an MP4 file with corrupted metadata tags (e.g, minor_version value set to NULL), and affter victim runs "MP4Box -info" on the malicious file, triggering NULL dereference during metadata output.
+
+9. Suggested CVE description:
+A NULL pointer dereference vulnerability exists in the DumpMovieInfo function of GPAC's MP4Box (filedump.c). When processing MP4 files with corrupted metadata tags, the application fails to validate pointers before dereferencing them. This allows attackers to craft malicious files that crash MP4Box during the -info command execution, leading to Denial of Service. The flaw occurs due to missing NULL checks when printing tag values (e.g., minor_version), resulting in a segmentation fault. User interaction is required for exploitation.
+
+10. Discoverer(s)/Credits info:
+Alexander A. Shvedov (@sigdevel)
+
+11. Reference(s) info:
+https://github.com/gpac/gpac/issues/3255
+https://github.com/sigdevel/pocs/blob/main/res/gpac/MP4Box/24/24_data
+https://github.com/gpac/gpac/commit/4bbb6e5f7cb827e56f32b2f7a5918b0b8e395eb8
+
+12. Additional information:
+At this point, the vulnerability is public knowledge and affects all versions of GPAC, including the latest version: 2.4. The developer has proposed a patch to fix this issue, and the fix has been added to the main branch of the repository on GitHub.
+1. Reporting to the vendor: https://github.com/gpac/gpac/issues/3255
+2. PoC: https://github.com/sigdevel/pocs/blob/main/res/gpac/MP4Box/24/24_data
+3. Patch: https://github.com/gpac/gpac/commit/4bbb6e5f7cb827e56f32b2f7a5918b0b8e395eb8
+```
