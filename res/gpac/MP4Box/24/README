@@ -14,7 +14,7 @@ GPAC Multimedia Open Source Project
 GPAC 2.4
 
 4. Affected product(s)/code base:
-MP4Box (filters/in_file.c)
+MP4Box (applications/mp4box/filedump.c)
 
 5. Impact:
 Code Execution
