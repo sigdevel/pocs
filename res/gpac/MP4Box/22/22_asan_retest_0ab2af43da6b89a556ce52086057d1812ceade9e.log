@@ -1,0 +1,65 @@
+Exporting MPEG-4 Visual part 2 - Size 564x6473
+[FileOut] cannot open output file /dev/null.info                                                                                                            
+[FileOut] output file handle is not opened, discarding 8622 bytes                                                                                           
+[FileOut] cannot open output file /dev/null.nhml                                                                                                            
+[FileOut] output file handle is not opened, discarding 209 bytes                                                                                            
+[FileOut] cannot open output file /dev/null.media                                                                                                           
+[FileOut] output file handle is not opened, discarding 114 bytes                                                                                            
+=================================================================                                                                                           
+==1387528==ERROR: AddressSanitizer: heap-use-after-free on address 0x513000001700 at pc 0x7f1e870ac6d8 bp 0x7ffead8d0970 sp 0x7ffead8d0968
+READ of size 8 at 0x513000001700 thread T0                                                                                                                  
+    #0 0x7f1e870ac6d7 in gf_filter_pid_get_packet filter_core/filter_pid.c:6792
+    #1 0x7f1e874531e3 in fileout_process filters/out_file.c:487
+    #2 0x7f1e87110cc1 in gf_filter_process_task filter_core/filter.c:3179
+    #3 0x7f1e870e4215 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #4 0x7f1e870e9474 in gf_fs_run filter_core/filter_session.c:2727
+    #5 0x7f1e86c7dc62 in gf_media_export_filters media_tools/media_export.c:1375
+    #6 0x55b168200be5 in do_export_tracks_non_isobmf /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:5013
+    #7 0x55b168200be5 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6577
+    #8 0x7f1e86033ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7f1e86033d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x55b1681de000 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: a89399f36cba7ab04df133b821cc507f374e85c4)
+
+0x513000001700 is located 0 bytes inside of 336-byte region [0x513000001700,0x513000001850)
+freed by thread T0 here:                                                                                                                                    
+    #0 0x7f1e880f3918 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7f1e870784fc in gf_filter_pid_del filter_core/filter_pid.c:5899
+
+previously allocated by thread T0 here:
+    #0 0x7f1e880f4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f1e870a4923 in gf_filter_pid_inst_new filter_core/filter_pid.c:105
+    #2 0x7f1e870a4923 in gf_filter_pid_configure filter_core/filter_pid.c:868
+
+SUMMARY: AddressSanitizer: heap-use-after-free filter_core/filter_pid.c:6792 in gf_filter_pid_get_packet
+Shadow bytes around the buggy address:
+  0x513000001480: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa
+  0x513000001500: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x513000001580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001600: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001680: fd fd fd fd fd fa fa fa fa fa fa fa fa fa fa fa
+=>0x513000001700:[fd]fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001780: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001800: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa
+  0x513000001880: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x513000001900: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001980: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1387528==ABORTING
