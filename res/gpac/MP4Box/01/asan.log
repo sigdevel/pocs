@@ -1,0 +1,9 @@
+└─$ /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box -add /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/input_add/93fa79beddd2ee3aa969477fd407bf10737e1f59 -new /dev/null
+=================================================================
+==702609==ERROR: AddressSanitizer: requested allocation size 0xfffffff400000018 (0xfffffff400001018 after adjustments for alignment, red zones etc.) exceeds maximum supported size of 0x10000000000 (thread T0)
+    #0 0x7fa6bb4f3b78 in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:85
+    #1 0x7fa6ba0bf381 in avi_parse_input_file media_tools/avilib.c:2646
+
+==702609==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: allocation-size-too-big ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:85 in realloc
+==702609==ABORTING
