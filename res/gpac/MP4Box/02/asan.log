@@ -1,0 +1,9 @@
+└─$ /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box -add /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/input_add/80484cc83e0708d3878d9dc819ee5648d6411c74 -new /dev/null
+=================================================================
+==704022==ERROR: AddressSanitizer: out of memory: allocator is trying to allocate 0xaeac81800 bytes
+    #0 0x7f37d30f4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f37d1cbb481 in avi_parse_input_file media_tools/avilib.c:2612
+
+==704022==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: out-of-memory ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69 in malloc
+==704022==ABORTING
