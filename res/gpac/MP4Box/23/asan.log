@@ -1,0 +1,33 @@
+[MPEG-2 TS] TS Packet 44 does not start with sync marker
+[MPEG-2 TS] TS Packet 47 does not start with sync marker                                                                                                   
+Broken PMT descriptor! size 58, desc size 48 but position 32                                                                                               
+Broken PMT descriptor! size 58, desc size 48 but position 37                                                                                               
+[MPEG-2 TS] PID 4144 reused across programs 18247 and 18247, not completely supported                                                                      
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4097                                                                                                    
+[MPEG-2 TS] Reassinging PID 4144 from program 18247 to program 18247                                                                                       
+Track Importing MPEG-H AudioMux                                                                                                                            
+AddressSanitizer:DEADLYSIGNAL                                                                                                                              
+=================================================================
+==748312==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f8d4d70efe6 bp 0x7ffc18a95310 sp 0x7ffc18a94ab8 T0)
+==748312==The signal is caused by a READ memory access.                                                                                                    
+==748312==Hint: address points to the zero page.
+    #0 0x7f8d4d70efe6 in __sanitizer::internal_strlen(char const*) ../../../../src/libsanitizer/sanitizer_common/sanitizer_libc.cpp:176
+    #1 0x7f8d4d6eeba9 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:574
+    #2 0x7f8d4bfffe94 in gf_isom_add_track_kind isomedia/isom_write.c:3153
+    #3 0x7f8d4ca1bce1 in mp4_mux_set_udta filters/mux_isom.c:938
+    #4 0x7f8d4ca1bce1 in mp4_mux_setup_pid filters/mux_isom.c:4159
+    #5 0x7f8d4c6a4371 in gf_filter_pid_configure filter_core/filter_pid.c:927
+    #6 0x7f8d4c6aac62 in gf_filter_pid_connect_task filter_core/filter_pid.c:1306
+    #7 0x7f8d4c6e4665 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f8d4c6e98c4 in gf_fs_run filter_core/filter_session.c:2727
+    #9 0x7f8d4c1ccc5d in gf_media_import media_tools/media_import.c:1601
+    #10 0x55d440ca3be6 in import_file /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1693
+    #11 0x55d440c61716 in do_add_cat /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4603
+    #12 0x55d440c63c42 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6309
+    #13 0x7f8d4b633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f8d4b633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55d440c44000 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: a723b28ccba37f4e60420c8b17d5a2fea348b794)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../../../../src/libsanitizer/sanitizer_common/sanitizer_libc.cpp:176 in __sanitizer::internal_strlen(char const*)
+==748312==ABORTING
