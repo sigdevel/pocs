@@ -1,0 +1,88 @@
+[iso file] Box "hvcC" (start 939) has 18 extra bytes
+[iso file] Box 00000000 size 1835427940 is larger than remaining parent size 1451
+[iso file] senc box without tenc, assuming MS smooth+piff
+[iso file] Unknown top-level box type C5w¿§
+[iso file] Incomplete box C5w¿§ - start 59067 size 4178722063
+[iso file] Incomplete file while reading for dump - aborting parsing
+[iso file] Missing handler in META!
+[iso file] Box "hvcC" (start 939) has 18 extra bytes
+[iso file] Box 00000000 size 1835427940 is larger than remaining parent size 1451
+[iso file] senc box without tenc, assuming MS smooth+piff
+[iso file] Unknown top-level box type C5w¿§
+Attempt at defining data property CBIV with NULL pointer, not allowed
+Track Importing HEVC - Width 560 Height 320 FPS 90000/3000 SAR -1811939327/1
+Track Importing HEVC - SampleRate 48000 Num Channels 1
+Import: |                    | (02/100)
+Import: |=                   | (05/100)
+Import: |=                   | (07/100)
+Import: |==                  | (10/100)
+Import: |==                  | (13/100)
+Import: |===                 | (15/100)
+Import: |===                 | (18/100)
+Import: |====                | (21/100)
+Import: |====                | (23/100)
+Import: |=====               | (26/100)
+Import: |=====               | (28/100)
+Import: |======              | (31/100)
+Import: |======              | (34/100)
+Import: |=======             | (36/100)
+Import: |=======             | (39/100)
+Import: |========            | (42/100)
+=================================================================
+==459908==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x506000006480 at pc 0x7f708f8531f1 bp 0x7fff5014c390 sp 0x7fff5014c388
+WRITE of size 4 at 0x506000006480 thread T0
+    #0 0x7f708f8531f0 in stbl_AddSize isomedia/stbl_write.c:492
+    #1 0x7f708f80cb60 in Media_AddSample isomedia/media.c:1033
+    #2 0x7f708f7d12fb in trak_add_sample isomedia/isom_write.c:1048
+    #3 0x7f708f7d1f33 in gf_isom_add_sample isomedia/isom_write.c:1120
+    #4 0x7f70901cdf7f in mp4_mux_process_sample filters/mux_isom.c:5103
+    #5 0x7f70901f7a09 in mp4_mux_process filters/mux_isom.c:7701
+    #6 0x7f708feed9d1 in gf_filter_process_task filter_core/filter.c:3179
+    #7 0x7f708fec0d25 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f708fec5f84 in gf_fs_run filter_core/filter_session.c:2727
+    #9 0x7f708f9a931d in gf_media_import media_tools/media_import.c:1601
+    #10 0x55c0e9ef2be6 in import_file /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:1693
+    #11 0x55c0e9eb0716 in do_add_cat /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:4603
+    #12 0x55c0e9eb2c42 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6309
+    #13 0x7f708ee33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f708ee33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55c0e9e93000 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4c000) (BuildId: aff5a5f22f18f3b2630acb40e28acc1487a43276)
+
+0x506000006480 is located 0 bytes after 64-byte region [0x506000006440,0x506000006480)
+allocated by thread T0 here:
+    #0 0x7f7090ef4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f708f85a080 in stbl_SampleSizeAppend isomedia/stbl_write.c:1678
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow isomedia/stbl_write.c:492 in stbl_AddSize
+Shadow bytes around the buggy address:
+  0x506000006200: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x506000006280: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x506000006300: fa fa fa fa fd fd fd fd fd fd fd fd fa fa fa fa
+  0x506000006380: fd fd fd fd fd fd fd fd fa fa fa fa 00 00 00 00
+  0x506000006400: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x506000006480:[fa]fa fa fa 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x506000006500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000006580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000006600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000006680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000006700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==459908==ABORTING
