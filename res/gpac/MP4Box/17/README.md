@@ -5,6 +5,7 @@ https://github.com/gpac/gpac/issues/3240
 https://github.com/gpac/gpac/commit/ad3b541b4f38c8f0ef67544509598f8207ea1207
 
 
+
 1. Vulnerability type: 
 NULL Pointer Dereference
 
