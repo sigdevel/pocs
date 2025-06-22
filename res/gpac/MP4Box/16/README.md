@@ -7,7 +7,7 @@ https://github.com/gpac/gpac/commit/df0c81722847238659a6beb0feab2c1ecd05c020
 
 
 1. Vulnerability type: 
-NULL Pointer Dereference
+Heap Buffer Overflow
 
 2. Vendor of the product(s):
 GPAC Multimedia Open Source Project
