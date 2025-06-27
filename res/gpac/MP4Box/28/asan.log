@@ -1,0 +1,30 @@
+[DASH] Setting up period start 0 duration 36 xlink none ID none
+[DASH] AS#1 changed quality to bitrate 784 kbps - sample rate 32000 (playback speed 1)                                                                      
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==418758==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f4efdac1564 bp 0x7ffd6e217c70 sp 0x7ffd6e217400 T0)
+==418758==The signal is caused by a READ memory access.                                                                                                     
+==418758==Hint: address points to the zero page.
+    #0 0x7f4efdac1564 in strcmp ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:465
+    #1 0x7f4efc633c46 in gf_dash_group_get_audio_channels media_tools/dash_client.c:10769
+    #2 0x7f4efc656eb8 in gf_dash_group_get_quality_info media_tools/dash_client.c:10970
+    #3 0x7f4efcc04f45 in dashdmx_io_on_dash_event filters/dmx_dash.c:1329
+    #4 0x7f4efc63b816 in gf_dash_set_group_representation media_tools/dash_client.c:4019
+    #5 0x7f4efc64bfe2 in gf_dash_setup_period media_tools/dash_client.c:6976
+    #6 0x7f4efc654476 in dash_setup_period_and_groups media_tools/dash_client.c:8171
+    #7 0x7f4efc654476 in gf_dash_process_internal media_tools/dash_client.c:8538
+    #8 0x7f4efc654476 in gf_dash_process media_tools/dash_client.c:8609
+    #9 0x7f4efcbfd5eb in dashdmx_process filters/dmx_dash.c:3305
+    #10 0x7f4efcaef961 in gf_filter_process_task filter_core/filter.c:3179
+    #11 0x7f4efcac39d5 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #12 0x7f4efcac8c34 in gf_fs_run filter_core/filter_session.c:2727
+    #13 0x7f4efc5a9d49 in gf_media_import media_tools/media_import.c:1278
+    #14 0x559bfb03e8d3 in convert_file_info /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/fileimport.c:131
+    #15 0x559bfb00f4b7 in mp4box_main /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6520
+    #16 0x7f4efba33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #17 0x7f4efba33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x559bfafec040 in _start (/media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 197526975cb7a0cfa98f79803b46d62177e1f456)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:465 in strcmp
+==418758==ABORTING
