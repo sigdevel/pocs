@@ -1,0 +1,35 @@
+[MPD] Wrong namespace found for DASH MPD - cannot parse
+[DASH] Setting up period start 0 duration 36 xlink none ID none                                                                                             
+[DASH] Cannot compute default segment duration                                                                                                              
+[DASH] AS#1 changed quality to bitrate 384 kbps (playback speed 1)                                                                                          
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==521030==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f40fce594fd bp 0x00000000000a sp 0x7ffdefb74b10 T0)
+==521030==The signal is caused by a READ memory access.                                                                                                     
+==521030==Hint: address points to the zero page.
+    #0 0x7f40fce594fd in __GI_____strtol_l_internal ../stdlib/strtol_l.c:304
+    #1 0x7f40feeef9fb in StrtolImpl<long int (*)(char const*, char**, int)> ../../../../src/libsanitizer/asan/asan_interceptors.cpp:626
+    #2 0x7f40feeef9fb in strtol ../../../../src/libsanitizer/asan/asan_interceptors.cpp:639
+    #3 0x7f40fda33d87 in atoi /usr/include/stdlib.h:483
+    #4 0x7f40fda33d87 in gf_dash_group_get_audio_channels media_tools/dash_client.c:10770
+    #5 0x7f40fda56eb8 in gf_dash_group_get_quality_info media_tools/dash_client.c:10970
+    #6 0x7f40fe004f45 in dashdmx_io_on_dash_event filters/dmx_dash.c:1329
+    #7 0x7f40fda3b816 in gf_dash_set_group_representation media_tools/dash_client.c:4019
+    #8 0x7f40fda4bfe2 in gf_dash_setup_period media_tools/dash_client.c:6976
+    #9 0x7f40fda54476 in dash_setup_period_and_groups media_tools/dash_client.c:8171
+    #10 0x7f40fda54476 in gf_dash_process_internal media_tools/dash_client.c:8538
+    #11 0x7f40fda54476 in gf_dash_process media_tools/dash_client.c:8609
+    #12 0x7f40fdffd5eb in dashdmx_process filters/dmx_dash.c:3305
+    #13 0x7f40fdeef961 in gf_filter_process_task filter_core/filter.c:3179
+    #14 0x7f40fdec39d5 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #15 0x7f40fdec8c34 in gf_fs_run filter_core/filter_session.c:2727
+    #16 0x7f40fd9a9d49 in gf_media_import media_tools/media_import.c:1278
+    #17 0x55aec68ad8d3 in convert_file_info /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/fileimport.c:131
+    #18 0x55aec687e4b7 in mp4box_main /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6520
+    #19 0x7f40fce33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #20 0x7f40fce33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #21 0x55aec685b040 in _start (/media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 197526975cb7a0cfa98f79803b46d62177e1f456)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../stdlib/strtol_l.c:304 in __GI_____strtol_l_internal
+==521030==ABORTING
