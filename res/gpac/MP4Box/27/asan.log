@@ -1,0 +1,31 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==418151==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fefbc658a15 bp 0x0a08000000c2 sp 0x7fff00bf5e90 T0)
+==418151==The signal is caused by a READ memory access.                                                                                                     
+==418151==Hint: address points to the zero page.
+    #0 0x7fefbc658a15 in gf_node_get_field_by_name scenegraph/base_scenegraph.c:2088
+    #1 0x7fefbcce60bb in xmt_parse_element scene_manager/loader_xmt.c:1916
+    #2 0x7fefbcceb5f6 in xmt_node_start scene_manager/loader_xmt.c:2681
+    #3 0x7fefbc5718cc in xml_sax_node_start utils/xml_parser.c:307
+    #4 0x7fefbc57552f in xml_sax_parse_attribute utils/xml_parser.c:396
+    #5 0x7fefbc57552f in xml_sax_parse utils/xml_parser.c:939
+    #6 0x7fefbc5772ac in gf_xml_sax_parse_intern utils/xml_parser.c:1108
+    #7 0x7fefbc57783f in gf_xml_sax_parse utils/xml_parser.c:1136
+    #8 0x7fefbc577b8a in xml_sax_read_file utils/xml_parser.c:1223
+    #9 0x7fefbc5785d8 in gf_xml_sax_parse_file utils/xml_parser.c:1335
+    #10 0x7fefbccddfeb in load_xmt_run scene_manager/loader_xmt.c:3208
+    #11 0x7fefbd380668 in ctxload_process filters/load_bt_xmt.c:522
+    #12 0x7fefbd0ef961 in gf_filter_process_task filter_core/filter.c:3179
+    #13 0x7fefbd0c39d5 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #14 0x7fefbd0c8c34 in gf_fs_run filter_core/filter_session.c:2727
+    #15 0x7fefbcba9d49 in gf_media_import media_tools/media_import.c:1278
+    #16 0x560f5b0968d3 in convert_file_info /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/fileimport.c:131
+    #17 0x560f5b0674b7 in mp4box_main /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6520
+    #18 0x7fefbc033ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0x7fefbc033d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0x560f5b044040 in _start (/media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 197526975cb7a0cfa98f79803b46d62177e1f456)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/base_scenegraph.c:2088 in gf_node_get_field_by_name
+==418151==ABORTING
