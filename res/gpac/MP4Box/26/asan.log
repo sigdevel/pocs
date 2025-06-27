@@ -1,0 +1,31 @@
+[MPEG-2 TS] Invalid descriptors size read from data (4095)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==416312==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fb51c81d472 bp 0x000000000001 sp 0x7ffcc87ad140 T0)
+==416312==The signal is caused by a READ memory access.
+==416312==Hint: address points to the zero page.
+    #0 0x7fb51c81d472 in m2tsdmx_update_sdt filters/dmx_m2ts.c:218
+    #1 0x7fb51c81f450 in m2tsdmx_declare_pid filters/dmx_m2ts.c:679
+    #2 0x7fb51c82530a in m2tsdmx_setup_program filters/dmx_m2ts.c:739
+    #3 0x7fb51c8271f8 in m2tsdmx_on_event filters/dmx_m2ts.c:1126
+    #4 0x7fb51c1c03ce in gf_m2ts_process_pmt media_tools/mpegts.c:1877
+    #5 0x7fb51c1c03ce in gf_m2ts_process_pmt media_tools/mpegts.c:1155
+    #6 0x7fb51c1b3d4f in gf_m2ts_section_complete media_tools/mpegts.c:577
+    #7 0x7fb51c1b4c0d in gf_m2ts_gather_section media_tools/mpegts.c:711
+    #8 0x7fb51c1b8be6 in gf_m2ts_process_packet media_tools/mpegts.c:2891
+    #9 0x7fb51c1bbc81 in gf_m2ts_process_data media_tools/mpegts.c:2983
+    #10 0x7fb51c8247d5 in m2tsdmx_process filters/dmx_m2ts.c:1841
+    #11 0x7fb51c6ef961 in gf_filter_process_task filter_core/filter.c:3179
+    #12 0x7fb51c6c39d5 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #13 0x7fb51c6c8c34 in gf_fs_run filter_core/filter_session.c:2727
+    #14 0x7fb51c1a9d49 in gf_media_import media_tools/media_import.c:1278
+    #15 0x5638f4c608d3 in convert_file_info /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/fileimport.c:131
+    #16 0x5638f4c314b7 in mp4box_main /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6520
+    #17 0x7fb51b633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #18 0x7fb51b633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0x5638f4c0e040 in _start (/media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 197526975cb7a0cfa98f79803b46d62177e1f456)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV filters/dmx_m2ts.c:218 in m2tsdmx_update_sdt
+==416312==ABORTING
+                        
