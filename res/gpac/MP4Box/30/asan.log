@@ -1,0 +1,27 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "striog" for node Text - skipping (line 117)                                                                           
+[XMT Parsing] Invalid child descriptor (line 346)                                                                                                           
+[XMT Parsing] Invalid child descriptor (line 348)                                                                                                           
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==527221==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000004 (pc 0x7fe5bab7055f bp 0x7ffc02914100 sp 0x7ffc02913898 T0)
+==527221==The signal is caused by a READ memory access.                                                                                                     
+==527221==Hint: address points to the zero page.
+    #0 0x7fe5bab7055f in __strchr_avx2 ../sysdeps/x86_64/multiarch/strchr-avx2.S:67
+    #1 0x7fe5bca7e0df in strchr ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:709
+    #2 0x7fe5bb945ba8 in gf_scene_ns_connect_object compositor/scene_ns.c:479
+    #3 0x7fe5bbbafcb8 in ODS_SetupOD filters/dec_odf.c:140
+    #4 0x7fe5bbd7f8d9 in ctxload_process filters/load_bt_xmt.c:686
+    #5 0x7fe5bbaef961 in gf_filter_process_task filter_core/filter.c:3179
+    #6 0x7fe5bbac39d5 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #7 0x7fe5bbac8c34 in gf_fs_run filter_core/filter_session.c:2727
+    #8 0x7fe5bb5a9d49 in gf_media_import media_tools/media_import.c:1278
+    #9 0x55e0919ec8d3 in convert_file_info /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/fileimport.c:131
+    #10 0x55e0919bd4b7 in mp4box_main /media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/applications/mp4box/mp4box.c:6520
+    #11 0x7fe5baa33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7fe5baa33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x55e09199a040 in _start (/media/user/680cad2d-6a9a-40a3-94e3-7701d3f641e9/targets/gpac/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 197526975cb7a0cfa98f79803b46d62177e1f456)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strchr-avx2.S:67 in __strchr_avx2
+==527221==ABORTING
