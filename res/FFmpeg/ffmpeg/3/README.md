@@ -11,7 +11,7 @@ x86_64 ;
 
 #### Version
 ```
-ffmpeg debug version: N-120001-gf789d60e11 (ffmpeg commit hash f789d60e115e3e2ef48d36c5fa43686a6cf3f9c8) ;
+ffmpeg debug version: N-120056-g6e8bd5dd25 (ffmpeg commit hash 6e8bd5dd2588f892cde308022a8a1e6ee82b9fa0) ;
 ffmpeg latest autobuild version: ffmpeg version N-120054-g18c62245d7-20250627 ;
 ```
 #### Build opts asan-debug:
