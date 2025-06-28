@@ -1,0 +1,97 @@
+ffmpeg version N-120001-gf789d60e11 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Debian clang version 19.1.7 (1+b1)
+  configuration: --disable-shared --enable-static --disable-doc --enable-gpl --enable-libass --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libvorbis --enable-libx264 --enable-libx265 --enable-nonfree --toolchain=clang-asan --enable-debug=3 --disable-optimizations --disable-stripping
+  libavutil      60.  3.100 / 60.  3.100
+  libavcodec     62.  3.101 / 62.  3.101
+  libavformat    62.  1.100 / 62.  1.100
+  libavdevice    62.  0.100 / 62.  0.100
+  libavfilter    11.  0.100 / 11.  0.100
+  libswscale      9.  0.100 /  9.  0.100
+  libswresample   6.  0.100 /  6.  0.100
+[kux @ 0x517000000080] Read FLV header error, input file is not a standard flv format, first PreviousTagSize0 always is 0
+[kux @ 0x517000000080] Negative cts, previous timestamps might be wrong.                                                                                    
+Truncating packet of size 6514015 to 571                                                                                                                    
+[kux @ 0x517000000080] Packet corrupt (stream = 0, dts = 6255619).                                                                                          
+[kux @ 0x517000000080] Track size mismatch: 6513444!                                                                                                        
+[extract_extradata @ 0x50e000000100] Failed to parse header of NALU (type 0): "Invalid data found when processing input". Skipping NALU.                    
+    Last message repeated 1 times                                                                                                                           
+[NULL @ 0x519000000f80] VPS 7 does not exist
+[NULL @ 0x519000000f80] Failed to parse header of NALU (type 0): "Invalid data found when processing input". Skipping NALU.                                 
+    Last message repeated 1 times                                                                                                                           
+[NULL @ 0x519000000f80] VPS 7 does not exist
+[NULL @ 0x519000000f80] PPS id out of range: 2                                                                                                              
+[extract_extradata @ 0x50e000000100] Failed to parse header of NALU (type 0): "Invalid data found when processing input". Skipping NALU.                    
+    Last message repeated 1 times                                                                                                                           
+[hevc @ 0x519000000f80] VPS 7 does not exist
+[hevc @ 0x519000000f80] Failed to parse header of NALU (type 0): "Invalid data found when processing input". Skipping NALU.                                 
+    Last message repeated 1 times                                                                                                                           
+[hevc @ 0x519000000f80] VPS 7 does not exist
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 33                                                                                               
+[hevc @ 0x519000000f80] Unknown profile bitstream                                                                                                           
+    Last message repeated 1 times                                                                                                                           
+[hevc @ 0x519000000f80] sps_max_num_reorder_pics out of range: 2
+[hevc @ 0x519000000f80] Overread PPS by 8 bits                                                                                                              
+[hevc @ 0x519000000f80] Overread slice header by 8 bits                                                                                                     
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 0                                                                                                
+[hevc @ 0x519000000f80] Unknown profile bitstream                                                                                                           
+[hevc @ 0x519000000f80] SPS id out of range: 32                                                                                                             
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 33                                                                                               
+[hevc @ 0x519000000f80] VPS 0 does not exist                                                                                                                
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 33                                                                                               
+[hevc @ 0x519000000f80] Overread slice header by 8 bits                                                                                                     
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 0                                                                                                
+[hevc @ 0x519000000f80] Could not find ref with POC -30                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 127                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 130                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 135                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 146                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 148                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 150                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 152                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 174                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 176                                                                                                     
+[hevc @ 0x519000000f80] Could not find ref with POC 1                                                                                                       
+[hevc @ 0x519000000f80] Could not find ref with POC 2                                                                                                       
+[hevc @ 0x519000000f80] Could not find ref with POC 13                                                                                                      
+[hevc @ 0x519000000f80] PTL information too short                                                                                                           
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 32                                                                                               
+[hevc @ 0x519000000f80] Two slices reporting being the first in the same frame.                                                                             
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 0                                                                                                
+[hevc @ 0x519000000f80] PTL information too short                                                                                                           
+[hevc @ 0x519000000f80] Skipping invalid undecodable NALU: 32                                                                                               
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==10759==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55b9d2cdc5fc bp 0x7ffcb77398e0 sp 0x7ffcb7738f60 T0)
+==10759==The signal is caused by a READ memory access.                                                                                                      
+==10759==Hint: address points to the zero page.
+    #0 0x55b9d2cdc5fc in hls_prediction_unit /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2147:16
+    #1 0x55b9d2cd9797 in hls_coding_unit /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2469:9
+    #2 0x55b9d2cd8a2c in hls_coding_quadtree /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2677:15
+    #3 0x55b9d2cd8549 in hls_coding_quadtree /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2642:21
+    #4 0x55b9d2cd2691 in hls_decode_entry /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2782:21
+    #5 0x55b9d2cc9a33 in decode_slice_data /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:3075:12
+    #6 0x55b9d2cbf0b4 in decode_slice /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:3589:11
+    #7 0x55b9d2cbd916 in decode_nal_unit /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:3657:15
+    #8 0x55b9d2cbca67 in decode_nal_units /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:3770:15
+    #9 0x55b9d2cb69d8 in hevc_receive_frame /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:3872:14
+    #10 0x55b9d2950998 in ff_decode_receive_frame_internal /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/decode.c:618:19
+    #11 0x55b9d29530b4 in decode_receive_frame_internal /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/decode.c:650:15
+    #12 0x55b9d2952fad in avcodec_send_packet /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/decode.c:726:15
+    #13 0x55b9d1ead07b in try_decode_frame /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavformat/demux.c:2146:19
+    #14 0x55b9d1ea75c5 in avformat_find_stream_info /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavformat/demux.c:2828:9
+    #15 0x55b9d100f7d0 in ifile_open /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/fftools/ffmpeg_demux.c:1814:15
+    #16 0x55b9d1073ee4 in open_files /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/fftools/ffmpeg_opt.c:1366:15
+    #17 0x55b9d1073928 in ffmpeg_parse_options /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/fftools/ffmpeg_opt.c:1415:11
+    #18 0x55b9d10b6fd9 in main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/fftools/ffmpeg.c:991:11
+    #19 0x7fb6b3a33ca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #20 0x7fb6b3a33d64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #21 0x55b9d0f18710 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/ffmpeg+0x521710) (BuildId: 379ac85827c85a62a3da71cc682c7649d933e230)
+
+==10759==Register values:
+rax = 0x0000000000000000  rbx = 0x00007ffcb7738f60  rcx = 0x0000000000000000  rdx = 0x0000000000000002  
+rdi = 0x00007fb6b27c8dec  rsi = 0x0000000000000000  rbp = 0x00007ffcb77398e0  rsp = 0x00007ffcb7738f60  
+ r8 = 0x00000ff6d64f91bd   r9 = 0x00007fb6b27c8df7  r10 = 0x00000ff6d64f91be  r11 = 0x00000ff7564f11b8  
+r12 = 0x0000000000000000  r13 = 0x00007ffcb773e318  r14 = 0x0000000000000003  r15 = 0x000055b9d5b831b0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/ffmpeg_asan/libavcodec/hevc/hevcdec.c:2147:16 in hls_prediction_unit
+==10759==ABORTING
