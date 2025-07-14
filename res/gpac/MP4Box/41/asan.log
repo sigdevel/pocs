@@ -1,0 +1,24 @@
+[AC4] Don't support presentation_version 0.
+[AC4] Cannot find substream group 1 for presentation 0                                                                                                                     
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                              
+=================================================================
+==1829578==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000048 (pc 0x7f3bd07946ea bp 0x0a30000002f1 sp 0x7ffde7ad7200 T0)
+==1829578==The signal is caused by a READ memory access.                                                                                                                   
+==1829578==Hint: address points to the zero page.
+    #0 0x7f3bd07946ea in gf_ac4_presentation_ch_mode media_tools/av_parsers.c:15641
+    #1 0x7f3bd07946ea in gf_ac4_raw_frame media_tools/av_parsers.c:15976
+    #2 0x7f3bd07946ea in gf_ac4_parser_bs media_tools/av_parsers.c:16113
+    #3 0x7f3bd10d34f7 in ac4dmx_process filters/reframe_ac4.c:388
+    #4 0x7f3bd0d083c1 in gf_filter_process_task filter_core/filter.c:3187
+    #5 0x7f3bd0cdc305 in gf_fs_thread_proc filter_core/filter_session.c:2421
+    #6 0x7f3bd0ce1564 in gf_fs_run filter_core/filter_session.c:2728
+    #7 0x7f3bd07c23c9 in gf_media_import media_tools/media_import.c:1278
+    #8 0x556972de1a23 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
+    #9 0x556972db24b7 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6520
+    #10 0x7f3bcfc33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f3bcfc33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x556972d8f040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV media_tools/av_parsers.c:15641 in gf_ac4_presentation_ch_mode
+==1829578==ABORTING

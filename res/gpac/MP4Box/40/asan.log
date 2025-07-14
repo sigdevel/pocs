@@ -1,0 +1,52 @@
+=================================================================
+==1823022==ERROR: AddressSanitizer: global-buffer-overflow on address 0x7f8be83df95c at pc 0x7f8be7592fce bp 0x7fff40bffe90 sp 0x7fff40bffe88
+READ of size 4 at 0x7f8be83df95c thread T0                                                                                                                                 
+    #0 0x7f8be7592fcd in gf_ac4_parser_bs media_tools/av_parsers.c:16140
+    #1 0x7f8be7ecfcbc in ac4dmx_probe_data filters/reframe_ac4.c:546
+    #2 0x7f8be7b0262f in gf_filter_pid_raw_new filter_core/filter.c:4704
+    #3 0x7f8be7cc44f5 in filein_process filters/in_file.c:610
+    #4 0x7f8be7b083c1 in gf_filter_process_task filter_core/filter.c:3187
+    #5 0x7f8be7adc305 in gf_fs_thread_proc filter_core/filter_session.c:2421
+    #6 0x7f8be7ae1564 in gf_fs_run filter_core/filter_session.c:2728
+    #7 0x7f8be75c23c9 in gf_media_import media_tools/media_import.c:1278
+    #8 0x562833731a23 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
+    #9 0x5628337024b7 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6520
+    #10 0x7f8be90f0d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f8be90f0e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x5628336df040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+0x7f8be83df95c is located 36 bytes before global variable 'AC4_SAMPLING_FREQ_TABLE' defined in 'media_tools/av_parsers.c:14240:11' (0x7f8be83df980) of size 8
+0x7f8be83df95c is located 4 bytes after global variable 'AC4_SAMPLE_DELTA_TABLE_48' defined in 'media_tools/av_parsers.c:14246:11' (0x7f8be83df920) of size 56             
+SUMMARY: AddressSanitizer: global-buffer-overflow media_tools/av_parsers.c:16140 in gf_ac4_parser_bs                                                                       
+Shadow bytes around the buggy address:
+  0x7f8be83df680: f9 f9 f9 f9 00 00 00 00 f9 f9 f9 f9 00 00 00 f9
+  0x7f8be83df700: f9 f9 f9 f9 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f8be83df780: 00 00 00 00 f9 f9 f9 f9 00 00 f9 f9 f9 f9 f9 f9
+  0x7f8be83df800: 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 00 00 00 00
+  0x7f8be83df880: 00 00 00 f9 f9 f9 f9 f9 00 00 00 00 00 00 00 f9
+=>0x7f8be83df900: f9 f9 f9 f9 00 00 00 00 00 00 00[f9]f9 f9 f9 f9
+  0x7f8be83df980: 00 f9 f9 f9 f9 f9 f9 f9 00 00 00 00 00 00 00 00
+  0x7f8be83dfa00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7f8be83dfa80: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 00 00 00 00
+  0x7f8be83dfb00: 00 00 00 00 04 f9 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x7f8be83dfb80: f9 f9 f9 f9 00 00 00 00 f9 f9 f9 f9 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1823022==ABORTING

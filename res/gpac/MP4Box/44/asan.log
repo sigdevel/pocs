@@ -1,0 +1,58 @@
+==1847116==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x518000000f90 at pc 0x7f556dea1064 bp 0x7ffe2aa85f50 sp 0x7ffe2aa85f48
+READ of size 1 at 0x518000000f90 thread T0                                                                                                                                 
+    #0 0x7f556dea1063 in gf_odf_ac4_cfg_alternative_info odf/descriptors.c:1899
+    #1 0x7f556dea43fa in gf_odf_ac4_cfg_presentation_v1_dsi odf/descriptors.c:2103
+    #2 0x7f556dea5b2c in gf_odf_ac4_cfg_dsi_v1 odf/descriptors.c:2233
+    #3 0x7f556dea6ae1 in gf_odf_ac4_cfg_write_bs odf/descriptors.c:2281
+    #4 0x7f556dea6ae1 in gf_odf_ac4_cfg_write odf/descriptors.c:2288
+    #5 0x7f556e8d1cb7 in ac4dmx_check_pid filters/reframe_ac4.c:238
+    #6 0x7f556e8d2b09 in ac4dmx_process filters/reframe_ac4.c:403
+    #7 0x7f556e5083c1 in gf_filter_process_task filter_core/filter.c:3187
+    #8 0x7f556e4dc305 in gf_fs_thread_proc filter_core/filter_session.c:2421
+    #9 0x7f556e4e1564 in gf_fs_run filter_core/filter_session.c:2728
+    #10 0x7f556dfc23c9 in gf_media_import media_tools/media_import.c:1278
+    #11 0x5595177e6a23 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
+    #12 0x5595177b74b7 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6520
+    #13 0x7f556d433d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f556d433e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x559517794040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+0x518000000f90 is located 0 bytes after 784-byte region [0x518000000c80,0x518000000f90)
+allocated by thread T0 here:                                                                                                                                               
+    #0 0x7f556f4f4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f556df93069 in gf_ac4_raw_frame media_tools/av_parsers.c:15916
+    #2 0x7f556df93069 in gf_ac4_parser_bs media_tools/av_parsers.c:16113
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow odf/descriptors.c:1899 in gf_odf_ac4_cfg_alternative_info
+Shadow bytes around the buggy address:
+  0x518000000d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000000d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000000e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000000e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000000f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x518000000f80: 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x518000001000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x518000001080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000001100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000001180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x518000001200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1847116==ABORTING

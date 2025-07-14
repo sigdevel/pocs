@@ -1,0 +1,92 @@
+Track Importing AC-4 - SampleRate 48000
+Saving /dev/null: 0.500 secs Interleaving                                                                                                                                  
+=================================================================                                                                                                          
+==1851703==ERROR: AddressSanitizer: heap-use-after-free on address 0x502000001ed8 at pc 0x7feeb4f42924 bp 0x7fffbf3739a0 sp 0x7fffbf373998
+READ of size 4 at 0x502000001ed8 thread T0                                                                                                                                 
+    #0 0x7feeb4f42923 in gf_list_count utils/list.c:664
+    #1 0x7feeb54a71b4 in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2411
+    #2 0x7feeb54a71b4 in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2400
+    #3 0x7feeb530af0c in dac4_box_del isomedia/box_code_base.c:9218
+    #4 0x7feeb536c622 in gf_isom_box_del isomedia/box_funcs.c:2131
+    #5 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #6 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #7 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #8 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #9 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #10 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #11 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #12 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #13 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #14 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #15 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #16 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #17 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #18 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #19 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #20 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #21 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #22 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #23 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #24 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #25 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #26 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #27 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #28 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #29 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #30 0x7feeb536c656 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #31 0x7feeb536c656 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #32 0x7feeb536c656 in gf_isom_box_del isomedia/box_funcs.c:2135
+    #33 0x7feeb536ea06 in gf_isom_box_array_reset isomedia/box_funcs.c:443
+    #34 0x7feeb536ea06 in gf_isom_box_array_reset isomedia/box_funcs.c:436
+    #35 0x7feeb536ea06 in gf_isom_box_array_del isomedia/box_funcs.c:449
+    #36 0x7feeb538ecb7 in gf_isom_delete_movie isomedia/isom_intern.c:1170
+    #37 0x7feeb5398635 in gf_isom_close isomedia/isom_read.c:631
+    #38 0x558c94845a9e in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:7024
+    #39 0x7feeb4a33d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #40 0x7feeb4a33e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #41 0x558c94824040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+0x502000001ed8 is located 8 bytes inside of 16-byte region [0x502000001ed0,0x502000001ee0)
+freed by thread T0 here:                                                                                                                                                   
+    #0 0x7feeb6af3918 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7feeb54a7346 in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2438
+    #2 0x7feeb54a7346 in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2400
+
+previously allocated by thread T0 here:
+    #0 0x7feeb6af4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7feeb4f4264d in gf_list_new utils/list.c:612
+
+SUMMARY: AddressSanitizer: heap-use-after-free utils/list.c:664 in gf_list_count
+Shadow bytes around the buggy address:
+  0x502000001c00: fa fa fd fa fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000001c80: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000001d00: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000001d80: fa fa fd fd fa fa fd fd fa fa fd fd fa fa 00 00
+  0x502000001e00: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa fd fd
+=>0x502000001e80: fa fa 00 00 fa fa 00 00 fa fa fd[fd]fa fa fd fd
+  0x502000001f00: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x502000001f80: fa fa 00 00 fa fa 00 00 fa fa fd fd fa fa fd fa
+  0x502000002000: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000002080: fa fa fd fd fa fa 00 fa fa fa 04 fa fa fa fd fd
+  0x502000002100: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1851703==ABORTING
+                                                                                    

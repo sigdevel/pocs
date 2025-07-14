@@ -1,0 +1,62 @@
+[AC4] Don't support presentation_version 0.
+=================================================================                                                                                                          
+==1841011==ERROR: AddressSanitizer: heap-use-after-free on address 0x508000000470 at pc 0x7f3324ca739f bp 0x7fff4d6c5860 sp 0x7fff4d6c5858
+READ of size 8 at 0x508000000470 thread T0                                                                                                                                 
+    #0 0x7f3324ca739e in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2419
+    #1 0x7f3324ca739e in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2400
+    #2 0x7f3324d92ebc in gf_ac4_parser_bs media_tools/av_parsers.c:16101
+    #3 0x7f33256d2a49 in ac4dmx_process filters/reframe_ac4.c:388
+    #4 0x7f33253083c1 in gf_filter_process_task filter_core/filter.c:3187
+    #5 0x7f33252dc305 in gf_fs_thread_proc filter_core/filter_session.c:2421
+    #6 0x7f33252e1564 in gf_fs_run filter_core/filter_session.c:2728
+    #7 0x7f3324dc23c9 in gf_media_import media_tools/media_import.c:1278
+    #8 0x55a5e8e53a23 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
+    #9 0x55a5e8e244b7 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6520
+    #10 0x7f3324233d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f3324233e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55a5e8e01040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+0x508000000470 is located 80 bytes inside of 88-byte region [0x508000000420,0x508000000478)
+freed by thread T0 here:                                                                                                                                                   
+    #0 0x7f33262f3918 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7f3324ca72ea in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2432
+    #2 0x7f3324ca72ea in gf_odf_ac4_cfg_clean_list odf/descriptors.c:2400
+
+previously allocated by thread T0 here:
+    #0 0x7f33262f4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7f3324d94319 in gf_ac4_raw_frame media_tools/av_parsers.c:15938
+    #2 0x7f3324d94319 in gf_ac4_parser_bs media_tools/av_parsers.c:16113
+
+SUMMARY: AddressSanitizer: heap-use-after-free odf/descriptors.c:2419 in gf_odf_ac4_cfg_clean_list
+Shadow bytes around the buggy address:
+  0x508000000180: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+  0x508000000200: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 01
+  0x508000000280: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 01 fa
+  0x508000000300: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 03 fa
+  0x508000000380: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+=>0x508000000400: fa fa fa fa fd fd fd fd fd fd fd fd fd fd[fd]fa
+  0x508000000480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x508000000500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x508000000580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x508000000600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x508000000680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1841011==ABORTING

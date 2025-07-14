@@ -1,0 +1,23 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1848484==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f77c30a5cfa bp 0x000000000000 sp 0x7ffdad34e3d0 T0)
+==1848484==The signal is caused by a READ memory access.                                                                                                                   
+==1848484==Hint: address points to the zero page.
+    #0 0x7f77c30a5cfa in gf_odf_ac4_cfg_dsi_v1 odf/descriptors.c:2148
+    #1 0x7f77c30a6ae1 in gf_odf_ac4_cfg_write_bs odf/descriptors.c:2281
+    #2 0x7f77c30a6ae1 in gf_odf_ac4_cfg_write odf/descriptors.c:2288
+    #3 0x7f77c3ad1cb7 in ac4dmx_check_pid filters/reframe_ac4.c:238
+    #4 0x7f77c3ad2b09 in ac4dmx_process filters/reframe_ac4.c:403
+    #5 0x7f77c37083c1 in gf_filter_process_task filter_core/filter.c:3187
+    #6 0x7f77c36dc305 in gf_fs_thread_proc filter_core/filter_session.c:2421
+    #7 0x7f77c36e1564 in gf_fs_run filter_core/filter_session.c:2728
+    #8 0x7f77c31c23c9 in gf_media_import media_tools/media_import.c:1278
+    #9 0x5604da51ea23 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
+    #10 0x5604da4ef4b7 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6520
+    #11 0x7f77c2633d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7f77c2633e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x5604da4cc040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: 83eb7d5f962205b1b24f2293e134ce24b6f4536b)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV odf/descriptors.c:2148 in gf_odf_ac4_cfg_dsi_v1
+==1848484==ABORTING
