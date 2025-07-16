@@ -1,0 +1,25 @@
+[AC4] stream frame_rate_index 15 >= length AC4_SAMPLE_DELTA_TABLE_48 or AC4_MEDIA_TIMESCALE_48
+[Dasher] No template assigned, using $File$_dash$FS$$Number$                                                                                                               
+[AC4] Cannot find substream group 4 for presentation 0                                                                                                                     
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                              
+=================================================================
+==56315==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000048 (pc 0x7f3ff4b7f8d1 bp 0x0a100000018e sp 0x7ffcf2d7c730 T0)
+==56315==The signal is caused by a READ memory access.
+==56315==Hint: address points to the zero page.
+    #0 0x7f3ff4b7f8d1 in gf_ac4_pres_b_4_back_channels_present media_tools/av_parsers.c:15703
+    #1 0x7f3ff4b7f8d1 in gf_ac4_raw_frame media_tools/av_parsers.c:15999
+    #2 0x7f3ff4b7f8d1 in gf_ac4_parser_bs media_tools/av_parsers.c:16141
+    #3 0x7f3ff54bbe79 in ac4dmx_process filters/reframe_ac4.c:388
+    #4 0x7f3ff50f2310 in gf_filter_process_task filter_core/filter.c:3201
+    #5 0x7f3ff50c641e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #6 0x7f3ff50cb4c4 in gf_fs_run filter_core/filter_session.c:2697
+    #7 0x7f3ff4afb2f1 in gf_dasher_process media_tools/dash_segmenter.c:1273
+    #8 0x55766fbb7ae9 in do_dash /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:4894
+    #9 0x55766fbd3797 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6371
+    #10 0x7f3ff4033d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f3ff4033e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55766fbb3040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: e2fb1f46bcd3af3eca0c699744f7dd57815f4966)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV media_tools/av_parsers.c:15703 in gf_ac4_pres_b_4_back_channels_present
+==56315==ABORTING

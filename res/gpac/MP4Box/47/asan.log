@@ -1,0 +1,270 @@
+[MPEG-2 TS] TS Packet 33 does not start with sync marker
+[MPEG-2 TS] TS Packet 41 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported
+[MPEG-2 TS] Stream type (0xc4) for PID 312 not supported
+MORE sections on pid 48
+Broken PMT descriptor! size 61, desc size 48 but position 15
+MORE sections on pid 4144
+Broken PMT descriptor! size 61, desc size 243 but position 47
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4874
+Broken PAT found reserved PID 0, ignoring
+Broken PAT found reserved PID 0, ignoring
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported
+[MPEG-2 TS] Stream type (0xfd) for PID 312 not supported
+MORE sections on pid 48
+Broken PMT descriptor! size 57, desc size 48 but position 15
+[MPEG-2 TS] PID 48 reused across programs 22343 and 18247, not completely supported
+MORE sections on pid 4144
+Broken PMT descriptor! size 57, desc size 48 but position 20
+[MPEG-2 TS] PID 4144 reused across programs 22343 and 18247, not completely supported
+Broken PMT descriptor! size 57, desc size 58 but position 25
+[MPEG-2 TS] PID 4144 reused across programs 22343 and 18247, not completely supported
+Broken PMT descriptor! size 57, desc size 255 but position 34
+[MPEG-2 TS] Invalid PID 8054 for es descriptor in PMT of program 5959, this PID is already assigned to a PMT
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] TS Packet 54 does not start with sync marker
+[MPEG-2 TS] PID 1863 PCR discontinuity not signaled (diff 1925868574 us - PCR diff 1925869276 vs prev PCR diff 702)
+[MPEG-2 TS] TS Packet 58 does not start with sync marker
+[MPEG-2 TS] corrupted section (CRC32 failed)
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported
+[MPEG-2 TS] Stream type (0xc4) for PID 312 not supported
+MORE sections on pid 48
+Broken PMT descriptor! size 61, desc size 48 but position 15
+MORE sections on pid 4144
+Broken PMT descriptor! size 61, desc size 243 but position 47
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4874
+[MPEG-2 TS] TS Packet 62 does not start with sync marker
+[MPEG-2 TS] TS Packet 62 does not start with sync marker
+[MPEG-2 TS] PID 1863 PCR discontinuity not signaled (diff -443150173 us - PCR diff -1925947847 vs prev PCR diff 1925869276)
+[MPEG-2 TS] TS Packet 70 does not start with sync marker
+[MPEG-2 TS] TS Packet 70 does not start with sync marker
+[MPEG-2 TS] TS Packet 70 does not start with sync marker
+[MPEG-2 TS] TS Packet 33 does not start with sync marker
+[MPEG-2 TS] TS Packet 41 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 43 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] TS Packet 45 does not start with sync marker
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported
+[MPEG-2 TS] Stream type (0xc4) for PID 312 not supported
+MORE sections on pid 48
+Broken PMT descriptor! size 61, desc size 48 but position 15
+MORE sections on pid 4144
+Broken PMT descriptor! size 61, desc size 243 but position 47
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4874
+[M2TSDmx] Unknown stream(s) skipped, use --upes to enable
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[MPEG-2 TS] TS Packet 49 does not start with sync marker
+[Dasher] No template assigned, using $File$_dash$FS$$Number$
+[Dasher] No bitrate property assigned to PID P22343V3, computing from bitstream
+[MPEG-2 TS] TS Packet 20 does not start with sync marker
+[MPEG-2 TS] TS Packet 31 does not start with sync marker
+[MPEG-2 TS] TS Packet 39 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 40 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 42 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[MPEG-2 TS] TS Packet 46 does not start with sync marker
+[Dasher] No bitrate property assigned to PID P22343V3, computing from bitstream
+Broken PAT found reserved PID 0, ignoring
+Broken PAT found reserved PID 0, ignoring
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported
+[MPEG-2 TS] Stream type (0xfd) for PID 312 not supported
+MORE sections on pid 48
+Broken PMT descriptor! size 57, desc size 48 but position 15
+[MPEG-2 TS] PID 48 reused across programs 22343 and 18247, not completely supported
+MORE sections on pid 4144
+Broken PMT descriptor! size 57, desc size 48 but position 20
+[MPEG-2 TS] PID 4144 reused across programs 22343 and 18247, not completely supported
+Broken PMT descriptor! size 57, desc size 58 but position 25
+[MPEG-2 TS] PID 4144 reused across programs 22343 and 18247, not completely supported
+Broken PMT descriptor! size 57, desc size 255 but position 34
+[MPEG-2 TS] Invalid PID 8054 for es descriptor in PMT of program 5959, this PID is already assigned to a PMT
+[MPEG-2 TS] Reassinging PID 4144 from program 22343 to program 18247
+[MPEG-2 TS] PES 4144: Duplicated Packet found (CC 0) - skipping
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker
+[Dasher] No bitrate property assigned to PID P18247V5, computing from bitstream
+[ODF] Error reading descriptor (tag 6 size 8): Invalid MPEG-4 Descriptor
+[ODF] Error reading descriptor (tag 1 size 4): Invalid MPEG-4 Descriptor
+pmt iod has wrong tag 3
+[ODF] Error reading descriptor (tag 6 size 8): Invalid MPEG-4 Descriptor
+[ODF] Error reading descriptor (tag 1 size 4): Invalid MPEG-4 Descriptor
+pmt iod has wrong tag 3
+MORE sections on pid 1792
+Broken PMT descriptor! size 17, desc size 224 but position 5
+[MPEG-2 TS] Invalid PID 67 for es descriptor in PMT of program 1863, this PID is already assigned to a PMT
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] TS Packet 55 does not start with sync marker
+[MPEG-2 TS] PES 4144: Duplicated Packet found (CC 0) - skipping
+[MPEG-2 TS] corrupted section (CRC32 failed)
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[MPEG-2 TS] TS Packet 59 does not start with sync marker
+[Core] exp-golomb read failed, not enough bits in bitstream !
+[AVC|H264] Error parsing NAL unit type 1
+[Dasher] No bitrate property assigned to PID P18247V4, computing from bitstream
+[Dasher] PID P18247V4 config changed during active period, forcing period switch
+[Dasher] Segment 1 is empty - pid end of stream 1
+[MPD] Generating MPD at time 2025-07-16T07:11:03.081Z
+[Dasher] End of Period 
+=================================================================
+==53942==ERROR: AddressSanitizer: heap-use-after-free on address 0x513000001054 at pc 0x7fe37d43b6d5 bp 0x7ffc37c1a590 sp 0x7ffc37c1a588
+WRITE of size 4 at 0x513000001054 thread T0
+    #0 0x7fe37d43b6d4 in gf_filter_packet_destroy filter_core/filter_pck.c:678
+    #1 0x7fe37d43acc8 in gf_filter_packet_destroy filter_core/filter_pck.c:684
+    #2 0x7fe37d473007 in gf_filter_pid_drop_packet filter_core/filter_pid.c:7270
+    #3 0x7fe37d826cae in fileout_process filters/out_file.c:933
+    #4 0x7fe37d4f2310 in gf_filter_process_task filter_core/filter.c:3201
+    #5 0x7fe37d4c641e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #6 0x7fe37d4cb4c4 in gf_fs_run filter_core/filter_session.c:2697
+    #7 0x7fe37cefb2f1 in gf_dasher_process media_tools/dash_segmenter.c:1273
+    #8 0x55ba6a89dae9 in do_dash /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:4894
+    #9 0x55ba6a8b9797 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6371
+    #10 0x7fe37c433d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7fe37c433e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55ba6a899040 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d040) (BuildId: e2fb1f46bcd3af3eca0c699744f7dd57815f4966)
+
+0x513000001054 is located 84 bytes inside of 360-byte region [0x513000001000,0x513000001168)
+freed by thread T0 here:
+    #0 0x7fe37e4f3918 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7fe37d500204 in gf_filter_del filter_core/filter.c:657
+
+previously allocated by thread T0 here:
+    #0 0x7fe37e4f4c77 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7fe37d471e73 in gf_filter_pid_new filter_core/filter_pid.c:5938
+
+SUMMARY: AddressSanitizer: heap-use-after-free filter_core/filter_pck.c:678 in gf_filter_packet_destroy
+Shadow bytes around the buggy address:
+  0x513000000d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa
+  0x513000000e00: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x513000000e80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000000f00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000000f80: fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x513000001000: fd fd fd fd fd fd fd fd fd fd[fd]fd fd fd fd fd
+  0x513000001080: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000001100: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x513000001180: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x513000001200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x513000001280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==53942==ABORTING
