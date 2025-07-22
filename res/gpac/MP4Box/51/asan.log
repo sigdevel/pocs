@@ -1,0 +1,79 @@
+[MPEG-2 TS] TS Packet 44 does not start with sync marker
+Broken PMT descriptor! size 97, desc size 191 but position 9                                                                                                               
+AIT sections on pid 7984                                                                                                                                                   
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 7984                                                                                                                    
+[MPEG-2 TS] Invalid PID 1863 for es descriptor in PMT of program 1863, this PID is already assigned to a PMT                                                               
+[MPEG-2 TS] PES 4144: Packet discontinuity (5 expected - got 0) - may have lost end of previous PES                                                                        
+[MPEG-2 TS] TS Packet 44 does not start with sync marker                                                                                                                   
+Broken PMT descriptor! size 97, desc size 191 but position 9                                                                                                               
+AIT sections on pid 7984                                                                                                                                                   
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 7984                                                                                                                    
+[MPEG-2 TS] Invalid PID 1863 for es descriptor in PMT of program 1863, this PID is already assigned to a PMT                                                               
+[M2TSDmx] Unknown stream(s) skipped, use --upes to enable                                                                                                                  
+[MPEG-2 TS] PES 4144: Packet discontinuity (5 expected - got 0) - may have lost end of previous PES                                                                        
+[Dasher] No template assigned, using $File$_dash$FS$$Number$                                                                                                               
+[Dasher] No bitrate property assigned to PID P18247T2, computing from bitstream                                                                                            
+[RFC6381] Codec parameters not known, cannot set codec string                                                                                                              
+[MPEG-2 TS] TS Packet 44 does not start with sync marker                                                                                                                   
+[MPEG-2 TS] PES 4144: Packet discontinuity (5 expected - got 0) - may have lost end of previous PES                                                                        
+=================================================================                                                                                                          
+==294950==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5100000006f8 at pc 0x7fc5766f2956 bp 0x7ffde8b91e70 sp 0x7ffde8b91630
+READ of size 4294967295 at 0x5100000006f8 thread T0                                                                                                                        
+    #0 0x7fc5766f2955 in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
+    #1 0x7fc57582aec6 in m2tsdmx_send_packet filters/dmx_m2ts.c:916
+    #2 0x7fc57582aec6 in m2tsdmx_on_event filters/dmx_m2ts.c:1164
+    #3 0x7fc5751b14f4 in gf_m2ts_reframe_default media_tools/mpegts.c:136
+    #4 0x7fc5751ba6b8 in gf_m2ts_flush_pes media_tools/mpegts.c:2298
+    #5 0x7fc5751be7c1 in gf_m2ts_process_pes media_tools/mpegts.c:2397
+    #6 0x7fc5751be7c1 in gf_m2ts_process_packet media_tools/mpegts.c:2901
+    #7 0x7fc5751bf601 in gf_m2ts_process_data media_tools/mpegts.c:2989
+    #8 0x7fc575828295 in m2tsdmx_process filters/dmx_m2ts.c:1846
+    #9 0x7fc5756f3550 in gf_filter_process_task filter_core/filter.c:3204
+    #10 0x7fc5756c75be in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #11 0x7fc5756cc664 in gf_fs_run filter_core/filter_session.c:2697
+    #12 0x7fc5750fc2f1 in gf_dasher_process media_tools/dash_segmenter.c:1273
+    #13 0x5641d893db69 in do_dash /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:4898
+    #14 0x5641d8959817 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6375
+    #15 0x7fc574633d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7fc574633e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x5641d89390c0 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 70af19ce608302e101e58c3deb9f98d8473674f1)
+
+0x5100000006f8 is located 1 bytes after 183-byte region [0x510000000640,0x5100000006f7)
+allocated by thread T0 here:                                                                                                                                               
+    #0 0x7fc5766f3b78 in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:85
+    #1 0x7fc5751be552 in gf_m2ts_process_pes media_tools/mpegts.c:2408
+    #2 0x7fc5751be552 in gf_m2ts_process_packet media_tools/mpegts.c:2901
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in memcpy
+Shadow bytes around the buggy address:
+  0x510000000400: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x510000000480: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x510000000500: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x510000000580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x510000000600: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x510000000680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 07[fa]
+  0x510000000700: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x510000000780: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x510000000800: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x510000000880: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x510000000900: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==294950==ABORTING
