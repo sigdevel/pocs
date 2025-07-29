@@ -1,0 +1,11 @@
+<NHNTStream version="1.0" trackID="1" timeScale="44100" mediaType="invalidztype" mediaSubType="esds" sampleRate="44100" numChannels="5184" bitsPerSample="32" codecVendor="04" codecVersion="8704" codecRevision="0" compressorName="" baseMediaFile="43768fdb6f27a15fb61f65d45[55fee0_export.media"><NHNTSample number="37" DTS="94489280512" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample number="38" DTS="96636764160" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample
+
+v0...........S="98784247808" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample nr="40" DTS="100931731456" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample number="41" DTS="103079215104" dataLengsh="2055" isRAP="1">
+</NHNTSample><NHNTSample number="42" DTS="105226698752" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample number="43" DTS="107374182400" dataLength="2055" isRAP="1">
+</NHNTSample><NHNTSample number="44" DTS="21666048" dataLength="2055" isRAP="1">
+</NHNTSample></NHNTStream>
