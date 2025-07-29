@@ -1,0 +1,28 @@
+[MP4Mux] Unable to find ISOM media type for stream type Unknown codec Codec Not Supported
+[MP4Mux] muxing unknown codec ID Codec Not Supported, using generic sample entry with 4CC "esds"                                                             
+Track Importing Codec Not Supported - SampleRate 44100 Num Channels 5184                                                                                     
+[NHMLDmx] Media file /home/user/Downloads/43768fdb6f27a15fb61f65d45[55fee0_export.media not found                                                            
+[NHMLDmx] Media file /home/user/Downloads/43768fdb6f27a15fb61f65d45[55fee0_export.media not found                                                            
+[NHMLDmx] Media file /home/user/Downloads/43768fdb6f27a15fb61f65d45[55fee0_export.media not found                                                            
+[NHMLDmx] Media file /home/user/Downloads/43768fdb6f27a15fb61f65d45[55fee0_export.media not found                                                            
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                
+=================================================================
+==65323==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f867547b312 bp 0x000000000000 sp 0x7ffc3e23e9d0 T0)
+==65323==The signal is caused by a WRITE memory access.                                                                                                      
+==65323==Hint: address points to the zero page.
+    #0 0x7f867547b312 in nhmldmx_send_sample filters/dmx_nhml.c:1600
+    #1 0x7f867547f57a in nhmldmx_process filters/dmx_nhml.c:1782
+    #2 0x7f8675319440 in gf_filter_process_task filter_core/filter.c:3208
+    #3 0x7f86752ed45e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #4 0x7f86752f2504 in gf_fs_run filter_core/filter_session.c:2697
+    #5 0x7f8674dd2c3d in gf_media_import media_tools/media_import.c:1602
+    #6 0x5608828af681 in import_file /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1705
+    #7 0x56088286b9d6 in do_add_cat /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4607
+    #8 0x56088286df02 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6326
+    #9 0x7f8674233ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f8674233d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x56088284e0c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 7a9b69d03a1e013a6045cdb1b873d9b8943667ef)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV filters/dmx_nhml.c:1600 in nhmldmx_send_sample
+==65323==ABORTING

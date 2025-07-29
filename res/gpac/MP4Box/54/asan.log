@@ -1,0 +1,142 @@
+[MPEG-2 TS] TS Packet 33 does not start with sync marker
+[MPEG-2 TS] TS Packet 51 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 51 does not start with sync marker                                                                                                     
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported                                                                                                    
+[MPEG-2 TS] Stream type (0xc4) for PID 312 not supported                                                                                                     
+MORE sections on pid 48                                                                                                                                      
+Broken PMT descriptor! size 61, desc size 48 but position 15                                                                                                 
+MORE sections on pid 4144                                                                                                                                    
+Broken PMT descriptor! size 61, desc size 243 but position 47                                                                                                
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4874                                                                                                      
+[M2TSDmx] Unknown stream(s) skipped, use --upes to enable                                                                                                    
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 55 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 32 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 50 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 50 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 54 does not start with sync marker                                                                                                     
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported                                                                                                    
+[MPEG-2 TS] Stream type (0xdc) for PID 312 not supported                                                                                                     
+MORE sections on pid 48                                                                                                                                      
+Broken PMT descriptor! size 57, desc size 48 but position 15                                                                                                 
+MORE sections on pid 4144                                                                                                                                    
+Broken PMT descriptor! size 57, desc size 48 but position 20                                                                                                 
+Broken PMT descriptor! size 57, desc size 58 but position 25                                                                                                 
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 6706                                                                                                      
+[MPEG-2 TS] PID 4144 Wrong pes_header_data_length field 4 bytes - read 10                                                                                    
+[MPEG-2 TS] PID 4144 Wrong DTS -1942961033 negative for PTS 0 - forcing to 0                                                                                 
+[MPEG-2 TS] PID 4144 - same PTS 0 for two consecutive PES packets                                                                                            
+[MPEG-2 TS] PID 4144 - same DTS 0 for two consecutive PES packets                                                                                            
+[MPEG-2 TS] PID 4144 PES payload size 8841 but received 107 bytes                                                                                            
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 59 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 61 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 69 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 69 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 86 does not start with sync marker                                                                                                     
+AVC|H264 Import results: 0 samples (7 NALUs) - Slices: 0 I 1 P 2 B - 0 SEI - 0 IDR - 0 CRA                                                                   
+AVC|H264 Max NALU size is 83 - stream could be optimized by setting nal_length=1                                                                             
+[MPEG-2 TS] Stream type (0xf3) for PID 2688 not supported                                                                                                    
+[MPEG-2 TS] Stream type (0xc4) for PID 312 not supported                                                                                                     
+MORE sections on pid 48                                                                                                                                      
+Broken PMT descriptor! size 61, desc size 48 but position 15                                                                                                 
+MORE sections on pid 4144                                                                                                                                    
+Broken PMT descriptor! size 61, desc size 243 but position 47                                                                                                
+[MPEG-2 TS] Invalid PMT es descriptor size for PID 4874                                                                                                      
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+[MPEG-2 TS] TS Packet 90 does not start with sync marker                                                                                                     
+=================================================================                                                                                            
+==58521==ERROR: AddressSanitizer: heap-use-after-free on address 0x513000000e40 at pc 0x7ff3d2cbcbbe bp 0x7ffefcb11a40 sp 0x7ffefcb11a38
+READ of size 8 at 0x513000000e40 thread T0                                                                                                                   
+    #0 0x7ff3d2cbcbbd in gf_filter_pid_send_event_downstream filter_core/filter_pid.c:7919
+    #1 0x7ff3d2ced45e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #2 0x7ff3d2cf2504 in gf_fs_run filter_core/filter_session.c:2697
+    #3 0x7ff3d27d2c3d in gf_media_import media_tools/media_import.c:1602
+    #4 0x55fc095b8681 in import_file /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1705
+    #5 0x55fc095749d6 in do_add_cat /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4607
+    #6 0x55fc09576f02 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6326
+    #7 0x7ff3d1c33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7ff3d1c33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x55fc095570c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 7a9b69d03a1e013a6045cdb1b873d9b8943667ef)
+
+0x513000000e40 is located 0 bytes inside of 344-byte region [0x513000000e40,0x513000000f98)
+freed by thread T0 here:                                                                                                                                     
+    #0 0x7ff3d3cf38f8 in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x7ff3d2c7b437 in gf_filter_pid_inst_check_delete filter_core/filter_pid.c:108
+    #2 0x7ff3d2c7b437 in gf_filter_pid_inst_swap_delete filter_core/filter_pid.c:551
+
+previously allocated by thread T0 here:
+    #0 0x7ff3d3cf4c57 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7ff3d2cad9a3 in gf_filter_pid_inst_new filter_core/filter_pid.c:116
+    #2 0x7ff3d2cad9a3 in gf_filter_pid_configure filter_core/filter_pid.c:888
+
+SUMMARY: AddressSanitizer: heap-use-after-free filter_core/filter_pid.c:7919 in gf_filter_pid_send_event_downstream
+Shadow bytes around the buggy address:
+  0x513000000b80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000000c00: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x513000000c80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x513000000d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x513000000d80: 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa
+=>0x513000000e00: fa fa fa fa fa fa fa fa[fd]fd fd fd fd fd fd fd
+  0x513000000e80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000000f00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x513000000f80: fd fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x513000001000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x513000001080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==58521==ABORTING
