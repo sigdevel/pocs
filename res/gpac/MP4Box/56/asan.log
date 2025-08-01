@@ -1,0 +1,15 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3903891==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000050 (pc 0x7f8406fa8838 bp 0x000000000000 sp 0x7ffe2a3b9450 T0)
+==3903891==The signal is caused by a READ memory access.                                                                                                                   
+==3903891==Hint: address points to the zero page.
+    #0 0x7f8406fa8838 in gf_isom_get_esd isomedia/isom_read.c:1386
+    #1 0x55e77e2c619c in dump_isom_nal /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:1397
+    #2 0x55e77e2b5e51 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6670
+    #3 0x7f8406633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #4 0x7f8406633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #5 0x55e77e2950c0 in _start (/media/user/f0f26451-c88f-41ac-9d2e-568f6a9febf2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 7a9b69d03a1e013a6045cdb1b873d9b8943667ef)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_read.c:1386 in gf_isom_get_esd
+==3903891==ABORTING
