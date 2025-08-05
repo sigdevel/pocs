@@ -1,0 +1,22 @@
+[iso file] Unknown box type sTsd in parent stbl
+[iso file] Track with no sample description box !                                                                                                            
+[iso file] Box 00000000 size 65280 is larger than remaining parent size 83                                                                                   
+[iso file] Unknown box type tkhd in parent mvex                                                                                                              
+[iso file] Unknown box type edts in parent mvex                                                                                                              
+[iso file] Invalid number of entries 1 in ctts                                                                                                               
+[iso file] Unknown box type mdia in parent mvex                                                                                                              
+[iso file] Unknown box type 0400ts in parent trak                                                                                                            
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                
+=================================================================
+==620767==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000001c (pc 0x563c09a0b677 bp 0x000000000001 sp 0x7ffe1b88e860 T0)
+==620767==The signal is caused by a READ memory access.                                                                                                      
+==620767==Hint: address points to the zero page.
+    #0 0x563c09a0b677 in dump_isom_saps /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:1743
+    #1 0x563c099f6ec2 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6674
+    #2 0x7fd6ae633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x7fd6ae633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #4 0x563c099d60c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 7a9b69d03a1e013a6045cdb1b873d9b8943667ef)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:1743 in dump_isom_saps
+==620767==ABORTING
