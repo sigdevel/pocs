@@ -1,0 +1,22 @@
+MPEG-4 BIFS Scene Parsing
+Analysing Scene                                                                                                                                              
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==208690==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f499034d320 bp 0x7f497c236f00 sp 0x7ffe4d7c6f20 T0)
+==208690==The signal is caused by a READ memory access.                                                                                                      
+==208690==Hint: address points to the zero page.
+    #0 0x7f499034d320 in StatSFVec2f scene_manager/scene_stats.c:192
+    #1 0x7f499034d320 in StatSingleField scene_manager/scene_stats.c:265
+    #2 0x7f499034d320 in StatSingleField scene_manager/scene_stats.c:261
+    #3 0x7f49903500ac in gf_sm_stats_for_command scene_manager/scene_stats.c:584
+    #4 0x7f4990350a57 in gf_sm_stat_au scene_manager/scene_stats.c:625
+    #5 0x7f4990350a57 in gf_sm_stats_for_scene scene_manager/scene_stats.c:648
+    #6 0x556b1d6b734f in dump_isom_scene_stats /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:430
+    #7 0x556b1d6a8b55 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6617
+    #8 0x7f498f633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7f498f633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x556b1d6880c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 7a9b69d03a1e013a6045cdb1b873d9b8943667ef)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/scene_stats.c:192 in StatSFVec2f
+==208690==ABORTING
