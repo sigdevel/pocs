@@ -1,3 +1,5 @@
 e44a4e2b0d193566619ada71599e70255699da94
 
 2.5-DEV-rev1687-ge44a4e2b0-master
+
+https://github.com/gpac/gpac/issues/3324
