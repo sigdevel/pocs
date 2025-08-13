@@ -1,67 +1,33 @@
-[MPEG-2 TS] TS Packet 44 does not start with sync marker
-Unknown registration descriptor 0001B
-[MPEG-2 TS] Invalid PMT es descriptor size for PID 4144
-[MPEG-2 TS] PES 4144: Packet discontinuity (5 expected - got 0) - may have lost end of previous PES
-[MPEG-2 TS] TS Packet 44 does not start with sync marker
-[MPEG-2 TS] PES 4144: Packet discontinuity (5 expected - got 0) - may have lost end of previous PES
+[ODF] Not enough bytes (4) to read descriptor (size=123)
+[ODF] Error reading descriptor (tag 3 size 37): Invalid MPEG-4 Descriptor
+[iso file] Read Box "esds" (start 460) failed (Invalid MPEG-4 Descriptor) - skipping
+[ODF] Not enough bytes (4) to read descriptor (size=123)
+[ODF] Error reading descriptor (tag 3 size 37): Invalid MPEG-4 Descriptor
+[iso file] Box "stsz" (start 586) has 1740 extra bytes
+[iso file] Incomplete box - start 3345
+[iso file] Incomplete file while reading for dump - aborting parsing
+AddressSanitizer:DEADLYSIGNAL
 =================================================================
-==3702531==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5100000004f8 at pc 0x7fe5440f2956 bp 0x7ffc2ee7f340 sp 0x7ffc2ee7eb00
-READ of size 4294967295 at 0x5100000004f8 thread T0
-    #0 0x7fe5440f2955 in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
-    #1 0x7fe54322af06 in m2tsdmx_send_packet filters/dmx_m2ts.c:916
-    #2 0x7fe54322af06 in m2tsdmx_on_event filters/dmx_m2ts.c:1164
-    #3 0x7fe542bb1534 in gf_m2ts_reframe_default media_tools/mpegts.c:136
-    #4 0x7fe542bba6f8 in gf_m2ts_flush_pes media_tools/mpegts.c:2298
-    #5 0x7fe542bbe801 in gf_m2ts_process_pes media_tools/mpegts.c:2397
-    #6 0x7fe542bbe801 in gf_m2ts_process_packet media_tools/mpegts.c:2901
-    #7 0x7fe542bbf641 in gf_m2ts_process_data media_tools/mpegts.c:2989
-    #8 0x7fe5432282d5 in m2tsdmx_process filters/dmx_m2ts.c:1846
-    #9 0x7fe5430f3590 in gf_filter_process_task filter_core/filter.c:3204
-    #10 0x7fe5430c75fe in gf_fs_thread_proc filter_core/filter_session.c:2393
-    #11 0x7fe5430cc6a4 in gf_fs_run filter_core/filter_session.c:2697
-    #12 0x7fe542bad689 in gf_media_import media_tools/media_import.c:1278
-    #13 0x55e563b38f83 in convert_file_info /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/fileimport.c:131
-    #14 0x55e563b08537 in mp4box_main /media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/applications/mp4box/mp4box.c:6524
-    #15 0x7fe542033d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #16 0x7fe542033e24 in __libc_start_main_impl ../csu/libc-start.c:360
-    #17 0x55e563ae50c0 in _start (/media/user/8b16fbb8-17fc-4a2a-99f7-d4da627d0251/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: d3f27d1b1acd79f361b1ab0fcd895ae9d6ac3f1e)
+==3348634==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fbb82e01a73 bp 0x000000000000 sp 0x7ffd85af26e0 T0)
+==3348634==The signal is caused by a READ memory access.
+==3348634==Hint: address points to the zero page.
+    #0 0x7fbb82e01a73 in gf_isom_apple_set_tag_ex isomedia/isom_write.c:6309
+    #1 0x7fbb83801731 in mp4_mux_set_tags filters/mux_isom.c:841
+    #2 0x7fbb83820909 in mp4_mux_setup_pid filters/mux_isom.c:4184
+    #3 0x7fbb834ad1e1 in gf_filter_pid_configure filter_core/filter_pid.c:939
+    #4 0x7fbb834b4746 in filter_pck_check_prop_change filter_core/filter_pid.c:6889
+    #5 0x7fbb834b4746 in gf_filter_pid_get_packet filter_core/filter_pid.c:6945
+    #6 0x7fbb83836ee9 in mp4_mux_config_timing filters/mux_isom.c:7322
+    #7 0x7fbb83836ee9 in mp4_mux_process filters/mux_isom.c:7611
+    #8 0x7fbb835196f0 in gf_filter_process_task filter_core/filter.c:3208
+    #9 0x7fbb834ed6de in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #10 0x7fbb834f2784 in gf_fs_run filter_core/filter_session.c:2697
+    #11 0x55915ee62b48 in split_isomedia_file /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2554
+    #12 0x55915ee2d04f in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6701
+    #13 0x7fbb82433ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7fbb82433d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55915ee0c0c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 11613e96bc09ebc8937cc7589add4800270bd83b)
 
-0x5100000004f8 is located 1 bytes after 183-byte region [0x510000000440,0x5100000004f7)
-allocated by thread T0 here:
-    #0 0x7fe5440f3b78 in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:85
-    #1 0x7fe542bbe592 in gf_m2ts_process_pes media_tools/mpegts.c:2408
-    #2 0x7fe542bbe592 in gf_m2ts_process_packet media_tools/mpegts.c:2901
-
-SUMMARY: AddressSanitizer: heap-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in memcpy
-Shadow bytes around the buggy address:
-  0x510000000200: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
-  0x510000000280: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
-  0x510000000300: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
-  0x510000000380: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
-  0x510000000400: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
-=>0x510000000480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 07[fa]
-  0x510000000500: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
-  0x510000000580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
-  0x510000000600: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
-  0x510000000680: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
-  0x510000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-Shadow byte legend (one shadow byte represents 8 application bytes):
-  Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07 
-  Heap left redzone:       fa
-  Freed heap region:       fd
-  Stack left redzone:      f1
-  Stack mid redzone:       f2
-  Stack right redzone:     f3
-  Stack after return:      f5
-  Stack use after scope:   f8
-  Global redzone:          f9
-  Global init order:       f6
-  Poisoned by user:        f7
-  Container overflow:      fc
-  Array cookie:            ac
-  Intra object redzone:    bb
-  ASan internal:           fe
-  Left alloca redzone:     ca
-  Right alloca redzone:    cb
-==3702531==ABORTING
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_write.c:6309 in gf_isom_apple_set_tag_ex
+==3348634==ABORTING
