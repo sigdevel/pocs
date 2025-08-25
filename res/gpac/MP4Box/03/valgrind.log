@@ -1,0 +1,175 @@
+DASH Warning: using -segment-timeline with no -url-template. Forcing URL template.
+[iso file] Unknown top-level box type C1g00
+[Dasher] No template assigned, using $File$_dash$FS$$Time$
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 2 with DTS 0 less than previous sample DTS 0, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 3 with DTS 0 less than previous sample DTS 1, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 4 with DTS 1 less than previous sample DTS 2, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 5 with DTS 1 less than previous sample DTS 3, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 6 with DTS 2 less than previous sample DTS 4, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 7 with DTS 2 less than previous sample DTS 5, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 8 with DTS 3 less than previous sample DTS 6, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 9 with DTS 3 less than previous sample DTS 7, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 10 with DTS 4 less than previous sample DTS 8, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 11 with DTS 4 less than previous sample DTS 9, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 12 with DTS 5 less than previous sample DTS 10, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 13 with DTS 5 less than previous sample DTS 11, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 14 with DTS 6 less than previous sample DTS 12, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 15 with DTS 6 less than previous sample DTS 13, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 16 with DTS 7 less than previous sample DTS 14, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 17 with DTS 7 less than previous sample DTS 15, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 18 with DTS 8 less than previous sample DTS 16, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 19 with DTS 8 less than previous sample DTS 17, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 20 with DTS 9 less than previous sample DTS 18, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 21 with DTS 9 less than previous sample DTS 19, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 22 with DTS 10 less than previous sample DTS 20, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 23 with DTS 10 less than previous sample DTS 21, patching DTS
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 24 with DTS 11 less than previous sample DTS 22, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 25 with DTS 11 less than previous sample DTS 23, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 26 with DTS 12 less than previous sample DTS 24, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 27 with DTS 12 less than previous sample DTS 25, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 28 with DTS 13 less than previous sample DTS 26, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 29 with DTS 13 less than previous sample DTS 27, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 30 with DTS 14 less than previous sample DTS 28, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 31 with DTS 14 less than previous sample DTS 29, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 32 with DTS 15 less than previous sample DTS 30, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 33 with DTS 15 less than previous sample DTS 31, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 34 with DTS 16 less than previous sample DTS 32, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 35 with DTS 16 less than previous sample DTS 33, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 36 with DTS 17 less than previous sample DTS 34, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 37 with DTS 17 less than previous sample DTS 35, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 38 with DTS 18 less than previous sample DTS 36, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 39 with DTS 18 less than previous sample DTS 37, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 40 with DTS 19 less than previous sample DTS 38, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 41 with DTS 19 less than previous sample DTS 39, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 42 with DTS 20 less than previous sample DTS 40, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 43 with DTS 20 less than previous sample DTS 41, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 44 with DTS 21 less than previous sample DTS 42, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 45 with DTS 21 less than previous sample DTS 43, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 46 with DTS 22 less than previous sample DTS 44, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 47 with DTS 22 less than previous sample DTS 45, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 48 with DTS 23 less than previous sample DTS 46, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 49 with DTS 23 less than previous sample DTS 47, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 50 with DTS 24 less than previous sample DTS 48, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 51 with DTS 24 less than previous sample DTS 49, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 52 with DTS 25 less than previous sample DTS 50, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 53 with DTS 25 less than previous sample DTS 51, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 54 with DTS 26 less than previous sample DTS 52, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 55 with DTS 26 less than previous sample DTS 53, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 56 with DTS 27 less than previous sample DTS 54, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 57 with DTS 27 less than previous sample DTS 55, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 58 with DTS 28 less than previous sample DTS 56, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 59 with DTS 28 less than previous sample DTS 57, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 60 with DTS 29 less than previous sample DTS 58, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 61 with DTS 29 less than previous sample DTS 59, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 62 with DTS 30 less than previous sample DTS 60, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 63 with DTS 30 less than previous sample DTS 61, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 64 with DTS 31 less than previous sample DTS 62, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 65 with DTS 31 less than previous sample DTS 63, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 66 with DTS 32 less than previous sample DTS 64, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 67 with DTS 32 less than previous sample DTS 65, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 68 with DTS 33 less than previous sample DTS 66, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 69 with DTS 33 less than previous sample DTS 67, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 70 with DTS 34 less than previous sample DTS 68, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 71 with DTS 34 less than previous sample DTS 69, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 72 with DTS 35 less than previous sample DTS 70, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 73 with DTS 35 less than previous sample DTS 71, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 74 with DTS 36 less than previous sample DTS 72, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 75 with DTS 36 less than previous sample DTS 73, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 76 with DTS 37 less than previous sample DTS 74, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 77 with DTS 37 less than previous sample DTS 75, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 78 with DTS 38 less than previous sample DTS 76, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 79 with DTS 38 less than previous sample DTS 77, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 80 with DTS 39 less than previous sample DTS 78, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 81 with DTS 39 less than previous sample DTS 79, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 82 with DTS 40 less than previous sample DTS 80, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 83 with DTS 40 less than previous sample DTS 81, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 84 with DTS 41 less than previous sample DTS 82, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 85 with DTS 41 less than previous sample DTS 83, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 86 with DTS 42 less than previous sample DTS 84, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 87 with DTS 42 less than previous sample DTS 85, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 88 with DTS 43 less than previous sample DTS 86, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 89 with DTS 43 less than previous sample DTS 87, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 90 with DTS 44 less than previous sample DTS 88, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 91 with DTS 44 less than previous sample DTS 89, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 92 with DTS 45 less than previous sample DTS 90, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 93 with DTS 45 less than previous sample DTS 91, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 94 with DTS 46 less than previous sample DTS 92, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 95 with DTS 46 less than previous sample DTS 93, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 96 with DTS 47 less than previous sample DTS 94, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 97 with DTS 47 less than previous sample DTS 95, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 98 with DTS 48 less than previous sample DTS 96, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 99 with DTS 48 less than previous sample DTS 97, patching DTS                              
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 100 with DTS 49 less than previous sample DTS 98, patching DTS                             
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 101 with DTS 49 less than previous sample DTS 99, patching DTS                             
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 102 with DTS 50 less than previous sample DTS 100, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 103 with DTS 50 less than previous sample DTS 101, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 104 with DTS 51 less than previous sample DTS 102, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 105 with DTS 51 less than previous sample DTS 103, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 106 with DTS 52 less than previous sample DTS 104, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 107 with DTS 52 less than previous sample DTS 105, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 108 with DTS 53 less than previous sample DTS 106, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 109 with DTS 53 less than previous sample DTS 107, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 110 with DTS 54 less than previous sample DTS 108, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 111 with DTS 54 less than previous sample DTS 109, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 112 with DTS 55 less than previous sample DTS 110, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 113 with DTS 55 less than previous sample DTS 111, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 114 with DTS 56 less than previous sample DTS 112, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 115 with DTS 56 less than previous sample DTS 113, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 116 with DTS 57 less than previous sample DTS 114, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 117 with DTS 57 less than previous sample DTS 115, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 118 with DTS 58 less than previous sample DTS 116, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 119 with DTS 58 less than previous sample DTS 117, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 120 with DTS 59 less than previous sample DTS 118, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 121 with DTS 59 less than previous sample DTS 119, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 122 with DTS 60 less than previous sample DTS 120, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 123 with DTS 60 less than previous sample DTS 121, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 124 with DTS 61 less than previous sample DTS 122, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 125 with DTS 61 less than previous sample DTS 123, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 126 with DTS 62 less than previous sample DTS 124, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 127 with DTS 62 less than previous sample DTS 125, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 128 with DTS 63 less than previous sample DTS 126, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 129 with DTS 63 less than previous sample DTS 127, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 130 with DTS 64 less than previous sample DTS 128, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 131 with DTS 64 less than previous sample DTS 129, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 132 with DTS 65 less than previous sample DTS 130, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 133 with DTS 65 less than previous sample DTS 131, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 134 with DTS 66 less than previous sample DTS 132, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 135 with DTS 66 less than previous sample DTS 133, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 136 with DTS 67 less than previous sample DTS 134, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 137 with DTS 67 less than previous sample DTS 135, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 138 with DTS 68 less than previous sample DTS 136, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 139 with DTS 68 less than previous sample DTS 137, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 140 with DTS 69 less than previous sample DTS 138, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 141 with DTS 69 less than previous sample DTS 139, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 142 with DTS 70 less than previous sample DTS 140, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 143 with DTS 70 less than previous sample DTS 141, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 144 with DTS 71 less than previous sample DTS 142, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 145 with DTS 71 less than previous sample DTS 143, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 146 with DTS 72 less than previous sample DTS 144, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 147 with DTS 72 less than previous sample DTS 145, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 148 with DTS 73 less than previous sample DTS 146, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 149 with DTS 73 less than previous sample DTS 147, patching DTS                            
+[MP4Mux] PID 11ddf100318b46af1031256333923431d27a68dc ID 1 Sample 150 with DTS 74 less than previous sample DTS 148, patching DTS                            
+[Dasher] Segment 1 is empty - pid end of stream 1                                                                                                            
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                
+=================================================================
+==21798==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000000c (pc 0x7f6de1b6c4b0 bp 0x00000000000c sp 0x7ffe49cab3e0 T0)
+==21798==The signal is caused by a READ memory access.                                                                                                       
+==21798==Hint: address points to the zero page.
+    #0 0x7f6de1b6c4b0 in dasher_insert_timeline_entry filters/dasher.c:7760
+    #1 0x7f6de1b7d249 in dasher_insert_timeline_entry filters/dasher.c:7623
+    #2 0x7f6de1b7d249 in dasher_flush_segment filters/dasher.c:8005
+    #3 0x7f6de1bc0ee1 in dasher_process filters/dasher.c:9423
+    #4 0x7f6de1b196f0 in gf_filter_process_task filter_core/filter.c:3208
+    #5 0x7f6de1aed6de in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #6 0x7f6de1af2784 in gf_fs_run filter_core/filter_session.c:2697
+    #7 0x7f6de1520291 in gf_dasher_process media_tools/dash_segmenter.c:1273
+    #8 0x558ea0f80b69 in do_dash /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4898
+    #9 0x558ea0f9c817 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6375
+    #10 0x7f6de0a33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f6de0a33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x558ea0f7c0c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 11613e96bc09ebc8937cc7589add4800270bd83b)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV filters/dasher.c:7760 in dasher_insert_timeline_entry
+==21798==ABORTING

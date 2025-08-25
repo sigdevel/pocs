@@ -1,0 +1,7 @@
+Program received signal SIGSEGV, Segmentation fault.
+#0  0x00000000012724a7 in __strcmp_avx2_rtm ()
+#1  0x0000000000775452 in GetESD (moov=moov@entry=0x18c41e0, trackID=<optimized out>, StreamDescIndex=<optimized out>, outESD=outESD@entry=0x7fffffffacc0) at isomedia/track.c:212
+#2  0x00000000006d9315 in gf_isom_get_esd (movie=movie@entry=0x18c54f0, trackNumber=<optimized out>, StreamDescriptionIndex=StreamDescriptionIndex@entry=1) at isomedia/isom_read.c:1389
+#3  0x000000000042fd05 in dump_isom_nal (file=0x18c54f0, trackID=2, inName=0x16b0d60 <outfile> "/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/output-crashes/id1", is_final_name=GF_FALSE, dump_flags=0) at filedump.c:1397
+#4  0x000000000041948a in mp4box_main (argc=4, argv=<optimized out>) at mp4box.c:6670
+#5  0x000000000122a934 in __libc_start_call_main ()
