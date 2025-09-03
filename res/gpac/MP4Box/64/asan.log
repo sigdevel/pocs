@@ -1,0 +1,36 @@
+[FileList] Switching to file   #50000  #5:@@158058662964011166094################(:#8TKT=T(#00@#:#I@@0(:#ITID=#2@@@@@w@@@#@#ITID4#########################00@#:#I@@0(:#ITID=T(:#ID@@0(:'#########00@#:#I@@0(:#ITID=min##########(:#ITKT=05866296@011166094######fT(T(:#ID@#5:@@158T(#00@#:#I@@@0(:0(:#ITHD=T(:TID=T(:#ID
+Unknown property type T(#00                                                                                                                                 
+Unrecognized property type T(#00, defaulting to string                                                                                                      
+Wrong argument value #2T(#00@#T(#00@#T(#00@### for unsigned int arg ITID - using 0                                                                          
+Wrong argument value min##########( for unsigned int arg ITID - using 0                                                                                     
+Wrong argument value (null) for unsigned int arg ID - using 0                                                                                               
+Unknown property type T(#00                                                                                                                                 
+Unrecognized property type T(#00, defaulting to string                                                                                                      
+Wrong argument value #2T(#00@#T(#00@#T(#00@### for unsigned int arg ITID - using 0                                                                          
+Wrong argument value min##########( for unsigned int arg ITID - using 0                                                                                     
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==4009521==ERROR: AddressSanitizer: SEGV on unknown address 0x000011166094 (pc 0x7fad36d7668a bp 0x7ffd6374ce90 sp 0x7ffd6374c618 T0)
+==4009521==The signal is caused by a READ memory access.                                                                                                    
+    #0 0x7fad36d7668a in __memcmp_avx2_movbe_rtm ../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:84
+    #1 0x7fad38cc3f5f in MemcmpInterceptorCommon(void*, int (*)(void const*, void const*, unsigned long), void const*, void const*, unsigned long) ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:834
+    #2 0x7fad38cc4b33 in memcmp ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:845
+    #3 0x7fad38cc4b33 in memcmp ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:840
+    #4 0x7fad37ca4619 in gf_props_equal_internal filter_core/filter_props.c:867
+    #5 0x7fad37c6ac33 in gf_filter_pid_set_property_full filter_core/filter_pid.c:6151
+    #6 0x7fad37c72557 in gf_filter_pid_set_args_internal filter_core/filter_pid.c:4449
+    #7 0x7fad37c7f5e8 in gf_filter_pid_set_args filter_core/filter_pid.c:4548
+    #8 0x7fad37c7f5e8 in gf_filter_pid_init_task filter_core/filter_pid.c:4821
+    #9 0x7fad37cc9e1e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #10 0x7fad37cceec4 in gf_fs_run filter_core/filter_session.c:2697
+    #11 0x7fad377af53d in gf_media_import media_tools/media_import.c:1602
+    #12 0x563001ca26a1 in import_file /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1705
+    #13 0x563001c5e9d6 in do_add_cat /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4607
+    #14 0x563001c60f02 in mp4box_main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6326
+    #15 0x7fad36c33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7fad36c33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x563001c410c0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 4de0a8fe5e600eb51579b5ff67dae9e24aa9b8d9)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:84 in __memcmp_avx2_movbe_rtm
+==4009521==ABORTING

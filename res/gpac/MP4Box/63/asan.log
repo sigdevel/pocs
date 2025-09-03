@@ -1,0 +1,36 @@
+[iso file] Box "orfo" (start 16) has 3590 extra bytes
+[iso file] Unknown box type a0010p in parent encv                                                                                                            
+[ODF] Error reading descriptor (tag 4 size 0): Invalid MPEG-4 Descriptor                                                                                     
+[ODF] Error reading descriptor (tag 4 size 17): Invalid MPEG-4 Descriptor                                                                                    
+[iso file] Unknown box type sca00 in parent sinf                                                                                                             
+[iso file] Unknown box type dath in parent ©too                                                                                                              
+[iso file] Box "sidx" (start 5272) has 24 extra bytes                                                                                                        
+[iso file] Read Box type 00120001 (0x00120001) at position 5492 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !            
+[iso file] Box "traf" (start 5352) has 458 extra bytes                                                                                                       
+[iso file] Box "saio" (start 6055) has 4 extra bytes                                                                                                         
+[iso file] Read Box type 00000000 (0x00000000) at position 6083 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !            
+[iso file] Box "traf" (start 5958) has 700 extra bytes                                                                                                       
+[isobmf] No offset in saio type ^enc aux info type 0, cannot merge SAI                                                                                       
+[isobmf] No offset in saio type clnc aux info type 0, cannot merge SAI                                                                                       
+[iso file] Unknown box type a0010p in parent encv                                                                                                            
+[iso file] Unknown box type a0010p in parent encv                                                                                                            
+[iso file] Unknown box type sca00 in parent sinf                                                                                                             
+[iso file] Unknown box type dath in parent ©too                                                                                                              
+[iso file] Box "iloc" (start 8295) has 25 extra bytes                                                                                                        
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                
+=================================================================
+==85294==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x5649767727e6 bp 0x7f8066101000 sp 0x7ffec709c640 T0)
+==85294==The signal is caused by a READ memory access.                                                                                                       
+==85294==Hint: address points to the zero page.
+    #0 0x5649767727e6 in check_media_profile /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:3883
+    #1 0x56497678d1c3 in remove_systems_tracks /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:3937
+    #2 0x56497678d1c3 in remove_systems_tracks /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:3916
+    #3 0x5649767944e9 in mp4box_main /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6748
+    #4 0x7f8079233ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #5 0x7f8079233d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #6 0x5649767700c0 in _start (/media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 11613e96bc09ebc8937cc7589add4800270bd83b)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/6d3eeb8a-a93b-4220-bb13-a4e488ce0ce2/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:3883 in check_media_profile
+==85294==ABORTING
+                     
