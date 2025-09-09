@@ -3,3 +3,5 @@
 2.5-DEV-rev1780-g50b5741f2-master
 
 https://github.com/gpac/gpac/issues/3335
+
+fix: https://github.com/gpac/gpac/commit/9beed3c0a2f38505c745e5376234e7ed66e8e0b1
