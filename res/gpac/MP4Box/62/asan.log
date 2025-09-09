@@ -1,0 +1,31 @@
+[iso file] Unknown box type avC9 in parent stsd
+[iso file] more than one stts entry at the end of the track with sample_delta=0 - forbidden ! Fixing to 1                                                   
+[iso file] Box "tref" (start 5718) has 4 extra bytes                                                                                                        
+[iso file] Unknown top-level box type qree                                                                                                                  
+[iso file] Incomplete box mdat - start 6087 size 1131074                                                                                                    
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                        
+[iso file] Unknown box type avC9 in parent stsd                                                                                                             
+[iso file] more than one stts entry at the end of the track with sample_delta=0 - forbidden ! Fixing to 1                                                   
+[iso file] Box "tref" (start 5718) has 4 extra bytes                                                                                                        
+[iso file] Unknown top-level box type qree                                                                                                                  
+[iso file] Incomplete box mdat - start 6087 size 1131074                                                                                                    
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                        
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==852440==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f16eb4534a4 bp 0x0fe2dd0c1880 sp 0x7ffd254c4540 T0)
+==852440==The signal is caused by a READ memory access.                                                                                                     
+==852440==Hint: address points to the zero page.
+    #0 0x7f16eb4534a4 in GetESD isomedia/track.c:107
+    #1 0x7f16eb453e9b in GetESDForTime isomedia/track.c:325
+    #2 0x7f16eb3829dd in gf_isom_get_root_od isomedia/isom_read.c:764
+    #3 0x7f16eb6f8b97 in gf_sm_load_init_isom scene_manager/loader_isom.c:369
+    #4 0x7f16eb6d9110 in gf_sm_load_init scene_manager/scene_manager.c:700
+    #5 0x556e9253d417 in dump_isom_scene /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:212
+    #6 0x556e9252fb05 in mp4box_main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6611
+    #7 0x7f16eaa33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7f16eaa33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x556e9250f0c0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: 6f5bf1b4584b62229d9fafdeff0a8a4ac608be29)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/track.c:107 in GetESD
+==852440==ABORTING
