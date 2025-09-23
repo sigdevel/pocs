@@ -2,3 +2,4 @@
 
 2.5-DEV-rev1815-g261ffdd13-master
 
+https://github.com/gpac/gpac/issues/3345
