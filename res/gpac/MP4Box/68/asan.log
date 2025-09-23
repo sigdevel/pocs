@@ -1,0 +1,53 @@
+[iso file] Unknown box type aaaa in parent stsd
+[iso file] Unknown box type 00000001 in parent stsd                                                                                                         
+[iso file] Unknown box type 05FFFF05 in parent stsd                                                                                                         
+[iso file] Unknown box type avcC in parent lhe1                                                                                                             
+[iso file] Box "avcC" (start 17644) has 4 extra bytes                                                                                                       
+[iso file] Unknown box type avcC in parent av01                                                                                                             
+[iso file] Unknown box type nmh00 in parent dims                                                                                                            
+[iso file] Read Box type 02@0400 (0x02400400) at position 20644 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !           
+[iso file] Box "dims" (start 20616) has 256 extra bytes                                                                                                     
+[iso file] Read Box type 00000000 (0x00000000) at position 20908 has size 0 but is not at root/file level. Forbidden, skipping end of parent box !          
+[iso file] Box "stsd" (start 414) has 7338 extra bytes                                                                                                      
+[iso file] Unknown top-level box type ¯1F1DF2                                                                                                               
+[iso file] Incomplete box ¯1F1DF2 - start 256745 size 2717411827                                                                                            
+[iso file] Incomplete file while reading for dump - aborting parsing                                                                                        
+[iso file] Unknown box type aaaa in parent stsd                                                                                                             
+[iso file] Unknown box type 00000001 in parent stsd                                                                                                         
+[iso file] Unknown box type 05FFFF05 in parent stsd                                                                                                         
+[iso file] Unknown box type avcC in parent lhe1                                                                                                             
+[iso file] Unknown box type avcC in parent av01                                                                                                             
+[iso file] Unknown box type nmh00 in parent dims                                                                                                            
+[Core] exp-golomb read failed, not enough bits in bitstream !                                                                                               
+[IsoMedia] Track 1 type aaaa not natively handled                                                                                                           
+[iso file] Unknown box type aaaa in parent stsd                                                                                                             
+[IsoMedia] Track 1 type 00000001 not natively handled                                                                                                       
+[iso file] Unknown box type 00000001 in parent stsd                                                                                                         
+[IsoMedia] Track 1 type 05FFFF05 not natively handled                                                                                                       
+[iso file] Unknown box type 05FFFF05 in parent stsd                                                                                                         
+[Core] exp-golomb read failed, not enough bits in bitstream !                                                                                               
+[iso file] Unknown box type avcC in parent lhe1                                                                                                             
+[IsoMedia] File truncated, aborting read for track 2 after 44 / 80 samples                                                                                  
+[Core] exp-golomb read failed, not enough bits in bitstream !                                                                                               
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==3660073==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000001d (pc 0x7fc0abb79c59 bp 0x7ffcecd750a0 sp 0x7ffcecd74848 T0)
+==3660073==The signal is caused by a READ memory access.                                                                                                    
+==3660073==Hint: address points to the zero page.
+    #0 0x7fc0abb79c59 in __strlen_avx2_rtm ../sysdeps/x86_64/multiarch/strlen-avx2.S:76
+    #1 0x7fc0ada78ee9 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:389
+    #2 0x7fc0ac4e9ece in gf_media_map_esd media_tools/isom_tools.c:1364
+    #3 0x7fc0acd2d521 in isor_declare_track filters/isoffin_load.c:855
+    #4 0x7fc0acd51b3f in isoffin_process filters/isoffin_read.c:1601
+    #5 0x7fc0acafcd30 in gf_filter_process_task filter_core/filter.c:3208
+    #6 0x7fc0acad0d1e in gf_fs_thread_proc filter_core/filter_session.c:2393
+    #7 0x7fc0acad5dc4 in gf_fs_run filter_core/filter_session.c:2697
+    #8 0x55cd0c78cb48 in split_isomedia_file /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2554
+    #9 0x55cd0c75704f in mp4box_main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6705
+    #10 0x7fc0aba33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7fc0aba33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55cd0c7360c0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: d215e0e8d4dd29258556b9ec9b1aead5f275db93)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strlen-avx2.S:76 in __strlen_avx2_rtm
+==3660073==ABORTING
