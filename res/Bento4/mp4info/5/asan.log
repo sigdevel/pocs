@@ -1,0 +1,13 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==623466==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000000c (pc 0x5568e04058c4 bp 0x7ffd22324970 sp 0x7ffd223246f0 T0)
+==623466==The signal is caused by a READ memory access.                                                                                                     
+==623466==Hint: address points to the zero page.
+    #0 0x5568e04058c4 in main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/bento4/runtime/bento4_asan/Source/C++/Apps/Mp42Hls/Mp42Hls.cpp:2080
+    #1 0x7fe4a3633ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #2 0x7fe4a3633d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #3 0x5568e03f84d0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/bento4/runtime/bento4_asan/build-asan/mp42hls+0x32e4d0) (BuildId: 05963e01d5a58821d8a8693a5674947bc0893606)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/bento4/runtime/bento4_asan/Source/C++/Apps/Mp42Hls/Mp42Hls.cpp:2080 in main
+==623466==ABORTING
