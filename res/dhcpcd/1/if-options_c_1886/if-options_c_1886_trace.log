@@ -1,0 +1,11 @@
+/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/src/if-options.c:1886:21: runtime error: member access within null pointer of type 'struct dhcp_opt'
+    #0 0x55cc35d1d254 in parse_option /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/src/if-options.c:1886:21
+    #1 0x55cc35d0e756 in read_config /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/src/if-options.c:2940:3
+    #2 0x55cc35cf1c52 in LLVMFuzzerTestOneInput /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/dhcpcd_conf_read/fuzz_dhcpcd_conf_read.c:35:30
+    #3 0x55cc35cf1996 in main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/dhcpcd_conf_read/afl_stdin_driver.c:57:12
+    #4 0x7fb80313aca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #5 0x7fb80313ad64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #6 0x55cc35c10520 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/dhcpcd_conf_read/build_asan/asan_dhcpcd_conf_read+0x55520) (BuildId: 00bf00587119903bbb27c3a9264e41ed4fdafb51)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/l-mst/uil-dev/dhcpcd/src/if-options.c:1886:21 
+zsh: IOT instruction   /tmp/if-options_c_1886
