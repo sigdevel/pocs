@@ -1,0 +1,26 @@
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  0x000000000044f194 in gf_list_get (ptr=0xd6c5a10, itemNumber=0) at utils/list.c:672
+672             return ptr->slots[itemNumber];
+(gdb) bt
+#0  0x000000000044f194 in gf_list_get (ptr=0xd6c5a10, itemNumber=0) at utils/list.c:672
+#1  0x000000000060edc2 in Media_GetSampleDesc (mdia=0xd6efc10, SampleDescIndex=1, out_entry=0x7ffddaa93810, dataRefIndex=0x7ffddaa937e8)
+    at isomedia/media.c:43
+#2  0x0000000000610c57 in Media_GetSample (mdia=0xd6efc10, sampleNumber=1, samp=0x7ffddaa938b8, sIDX=0x7ffddaa938f8, no_data=GF_TRUE, out_offset=0x0, 
+    ext_realloc=GF_FALSE) at isomedia/media.c:557
+#3  0x00000000005e0148 in gf_isom_get_sample_info_ex (the_file=0xd6ad480, trackNumber=1, sampleNumber=1, sampleDescriptionIndex=0x7ffddaa938f8, 
+    data_offset=0x0, static_sample=0x7ffddaa93950) at isomedia/isom_read.c:2119
+#4  0x00000000006b4c70 in gf_media_update_bitrate_ex (file=0xd6ad480, track=1, use_esd=GF_FALSE) at media_tools/media_import.c:69
+#5  0x00000000006b4ee0 in gf_media_update_bitrate (file=0xd6ad480, track=1) at media_tools/media_import.c:113
+#6  0x000000000090a121 in mp4_mux_done_track (ctx=0xd6fca00, tkw=0xd6b8b00) at filters/mux_isom.c:8497
+#7  0x000000000090a2b2 in mp4_mux_done (ctx=0xd6fca00, is_final=GF_TRUE) at filters/mux_isom.c:8523
+#8  0x0000000000907816 in mp4_mux_process (filter=0xd70b870) at filters/mux_isom.c:7834
+#9  0x00000000007a7345 in gf_filter_process_task (task=0xd6c90d0) at filter_core/filter.c:3212
+#10 0x0000000000792516 in gf_fs_thread_proc (sess_thread=0xd6adc78) at filter_core/filter_session.c:2393
+#11 0x0000000000792f83 in gf_fs_run (fsess=0xd6adbe0) at filter_core/filter_session.c:2697
+#12 0x00000000006bb9ba in gf_media_import (importer=0xd6b0870) at media_tools/media_import.c:1602
+#13 0x00000000004390c8 in import_file (dest=0xd6ad480, 
+    inName=0x7ffddaa96f88 "/home/user/Downloads/69_utils_list_c_672", import_flags=0, force_fps=..., 
+    frames_per_sample=0, fsess=0x0, mux_args_if_first_pass=0x0, mux_sid_if_first_pass=0x0, tk_idx=0) at fileimport.c:1705
+#14 0x000000000040fa73 in do_add_cat (argc=5, argv=0x7ffddaa95e48) at mp4box.c:4611
+#15 0x00000000004166b2 in mp4box_main (argc=5, argv=0x7ffddaa95e48) at mp4box.c:6333
+#16 0x000000000041980e in main (argc=5, argv=0x7ffddaa95e48) at mp4box.c:7081
