@@ -1,0 +1,62 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2382361648
+INFO: Loaded 1 modules   (147 inline 8-bit counters): 147 [0x55b568543818, 0x55b5685438ab), 
+INFO: Loaded 1 PC tables (147 PCs): 147 [0x55b5685438b0,0x55b5685441e0), 
+./build-fuzz/fuzz/fuzz_names: Running 1 inputs 1 time(s) each.
+Running: fuzz/crashes/crash-names-asan-global-overflow
+=================================================================
+==7272==ERROR: AddressSanitizer: global-buffer-overflow on address 0x7f824cc94691 at pc 0x7f824cc8617a bp 0x7ffcdc12fd50 sp 0x7ffcdc12fd48
+READ of size 1 at 0x7f824cc94691 thread T0                                                                                                                  
+    #0 0x7f824cc86179 in cmp_entry /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/../libevdev/libevdev-names.c:31:7
+    #1 0x7f824cc84b28 in bsearch /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:29:22
+    #2 0x7f824cc84b28 in lookup_name /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/../libevdev/libevdev-names.c:46:10
+    #3 0x7f824cc85b2d in libevdev_event_code_from_code_name_n /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/../libevdev/libevdev-names.c:188:10
+    #4 0x55b568532dec in LLVMFuzzerTestOneInput /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/../fuzz/fuzz_names.cc:49:3
+    #5 0x55b568517c1a in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/fuzz/fuzz_names+0x25c1a) (BuildId: 66880e292566d0f067f038d25458ea24c736fdef)
+    #6 0x55b5685003d3 in fuzzer::RunOneTest(fuzzer::Fuzzer*, char const*, unsigned long) (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/fuzz/fuzz_names+0xe3d3) (BuildId: 66880e292566d0f067f038d25458ea24c736fdef)
+    #7 0x55b5685063ec in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/fuzz/fuzz_names+0x143ec) (BuildId: 66880e292566d0f067f038d25458ea24c736fdef)
+    #8 0x55b568531296 in main (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/fuzz/fuzz_names+0x3f296) (BuildId: 66880e292566d0f067f038d25458ea24c736fdef)
+    #9 0x7f824ba33ca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7f824ba33d64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x55b5684fab20 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/fuzz/fuzz_names+0x8b20) (BuildId: 66880e292566d0f067f038d25458ea24c736fdef)
+
+0x7f824cc94691 is located 47 bytes before global variable '.str.211' defined in '/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/./event-names.h:1104' (0x7f824cc946c0) of size 6                                                                                                                  
+  '.str.211' is ascii string 'KEY_7'                                                                                                                        
+0x7f824cc94691 is located 15 bytes before global variable '.str.210' defined in '/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/./event-names.h:1103' (0x7f824cc946a0) of size 6                                                                                                                  
+  '.str.210' is ascii string 'KEY_6'                                                                                                                        
+0x7f824cc94691 is located 11 bytes after global variable '.str.209' defined in '/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/./event-names.h:1102' (0x7f824cc94680) of size 6                                                                                                                   
+  '.str.209' is ascii string 'KEY_5'                                                                                                                        
+SUMMARY: AddressSanitizer: global-buffer-overflow /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libevdev/build-fuzz/../libevdev/libevdev-names.c:31:7 in cmp_entry
+Shadow bytes around the buggy address:
+  0x7f824cc94400: 00 04 f9 f9 00 02 f9 f9 00 f9 f9 f9 00 02 f9 f9
+  0x7f824cc94480: 00 02 f9 f9 00 06 f9 f9 00 00 02 f9 f9 f9 f9 f9
+  0x7f824cc94500: 00 04 f9 f9 06 f9 f9 f9 06 f9 f9 f9 00 02 f9 f9
+  0x7f824cc94580: 00 00 03 f9 f9 f9 f9 f9 00 00 01 f9 f9 f9 f9 f9
+  0x7f824cc94600: 06 f9 f9 f9 06 f9 f9 f9 00 04 f9 f9 06 f9 f9 f9
+=>0x7f824cc94680: 06 f9[f9]f9 06 f9 f9 f9 06 f9 f9 f9 06 f9 f9 f9
+  0x7f824cc94700: 06 f9 f9 f9 06 f9 f9 f9 07 f9 f9 f9 00 00 02 f9
+  0x7f824cc94780: f9 f9 f9 f9 00 00 f9 f9 00 02 f9 f9 00 00 05 f9
+  0x7f824cc94800: f9 f9 f9 f9 00 07 f9 f9 00 05 f9 f9 00 02 f9 f9
+  0x7f824cc94880: 00 07 f9 f9 00 06 f9 f9 00 04 f9 f9 00 00 01 f9
+  0x7f824cc94900: f9 f9 f9 f9 00 06 f9 f9 00 00 02 f9 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==7272==ABORTING
+zsh: IOT instruction  LD_PRELOAD= LD_LIBRARY_PATH="/usr/lib/llvm-19/lib/clang/19/lib/linux" = =  
