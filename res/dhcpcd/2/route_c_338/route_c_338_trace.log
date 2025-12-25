@@ -1,0 +1,21 @@
+=================================================================
+==905291==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55fa85a5a7db bp 0x7ffcdfed9d70 sp 0x7ffcdfed9c00 T0)
+==905291==The signal is caused by a READ memory access.                                                                                                     
+==905291==Hint: address points to the zero page.
+    #0 0x55fa85a5a7db in rt_headclear /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/route.c:338:28
+    #1 0x55fa85a4c6b0 in parse_option /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:1323:5
+    #2 0x55fa85a3b5d3 in parse_config_line /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2605:10
+    #3 0x55fa85a3b5d3 in read_config /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2940:3
+    #4 0x55fa85a1e54a in main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd.c:2191:8
+    #5 0x7f7cece84ca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #6 0x7f7cece84d64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #7 0x55fa85928880 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd+0x47880) (BuildId: 11c83f634e86387df9e54bcb705fc55c33de9080)
+
+==905291==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000002  rcx = 0x00000a220000053b  rdx = 0x0000000000000bff  
+rdi = 0x0000000000000000  rsi = 0x0000000000000001  rbp = 0x00007ffcdfed9d70  rsp = 0x00007ffcdfed9c00  
+ r8 = 0x0000000000000001   r9 = 0x0000000000000001  r10 = 0x0000000000000006  r11 = 0x000055fa85ba7d20  
+r12 = 0x0000000000000000  r13 = 0x00007f7ceaf1b120  r14 = 0x00005310000108e0  r15 = 0x000055fa85ba7d20  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/route.c:338:28 in rt_headclear
+==905291==ABORTING
