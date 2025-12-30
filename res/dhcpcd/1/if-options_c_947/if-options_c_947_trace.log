@@ -1,0 +1,24 @@
+unknown option: .10
+vendor option should be between 1 and 65535 inclusive
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==27669==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55f1fef9ab04 bp 0x7ffe724f3a30 sp 0x7ffe724f38e0 T0)
+==27669==The signal is caused by a READ memory access.                                                                                                     
+==27669==Hint: address points to the zero page.
+    #0 0x55f1fef9ab04 in strskipwhite /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c
+    #1 0x55f1fef9ab04 in parse_option /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:947:8
+    #2 0x55f1fef925d3 in parse_config_line /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2605:10
+    #3 0x55f1fef925d3 in read_config /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2940:3
+    #4 0x55f1fef7554a in main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd.c:2191:8
+    #5 0x7fe108ac1ca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #6 0x7fe108ac1d64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #7 0x55f1fee7f880 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd+0x47880) (BuildId: a2cd647b862a0905857412ad54c9950619ec029b)
+
+==27669==Register values:
+rax = 0x00000000000000d2  rbx = 0x00007ffe724f38e0  rcx = 0x000055f1ffa74f80  rdx = 0x0000000000000001  
+rdi = 0x0000000000000000  rsi = 0x000055f1ff100d90  rbp = 0x00007ffe724f3a30  rsp = 0x00007ffe724f38e0  
+ r8 = 0x000055f1ff100d94   r9 = 0x0000000000000002  r10 = 0x0000000000000a8c  r11 = 0x0000000000000002  
+r12 = 0x0000000000000000  r13 = 0x00007fe106b1a220  r14 = 0x00000abe3fe1fda4  r15 = 0x00007ffe724f3b44  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c in strskipwhite
+==27669==ABORTING
