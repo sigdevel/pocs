@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NHNTStream version="1.0" timeScale="1000" streamType="1" objectTypeIndication="108" baseMediaFile="//etc/passwd" >
+<NHNTSample number="1" DTS="8" dataLength="44444444444444444444444444444444"5es" >
+</NHNTSample>
+</NHNTStream>
+<!ENTITY xxe SYSTEM "file:/jpeg_10media">

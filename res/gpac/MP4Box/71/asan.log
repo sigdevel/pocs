@@ -1,0 +1,26 @@
+Track Importing JPEG
+AddressSanitizer:DEADLYSIGNAL                                                                                                                                
+=================================================================
+==3491106==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000020 (pc 0x7f2ba2b76fc7 bp 0x000000000d25 sp 0x7ffc3c9961b8 T0)
+==3491106==The signal is caused by a WRITE memory access.
+==3491106==Hint: address points to the zero page.
+    #0 0x7f2ba2b76fc7 in __memmove_avx_unaligned_erms_rtm ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:488
+    #1 0x7f2ba2a9599d in __GI__IO_file_xsgetn libio/fileops.c:1305
+    #2 0x7f2ba2a88e68 in __GI__IO_fread libio/iofread.c:38
+    #3 0x7f2ba4a7a1bb in fread ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:995
+    #4 0x7f2ba3c82566 in nhmldmx_send_sample filters/dmx_nhml.c:1589
+    #5 0x7f2ba3c83ccb in nhmldmx_process filters/dmx_nhml.c:1786
+    #6 0x7f2ba3b2a2d4 in gf_filter_process_task filter_core/filter.c:3242
+    #7 0x7f2ba3afecb4 in gf_fs_thread_proc filter_core/filter_session.c:2400
+    #8 0x7f2ba3b03d14 in gf_fs_run filter_core/filter_session.c:2707
+    #9 0x7f2ba35d930d in gf_media_import media_tools/media_import.c:1626
+    #10 0x55d06a231863 in import_file /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1705
+    #11 0x55d06a1ed0e6 in do_add_cat /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4620
+    #12 0x55d06a1ef642 in mp4box_main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6342
+    #13 0x7f2ba2a33ca7 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f2ba2a33d64 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55d06a1cf0c0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0c0) (BuildId: e4a9f38fb58211f5dfeaef6db8c0e614cd8329b2)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:488 in __memmove_avx_unaligned_erms_rtm
+==3491106==ABORTING
