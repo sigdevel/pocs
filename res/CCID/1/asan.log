@@ -1,0 +1,26 @@
+../../src/simclist.c:397:39: runtime error: member access within null pointer of type 'list_t'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior ../../src/simclist.c:397:39 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==10679==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000018 (pc 0x557ba6175119 bp 0x7ffd97398990 sp 0x7ffd97398970 T0)
+==10679==The signal is caused by a READ memory access.                                                                                                     
+==10679==Hint: address points to the zero page.
+    #0 0x557ba6175119 in list_append /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/../../src/simclist.c:397:39
+    #1 0x557ba617719b in eval_value /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/../../src/tokenparser.l:152:6
+    #2 0x557ba617719b in yylex /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/../../src/tokenparser.l:75:3
+    #3 0x557ba617f6d4 in bundleParse /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/../../src/tokenparser.l:228:9
+    #4 0x557ba61723e2 in run_one_input /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/fuzz_plist.c:74:6
+    #5 0x557ba61723e2 in LLVMFuzzerTestOneInput /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/fuzz_plist.c:84:2
+    #6 0x557ba61728a0 in main /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/fuzz_plist.c:167:8
+    #7 0x7fbd01aecca7 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7fbd01aecd64 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x557ba609d3d0 in _start (/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/build_asan/plist_fuzz+0x343d0) (BuildId: 4b8cb494e9d45883d505ad1a6da6c628ebef16cf)
+
+==10679==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000018  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x0000000000000000  rsi = 0x0000502000000030  rbp = 0x00007ffd97398990  rsp = 0x00007ffd97398970  
+ r8 = 0x000000000000007c   r9 = 0x0000000000000000  r10 = 0xafffff00000fffff  r11 = 0x0000000000000246  
+r12 = 0x0000000000000006  r13 = 0x0000529000000239  r14 = 0x0000502000000030  r15 = 0x0000502000000036  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/CCID/CCID/fuzz/plist/../../src/simclist.c:397:39 in list_append
+==10679==ABORTING
