@@ -2,4 +2,6 @@
 
 2.5-DEV-rev2190-g106f08dce-master
 
+https://github.com/gpac/gpac/issues/3442
+
 fix: https://github.com/gpac/gpac/commit/d65d699012bd82a0839e8af6747bca438e26938a
