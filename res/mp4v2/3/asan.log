@@ -1,0 +1,27 @@
+=================================================================
+==112703==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fdee457c4ff bp 0x7fff8244b020 sp 0x7fff8244a7c8 T0)
+==112703==The signal is caused by a READ memory access.                                                                                                    
+==112703==Hint: address points to the zero page.
+    #0 0x7fdee457c4ff in __strchr_avx2_rtm ../sysdeps/x86_64/multiarch/strchr-avx2.S:67
+    #1 0x7fdee4a8ce37 in strchr ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:744
+    #2 0x5598dab34e92 in strchr /usr/include/string.h:241
+    #3 0x5598dab34e92 in mp4v2::impl::MP4RtpHintTrack::GetPayload(char**, unsigned char*, unsigned short*, char**) src/rtphint.cpp:325
+    #4 0x5598daadc7eb in mp4v2::impl::MP4File::GetHintTrackRtpPayload(unsigned int, char**, unsigned char*, unsigned short*, char**) src/mp4file.cpp:3799
+    #5 0x5598daabd64a in MP4GetHintTrackRtpPayload src/mp4.cpp:3544
+    #6 0x5598dab04bda in PrintHintInfo src/mp4info.cpp:507
+    #7 0x5598dab04bda in PrintTrackInfo src/mp4info.cpp:538
+    #8 0x5598dab05901 in MP4Info src/mp4info.cpp:589
+    #9 0x5598dab05a91 in MP4FileInfo src/mp4info.cpp:620
+    #10 0x5598daa74b83 in main util/mp4info.cpp:77
+    #11 0x7fdee4433f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7fdee4434026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x5598daa728e0 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mp4v2/runtime/sub/mp4v2/mp4info_asan+0x638e0) (BuildId: b2233bfe65c7ff1709d4cbbd7012f55656916e28)
+
+==112703==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x0000000000000000  rdx = 0x00000f7fdc6fcc9e  
+rdi = 0x0000000000000000  rsi = 0x000000000000002f  rbp = 0x00007fff8244b020  rsp = 0x00007fff8244a7c8  
+ r8 = 0x00007fdee457ad00   r9 = 0x00000000fffffff3  r10 = 0x0000000000000000  r11 = 0x0000000000004648  
+r12 = 0x00007d4ee37e0080  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x00000f7bdc4840a0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strchr-avx2.S:67 in __strchr_avx2_rtm
+==112703==ABORTING

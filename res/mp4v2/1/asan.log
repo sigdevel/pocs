@@ -1,0 +1,23 @@
+=================================================================
+==37778==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fc85cae45c4 bp 0x7ffefeb5a740 sp 0x7ffefeb59ed0 T0)
+==37778==The signal is caused by a READ memory access.
+==37778==Hint: address points to the zero page.
+    #0 0x7fc85cae45c4 in strcmp ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:500
+    #1 0x55f4148f0fe9 in mp4v2::impl::MP4File::GenerateTracks() src/mp4file.cpp:472
+    #2 0x55f4148f1ca6 in mp4v2::impl::MP4File::ReadFromFile() src/mp4file.cpp:434
+    #3 0x55f4148fc96a in mp4v2::impl::MP4File::Read(char const*, MP4FileProvider_s const*) src/mp4file.cpp:98
+    #4 0x55f4148c2928 in MP4Read src/mp4.cpp:106
+    #5 0x55f414912a7e in MP4FileInfo src/mp4info.cpp:614
+    #6 0x55f414881b83 in main util/mp4info.cpp:77
+    #7 0x7fc85c433f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7fc85c434026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x55f41487f8e0 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mp4v2/runtime/sub/mp4v2/mp4info_asan+0x638e0) (BuildId: b2233bfe65c7ff1709d4cbbd7012f55656916e28)
+
+==37778==Register values:
+rax = 0x0000000000000001  rbx = 0x00007d685b7e0080  rcx = 0x0000000000000000  rdx = 0x00000f7d0b6fc16a  
+rdi = 0x0000000000000000  rsi = 0x000055f4149d9800  rbp = 0x00007ffefeb5a740  rsp = 0x00007ffefeb59ed0  
+ r8 = 0x00007fc85c57ad00   r9 = 0x00000000fffffff3  r10 = 0x0000000000000000  r11 = 0x00007be85b7e1c10  
+r12 = 0x0000000000000000  r13 = 0x000055f4149d9800  r14 = 0x0000000000000000  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/mp4file.cpp:472 in mp4v2::impl::MP4File::GenerateTracks()
+==37778==ABORTING
