@@ -1,0 +1,17 @@
+=================================================================
+==136757==ERROR: AddressSanitizer: unknown-crash on address 0x0000fffffffd at pc 0x7f99cc322094 bp 0x7ffd1a46ebb0 sp 0x7ffd1a46e370
+READ of size 4294967293 at 0x0000fffffffd thread T0                                                                                                        
+    #0 0x7f99cc322093 in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:117
+    #1 0x56321dd8d8b1 in mp4v2::impl::MP4BytesProperty::GetValueStringAlloc(unsigned int) src/mp4property.h:420
+    #2 0x56321dd873e9 in __itemAtomToModel src/itmf/generic.cpp:168
+    #3 0x56321dd87b43 in mp4v2::impl::itmf::genericGetItems(mp4v2::impl::MP4File&) src/itmf/generic.cpp:308
+    #4 0x56321dd80ed4 in mp4v2::impl::itmf::Tags::c_fetch(MP4Tags_s*&, void*) src/itmf/Tags.cpp:72
+    #5 0x56321dd721f0 in MP4TagsFetch src/cmeta.cpp:133
+    #6 0x56321dd69be7 in main util/mp4info.cpp:90
+    #7 0x7f99cbc33f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7f99cbc34026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x56321dd678e0 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mp4v2/runtime/sub/mp4v2/mp4info_asan+0x638e0) (BuildId: b2233bfe65c7ff1709d4cbbd7012f55656916e28)
+
+Address 0x0000fffffffd is located in the shadow gap area.
+SUMMARY: AddressSanitizer: unknown-crash src/mp4property.h:420 in mp4v2::impl::MP4BytesProperty::GetValueStringAlloc(unsigned int)
+==136757==ABORTING

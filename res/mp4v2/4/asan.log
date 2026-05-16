@@ -1,0 +1,57 @@
+=================================================================
+==109653==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b5716deb034 at pc 0x560f5984c97f bp 0x7fff34e17b10 sp 0x7fff34e17b08
+READ of size 1 at 0x7b5716deb034 thread T0                                                                                                                 
+    #0 0x560f5984c97e in mp4v2::impl::itmf::Tags::fetchTrack(std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, MP4ItmfItem_s*, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, MP4ItmfItem_s*> > > const&, MP4TagTrack_s&, MP4TagTrack_s const*&) src/itmf/Tags.cpp:480
+    #1 0x560f5984e41c in mp4v2::impl::itmf::Tags::c_fetch(MP4Tags_s*&, void*) src/itmf/Tags.cpp:98
+    #2 0x560f5983f1f0 in MP4TagsFetch src/cmeta.cpp:133
+    #3 0x560f59836be7 in main util/mp4info.cpp:90
+    #4 0x7f3717a33f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #5 0x7f3717a34026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #6 0x560f598348e0 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mp4v2/runtime/sub/mp4v2/mp4info_asan+0x638e0) (BuildId: b2233bfe65c7ff1709d4cbbd7012f55656916e28)
+
+0x7b5716deb034 is located 0 bytes after 4-byte region [0x7b5716deb030,0x7b5716deb034)
+allocated by thread T0 here:                                                                                                                               
+    #0 0x7f371812435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x560f59854839 in mp4v2::impl::MP4Malloc(unsigned long) src/mp4util.h:56
+    #2 0x560f59854839 in mp4v2::impl::MP4BytesProperty::GetValue(unsigned char**, unsigned int*, unsigned int) src/mp4property.h:413
+    #3 0x560f59854839 in __itemAtomToModel src/itmf/generic.cpp:206
+    #4 0x560f59854b43 in mp4v2::impl::itmf::genericGetItems(mp4v2::impl::MP4File&) src/itmf/generic.cpp:308
+    #5 0x560f5984ded4 in mp4v2::impl::itmf::Tags::c_fetch(MP4Tags_s*&, void*) src/itmf/Tags.cpp:72
+    #6 0x560f5983f1f0 in MP4TagsFetch src/cmeta.cpp:133
+    #7 0x560f59836be7 in main util/mp4info.cpp:90
+    #8 0x7f3717a33f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7fff34e19022  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/itmf/Tags.cpp:480 in mp4v2::impl::itmf::Tags::fetchTrack(std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, MP4ItmfItem_s*, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, MP4ItmfItem_s*> > > const&, MP4TagTrack_s&, MP4TagTrack_s const*&)
+Shadow bytes around the buggy address:
+  0x7b5716dead80: fa fa 04 fa fa fa fd fd fa fa 04 fa fa fa 00 00
+  0x7b5716deae00: fa fa 00 00 fa fa 00 fa fa fa 00 00 fa fa 00 00
+  0x7b5716deae80: fa fa 05 fa fa fa 05 fa fa fa 05 fa fa fa 06 fa
+  0x7b5716deaf00: fa fa 05 fa fa fa 06 fa fa fa 05 fa fa fa 05 fa
+  0x7b5716deaf80: fa fa 05 fa fa fa 04 fa fa fa 05 fa fa fa 00 03
+=>0x7b5716deb000: fa fa 05 fa fa fa[04]fa fa fa fa fa fa fa fa fa
+  0x7b5716deb080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b5716deb100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b5716deb180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b5716deb200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b5716deb280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==109653==ABORTING
