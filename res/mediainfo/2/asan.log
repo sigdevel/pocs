@@ -1,0 +1,45 @@
+=================================================================
+==837076==ERROR: AddressSanitizer: SEGV on unknown address (pc 0x55c795e402c5 bp 0x7ffe655c6790 sp 0x7ffe655c6180 T0)
+==837076==The signal is caused by a READ memory access.                                                                                                     
+==837076==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
+    #0 0x55c795e402c5 in MediaInfoLib::File_Usac::Streams_Finish_Conformance_Profile(MediaInfoLib::File_Usac::usac_config&) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1886:19
+    #1 0x55c795e40ab6 in MediaInfoLib::File_Usac::Streams_Finish_Conformance() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1891:5
+    #2 0x55c795795e52 in MediaInfoLib::File_Aac::Streams_Finish() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac.cpp:267:9
+    #3 0x55c797b1d080 in MediaInfoLib::File__Analyze::ForceFinish(char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3672:9
+    #4 0x55c797b58f0d in MediaInfoLib::File__Analyze::Finish(char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3619:5
+    #5 0x55c7957995b6 in MediaInfoLib::File_Aac::Read_Buffer_Continue_payload() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac.cpp:449:36
+    #6 0x55c795797947 in MediaInfoLib::File_Aac::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac.cpp:365:41
+    #7 0x55c797b15d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #8 0x55c797b0910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #9 0x55c797b2ae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #10 0x55c795c07a69 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../Source/MediaInfo/File__Analyze.h:131:93
+    #11 0x55c79685142d in MediaInfoLib::File_Mpeg4_Descriptors::Descriptor_05() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Descriptors.cpp:1015:5
+    #12 0x55c796834c36 in MediaInfoLib::File_Mpeg4_Descriptors::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Descriptors.cpp:512:9
+    #13 0x55c797b45521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #14 0x55c797b2fe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #15 0x55c797b16aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #16 0x55c797b0910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #17 0x55c797b2ae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #18 0x55c7968a60e2 in MediaInfoLib::File_Mpeg4::mdat_xxxx() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Elements.cpp:2247:9
+    #19 0x55c796865cd9 in MediaInfoLib::File_Mpeg4::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Elements.cpp:1132:9
+    #20 0x55c797b45521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #21 0x55c797b2fe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #22 0x55c797b16aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #23 0x55c797b0910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #24 0x55c7956b2057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #25 0x55c795558ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #26 0x55c79555812f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #27 0x55c79555812f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #28 0x7f5e20d3df74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #29 0x7f5e20d3e026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #30 0x55c795474830 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x2313830) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+
+==837076==Register values:
+rax = 0x17d7d7d7d7d7d7d7  rbx = 0x00007ffe655c6180  rcx = 0x0000000000000052  rdx = 0xbe4b6b923417cc52  
+rdi = 0x00007f5e1f330020  rsi = 0x0000000000000002  rbp = 0x00007ffe655c6790  rsp = 0x00007ffe655c6180  
+ r8 = 0x0000000000000000   r9 = 0x0000000000000000  r10 = 0x00007fffffffff01  r11 = 0x8039deb413334701  
+r12 = 0x0000531000024800  r13 = 0x0000000000001960  r14 = 0x0000000000010000  r15 = 0x0000531000014800  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1886:19 in MediaInfoLib::File_Usac::Streams_Finish_Conformance_Profile(MediaInfoLib::File_Usac::usac_config&)
+==837076==ABORTING
+                                            

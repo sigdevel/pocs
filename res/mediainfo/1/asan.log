@@ -1,0 +1,67 @@
+=================================================================
+==830983==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50200000001c at pc 0x561e678f6c96 bp 0x7ffd019708b0 sp 0x7ffd019708a8
+READ of size 1 at 0x50200000001c thread T0                                                                                                                  
+    #0 0x561e678f6c95 in tfsxml_leave /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/ThirdParty/tfsxml/tfsxml.c:567:17
+    #1 0x561e678f3284 in tfsxml_next /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/ThirdParty/tfsxml/tfsxml.c:211:22
+    #2 0x561e6587220a in MediaInfoLib::tfsxml::NextElement() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Adm.cpp:3047:23
+    #3 0x561e658b2f9b in MediaInfoLib::file_adm_private::parse(void const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Adm.cpp:5254:5
+    #4 0x561e659e40a5 in MediaInfoLib::File_Adm::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Adm.cpp:7773:37
+    #5 0x561e679b1d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #6 0x561e679a510b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #7 0x561e67c3184c in MediaInfoLib::File__MultipleParsing::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__MultipleParsing.cpp:950:22
+    #8 0x561e679b1d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #9 0x561e679a510b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #10 0x561e6554e057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #11 0x561e653f4ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #12 0x561e653f412f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #13 0x561e653f412f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #14 0x7febab633f74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #15 0x7febab634026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #16 0x561e65310830 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x2313830) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+
+0x50200000001c is located 1 bytes after 11-byte region [0x502000000010,0x50200000001b)
+allocated by thread T0 here:                                                                                                                                
+/usr/bin/llvm-symbolizer-19: error: '[stack]': No such file or directory
+    #0 0x561e653f1a31 in operator new(unsigned long) (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x23f4a31) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+    #1 0x561e653f4408 in std::__new_allocator<unsigned char>::allocate(unsigned long, void const*) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/new_allocator.h:151:27
+    #2 0x561e653f4408 in std::allocator_traits<std::allocator<unsigned char>>::allocate(std::allocator<unsigned char>&, unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/alloc_traits.h:614:20
+    #3 0x561e653f4408 in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_M_allocate(unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:387:20
+    #4 0x561e653f4408 in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_M_create_storage(unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:405:33
+    #5 0x561e653f4408 in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_Vector_base(unsigned long, std::allocator<unsigned char> const&) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:341:9
+    #6 0x561e653f4408 in std::vector<unsigned char, std::allocator<unsigned char>>::vector(unsigned long, std::allocator<unsigned char> const&) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:587:9
+    #7 0x7febab633f74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7ffd01979fb9  ([stack]+0x20fb9)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/ThirdParty/tfsxml/tfsxml.c:567:17 in tfsxml_leave
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa 00[03]fa fa fd fa fa fa fd fd fa fa 00 fa
+  0x502000000080: fa fa 00 fa fa fa fd fd fa fa fa fa fa fa fa fa
+  0x502000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==830983==ABORTING

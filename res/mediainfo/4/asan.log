@@ -1,0 +1,66 @@
+/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4191:9: runtime error: index 6 out of bounds for type 'coreSbrFrameLengthIndex_mapping[5]'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4191:9 
+=================================================================
+==844005==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55af9e332d86 at pc 0x55af9afd203f bp 0x7ffe3afc3370 sp 0x7ffe3afc3368
+READ of size 2 at 0x55af9e332d86 thread T0                                                                                                                  
+    #0 0x55af9afd203e in MediaInfoLib::File_Usac::acSpectralData(unsigned long, bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4191:68
+    #1 0x55af9afd670e in MediaInfoLib::File_Usac::fdChannelStream(unsigned long, bool, bool, bool, bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4341:5
+    #2 0x55af9afc7132 in MediaInfoLib::File_Usac::UsacCoreCoderData(unsigned long, bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4515:13
+    #3 0x55af9afc283b in MediaInfoLib::File_Usac::UsacSingleChannelElement(bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:3849:5
+    #4 0x55af9afbd843 in MediaInfoLib::File_Usac::UsacFrame(unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:3689:17
+    #5 0x55af9a9013a8 in MediaInfoLib::File_Aac::payload(unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac_GeneralAudio.cpp:3127:19
+    #6 0x55af9a8d3101 in MediaInfoLib::File_Aac::Read_Buffer_Continue_payload() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac.cpp:419:5
+    #7 0x55af9a8d2947 in MediaInfoLib::File_Aac::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Aac.cpp:365:41
+    #8 0x55af9cc50d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #9 0x55af9cc4410b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #10 0x55af9cc65e38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #11 0x55af9b9e10e2 in MediaInfoLib::File_Mpeg4::mdat_xxxx() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Elements.cpp:2247:9
+    #12 0x55af9b9a0cd9 in MediaInfoLib::File_Mpeg4::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4_Elements.cpp:1132:9
+    #13 0x55af9cc80521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #14 0x55af9cc6ae9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #15 0x55af9cc51aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #16 0x55af9cc4410b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #17 0x55af9a7ed057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #18 0x55af9a693ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #19 0x55af9a69312f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #20 0x55af9a69312f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #21 0x7f50d050ff74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #22 0x7f50d0510026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #23 0x55af9a5af830 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x2313830) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+
+0x55af9e332d86 is located 58 bytes before global variable 'MediaInfoLib::reliabilities_Size' defined in '/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1340' (0x55af9e332dc0) of size 8                                                          
+0x55af9e332d86 is located 26 bytes before global variable 'MediaInfoLib::measurementSystems_Size' defined in '/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1330' (0x55af9e332da0) of size 8                                                     
+0x55af9e332d86 is located 8 bytes after global variable 'MediaInfoLib::coreSbrFrameLengthIndex_Mapping' defined in '/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:1248' (0x55af9e332d60) of size 30                                              
+SUMMARY: AddressSanitizer: global-buffer-overflow /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Usac.cpp:4191:68 in MediaInfoLib::File_Usac::acSpectralData(unsigned long, bool)
+Shadow bytes around the buggy address:
+  0x55af9e332b00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e332b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e332c00: 00 00 00 f9 f9 f9 f9 f9 00 00 00 00 00 f9 f9 f9
+  0x55af9e332c80: f9 f9 f9 f9 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9
+  0x55af9e332d00: 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 00 00 00 06
+=>0x55af9e332d80:[f9]f9 f9 f9 00 f9 f9 f9 00 f9 f9 f9 00 f9 f9 f9
+  0x55af9e332e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e332e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e332f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e332f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x55af9e333000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==844005==ABORTING

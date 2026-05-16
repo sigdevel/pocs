@@ -1,0 +1,114 @@
+=================================================================
+==882832==ERROR: AddressSanitizer: heap-use-after-free on address 0x52d0001227fc at pc 0x55da0f1646d3 bp 0x7ffc1a857a70 sp 0x7ffc1a857a68
+READ of size 1 at 0x52d0001227fc thread T0
+    #0 0x55da0f1646d2 in ZenLib::BitStream_LE::Get(unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../../ZenLib/Source/ZenLib/BitStream_LE.h:80:13
+    #1 0x55da0f16572c in ZenLib::BitStream_LE::Skip(unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../../ZenLib/Source/ZenLib/BitStream_LE.h:106:9
+    #2 0x55da0f11b0ba in MediaInfoLib::File__Analyze::Trusted_IsNot(char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3450:13
+    #3 0x55da0f18ae8e in MediaInfoLib::File__Analyze::Get_L1(unsigned char&, char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze_Buffer.cpp:511:5
+    #4 0x55da0f513e64 in MediaInfoLib::File_Vorbis::Setup() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Vorbis.cpp:131:5
+    #5 0x55da0f513938 in MediaInfoLib::File_Vorbis::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Audio/File_Vorbis.cpp:67:9
+    #6 0x55da0f105521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #7 0x55da0f0efe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #8 0x55da0f0d6aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #9 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #10 0x55da0f0eae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #11 0x55da0d1c7a69 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../Source/MediaInfo/File__Analyze.h:131:93
+    #12 0x55da0e6ed5d1 in MediaInfoLib::File_Ogg_SubElement::Default() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Ogg_SubElement.cpp:901:9
+    #13 0x55da0e6eb11b in MediaInfoLib::File_Ogg_SubElement::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Ogg_SubElement.cpp:337:25
+    #14 0x55da0f105521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #15 0x55da0f0efe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #16 0x55da0f0d6aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #17 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #18 0x55da0f0eae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #19 0x55da0e6dd681 in MediaInfoLib::File_Ogg::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Ogg.cpp:357:17
+    #20 0x55da0f105521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #21 0x55da0f0efe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #22 0x55da0f0d6aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #23 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #24 0x55da0f35584c in MediaInfoLib::File__MultipleParsing::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__MultipleParsing.cpp:950:22
+    #25 0x55da0f0d5d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #26 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #27 0x55da0cc72057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #28 0x55da0cb18ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #29 0x55da0cb1812f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #30 0x55da0cb1812f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #31 0x7f2033f3df74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #32 0x7f2033f3e026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #33 0x55da0ca34830 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x2313830) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+
+0x52d0001227fc is located 1020 bytes inside of 32768-byte region [0x52d000122400,0x52d00012a400)
+freed by thread T0 here:                                                                                                                                    
+/usr/bin/llvm-symbolizer-19: error: '[stack]': No such file or directory
+    #0 0x55da0cb163b1 in operator delete[](void*) (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x23f53b1) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+    #1 0x55da0f0defb2 in MediaInfoLib::File__Analyze::Buffer_Clear() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1975:5
+    #2 0x55da0f0cce47 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1198:9
+    #3 0x55da0f0eae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #4 0x55da0e6dd681 in MediaInfoLib::File_Ogg::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Ogg.cpp:357:17
+    #5 0x55da0f105521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #6 0x55da0f0efe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #7 0x55da0f0d6aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #8 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #9 0x55da0f35584c in MediaInfoLib::File__MultipleParsing::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__MultipleParsing.cpp:950:22
+    #10 0x55da0f0d5d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #11 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #12 0x55da0cc72057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #13 0x55da0cb18ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #14 0x55da0cb1812f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #15 0x55da0cb1812f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #16 0x7f2033f3df74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #17 0x7ffc1a86df97  ([stack]+0x20f97)
+    #18 0x2f726573752f6168  (<unknown module>)
+
+previously allocated by thread T0 here:
+    #0 0x55da0cb15b51 in operator new[](unsigned long) (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x23f4b51) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+    #1 0x55da0f0ce26e in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1224:33
+    #2 0x55da0f0eae38 in MediaInfoLib::File__Analyze::Open_Buffer_Continue(MediaInfoLib::File__Analyze*, unsigned char const*, unsigned long, bool, double) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1467:10
+    #3 0x55da0e6dd044 in MediaInfoLib::File_Ogg::Data_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Ogg.cpp:351:17
+    #4 0x55da0f105521 in MediaInfoLib::File__Analyze::Data_Manage() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:2858:9
+    #5 0x55da0f0efe9e in MediaInfoLib::File__Analyze::Buffer_Parse() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1961:10
+    #6 0x55da0f0d6aa5 in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1526:14
+    #7 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #8 0x55da0f35584c in MediaInfoLib::File__MultipleParsing::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__MultipleParsing.cpp:950:22
+    #9 0x55da0f0d5d6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #10 0x55da0f0c910b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #11 0x55da0cc72057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #12 0x55da0cb18ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #13 0x55da0cb1812f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #14 0x55da0cb1812f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #15 0x7f2033f3df74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #16 0x7ffc1a86df97  ([stack]+0x20f97)
+    #17 0x2f726573752f6168  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../../ZenLib/Source/ZenLib/BitStream_LE.h:80:13 in ZenLib::BitStream_LE::Get(unsigned long)
+Shadow bytes around the buggy address:
+  0x52d000122500: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122600: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122680: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122700: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x52d000122780: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]
+  0x52d000122800: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122880: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122900: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122980: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x52d000122a00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==882832==ABORTING

@@ -1,0 +1,41 @@
+/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:279:26: runtime error: index 190 out of bounds for type 'const float32[16]' (aka 'const float[16]')
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:279:26 
+/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:287:17: runtime error: index 190 out of bounds for type 'const char *[4]'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:287:17 
+/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:293:52: runtime error: index 190 out of bounds for type 'const char *[4]'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:293:52 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==900278==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7f281b17d0d9 bp 0x7ffe26eeee20 sp 0x7ffe26eee5d8 T0)
+==900278==The signal is caused by a READ memory access.                                                                                                     
+==900278==Hint: address points to the zero page.
+    #0 0x7f281b17d0d9 in __strlen_avx2_rtm string/../sysdeps/x86_64/multiarch/strlen-avx2.S:76
+    #1 0x55b49e994547 in strlen (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x232b547) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+    #2 0x55b4a17ddcf0 in ZenLib::Ztring::From_UTF8(char const*, unsigned long, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/ZenLib/Source/ZenLib/Ztring.cpp:408:16
+    #3 0x55b49ebf29d8 in ZenLib::Ztring::From_UTF8(char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../../ZenLib/Source/ZenLib/Ztring.h:91:89
+    #4 0x55b49ebf1b48 in MediaInfoLib::File__Analyze::Fill(MediaInfoLib::stream_t, unsigned long, unsigned long, char const*, unsigned long, bool, bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Project/CMake/../../Source/MediaInfo/File__Analyze.h:1162:226
+    #5 0x55b4a0eb8763 in MediaInfoLib::File_Vc1::Streams_Fill() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Video/File_Vc1.cpp:293:5
+    #6 0x55b4a103c451 in MediaInfoLib::File__Analyze::Fill(char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3569:5
+    #7 0x55b4a107ceae in MediaInfoLib::File__Analyze::Fill(MediaInfoLib::File__Analyze*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3586:13
+    #8 0x55b49fc55730 in MediaInfoLib::File_Mpeg4::Streams_Finish() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/Multiple/File_Mpeg4.cpp:983:17
+    #9 0x55b4a1025080 in MediaInfoLib::File__Analyze::ForceFinish(char const*) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:3672:9
+    #10 0x55b4a1039c37 in MediaInfoLib::File__Analyze::Open_Buffer_Finalize(bool) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1732:9
+    #11 0x55b4a129dc75 in MediaInfoLib::File__MultipleParsing::Read_Buffer_Continue() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__MultipleParsing.cpp:952:26
+    #12 0x55b4a101dd6c in MediaInfoLib::File__Analyze::Open_Buffer_Continue_Loop() /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1501:5
+    #13 0x55b4a101110b in MediaInfoLib::File__Analyze::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/File__Analyze.cpp:1114:16
+    #14 0x55b49ebba057 in MediaInfoLib::MediaInfo_Internal::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp:1723:11
+    #15 0x55b49ea60ebb in MediaInfoLib::MediaInfo::Open_Buffer_Continue(unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/src/MediaInfoLib/Source/MediaInfo/MediaInfo.cpp:110:22
+    #16 0x55b49ea6012f in run_one(MediaInfoLib::MediaInfo&, unsigned char const*, unsigned long) /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:53:28
+    #17 0x55b49ea6012f in main /run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo.cpp:101:5
+    #18 0x7f281b033f74 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #19 0x7f281b034026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #20 0x55b49e97c830 in _start (/run/media/user/81c71df6-ca99-4d27-a7b6-55107e347080/mediainfo/runtime/fuzz_harness/fuzz_mediainfo_asan+0x2313830) (BuildId: bea5f1543242f0d0639eacc3bc8ac2978314c4a4)
+
+==900278==Register values:
+rax = 0x0000000000000003  rbx = 0x0000000026eeef01  rcx = 0x0000000000000001  rdx = 0x0000000000000003  
+rdi = 0x0000000000000003  rsi = 0x0000000000000003  rbp = 0x00007ffe26eeee20  rsp = 0x00007ffe26eee5d8  
+ r8 = 0x0000000000000000   r9 = 0x00007fffffffff01  r10 = 0x000051d000026201  r11 = 0x0000000000000246  
+r12 = 0x000051b000000080  r13 = 0x0000000000000600  r14 = 0x0000000000000003  r15 = 0x000051b000000080  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV string/../sysdeps/x86_64/multiarch/strlen-avx2.S:76 in __strlen_avx2_rtm
+==900278==ABORTING
