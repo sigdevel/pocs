@@ -1,0 +1,64 @@
+[Core] system failure for file opening of "/tmp/gpac_cache/gpaccache.test" in mode "wb": 13 (0 opened)
+[Core] system failure for file opening of "/tmp/gpac_cache/gpaccache.test" in mode "wb": 13 (0 opened)                                                      
+[Cache] Cannot write to /tmp/gpac_cache/ directory, using system temp cache                                                                                 
+[DASH] Setting up period start 0 duration 0 xlink none ID none                                                                                              
+[DASH] AS#1 changed quality to bitrate 127 kbps - sample rate 44100 (playback speed 1)                                                                      
+=================================================================                                                                                           
+==3555701==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c74f65e06de at pc 0x7fc4f991c34d bp 0x7ffd8701c4c0 sp 0x7ffd8701bc80
+WRITE of size 37 at 0x7c74f65e06de thread T0                                                                                                                
+    #0 0x7fc4f991c34c in strcat ../../../../src/libsanitizer/asan/asan_interceptors.cpp:527
+    #1 0x7fc4f844199a in gf_mpd_resolve_url media_tools/mpd.c:5684
+    #2 0x7fc4f8482019 in gf_dash_resolve_url media_tools/dash_client.c:3672
+    #3 0x7fc4f8484641 in gf_dash_download_init_segment media_tools/dash_client.c:5161
+    #4 0x7fc4f84a18f5 in dash_setup_period_and_groups media_tools/dash_client.c:8254
+    #5 0x7fc4f84a18f5 in gf_dash_process_internal media_tools/dash_client.c:8594
+    #6 0x7fc4f84a18f5 in gf_dash_process media_tools/dash_client.c:8665
+    #7 0x7fc4f8a62341 in dashdmx_process filters/dmx_dash.c:3301
+    #8 0x7fc4f8951b43 in gf_filter_process_task filter_core/filter.c:3253
+    #9 0x7fc4f8926411 in gf_fs_thread_proc filter_core/filter_session.c:2418
+    #10 0x7fc4f892b4d2 in gf_fs_run filter_core/filter_session.c:2726
+    #11 0x7fc4f83ef024 in gf_media_import media_tools/media_import.c:1307
+    #12 0x55f11bdde4b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x55f11bdae3a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #14 0x7fc4f7833f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7fc4f7834026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x55f11bd8a0b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 3536c1eac40d38e30843f36722dcd7e2e0e18233)
+
+0x7c74f65e06de is located 0 bytes after 110-byte region [0x7c74f65e0670,0x7c74f65e06de)
+allocated by thread T0 here:                                                                                                                                
+    #0 0x7fc4f992435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc4f8441026 in gf_mpd_resolve_url media_tools/mpd.c:5511
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow media_tools/mpd.c:5684 in gf_mpd_resolve_url
+Shadow bytes around the buggy address:
+  0x7c74f65e0400: 00 00 02 fa fa fa fa fa fa fa fa fa 00 00 00 00
+  0x7c74f65e0480: 00 00 00 00 00 00 00 00 04 fa fa fa fa fa fa fa
+  0x7c74f65e0500: fa fa fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7c74f65e0580: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c74f65e0600: fd fd fd fd fd fa fa fa fa fa fa fa fa fa 00 00
+=>0x7c74f65e0680: 00 00 00 00 00 00 00 00 00 00 00[06]fa fa fa fa
+  0x7c74f65e0700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c74f65e0780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c74f65e0800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c74f65e0880: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c74f65e0900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3555701==ABORTING
