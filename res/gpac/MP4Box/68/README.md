@@ -5,3 +5,5 @@
 https://github.com/gpac/gpac/issues/3345
 
 fix: https://github.com/gpac/gpac/commit/56d21ea812fd5ba83e6c01777273de4903786fe4
+
+RESERVED CVE-2025-70116
