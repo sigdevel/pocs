@@ -1,0 +1,666 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - openh264_coverage.filtered.info - decoder/core/inc/decoder_context.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory decoder/core/inc">decoder/core/inc</a> - decoder_context.h<span style="font-size: 80%;"> (source / <a href="decoder_context.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">openh264_coverage.filtered.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">37.5&nbsp;%</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">9</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-05-24 06:03:43</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">2</td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : /*!</span>
+<span id="L2"><span class="lineNum">       2</span>              :  * \copy</span>
+<span id="L3"><span class="lineNum">       3</span>              :  *     Copyright (c)  2009-2013, Cisco Systems</span>
+<span id="L4"><span class="lineNum">       4</span>              :  *     All rights reserved.</span>
+<span id="L5"><span class="lineNum">       5</span>              :  *</span>
+<span id="L6"><span class="lineNum">       6</span>              :  *     Redistribution and use in source and binary forms, with or without</span>
+<span id="L7"><span class="lineNum">       7</span>              :  *     modification, are permitted provided that the following conditions</span>
+<span id="L8"><span class="lineNum">       8</span>              :  *     are met:</span>
+<span id="L9"><span class="lineNum">       9</span>              :  *</span>
+<span id="L10"><span class="lineNum">      10</span>              :  *        * Redistributions of source code must retain the above copyright</span>
+<span id="L11"><span class="lineNum">      11</span>              :  *          notice, this list of conditions and the following disclaimer.</span>
+<span id="L12"><span class="lineNum">      12</span>              :  *</span>
+<span id="L13"><span class="lineNum">      13</span>              :  *        * Redistributions in binary form must reproduce the above copyright</span>
+<span id="L14"><span class="lineNum">      14</span>              :  *          notice, this list of conditions and the following disclaimer in</span>
+<span id="L15"><span class="lineNum">      15</span>              :  *          the documentation and/or other materials provided with the</span>
+<span id="L16"><span class="lineNum">      16</span>              :  *          distribution.</span>
+<span id="L17"><span class="lineNum">      17</span>              :  *</span>
+<span id="L18"><span class="lineNum">      18</span>              :  *     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span id="L19"><span class="lineNum">      19</span>              :  *     &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span id="L20"><span class="lineNum">      20</span>              :  *     LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span>
+<span id="L21"><span class="lineNum">      21</span>              :  *     FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span>
+<span id="L22"><span class="lineNum">      22</span>              :  *     COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span>
+<span id="L23"><span class="lineNum">      23</span>              :  *     INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span>
+<span id="L24"><span class="lineNum">      24</span>              :  *     BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span>
+<span id="L25"><span class="lineNum">      25</span>              :  *     LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<span id="L26"><span class="lineNum">      26</span>              :  *     CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span>
+<span id="L27"><span class="lineNum">      27</span>              :  *     LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span>
+<span id="L28"><span class="lineNum">      28</span>              :  *     ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span id="L29"><span class="lineNum">      29</span>              :  *     POSSIBILITY OF SUCH DAMAGE.</span>
+<span id="L30"><span class="lineNum">      30</span>              :  *</span>
+<span id="L31"><span class="lineNum">      31</span>              :  *</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * \file    decoder_context.h</span>
+<span id="L33"><span class="lineNum">      33</span>              :  *</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * \brief   mainly interface introduced in Wels decoder side</span>
+<span id="L35"><span class="lineNum">      35</span>              :  *</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * \date    3/4/2009 Created</span>
+<span id="L37"><span class="lineNum">      37</span>              :  *</span>
+<span id="L38"><span class="lineNum">      38</span>              :  *************************************************************************************</span>
+<span id="L39"><span class="lineNum">      39</span>              :  */</span>
+<span id="L40"><span class="lineNum">      40</span>              : #ifndef WELS_DECODER_FRAMEWORK_H__</span>
+<span id="L41"><span class="lineNum">      41</span>              : #define WELS_DECODER_FRAMEWORK_H__</span>
+<span id="L42"><span class="lineNum">      42</span>              : #include &quot;typedefs.h&quot;</span>
+<span id="L43"><span class="lineNum">      43</span>              : #include &quot;utils.h&quot;</span>
+<span id="L44"><span class="lineNum">      44</span>              : #include &quot;wels_const.h&quot;</span>
+<span id="L45"><span class="lineNum">      45</span>              : #include &quot;wels_common_basis.h&quot;</span>
+<span id="L46"><span class="lineNum">      46</span>              : #include &quot;wels_common_defs.h&quot;</span>
+<span id="L47"><span class="lineNum">      47</span>              : #include &quot;codec_app_def.h&quot;</span>
+<span id="L48"><span class="lineNum">      48</span>              : #include &quot;parameter_sets.h&quot;</span>
+<span id="L49"><span class="lineNum">      49</span>              : #include &quot;nalu.h&quot;</span>
+<span id="L50"><span class="lineNum">      50</span>              : #include &quot;dec_frame.h&quot;</span>
+<span id="L51"><span class="lineNum">      51</span>              : #include &quot;pic_queue.h&quot;</span>
+<span id="L52"><span class="lineNum">      52</span>              : #include &quot;vlc_decoder.h&quot;</span>
+<span id="L53"><span class="lineNum">      53</span>              : #include &quot;fmo.h&quot;</span>
+<span id="L54"><span class="lineNum">      54</span>              : #include &quot;crt_util_safe_x.h&quot;</span>
+<span id="L55"><span class="lineNum">      55</span>              : #include &quot;mb_cache.h&quot;</span>
+<span id="L56"><span class="lineNum">      56</span>              : #include &quot;expand_pic.h&quot;</span>
+<span id="L57"><span class="lineNum">      57</span>              : #include &quot;mc.h&quot;</span>
+<span id="L58"><span class="lineNum">      58</span>              : #include &quot;memory_align.h&quot;</span>
+<span id="L59"><span class="lineNum">      59</span>              : #include &quot;wels_decoder_thread.h&quot;</span>
+<span id="L60"><span class="lineNum">      60</span>              : </span>
+<span id="L61"><span class="lineNum">      61</span>              : namespace WelsDec {</span>
+<span id="L62"><span class="lineNum">      62</span>              : #define MAX_PRED_MODE_ID_I16x16  3</span>
+<span id="L63"><span class="lineNum">      63</span>              : #define MAX_PRED_MODE_ID_CHROMA  3</span>
+<span id="L64"><span class="lineNum">      64</span>              : #define MAX_PRED_MODE_ID_I4x4    8</span>
+<span id="L65"><span class="lineNum">      65</span>              : #define  WELS_QP_MAX    51</span>
+<span id="L66"><span class="lineNum">      66</span>              : </span>
+<span id="L67"><span class="lineNum">      67</span>              : #define LONG_TERM_REF</span>
+<span id="L68"><span class="lineNum">      68</span>              : #define IMinInt32 -0x7FFFFFFF</span>
+<span id="L69"><span class="lineNum">      69</span>              : typedef struct SWels_Cabac_Element {</span>
+<span id="L70"><span class="lineNum">      70</span>              :   uint8_t uiState;</span>
+<span id="L71"><span class="lineNum">      71</span>              :   uint8_t uiMPS;</span>
+<span id="L72"><span class="lineNum">      72</span>              : } SWelsCabacCtx, *PWelsCabacCtx;</span>
+<span id="L73"><span class="lineNum">      73</span>              : </span>
+<span id="L74"><span class="lineNum">      74</span>              : typedef struct {</span>
+<span id="L75"><span class="lineNum">      75</span>              :   uint64_t uiRange;</span>
+<span id="L76"><span class="lineNum">      76</span>              :   uint64_t uiOffset;</span>
+<span id="L77"><span class="lineNum">      77</span>              :   int32_t iBitsLeft;</span>
+<span id="L78"><span class="lineNum">      78</span>              :   uint8_t* pBuffStart;</span>
+<span id="L79"><span class="lineNum">      79</span>              :   uint8_t* pBuffCurr;</span>
+<span id="L80"><span class="lineNum">      80</span>              :   uint8_t* pBuffEnd;</span>
+<span id="L81"><span class="lineNum">      81</span>              : } SWelsCabacDecEngine, *PWelsCabacDecEngine;</span>
+<span id="L82"><span class="lineNum">      82</span>              : </span>
+<span id="L83"><span class="lineNum">      83</span>              : #define NEW_CTX_OFFSET_MB_TYPE_I 3</span>
+<span id="L84"><span class="lineNum">      84</span>              : #define NEW_CTX_OFFSET_SKIP 11</span>
+<span id="L85"><span class="lineNum">      85</span>              : #define NEW_CTX_OFFSET_SUBMB_TYPE 21</span>
+<span id="L86"><span class="lineNum">      86</span>              : #define NEW_CTX_OFFSET_B_SUBMB_TYPE 36</span>
+<span id="L87"><span class="lineNum">      87</span>              : #define NEW_CTX_OFFSET_MVD 40</span>
+<span id="L88"><span class="lineNum">      88</span>              : #define NEW_CTX_OFFSET_REF_NO 54</span>
+<span id="L89"><span class="lineNum">      89</span>              : #define NEW_CTX_OFFSET_DELTA_QP 60</span>
+<span id="L90"><span class="lineNum">      90</span>              : #define NEW_CTX_OFFSET_IPR 68</span>
+<span id="L91"><span class="lineNum">      91</span>              : #define NEW_CTX_OFFSET_CIPR 64</span>
+<span id="L92"><span class="lineNum">      92</span>              : #define NEW_CTX_OFFSET_CBP 73</span>
+<span id="L93"><span class="lineNum">      93</span>              : #define NEW_CTX_OFFSET_CBF 85</span>
+<span id="L94"><span class="lineNum">      94</span>              : #define NEW_CTX_OFFSET_MAP 105</span>
+<span id="L95"><span class="lineNum">      95</span>              : #define NEW_CTX_OFFSET_LAST 166</span>
+<span id="L96"><span class="lineNum">      96</span>              : #define NEW_CTX_OFFSET_ONE 227</span>
+<span id="L97"><span class="lineNum">      97</span>              : #define NEW_CTX_OFFSET_ABS 232</span>
+<span id="L98"><span class="lineNum">      98</span>              : #define NEW_CTX_OFFSET_TS_8x8_FLAG 399</span>
+<span id="L99"><span class="lineNum">      99</span>              : #define CTX_NUM_MVD 7</span>
+<span id="L100"><span class="lineNum">     100</span>              : #define CTX_NUM_CBP 4</span>
+<span id="L101"><span class="lineNum">     101</span>              : // Table 9-34 in Page 270</span>
+<span id="L102"><span class="lineNum">     102</span>              : #define NEW_CTX_OFFSET_TRANSFORM_SIZE_8X8_FLAG  399</span>
+<span id="L103"><span class="lineNum">     103</span>              : #define NEW_CTX_OFFSET_MAP_8x8  402</span>
+<span id="L104"><span class="lineNum">     104</span>              : #define NEW_CTX_OFFSET_LAST_8x8 417</span>
+<span id="L105"><span class="lineNum">     105</span>              : #define NEW_CTX_OFFSET_ONE_8x8  426</span>
+<span id="L106"><span class="lineNum">     106</span>              : #define NEW_CTX_OFFSET_ABS_8x8  431 // Puzzle, where is the definition?</span>
+<span id="L107"><span class="lineNum">     107</span>              : </span>
+<span id="L108"><span class="lineNum">     108</span>              : typedef struct TagDataBuffer {</span>
+<span id="L109"><span class="lineNum">     109</span>              :   uint8_t* pHead;</span>
+<span id="L110"><span class="lineNum">     110</span>              :   uint8_t* pEnd;</span>
+<span id="L111"><span class="lineNum">     111</span>              : </span>
+<span id="L112"><span class="lineNum">     112</span>              :   uint8_t* pStartPos;</span>
+<span id="L113"><span class="lineNum">     113</span>              :   uint8_t* pCurPos;</span>
+<span id="L114"><span class="lineNum">     114</span>              : } SDataBuffer;</span>
+<span id="L115"><span class="lineNum">     115</span>              : </span>
+<span id="L116"><span class="lineNum">     116</span>              : //limit size for SPS PPS total permitted size for parse_only</span>
+<span id="L117"><span class="lineNum">     117</span>              : #define SPS_PPS_BS_SIZE 128</span>
+<span id="L118"><span class="lineNum">     118</span>              : typedef struct TagSpsBsInfo {</span>
+<span id="L119"><span class="lineNum">     119</span>              :   uint8_t pSpsBsBuf [SPS_PPS_BS_SIZE];</span>
+<span id="L120"><span class="lineNum">     120</span>              :   int32_t iSpsId;</span>
+<span id="L121"><span class="lineNum">     121</span>              :   uint16_t uiSpsBsLen;</span>
+<span id="L122"><span class="lineNum">     122</span>              : } SSpsBsInfo;</span>
+<span id="L123"><span class="lineNum">     123</span>              : </span>
+<span id="L124"><span class="lineNum">     124</span>              : typedef struct TagPpsBsInfo {</span>
+<span id="L125"><span class="lineNum">     125</span>              :   uint8_t pPpsBsBuf [SPS_PPS_BS_SIZE];</span>
+<span id="L126"><span class="lineNum">     126</span>              :   int32_t iPpsId;</span>
+<span id="L127"><span class="lineNum">     127</span>              :   uint16_t uiPpsBsLen;</span>
+<span id="L128"><span class="lineNum">     128</span>              : } SPpsBsInfo;</span>
+<span id="L129"><span class="lineNum">     129</span>              : //#ifdef __cplusplus</span>
+<span id="L130"><span class="lineNum">     130</span>              : //extern &quot;C&quot; {</span>
+<span id="L131"><span class="lineNum">     131</span>              : //#endif//__cplusplus</span>
+<span id="L132"><span class="lineNum">     132</span>              : </span>
+<span id="L133"><span class="lineNum">     133</span>              : /*</span>
+<span id="L134"><span class="lineNum">     134</span>              :  *  Need move below structures to function pointer to seperate module/file later</span>
+<span id="L135"><span class="lineNum">     135</span>              :  */</span>
+<span id="L136"><span class="lineNum">     136</span>              : </span>
+<span id="L137"><span class="lineNum">     137</span>              : //typedef int32_t (*rec_mb) (Mb *cur_mb, PWelsDecoderContext pCtx);</span>
+<span id="L138"><span class="lineNum">     138</span>              : </span>
+<span id="L139"><span class="lineNum">     139</span>              : /*typedef for get intra predictor func pointer*/</span>
+<span id="L140"><span class="lineNum">     140</span>              : typedef void (*PGetIntraPredFunc) (uint8_t* pPred, const int32_t kiLumaStride);</span>
+<span id="L141"><span class="lineNum">     141</span>              : typedef void (*PIdctResAddPredFunc) (uint8_t* pPred, const int32_t kiStride, int16_t* pRs);</span>
+<span id="L142"><span class="lineNum">     142</span>              : typedef void (*PIdctFourResAddPredFunc) (uint8_t* pPred, int32_t iStride, int16_t* pRs, const int8_t* pNzc);</span>
+<span id="L143"><span class="lineNum">     143</span>              : typedef void (*PExpandPictureFunc) (uint8_t* pDst, const int32_t kiStride, const int32_t kiPicWidth,</span>
+<span id="L144"><span class="lineNum">     144</span>              :                                     const int32_t kiPicHeight);</span>
+<span id="L145"><span class="lineNum">     145</span>              : </span>
+<span id="L146"><span class="lineNum">     146</span>              : typedef void (*PGetIntraPred8x8Func) (uint8_t* pPred, const int32_t kiLumaStride, bool bTLAvail, bool bTRAvail);</span>
+<span id="L147"><span class="lineNum">     147</span>              : </span>
+<span id="L148"><span class="lineNum">     148</span>              : /**/</span>
+<span id="L149"><span class="lineNum">     149</span>              : typedef struct TagRefPic {</span>
+<span id="L150"><span class="lineNum">     150</span>              :   PPicture      pRefList[LIST_A][MAX_DPB_COUNT];    // reference picture marking plus FIFO scheme</span>
+<span id="L151"><span class="lineNum">     151</span>              :   PPicture      pShortRefList[LIST_A][MAX_DPB_COUNT];</span>
+<span id="L152"><span class="lineNum">     152</span>              :   PPicture      pLongRefList[LIST_A][MAX_DPB_COUNT];</span>
+<span id="L153"><span class="lineNum">     153</span>              :   uint8_t       uiRefCount[LIST_A];</span>
+<span id="L154"><span class="lineNum">     154</span>              :   uint8_t       uiShortRefCount[LIST_A];</span>
+<span id="L155"><span class="lineNum">     155</span>              :   uint8_t       uiLongRefCount[LIST_A]; // dependend on ref pic module</span>
+<span id="L156"><span class="lineNum">     156</span>              :   int32_t       iMaxLongTermFrameIdx;</span>
+<span id="L157"><span class="lineNum">     157</span>              : } SRefPic, *PRefPic;</span>
+<span id="L158"><span class="lineNum">     158</span>              : </span>
+<span id="L159"><span class="lineNum">     159</span>              : typedef void (*PCopyFunc) (uint8_t* pDst, int32_t iStrideD, uint8_t* pSrc, int32_t iStrideS);</span>
+<span id="L160"><span class="lineNum">     160</span>              : typedef struct TagCopyFunc {</span>
+<span id="L161"><span class="lineNum">     161</span>              :   PCopyFunc pCopyLumaFunc;</span>
+<span id="L162"><span class="lineNum">     162</span>              :   PCopyFunc pCopyChromaFunc;</span>
+<span id="L163"><span class="lineNum">     163</span>              : } SCopyFunc;</span>
+<span id="L164"><span class="lineNum">     164</span>              : </span>
+<span id="L165"><span class="lineNum">     165</span>              : //deblock module defination</span>
+<span id="L166"><span class="lineNum">     166</span>              : struct TagDeblockingFunc;</span>
+<span id="L167"><span class="lineNum">     167</span>              : </span>
+<span id="L168"><span class="lineNum">     168</span>              : typedef struct tagDeblockingFilter {</span>
+<span id="L169"><span class="lineNum">     169</span>              :   uint8_t*      pCsData[3];     // pointer to reconstructed picture data</span>
+<span id="L170"><span class="lineNum">     170</span>              :   int32_t       iCsStride[2];   // Cs stride</span>
+<span id="L171"><span class="lineNum">     171</span>              :   EWelsSliceType  eSliceType;</span>
+<span id="L172"><span class="lineNum">     172</span>              :   int8_t        iSliceAlphaC0Offset;</span>
+<span id="L173"><span class="lineNum">     173</span>              :   int8_t        iSliceBetaOffset;</span>
+<span id="L174"><span class="lineNum">     174</span>              :   int8_t  iChromaQP[2];</span>
+<span id="L175"><span class="lineNum">     175</span>              :   int8_t  iLumaQP;</span>
+<span id="L176"><span class="lineNum">     176</span>              :   struct TagDeblockingFunc*  pLoopf;</span>
+<span id="L177"><span class="lineNum">     177</span>              :   PPicture* pRefPics[LIST_A];</span>
+<span id="L178"><span class="lineNum">     178</span>              : } SDeblockingFilter, *PDeblockingFilter;</span>
+<span id="L179"><span class="lineNum">     179</span>              : </span>
+<span id="L180"><span class="lineNum">     180</span>              : typedef void (*PDeblockingFilterMbFunc) (PDqLayer pCurDqLayer, PDeblockingFilter  filter, int32_t boundry_flag);</span>
+<span id="L181"><span class="lineNum">     181</span>              : typedef void (*PLumaDeblockingLT4Func) (uint8_t* iSampleY, int32_t iStride, int32_t iAlpha, int32_t iBeta,</span>
+<span id="L182"><span class="lineNum">     182</span>              :                                         int8_t* iTc);</span>
+<span id="L183"><span class="lineNum">     183</span>              : typedef void (*PLumaDeblockingEQ4Func) (uint8_t* iSampleY, int32_t iStride, int32_t iAlpha, int32_t iBeta);</span>
+<span id="L184"><span class="lineNum">     184</span>              : typedef void (*PChromaDeblockingLT4Func) (uint8_t* iSampleCb, uint8_t* iSampleCr, int32_t iStride, int32_t iAlpha,</span>
+<span id="L185"><span class="lineNum">     185</span>              :     int32_t iBeta, int8_t* iTc);</span>
+<span id="L186"><span class="lineNum">     186</span>              : typedef void (*PChromaDeblockingEQ4Func) (uint8_t* iSampleCb, uint8_t* iSampleCr, int32_t iStride, int32_t iAlpha,</span>
+<span id="L187"><span class="lineNum">     187</span>              :     int32_t iBeta);</span>
+<span id="L188"><span class="lineNum">     188</span>              : typedef void (*PChromaDeblockingLT4Func2) (uint8_t* iSampleCbr, int32_t iStride, int32_t iAlpha,</span>
+<span id="L189"><span class="lineNum">     189</span>              :     int32_t iBeta, int8_t* iTc);</span>
+<span id="L190"><span class="lineNum">     190</span>              : typedef void (*PChromaDeblockingEQ4Func2) (uint8_t* iSampleCbr, int32_t iStride, int32_t iAlpha,</span>
+<span id="L191"><span class="lineNum">     191</span>              :     int32_t iBeta);</span>
+<span id="L192"><span class="lineNum">     192</span>              : </span>
+<span id="L193"><span class="lineNum">     193</span>              : typedef struct TagDeblockingFunc {</span>
+<span id="L194"><span class="lineNum">     194</span>              :   PLumaDeblockingLT4Func    pfLumaDeblockingLT4Ver;</span>
+<span id="L195"><span class="lineNum">     195</span>              :   PLumaDeblockingEQ4Func    pfLumaDeblockingEQ4Ver;</span>
+<span id="L196"><span class="lineNum">     196</span>              :   PLumaDeblockingLT4Func    pfLumaDeblockingLT4Hor;</span>
+<span id="L197"><span class="lineNum">     197</span>              :   PLumaDeblockingEQ4Func    pfLumaDeblockingEQ4Hor;</span>
+<span id="L198"><span class="lineNum">     198</span>              : </span>
+<span id="L199"><span class="lineNum">     199</span>              :   PChromaDeblockingLT4Func  pfChromaDeblockingLT4Ver;</span>
+<span id="L200"><span class="lineNum">     200</span>              :   PChromaDeblockingEQ4Func  pfChromaDeblockingEQ4Ver;</span>
+<span id="L201"><span class="lineNum">     201</span>              :   PChromaDeblockingLT4Func  pfChromaDeblockingLT4Hor;</span>
+<span id="L202"><span class="lineNum">     202</span>              :   PChromaDeblockingEQ4Func  pfChromaDeblockingEQ4Hor;</span>
+<span id="L203"><span class="lineNum">     203</span>              : </span>
+<span id="L204"><span class="lineNum">     204</span>              :   PChromaDeblockingLT4Func2  pfChromaDeblockingLT4Ver2;</span>
+<span id="L205"><span class="lineNum">     205</span>              :   PChromaDeblockingEQ4Func2  pfChromaDeblockingEQ4Ver2;</span>
+<span id="L206"><span class="lineNum">     206</span>              :   PChromaDeblockingLT4Func2  pfChromaDeblockingLT4Hor2;</span>
+<span id="L207"><span class="lineNum">     207</span>              :   PChromaDeblockingEQ4Func2  pfChromaDeblockingEQ4Hor2;</span>
+<span id="L208"><span class="lineNum">     208</span>              : </span>
+<span id="L209"><span class="lineNum">     209</span>              : } SDeblockingFunc, *PDeblockingFunc;</span>
+<span id="L210"><span class="lineNum">     210</span>              : </span>
+<span id="L211"><span class="lineNum">     211</span>              : typedef void (*PWelsNonZeroCountFunc) (int8_t* pNonZeroCount);</span>
+<span id="L212"><span class="lineNum">     212</span>              : typedef void (*PWelsBlockZeroFunc) (int16_t* block, int32_t stride);</span>
+<span id="L213"><span class="lineNum">     213</span>              : typedef  struct  TagBlockFunc {</span>
+<span id="L214"><span class="lineNum">     214</span>              :   PWelsNonZeroCountFunc pWelsSetNonZeroCountFunc;</span>
+<span id="L215"><span class="lineNum">     215</span>              :   PWelsBlockZeroFunc    pWelsBlockZero16x16Func;</span>
+<span id="L216"><span class="lineNum">     216</span>              :   PWelsBlockZeroFunc    pWelsBlockZero8x8Func;</span>
+<span id="L217"><span class="lineNum">     217</span>              : } SBlockFunc;</span>
+<span id="L218"><span class="lineNum">     218</span>              : </span>
+<span id="L219"><span class="lineNum">     219</span>              : typedef void (*PWelsFillNeighborMbInfoIntra4x4Func) (PWelsNeighAvail pNeighAvail, uint8_t* pNonZeroCount,</span>
+<span id="L220"><span class="lineNum">     220</span>              :     int8_t* pIntraPredMode, PDqLayer pCurDqLayer);</span>
+<span id="L221"><span class="lineNum">     221</span>              : typedef void (*PWelsMapNeighToSample) (PWelsNeighAvail pNeighAvail, int32_t* pSampleAvail);</span>
+<span id="L222"><span class="lineNum">     222</span>              : typedef void (*PWelsMap16NeighToSample) (PWelsNeighAvail pNeighAvail, uint8_t* pSampleAvail);</span>
+<span id="L223"><span class="lineNum">     223</span>              : typedef int32_t (*PWelsParseIntra4x4ModeFunc) (PWelsNeighAvail pNeighAvail, int8_t* pIntraPredMode, PBitStringAux pBs,</span>
+<span id="L224"><span class="lineNum">     224</span>              :     PDqLayer pCurDqLayer);</span>
+<span id="L225"><span class="lineNum">     225</span>              : typedef int32_t (*PWelsParseIntra16x16ModeFunc) (PWelsNeighAvail pNeighAvail, PBitStringAux pBs, PDqLayer pCurDqLayer);</span>
+<span id="L226"><span class="lineNum">     226</span>              : </span>
+<span id="L227"><span class="lineNum">     227</span>              : enum {</span>
+<span id="L228"><span class="lineNum">     228</span>              :   OVERWRITE_NONE = 0,</span>
+<span id="L229"><span class="lineNum">     229</span>              :   OVERWRITE_PPS = 1,</span>
+<span id="L230"><span class="lineNum">     230</span>              :   OVERWRITE_SPS = 1 &lt;&lt; 1,</span>
+<span id="L231"><span class="lineNum">     231</span>              :   OVERWRITE_SUBSETSPS = 1 &lt;&lt; 2</span>
+<span id="L232"><span class="lineNum">     232</span>              : };</span>
+<span id="L233"><span class="lineNum">     233</span>              : </span>
+<span id="L234"><span class="lineNum">     234</span>              : </span>
+<span id="L235"><span class="lineNum">     235</span>              : //Decoder SPS and PPS global CTX</span>
+<span id="L236"><span class="lineNum">     236</span>              : typedef struct tagWelsWelsDecoderSpsPpsCTX {</span>
+<span id="L237"><span class="lineNum">     237</span>              :   SPosOffset                    sFrameCrop;</span>
+<span id="L238"><span class="lineNum">     238</span>              : </span>
+<span id="L239"><span class="lineNum">     239</span>              :   SSps                          sSpsBuffer[MAX_SPS_COUNT + 1];</span>
+<span id="L240"><span class="lineNum">     240</span>              :   SPps                          sPpsBuffer[MAX_PPS_COUNT + 1];</span>
+<span id="L241"><span class="lineNum">     241</span>              : </span>
+<span id="L242"><span class="lineNum">     242</span>              :   SSubsetSps                    sSubsetSpsBuffer[MAX_SPS_COUNT + 1];</span>
+<span id="L243"><span class="lineNum">     243</span>              :   SNalUnit                      sPrefixNal;</span>
+<span id="L244"><span class="lineNum">     244</span>              : </span>
+<span id="L245"><span class="lineNum">     245</span>              :   PSps                          pActiveLayerSps[MAX_LAYER_NUM];</span>
+<span id="L246"><span class="lineNum">     246</span>              :   bool                          bAvcBasedFlag;          // For decoding bitstream:</span>
+<span id="L247"><span class="lineNum">     247</span>              : </span>
+<span id="L248"><span class="lineNum">     248</span>              :   // for EC parameter sets</span>
+<span id="L249"><span class="lineNum">     249</span>              :   bool                          bSpsExistAheadFlag;     // whether does SPS NAL exist ahead of sequence?</span>
+<span id="L250"><span class="lineNum">     250</span>              :   bool                          bSubspsExistAheadFlag;// whether does Subset SPS NAL exist ahead of sequence?</span>
+<span id="L251"><span class="lineNum">     251</span>              :   bool                          bPpsExistAheadFlag;     // whether does PPS NAL exist ahead of sequence?</span>
+<span id="L252"><span class="lineNum">     252</span>              : </span>
+<span id="L253"><span class="lineNum">     253</span>              :   int32_t                       iSpsErrorIgnored;</span>
+<span id="L254"><span class="lineNum">     254</span>              :   int32_t                       iSubSpsErrorIgnored;</span>
+<span id="L255"><span class="lineNum">     255</span>              :   int32_t                       iPpsErrorIgnored;</span>
+<span id="L256"><span class="lineNum">     256</span>              : </span>
+<span id="L257"><span class="lineNum">     257</span>              :   bool                          bSpsAvailFlags[MAX_SPS_COUNT];</span>
+<span id="L258"><span class="lineNum">     258</span>              :   bool                          bSubspsAvailFlags[MAX_SPS_COUNT];</span>
+<span id="L259"><span class="lineNum">     259</span>              :   bool                          bPpsAvailFlags[MAX_PPS_COUNT];</span>
+<span id="L260"><span class="lineNum">     260</span>              :   int32_t                       iPPSLastInvalidId;</span>
+<span id="L261"><span class="lineNum">     261</span>              :   int32_t                       iPPSInvalidNum;</span>
+<span id="L262"><span class="lineNum">     262</span>              :   int32_t                       iSPSLastInvalidId;</span>
+<span id="L263"><span class="lineNum">     263</span>              :   int32_t                       iSPSInvalidNum;</span>
+<span id="L264"><span class="lineNum">     264</span>              :   int32_t                       iSubSPSLastInvalidId;</span>
+<span id="L265"><span class="lineNum">     265</span>              :   int32_t                       iSubSPSInvalidNum;</span>
+<span id="L266"><span class="lineNum">     266</span>              :   int32_t                       iSeqId; //sequence id</span>
+<span id="L267"><span class="lineNum">     267</span>              :   int                           iOverwriteFlags;</span>
+<span id="L268"><span class="lineNum">     268</span>              : } SWelsDecoderSpsPpsCTX, *PWelsDecoderSpsPpsCTX;</span>
+<span id="L269"><span class="lineNum">     269</span>              : </span>
+<span id="L270"><span class="lineNum">     270</span>              : //Last Decoded Picture Info</span>
+<span id="L271"><span class="lineNum">     271</span>              : typedef struct tagSWelsLastDecPicInfo {</span>
+<span id="L272"><span class="lineNum">     272</span>              :   // Save the last nal header info</span>
+<span id="L273"><span class="lineNum">     273</span>              :   SNalUnitHeaderExt sLastNalHdrExt;</span>
+<span id="L274"><span class="lineNum">     274</span>              :   SSliceHeader      sLastSliceHeader;</span>
+<span id="L275"><span class="lineNum">     275</span>              :   int32_t           iPrevPicOrderCntMsb;</span>
+<span id="L276"><span class="lineNum">     276</span>              :   int32_t           iPrevPicOrderCntLsb;</span>
+<span id="L277"><span class="lineNum">     277</span>              :   PPicture          pPreviousDecodedPictureInDpb; //pointer to previously decoded picture in DPB for error concealment</span>
+<span id="L278"><span class="lineNum">     278</span>              :   int32_t           iPrevFrameNum;// frame number of previous frame well decoded for non-truncated mode yet</span>
+<span id="L279"><span class="lineNum">     279</span>              :   bool              bLastHasMmco5;</span>
+<span id="L280"><span class="lineNum">     280</span>              :   uint32_t          uiDecodingTimeStamp; //represent relative decoding time stamps</span>
+<span id="L281"><span class="lineNum">     281</span>              : } SWelsLastDecPicInfo, *PWelsLastDecPicInfo;</span>
+<span id="L282"><span class="lineNum">     282</span>              : </span>
+<span id="L283"><span class="lineNum">     283</span>              : typedef struct tagPictInfo {</span>
+<span id="L284"><span class="lineNum">     284</span>              :   SBufferInfo             sBufferInfo;</span>
+<span id="L285"><span class="lineNum">     285</span>              :   int32_t                 iPOC;</span>
+<span id="L286"><span class="lineNum">     286</span>              :   int32_t                 iPicBuffIdx;</span>
+<span id="L287"><span class="lineNum">     287</span>              :   uint32_t                uiDecodingTimeStamp;</span>
+<span id="L288"><span class="lineNum">     288</span>              :   int32_t                 iSeqNum;</span>
+<span id="L289"><span class="lineNum">     289</span>              : } SPictInfo, *PPictInfo;</span>
+<span id="L290"><span class="lineNum">     290</span>              : </span>
+<span id="L291"><span class="lineNum">     291</span>              : typedef struct tagPictReoderingStatus {</span>
+<span id="L292"><span class="lineNum">     292</span>              :   int32_t iPictInfoIndex;</span>
+<span id="L293"><span class="lineNum">     293</span>              :   int32_t iMinSeqNum;</span>
+<span id="L294"><span class="lineNum">     294</span>              :   int32_t iMinPOC;</span>
+<span id="L295"><span class="lineNum">     295</span>              :   int32_t iNumOfPicts;</span>
+<span id="L296"><span class="lineNum">     296</span>              :   int32_t iLastWrittenSeqNum;</span>
+<span id="L297"><span class="lineNum">     297</span>              :   int32_t iLastWrittenPOC;</span>
+<span id="L298"><span class="lineNum">     298</span>              :   int32_t iLargestBufferedPicIndex;</span>
+<span id="L299"><span class="lineNum">     299</span>              :   bool    bHasBSlice;</span>
+<span id="L300"><span class="lineNum">     300</span>              : } SPictReoderingStatus, *PPictReoderingStatus;</span>
+<span id="L301"><span class="lineNum">     301</span>              : </span>
+<span id="L302"><span class="lineNum">     302</span>              : /*</span>
+<span id="L303"><span class="lineNum">     303</span>              :  *  SWelsDecoderContext: to maintail all modules data over decoder@framework</span>
+<span id="L304"><span class="lineNum">     304</span>              :  */</span>
+<span id="L305"><span class="lineNum">     305</span>              : </span>
+<span id="L306"><span class="lineNum">     306</span>              : typedef struct TagWelsDecoderContext {</span>
+<span id="L307"><span class="lineNum">     307</span>              :   SLogContext sLogCtx;</span>
+<span id="L308"><span class="lineNum">     308</span>              : // Input</span>
+<span id="L309"><span class="lineNum">     309</span>              :   void*</span>
+<span id="L310"><span class="lineNum">     310</span>              :   pArgDec;                        // structured arguments for decoder, reserved here for extension in the future</span>
+<span id="L311"><span class="lineNum">     311</span>              : </span>
+<span id="L312"><span class="lineNum">     312</span>              :   SDataBuffer                   sRawData;</span>
+<span id="L313"><span class="lineNum">     313</span>              :   SDataBuffer                   sSavedData; //for parse only purpose</span>
+<span id="L314"><span class="lineNum">     314</span>              : </span>
+<span id="L315"><span class="lineNum">     315</span>              : // Configuration</span>
+<span id="L316"><span class="lineNum">     316</span>              :   SDecodingParam*               pParam;</span>
+<span id="L317"><span class="lineNum">     317</span>              :   uint32_t                      uiCpuFlag;                      // CPU compatibility detected</span>
+<span id="L318"><span class="lineNum">     318</span>              : </span>
+<span id="L319"><span class="lineNum">     319</span>              :   VIDEO_BITSTREAM_TYPE eVideoType; //indicate the type of video to decide whether or not to do qp_delta error detection.</span>
+<span id="L320"><span class="lineNum">     320</span>              :   bool                          bHaveGotMemory; // global memory for decoder context related ever requested?</span>
+<span id="L321"><span class="lineNum">     321</span>              : </span>
+<span id="L322"><span class="lineNum">     322</span>              :   int32_t                       iImgWidthInPixel;       // width of image in pixel reconstruction picture to be output</span>
+<span id="L323"><span class="lineNum">     323</span>              :   int32_t                       iImgHeightInPixel;// height of image in pixel reconstruction picture to be output</span>
+<span id="L324"><span class="lineNum">     324</span>              :   int32_t</span>
+<span id="L325"><span class="lineNum">     325</span>              :   iLastImgWidthInPixel;   // width of image in last successful pixel reconstruction picture to be output</span>
+<span id="L326"><span class="lineNum">     326</span>              :   int32_t</span>
+<span id="L327"><span class="lineNum">     327</span>              :   iLastImgHeightInPixel;// height of image in last successful pixel reconstruction picture to be output</span>
+<span id="L328"><span class="lineNum">     328</span>              :   bool bFreezeOutput; // indicating current frame freezing. Default: true</span>
+<span id="L329"><span class="lineNum">     329</span>              : </span>
+<span id="L330"><span class="lineNum">     330</span>              : </span>
+<span id="L331"><span class="lineNum">     331</span>              : // Derived common elements</span>
+<span id="L332"><span class="lineNum">     332</span>              :   SNalUnitHeader                sCurNalHead;</span>
+<span id="L333"><span class="lineNum">     333</span>              :   EWelsSliceType                eSliceType;                     // Slice type</span>
+<span id="L334"><span class="lineNum">     334</span>              :   bool                          bUsedAsRef;                     //flag as ref</span>
+<span id="L335"><span class="lineNum">     335</span>              :   int32_t                       iFrameNum;</span>
+<span id="L336"><span class="lineNum">     336</span>              :   int32_t                       iErrorCode;                     // error code return while decoding in case packets lost</span>
+<span id="L337"><span class="lineNum">     337</span>              :   SFmo                          sFmoList[MAX_PPS_COUNT];        // list for FMO storage</span>
+<span id="L338"><span class="lineNum">     338</span>              :   PFmo                          pFmo;                           // current fmo context after parsed slice_header</span>
+<span id="L339"><span class="lineNum">     339</span>              :   int32_t                       iActiveFmoNum;          // active count number of fmo context in list</span>
+<span id="L340"><span class="lineNum">     340</span>              : </span>
+<span id="L341"><span class="lineNum">     341</span>              :   /*needed info by decode slice level and mb level*/</span>
+<span id="L342"><span class="lineNum">     342</span>              :   int32_t</span>
+<span id="L343"><span class="lineNum">     343</span>              :   iDecBlockOffsetArray[24];     // address talbe for sub 4x4 block in intra4x4_mb, so no need to caculta the address every time.</span>
+<span id="L344"><span class="lineNum">     344</span>              : </span>
+<span id="L345"><span class="lineNum">     345</span>              :   struct {</span>
+<span id="L346"><span class="lineNum">     346</span>              :     uint32_t*  pMbType[LAYER_NUM_EXCHANGEABLE];                      /* mb type */</span>
+<span id="L347"><span class="lineNum">     347</span>              :     int16_t (*pMv[LAYER_NUM_EXCHANGEABLE][LIST_A])[MB_BLOCK4x4_NUM][MV_A]; //[LAYER_NUM_EXCHANGEABLE   MB_BLOCK4x4_NUM*]</span>
+<span id="L348"><span class="lineNum">     348</span>              :     int8_t (*pRefIndex[LAYER_NUM_EXCHANGEABLE][LIST_A])[MB_BLOCK4x4_NUM];</span>
+<span id="L349"><span class="lineNum">     349</span>              :     int8_t (*pDirect[LAYER_NUM_EXCHANGEABLE])[MB_BLOCK4x4_NUM];</span>
+<span id="L350"><span class="lineNum">     350</span>              :     bool*   pNoSubMbPartSizeLessThan8x8Flag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L351"><span class="lineNum">     351</span>              :     bool*   pTransformSize8x8Flag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L352"><span class="lineNum">     352</span>              :     int8_t* pLumaQp[LAYER_NUM_EXCHANGEABLE];        /*mb luma_qp*/</span>
+<span id="L353"><span class="lineNum">     353</span>              :     int8_t (*pChromaQp[LAYER_NUM_EXCHANGEABLE])[2];                                         /*mb chroma_qp*/</span>
+<span id="L354"><span class="lineNum">     354</span>              :     int16_t (*pMvd[LAYER_NUM_EXCHANGEABLE][LIST_A])[MB_BLOCK4x4_NUM][MV_A]; //[LAYER_NUM_EXCHANGEABLE   MB_BLOCK4x4_NUM*]</span>
+<span id="L355"><span class="lineNum">     355</span>              :     uint16_t* pCbfDc[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L356"><span class="lineNum">     356</span>              :     int8_t (*pNzc[LAYER_NUM_EXCHANGEABLE])[24];</span>
+<span id="L357"><span class="lineNum">     357</span>              :     int8_t (*pNzcRs[LAYER_NUM_EXCHANGEABLE])[24];</span>
+<span id="L358"><span class="lineNum">     358</span>              :     int16_t (*pScaledTCoeff[LAYER_NUM_EXCHANGEABLE])[MB_COEFF_LIST_SIZE]; /*need be aligned*/</span>
+<span id="L359"><span class="lineNum">     359</span>              :     int8_t (*pIntraPredMode[LAYER_NUM_EXCHANGEABLE])[8];  //0~3 top4x4 ; 4~6 left 4x4; 7 intra16x16</span>
+<span id="L360"><span class="lineNum">     360</span>              :     int8_t (*pIntra4x4FinalMode[LAYER_NUM_EXCHANGEABLE])[MB_BLOCK4x4_NUM];</span>
+<span id="L361"><span class="lineNum">     361</span>              :     uint8_t* pIntraNxNAvailFlag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L362"><span class="lineNum">     362</span>              :     int8_t*  pChromaPredMode[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L363"><span class="lineNum">     363</span>              :     int8_t*  pCbp[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L364"><span class="lineNum">     364</span>              :     uint8_t (*pMotionPredFlag[LAYER_NUM_EXCHANGEABLE][LIST_A])[MB_PARTITION_SIZE]; // 8x8</span>
+<span id="L365"><span class="lineNum">     365</span>              :     uint32_t (*pSubMbType[LAYER_NUM_EXCHANGEABLE])[MB_SUB_PARTITION_SIZE];</span>
+<span id="L366"><span class="lineNum">     366</span>              :     int32_t* pSliceIdc[LAYER_NUM_EXCHANGEABLE];         // using int32_t for slice_idc</span>
+<span id="L367"><span class="lineNum">     367</span>              :     int8_t*  pResidualPredFlag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L368"><span class="lineNum">     368</span>              :     int8_t*  pInterPredictionDoneFlag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L369"><span class="lineNum">     369</span>              :     bool*    pMbCorrectlyDecodedFlag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L370"><span class="lineNum">     370</span>              :     bool*    pMbRefConcealedFlag[LAYER_NUM_EXCHANGEABLE];</span>
+<span id="L371"><span class="lineNum">     371</span>              :     uint32_t iMbWidth;</span>
+<span id="L372"><span class="lineNum">     372</span>              :     uint32_t iMbHeight;</span>
+<span id="L373"><span class="lineNum">     373</span>              :   } sMb;</span>
+<span id="L374"><span class="lineNum">     374</span>              : </span>
+<span id="L375"><span class="lineNum">     375</span>              : </span>
+<span id="L376"><span class="lineNum">     376</span>              : // reconstruction picture</span>
+<span id="L377"><span class="lineNum">     377</span>              :   PPicture                      pDec;                   //pointer to current picture being reconstructed</span>
+<span id="L378"><span class="lineNum">     378</span>              : </span>
+<span id="L379"><span class="lineNum">     379</span>              :   PPicture</span>
+<span id="L380"><span class="lineNum">     380</span>              :   pTempDec;               //pointer to temp decoder picture to be used only for Bi Prediction.</span>
+<span id="L381"><span class="lineNum">     381</span>              : </span>
+<span id="L382"><span class="lineNum">     382</span>              : // reference pictures</span>
+<span id="L383"><span class="lineNum">     383</span>              :   SRefPic                       sRefPic;</span>
+<span id="L384"><span class="lineNum">     384</span>              :   SRefPic                       sTmpRefPic; //used to temporarily save RefPic for next active thread</span>
+<span id="L385"><span class="lineNum">     385</span>              :   SVlcTable*                    pVlcTable;               // vlc table</span>
+<span id="L386"><span class="lineNum">     386</span>              : </span>
+<span id="L387"><span class="lineNum">     387</span>              :   SBitStringAux                 sBs;</span>
+<span id="L388"><span class="lineNum">     388</span>              :   int32_t iMaxBsBufferSizeInByte; //actual memory size for BS buffer</span>
+<span id="L389"><span class="lineNum">     389</span>              : </span>
+<span id="L390"><span class="lineNum">     390</span>              :   /* Global memory external */</span>
+<span id="L391"><span class="lineNum">     391</span>              :   SWelsDecoderSpsPpsCTX        sSpsPpsCtx;</span>
+<span id="L392"><span class="lineNum">     392</span>              :   bool                         bHasNewSps;</span>
+<span id="L393"><span class="lineNum">     393</span>              : </span>
+<span id="L394"><span class="lineNum">     394</span>              :   SPosOffset sFrameCrop;</span>
+<span id="L395"><span class="lineNum">     395</span>              : </span>
+<span id="L396"><span class="lineNum">     396</span>              :   PSliceHeader                  pSliceHeader;</span>
+<span id="L397"><span class="lineNum">     397</span>              : </span>
+<span id="L398"><span class="lineNum">     398</span>              :   PPicBuff                      pPicBuff;       // Initially allocated memory for pictures which are used in decoding.</span>
+<span id="L399"><span class="lineNum">     399</span>              :   int32_t                       iPicQueueNumber;</span>
+<span id="L400"><span class="lineNum">     400</span>              : </span>
+<span id="L401"><span class="lineNum">     401</span>              :   PAccessUnit                   pAccessUnitList;        // current access unit list to be performed</span>
+<span id="L402"><span class="lineNum">     402</span>              :   //PSps                          pActiveLayerSps[MAX_LAYER_NUM];</span>
+<span id="L403"><span class="lineNum">     403</span>              :   PSps                          pSps;   // used by current AU</span>
+<span id="L404"><span class="lineNum">     404</span>              :   PPps                          pPps;   // used by current AU</span>
+<span id="L405"><span class="lineNum">     405</span>              : // Memory for pAccessUnitList is dynamically held till decoder destruction.</span>
+<span id="L406"><span class="lineNum">     406</span>              :   PDqLayer</span>
+<span id="L407"><span class="lineNum">     407</span>              :   pCurDqLayer;            // current DQ layer representation, also carry reference base layer if applicable</span>
+<span id="L408"><span class="lineNum">     408</span>              :   PDqLayer                      pDqLayersList[LAYER_NUM_EXCHANGEABLE];  // DQ layers list with memory allocated</span>
+<span id="L409"><span class="lineNum">     409</span>              :   PNalUnit                      pNalCur;          // point to current NAL Nnit</span>
+<span id="L410"><span class="lineNum">     410</span>              :   uint8_t                       uiNalRefIdc;      // NalRefIdc for easy access;</span>
+<span id="L411"><span class="lineNum">     411</span>              :   int32_t                       iPicWidthReq;             // picture width have requested the memory</span>
+<span id="L412"><span class="lineNum">     412</span>              :   int32_t                       iPicHeightReq;            // picture height have requested the memory</span>
+<span id="L413"><span class="lineNum">     413</span>              : </span>
+<span id="L414"><span class="lineNum">     414</span>              :   uint8_t                       uiTargetDqId;           // maximal DQ ID in current access unit, meaning target layer ID</span>
+<span id="L415"><span class="lineNum">     415</span>              :   //bool                          bAvcBasedFlag;          // For decoding bitstream:</span>
+<span id="L416"><span class="lineNum">     416</span>              :   bool                          bEndOfStreamFlag;       // Flag on end of stream requested by external application layer</span>
+<span id="L417"><span class="lineNum">     417</span>              :   bool                          bInstantDecFlag;        // Flag for no-delay decoding</span>
+<span id="L418"><span class="lineNum">     418</span>              :   bool                          bInitialDqLayersMem;    // dq layers related memory is available?</span>
+<span id="L419"><span class="lineNum">     419</span>              : </span>
+<span id="L420"><span class="lineNum">     420</span>              :   bool                          bOnlyOneLayerInCurAuFlag; //only one layer in current AU: 1</span>
+<span id="L421"><span class="lineNum">     421</span>              : </span>
+<span id="L422"><span class="lineNum">     422</span>              :   bool                          bReferenceLostAtT0Flag;</span>
+<span id="L423"><span class="lineNum">     423</span>              :   int32_t                       iTotalNumMbRec; //record current number of decoded MB</span>
+<span id="L424"><span class="lineNum">     424</span>              : #ifdef LONG_TERM_REF</span>
+<span id="L425"><span class="lineNum">     425</span>              :   bool                          bParamSetsLostFlag;     //sps or pps do not exist or not correct</span>
+<span id="L426"><span class="lineNum">     426</span>              : </span>
+<span id="L427"><span class="lineNum">     427</span>              :   bool</span>
+<span id="L428"><span class="lineNum">     428</span>              :   bCurAuContainLtrMarkSeFlag; //current AU has the LTR marking syntax element, mark the previous frame or self</span>
+<span id="L429"><span class="lineNum">     429</span>              :   int32_t                       iFrameNumOfAuMarkedLtr; //if bCurAuContainLtrMarkSeFlag==true, SHOULD set this variable</span>
+<span id="L430"><span class="lineNum">     430</span>              : </span>
+<span id="L431"><span class="lineNum">     431</span>              :   uint16_t                      uiCurIdrPicId;</span>
+<span id="L432"><span class="lineNum">     432</span>              : #endif</span>
+<span id="L433"><span class="lineNum">     433</span>              :   bool       bNewSeqBegin;</span>
+<span id="L434"><span class="lineNum">     434</span>              :   bool       bNextNewSeqBegin;</span>
+<span id="L435"><span class="lineNum">     435</span>              :   int32_t    *pStreamSeqNum;</span>
+<span id="L436"><span class="lineNum">     436</span>              :   int32_t    iSeqNum;</span>
+<span id="L437"><span class="lineNum">     437</span>              : </span>
+<span id="L438"><span class="lineNum">     438</span>              : //for Parse only</span>
+<span id="L439"><span class="lineNum">     439</span>              :   bool bFramePending;</span>
+<span id="L440"><span class="lineNum">     440</span>              :   bool bFrameFinish;</span>
+<span id="L441"><span class="lineNum">     441</span>              :   int32_t iNalNum;</span>
+<span id="L442"><span class="lineNum">     442</span>              :   int32_t iMaxNalNum; //permitted max NAL num stored in parser</span>
+<span id="L443"><span class="lineNum">     443</span>              :   SSpsBsInfo sSpsBsInfo [MAX_SPS_COUNT];</span>
+<span id="L444"><span class="lineNum">     444</span>              :   SSpsBsInfo sSubsetSpsBsInfo [MAX_PPS_COUNT];</span>
+<span id="L445"><span class="lineNum">     445</span>              :   SPpsBsInfo sPpsBsInfo [MAX_PPS_COUNT];</span>
+<span id="L446"><span class="lineNum">     446</span>              :   SParserBsInfo* pParserBsInfo;</span>
+<span id="L447"><span class="lineNum">     447</span>              : </span>
+<span id="L448"><span class="lineNum">     448</span>              :   //PPicture pPreviousDecodedPictureInDpb; //pointer to previously decoded picture in DPB for error concealment</span>
+<span id="L449"><span class="lineNum">     449</span>              :   PGetIntraPredFunc pGetI16x16LumaPredFunc[7];          //h264_predict_copy_16x16;</span>
+<span id="L450"><span class="lineNum">     450</span>              :   PGetIntraPredFunc pGetI4x4LumaPredFunc[14];           // h264_predict_4x4_t</span>
+<span id="L451"><span class="lineNum">     451</span>              :   PGetIntraPredFunc pGetIChromaPredFunc[7];             // h264_predict_8x8_t</span>
+<span id="L452"><span class="lineNum">     452</span>              :   PIdctResAddPredFunc pIdctResAddPredFunc;</span>
+<span id="L453"><span class="lineNum">     453</span>              :   PIdctFourResAddPredFunc pIdctFourResAddPredFunc;</span>
+<span id="L454"><span class="lineNum">     454</span>              :   SMcFunc sMcFunc;</span>
+<span id="L455"><span class="lineNum">     455</span>              :   //Transform8x8</span>
+<span id="L456"><span class="lineNum">     456</span>              :   PGetIntraPred8x8Func pGetI8x8LumaPredFunc[14];</span>
+<span id="L457"><span class="lineNum">     457</span>              :   PIdctResAddPredFunc  pIdctResAddPredFunc8x8;</span>
+<span id="L458"><span class="lineNum">     458</span>              : </span>
+<span id="L459"><span class="lineNum">     459</span>              : //For error concealment</span>
+<span id="L460"><span class="lineNum">     460</span>              :   SCopyFunc sCopyFunc;</span>
+<span id="L461"><span class="lineNum">     461</span>              :   /* For Deblocking */</span>
+<span id="L462"><span class="lineNum">     462</span>              :   SDeblockingFunc     sDeblockingFunc;</span>
+<span id="L463"><span class="lineNum">     463</span>              :   SExpandPicFunc      sExpandPicFunc;</span>
+<span id="L464"><span class="lineNum">     464</span>              : </span>
+<span id="L465"><span class="lineNum">     465</span>              :   /* For Block */</span>
+<span id="L466"><span class="lineNum">     466</span>              :   SBlockFunc          sBlockFunc;</span>
+<span id="L467"><span class="lineNum">     467</span>              : </span>
+<span id="L468"><span class="lineNum">     468</span>              :   int32_t iCurSeqIntervalTargetDependId;</span>
+<span id="L469"><span class="lineNum">     469</span>              :   int32_t iCurSeqIntervalMaxPicWidth;</span>
+<span id="L470"><span class="lineNum">     470</span>              :   int32_t iCurSeqIntervalMaxPicHeight;</span>
+<span id="L471"><span class="lineNum">     471</span>              : </span>
+<span id="L472"><span class="lineNum">     472</span>              :   PWelsFillNeighborMbInfoIntra4x4Func  pFillInfoCacheIntraNxNFunc;</span>
+<span id="L473"><span class="lineNum">     473</span>              :   PWelsMapNeighToSample pMapNxNNeighToSampleFunc;</span>
+<span id="L474"><span class="lineNum">     474</span>              :   PWelsMap16NeighToSample pMap16x16NeighToSampleFunc;</span>
+<span id="L475"><span class="lineNum">     475</span>              : </span>
+<span id="L476"><span class="lineNum">     476</span>              : //feedback whether or not have VCL in current AU, and the temporal ID</span>
+<span id="L477"><span class="lineNum">     477</span>              :   int32_t iFeedbackVclNalInAu;</span>
+<span id="L478"><span class="lineNum">     478</span>              :   int32_t iFeedbackTidInAu;</span>
+<span id="L479"><span class="lineNum">     479</span>              :   int32_t iFeedbackNalRefIdc;</span>
+<span id="L480"><span class="lineNum">     480</span>              : </span>
+<span id="L481"><span class="lineNum">     481</span>              :   bool bAuReadyFlag;   // true: one au is ready for decoding; false: default value</span>
+<span id="L482"><span class="lineNum">     482</span>              : </span>
+<span id="L483"><span class="lineNum">     483</span>              :   bool bPrintFrameErrorTraceFlag; //true: can print info for upper layer</span>
+<span id="L484"><span class="lineNum">     484</span>              :   int32_t iIgnoredErrorInfoPacketCount; //store the packet number with error decoding info</span>
+<span id="L485"><span class="lineNum">     485</span>              : //trace handle</span>
+<span id="L486"><span class="lineNum">     486</span>              :   void*      pTraceHandle;</span>
+<span id="L487"><span class="lineNum">     487</span>              : </span>
+<span id="L488"><span class="lineNum">     488</span>              :   PWelsLastDecPicInfo pLastDecPicInfo;</span>
+<span id="L489"><span class="lineNum">     489</span>              : </span>
+<span id="L490"><span class="lineNum">     490</span>              :   SWelsCabacCtx sWelsCabacContexts[4][WELS_QP_MAX + 1][WELS_CONTEXT_COUNT];</span>
+<span id="L491"><span class="lineNum">     491</span>              :   bool bCabacInited;</span>
+<span id="L492"><span class="lineNum">     492</span>              :   SWelsCabacCtx   pCabacCtx[WELS_CONTEXT_COUNT];</span>
+<span id="L493"><span class="lineNum">     493</span>              :   PWelsCabacDecEngine   pCabacDecEngine;</span>
+<span id="L494"><span class="lineNum">     494</span>              :   double dDecTime;</span>
+<span id="L495"><span class="lineNum">     495</span>              :   SDecoderStatistics* pDecoderStatistics; // For real time debugging</span>
+<span id="L496"><span class="lineNum">     496</span>              :   int32_t iMbEcedNum;</span>
+<span id="L497"><span class="lineNum">     497</span>              :   int32_t iMbEcedPropNum;</span>
+<span id="L498"><span class="lineNum">     498</span>              :   int32_t iMbNum;</span>
+<span id="L499"><span class="lineNum">     499</span>              :   bool bMbRefConcealed;</span>
+<span id="L500"><span class="lineNum">     500</span>              :   bool bRPLRError;</span>
+<span id="L501"><span class="lineNum">     501</span>              :   int32_t iECMVs[16][2];</span>
+<span id="L502"><span class="lineNum">     502</span>              :   PPicture pECRefPic[16];</span>
+<span id="L503"><span class="lineNum">     503</span>              :   unsigned long long uiTimeStamp;</span>
+<span id="L504"><span class="lineNum">     504</span>              :   uint32_t    uiDecodingTimeStamp; //represent relative decoding time stamps</span>
+<span id="L505"><span class="lineNum">     505</span>              : // To support scaling list HP</span>
+<span id="L506"><span class="lineNum">     506</span>              :   uint16_t  pDequant_coeff_buffer4x4[6][52][16];</span>
+<span id="L507"><span class="lineNum">     507</span>              :   uint16_t  pDequant_coeff_buffer8x8[6][52][64];</span>
+<span id="L508"><span class="lineNum">     508</span>              :   uint16_t (*pDequant_coeff4x4[6])[16];// 4x4 sclaing list value pointer</span>
+<span id="L509"><span class="lineNum">     509</span>              :   uint16_t (*pDequant_coeff8x8[6])[64];//64 residual coeff ,with 6 kinds of residual type, 52 qp level</span>
+<span id="L510"><span class="lineNum">     510</span>              :   int iDequantCoeffPpsid;//When a new pps actived, reinitialised the scaling list value</span>
+<span id="L511"><span class="lineNum">     511</span>              :   bool bDequantCoeff4x4Init;</span>
+<span id="L512"><span class="lineNum">     512</span>              :   bool bUseScalingList;</span>
+<span id="L513"><span class="lineNum">     513</span>              :   CMemoryAlign*     pMemAlign;</span>
+<span id="L514"><span class="lineNum">     514</span>              :   void* pThreadCtx;</span>
+<span id="L515"><span class="lineNum">     515</span>              :   void* pLastThreadCtx;</span>
+<span id="L516"><span class="lineNum">     516</span>              :   WELS_MUTEX* pCsDecoder;</span>
+<span id="L517"><span class="lineNum">     517</span>              :   int16_t lastReadyHeightOffset[LIST_A][MAX_REF_PIC_COUNT]; //last ready reference MB offset</span>
+<span id="L518"><span class="lineNum">     518</span>              :   PPictInfo               pPictInfoList;</span>
+<span id="L519"><span class="lineNum">     519</span>              :   PPictReoderingStatus    pPictReoderingStatus;</span>
+<span id="L520"><span class="lineNum">     520</span>              : } SWelsDecoderContext, *PWelsDecoderContext;</span>
+<span id="L521"><span class="lineNum">     521</span>              : </span>
+<span id="L522"><span class="lineNum">     522</span>              : typedef struct tagSWelsDecThread {</span>
+<span id="L523"><span class="lineNum">     523</span>              :   SWelsDecSemphore* sIsBusy;</span>
+<span id="L524"><span class="lineNum">     524</span>              :   SWelsDecSemphore sIsActivated;</span>
+<span id="L525"><span class="lineNum">     525</span>              :   SWelsDecSemphore sIsIdle;</span>
+<span id="L526"><span class="lineNum">     526</span>              :   SWelsDecThread sThrHandle;</span>
+<span id="L527"><span class="lineNum">     527</span>              :   uint32_t uiCommand;</span>
+<span id="L528"><span class="lineNum">     528</span>              :   uint32_t uiThrNum;</span>
+<span id="L529"><span class="lineNum">     529</span>              :   uint32_t uiThrMaxNum;</span>
+<span id="L530"><span class="lineNum">     530</span>              :   uint32_t uiThrStackSize;</span>
+<span id="L531"><span class="lineNum">     531</span>              :   DECLARE_PROCTHREAD_PTR (pThrProcMain);</span>
+<span id="L532"><span class="lineNum">     532</span>              : } SWelsDecThreadInfo, *PWelsDecThreadInfo;</span>
+<span id="L533"><span class="lineNum">     533</span>              : </span>
+<span id="L534"><span class="lineNum">     534</span>              : typedef struct tagSWelsDecThreadCtx {</span>
+<span id="L535"><span class="lineNum">     535</span>              :   SWelsDecThreadInfo sThreadInfo;</span>
+<span id="L536"><span class="lineNum">     536</span>              :   PWelsDecoderContext pCtx;</span>
+<span id="L537"><span class="lineNum">     537</span>              :   void* threadCtxOwner;</span>
+<span id="L538"><span class="lineNum">     538</span>              :   uint8_t* kpSrc;</span>
+<span id="L539"><span class="lineNum">     539</span>              :   int32_t kiSrcLen;</span>
+<span id="L540"><span class="lineNum">     540</span>              :   uint8_t** ppDst;</span>
+<span id="L541"><span class="lineNum">     541</span>              :   SBufferInfo sDstInfo;</span>
+<span id="L542"><span class="lineNum">     542</span>              :   PPicture pDec;</span>
+<span id="L543"><span class="lineNum">     543</span>              :   SWelsDecEvent sImageReady;</span>
+<span id="L544"><span class="lineNum">     544</span>              :   SWelsDecEvent sSliceDecodeStart;</span>
+<span id="L545"><span class="lineNum">     545</span>              :   SWelsDecEvent sSliceDecodeFinish;</span>
+<span id="L546"><span class="lineNum">     546</span>              :   int32_t       iPicBuffIdx; //picBuff Index</span>
+<span id="L547"><span class="lineNum">     547</span>              : } SWelsDecoderThreadCTX, *PWelsDecoderThreadCTX;</span>
+<span id="L548"><span class="lineNum">     548</span>              : </span>
+<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">      433428 : static inline void ResetActiveSPSForEachLayer (PWelsDecoderContext pCtx) {</span></span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">      433428 :   if (pCtx-&gt;iTotalNumMbRec == 0) {</span></span>
+<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">     2941848 :     for (int i = 0; i &lt; MAX_LAYER_NUM; i++) {</span></span>
+<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">     2614976 :       pCtx-&gt;sSpsPpsCtx.pActiveLayerSps[i] = NULL;</span></span>
+<span id="L553"><span class="lineNum">     553</span>              :     }</span>
+<span id="L554"><span class="lineNum">     554</span>              :   }</span>
+<span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">      433428 : }</span></span>
+<span id="L556"><span class="lineNum">     556</span> <span class="tlaGNC">    77813047 : static inline int32_t GetThreadCount (PWelsDecoderContext pCtx) {</span></span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">    77813047 :   int32_t iThreadCount = 0;</span></span>
+<span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">    77813047 :   if (pCtx-&gt;pThreadCtx != NULL) {</span></span>
+<span id="L559"><span class="lineNum">     559</span> <span class="tlaUNC">           0 :     PWelsDecoderThreadCTX pThreadCtx = (PWelsDecoderThreadCTX)pCtx-&gt;pThreadCtx;</span></span>
+<span id="L560"><span class="lineNum">     560</span> <span class="tlaUNC">           0 :     iThreadCount = pThreadCtx-&gt;sThreadInfo.uiThrMaxNum;</span></span>
+<span id="L561"><span class="lineNum">     561</span>              :   }</span>
+<span id="L562"><span class="lineNum">     562</span> <span class="tlaGNC">    77813047 :   return iThreadCount;</span></span>
+<span id="L563"><span class="lineNum">     563</span>              : }</span>
+<span id="L564"><span class="lineNum">     564</span>              : //GetPrevFrameNum only applies when thread count &gt;= 2</span>
+<span id="L565"><span class="lineNum">     565</span> <span class="tlaUNC">           0 : static inline int32_t GetPrevFrameNum (PWelsDecoderContext pCtx) {</span></span>
+<span id="L566"><span class="lineNum">     566</span> <span class="tlaUNC">           0 :   if (pCtx-&gt;uiDecodingTimeStamp &gt; 0) {</span></span>
+<span id="L567"><span class="lineNum">     567</span> <span class="tlaUNC">           0 :     PWelsDecoderThreadCTX pThreadCtx = (PWelsDecoderThreadCTX)pCtx-&gt;pThreadCtx;</span></span>
+<span id="L568"><span class="lineNum">     568</span> <span class="tlaUNC">           0 :     int32_t iThreadCount = int32_t (pThreadCtx-&gt;sThreadInfo.uiThrMaxNum);</span></span>
+<span id="L569"><span class="lineNum">     569</span> <span class="tlaUNC">           0 :     int32_t  uiThrNum = int32_t (pThreadCtx-&gt;sThreadInfo.uiThrNum);</span></span>
+<span id="L570"><span class="lineNum">     570</span> <span class="tlaUNC">           0 :     for (int32_t i = 0; i &lt; iThreadCount; ++i) {</span></span>
+<span id="L571"><span class="lineNum">     571</span> <span class="tlaUNC">           0 :       int32_t id = i - uiThrNum;</span></span>
+<span id="L572"><span class="lineNum">     572</span> <span class="tlaUNC">           0 :       if (id != 0 &amp;&amp; pThreadCtx[id].pCtx-&gt;uiDecodingTimeStamp == pCtx-&gt;uiDecodingTimeStamp - 1) {</span></span>
+<span id="L573"><span class="lineNum">     573</span> <span class="tlaUNC">           0 :         if (pThreadCtx[id].pCtx-&gt;pDec != NULL) {</span></span>
+<span id="L574"><span class="lineNum">     574</span> <span class="tlaUNC">           0 :           int32_t iFrameNum = pThreadCtx[id].pCtx-&gt;pDec-&gt;iFrameNum;</span></span>
+<span id="L575"><span class="lineNum">     575</span> <span class="tlaUNC">           0 :           if (iFrameNum &gt;= 0) return iFrameNum;</span></span>
+<span id="L576"><span class="lineNum">     576</span>              :         }</span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaUNC">           0 :         return pThreadCtx[id].pCtx-&gt;iFrameNum;</span></span>
+<span id="L578"><span class="lineNum">     578</span>              :       }</span>
+<span id="L579"><span class="lineNum">     579</span>              :     }</span>
+<span id="L580"><span class="lineNum">     580</span>              :   }</span>
+<span id="L581"><span class="lineNum">     581</span> <span class="tlaUNC">           0 :   return pCtx-&gt;pLastDecPicInfo-&gt;iPrevFrameNum;</span></span>
+<span id="L582"><span class="lineNum">     582</span>              : }</span>
+<span id="L583"><span class="lineNum">     583</span>              : //#ifdef __cplusplus</span>
+<span id="L584"><span class="lineNum">     584</span>              : //}</span>
+<span id="L585"><span class="lineNum">     585</span>              : //#endif//__cplusplus</span>
+<span id="L586"><span class="lineNum">     586</span>              : </span>
+<span id="L587"><span class="lineNum">     587</span>              : </span>
+<span id="L588"><span class="lineNum">     588</span>              : } // namespace WelsDec</span>
+<span id="L589"><span class="lineNum">     589</span>              : </span>
+<span id="L590"><span class="lineNum">     590</span>              : #endif//WELS_DECODER_FRAMEWORK_H__</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

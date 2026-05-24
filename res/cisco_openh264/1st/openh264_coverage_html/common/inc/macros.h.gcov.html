@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - openh264_coverage.filtered.info - common/inc/macros.h</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory common/inc">common/inc</a> - macros.h<span style="font-size: 80%;"> (source / <a href="macros.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">openh264_coverage.filtered.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-05-24 06:03:43</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
+          </tr>
+                  <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : /*!</span>
+<span id="L2"><span class="lineNum">       2</span>              :  * \copy</span>
+<span id="L3"><span class="lineNum">       3</span>              :  *     Copyright (c)  2009-2013, Cisco Systems</span>
+<span id="L4"><span class="lineNum">       4</span>              :  *     All rights reserved.</span>
+<span id="L5"><span class="lineNum">       5</span>              :  *</span>
+<span id="L6"><span class="lineNum">       6</span>              :  *     Redistribution and use in source and binary forms, with or without</span>
+<span id="L7"><span class="lineNum">       7</span>              :  *     modification, are permitted provided that the following conditions</span>
+<span id="L8"><span class="lineNum">       8</span>              :  *     are met:</span>
+<span id="L9"><span class="lineNum">       9</span>              :  *</span>
+<span id="L10"><span class="lineNum">      10</span>              :  *        * Redistributions of source code must retain the above copyright</span>
+<span id="L11"><span class="lineNum">      11</span>              :  *          notice, this list of conditions and the following disclaimer.</span>
+<span id="L12"><span class="lineNum">      12</span>              :  *</span>
+<span id="L13"><span class="lineNum">      13</span>              :  *        * Redistributions in binary form must reproduce the above copyright</span>
+<span id="L14"><span class="lineNum">      14</span>              :  *          notice, this list of conditions and the following disclaimer in</span>
+<span id="L15"><span class="lineNum">      15</span>              :  *          the documentation and/or other materials provided with the</span>
+<span id="L16"><span class="lineNum">      16</span>              :  *          distribution.</span>
+<span id="L17"><span class="lineNum">      17</span>              :  *</span>
+<span id="L18"><span class="lineNum">      18</span>              :  *     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span id="L19"><span class="lineNum">      19</span>              :  *     &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span id="L20"><span class="lineNum">      20</span>              :  *     LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span>
+<span id="L21"><span class="lineNum">      21</span>              :  *     FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span>
+<span id="L22"><span class="lineNum">      22</span>              :  *     COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span>
+<span id="L23"><span class="lineNum">      23</span>              :  *     INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span>
+<span id="L24"><span class="lineNum">      24</span>              :  *     BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span>
+<span id="L25"><span class="lineNum">      25</span>              :  *     LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<span id="L26"><span class="lineNum">      26</span>              :  *     CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span>
+<span id="L27"><span class="lineNum">      27</span>              :  *     LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span>
+<span id="L28"><span class="lineNum">      28</span>              :  *     ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<span id="L29"><span class="lineNum">      29</span>              :  *     POSSIBILITY OF SUCH DAMAGE.</span>
+<span id="L30"><span class="lineNum">      30</span>              :  *</span>
+<span id="L31"><span class="lineNum">      31</span>              :  *</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * \file    macros.h</span>
+<span id="L33"><span class="lineNum">      33</span>              :  *</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * \brief   MACRO based tool utilization</span>
+<span id="L35"><span class="lineNum">      35</span>              :  *</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * \date    3/13/2009 Created</span>
+<span id="L37"><span class="lineNum">      37</span>              :  *</span>
+<span id="L38"><span class="lineNum">      38</span>              :  *************************************************************************************</span>
+<span id="L39"><span class="lineNum">      39</span>              :  */</span>
+<span id="L40"><span class="lineNum">      40</span>              : #ifndef WELS_MACRO_UTILIZATIONS_H__</span>
+<span id="L41"><span class="lineNum">      41</span>              : #define WELS_MACRO_UTILIZATIONS_H__</span>
+<span id="L42"><span class="lineNum">      42</span>              : </span>
+<span id="L43"><span class="lineNum">      43</span>              : #include &lt;math.h&gt;</span>
+<span id="L44"><span class="lineNum">      44</span>              : #include &lt;assert.h&gt;</span>
+<span id="L45"><span class="lineNum">      45</span>              : #include &lt;string.h&gt;</span>
+<span id="L46"><span class="lineNum">      46</span>              : #include &quot;typedefs.h&quot;</span>
+<span id="L47"><span class="lineNum">      47</span>              : </span>
+<span id="L48"><span class="lineNum">      48</span>              : </span>
+<span id="L49"><span class="lineNum">      49</span>              : /*</span>
+<span id="L50"><span class="lineNum">      50</span>              : * ENFORCE_STACK_ALIGN_1D: force 1 dimension local data aligned in stack</span>
+<span id="L51"><span class="lineNum">      51</span>              : * _tp: type</span>
+<span id="L52"><span class="lineNum">      52</span>              : * _nm: var name</span>
+<span id="L53"><span class="lineNum">      53</span>              : * _sz: size</span>
+<span id="L54"><span class="lineNum">      54</span>              : * _al: align bytes</span>
+<span id="L55"><span class="lineNum">      55</span>              : * auxiliary var: _nm ## _tEmP</span>
+<span id="L56"><span class="lineNum">      56</span>              : */</span>
+<span id="L57"><span class="lineNum">      57</span>              : #define ENFORCE_STACK_ALIGN_1D(_tp, _nm, _sz, _al) \</span>
+<span id="L58"><span class="lineNum">      58</span>              :     _tp _nm ## _tEmP[(_sz)+(_al)-1]; \</span>
+<span id="L59"><span class="lineNum">      59</span>              :     _tp *_nm = _nm ## _tEmP + ((_al)-1) - (((uintptr_t)(_nm ## _tEmP + ((_al)-1)) &amp; ((_al)-1))/sizeof(_tp));</span>
+<span id="L60"><span class="lineNum">      60</span>              : </span>
+<span id="L61"><span class="lineNum">      61</span>              : </span>
+<span id="L62"><span class="lineNum">      62</span>              : #define ENFORCE_STACK_ALIGN_2D(_tp, _nm, _cx, _cy, _al) \</span>
+<span id="L63"><span class="lineNum">      63</span>              :     assert( ((_al) &amp;&amp; !((_al) &amp; ((_al) - 1))) &amp;&amp; ((_al) &gt;= sizeof(_tp)) ); /*_al should be power-of-2 and &gt;= sizeof(_tp)*/\</span>
+<span id="L64"><span class="lineNum">      64</span>              :     _tp _nm ## _tEmP[(_cx)*(_cy)+(_al)/sizeof(_tp)-1]; \</span>
+<span id="L65"><span class="lineNum">      65</span>              :     _tp *_nm ## _tEmP_al = _nm ## _tEmP + ((_al)/sizeof(_tp)-1); \</span>
+<span id="L66"><span class="lineNum">      66</span>              :     _nm ## _tEmP_al -= (((uintptr_t)_nm ## _tEmP_al &amp; ((_al)-1))/sizeof(_tp)); \</span>
+<span id="L67"><span class="lineNum">      67</span>              :     _tp (*_nm)[(_cy)] = (_tp (*)[(_cy)])_nm ## _tEmP_al;</span>
+<span id="L68"><span class="lineNum">      68</span>              : </span>
+<span id="L69"><span class="lineNum">      69</span>              : </span>
+<span id="L70"><span class="lineNum">      70</span>              : #if defined(_MSC_VER)</span>
+<span id="L71"><span class="lineNum">      71</span>              : </span>
+<span id="L72"><span class="lineNum">      72</span>              : #if(_MSC_VER &lt; 1700)</span>
+<span id="L73"><span class="lineNum">      73</span>              : #define inline __inline</span>
+<span id="L74"><span class="lineNum">      74</span>              : #endif</span>
+<span id="L75"><span class="lineNum">      75</span>              : </span>
+<span id="L76"><span class="lineNum">      76</span>              : #define ALIGNED_DECLARE( type, var, n ) __declspec(align(n)) type var</span>
+<span id="L77"><span class="lineNum">      77</span>              : </span>
+<span id="L78"><span class="lineNum">      78</span>              : #elif defined(__GNUC__)</span>
+<span id="L79"><span class="lineNum">      79</span>              : </span>
+<span id="L80"><span class="lineNum">      80</span>              : #define ALIGNED_DECLARE( type, var, n ) type var __attribute__((aligned(n)))</span>
+<span id="L81"><span class="lineNum">      81</span>              : #endif//_MSC_VER</span>
+<span id="L82"><span class="lineNum">      82</span>              : </span>
+<span id="L83"><span class="lineNum">      83</span>              : </span>
+<span id="L84"><span class="lineNum">      84</span>              : #ifndef WELS_ALIGN</span>
+<span id="L85"><span class="lineNum">      85</span>              : #define WELS_ALIGN(x, n) (((x)+(n)-1)&amp;~((n)-1))</span>
+<span id="L86"><span class="lineNum">      86</span>              : #endif//WELS_ALIGN</span>
+<span id="L87"><span class="lineNum">      87</span>              : </span>
+<span id="L88"><span class="lineNum">      88</span>              : </span>
+<span id="L89"><span class="lineNum">      89</span>              : #if 1 // Alternative implementation of WELS_MAX and WELS_MIN</span>
+<span id="L90"><span class="lineNum">      90</span>              : #ifndef WELS_MAX</span>
+<span id="L91"><span class="lineNum">      91</span>              : #define WELS_MAX(x, y) ((x) &gt; (y) ? (x) : (y))</span>
+<span id="L92"><span class="lineNum">      92</span>              : #endif//WELS_MAX</span>
+<span id="L93"><span class="lineNum">      93</span>              : </span>
+<span id="L94"><span class="lineNum">      94</span>              : #ifndef WELS_MIN</span>
+<span id="L95"><span class="lineNum">      95</span>              : #define WELS_MIN(x, y) ((x) &lt; (y) ? (x) : (y))</span>
+<span id="L96"><span class="lineNum">      96</span>              : #endif//WELS_MIN</span>
+<span id="L97"><span class="lineNum">      97</span>              : #ifndef WELS_MIN_POSITIVE</span>
+<span id="L98"><span class="lineNum">      98</span>              : #define WELS_MIN_POSITIVE(x, y) (x &gt;= 0 &amp;&amp; y &gt;= 0) ? WELS_MIN(x, y) : WELS_MAX(x, y);</span>
+<span id="L99"><span class="lineNum">      99</span>              : #endif//WELS_MIN_POSITIVE</span>
+<span id="L100"><span class="lineNum">     100</span>              : #else // Alternative implementation of WELS_MAX and WELS_MIN</span>
+<span id="L101"><span class="lineNum">     101</span>              : #ifndef WELS_MAX</span>
+<span id="L102"><span class="lineNum">     102</span>              : #define WELS_MAX(x, y) ((x) - (((x)-(y))&amp;(((x)-(y))&gt;&gt;31)))</span>
+<span id="L103"><span class="lineNum">     103</span>              : #endif//WELS_MAX</span>
+<span id="L104"><span class="lineNum">     104</span>              : </span>
+<span id="L105"><span class="lineNum">     105</span>              : #ifndef WELS_MIN</span>
+<span id="L106"><span class="lineNum">     106</span>              : #define WELS_MIN(x, y) ((y) + (((x)-(y))&amp;(((x)-(y))&gt;&gt;31)))</span>
+<span id="L107"><span class="lineNum">     107</span>              : #endif//WELS_MIN</span>
+<span id="L108"><span class="lineNum">     108</span>              : #endif // Alternative implementation of WELS_MAX and WELS_MIN</span>
+<span id="L109"><span class="lineNum">     109</span>              : </span>
+<span id="L110"><span class="lineNum">     110</span>              : </span>
+<span id="L111"><span class="lineNum">     111</span>              : #ifndef WELS_CEIL</span>
+<span id="L112"><span class="lineNum">     112</span>              : #define WELS_CEIL(x) ceil(x) // FIXME: low complexity instead of math library used</span>
+<span id="L113"><span class="lineNum">     113</span>              : #endif//WELS_CEIL</span>
+<span id="L114"><span class="lineNum">     114</span>              : </span>
+<span id="L115"><span class="lineNum">     115</span>              : #ifndef WELS_FLOOR</span>
+<span id="L116"><span class="lineNum">     116</span>              : #define WELS_FLOOR(x) floor(x)        // FIXME: low complexity instead of math library used</span>
+<span id="L117"><span class="lineNum">     117</span>              : #endif//WELS_FLOOR</span>
+<span id="L118"><span class="lineNum">     118</span>              : </span>
+<span id="L119"><span class="lineNum">     119</span>              : #ifndef WELS_ROUND</span>
+<span id="L120"><span class="lineNum">     120</span>              : #define WELS_ROUND(x) ((int32_t)(0.5+(x)))</span>
+<span id="L121"><span class="lineNum">     121</span>              : #endif//WELS_ROUND</span>
+<span id="L122"><span class="lineNum">     122</span>              : </span>
+<span id="L123"><span class="lineNum">     123</span>              : #ifndef WELS_ROUND64</span>
+<span id="L124"><span class="lineNum">     124</span>              : #define WELS_ROUND64(x) ((int64_t)(0.5+(x)))</span>
+<span id="L125"><span class="lineNum">     125</span>              : #endif//WELS_ROUND</span>
+<span id="L126"><span class="lineNum">     126</span>              : </span>
+<span id="L127"><span class="lineNum">     127</span>              : #ifndef WELS_DIV_ROUND</span>
+<span id="L128"><span class="lineNum">     128</span>              : #define WELS_DIV_ROUND(x,y) ((int32_t)((y)==0?((x)/((y)+1)):(((y)/2+(x))/(y))))</span>
+<span id="L129"><span class="lineNum">     129</span>              : #endif//WELS_DIV_ROUND</span>
+<span id="L130"><span class="lineNum">     130</span>              : </span>
+<span id="L131"><span class="lineNum">     131</span>              : #ifndef WELS_DIV_ROUND64</span>
+<span id="L132"><span class="lineNum">     132</span>              : #define WELS_DIV_ROUND64(x,y) ((int64_t)((y)==0?((x)/((y)+1)):(((y)/2+(x))/(y))))</span>
+<span id="L133"><span class="lineNum">     133</span>              : #endif//WELS_DIV_ROUND64</span>
+<span id="L134"><span class="lineNum">     134</span>              : </span>
+<span id="L135"><span class="lineNum">     135</span>              : #define WELS_NON_ZERO_COUNT_AVERAGE(nC,nA,nB) {         \</span>
+<span id="L136"><span class="lineNum">     136</span>              :   nC = nA + nB + 1;                                     \</span>
+<span id="L137"><span class="lineNum">     137</span>              :   nC &gt;&gt;= (uint8_t)( nA != -1 &amp;&amp; nB != -1);              \</span>
+<span id="L138"><span class="lineNum">     138</span>              :   nC += (uint8_t)(nA == -1 &amp;&amp; nB == -1);                \</span>
+<span id="L139"><span class="lineNum">     139</span>              : }</span>
+<span id="L140"><span class="lineNum">     140</span>              : </span>
+<span id="L141"><span class="lineNum">     141</span>              : static inline int32_t CeilLog2 (int32_t i) {</span>
+<span id="L142"><span class="lineNum">     142</span>              :   int32_t s = 0;</span>
+<span id="L143"><span class="lineNum">     143</span>              :   i--;</span>
+<span id="L144"><span class="lineNum">     144</span>              :   while (i &gt; 0) {</span>
+<span id="L145"><span class="lineNum">     145</span>              :     s++;</span>
+<span id="L146"><span class="lineNum">     146</span>              :     i &gt;&gt;= 1;</span>
+<span id="L147"><span class="lineNum">     147</span>              :   }</span>
+<span id="L148"><span class="lineNum">     148</span>              :   return s;</span>
+<span id="L149"><span class="lineNum">     149</span>              : }</span>
+<span id="L150"><span class="lineNum">     150</span>              : /*</span>
+<span id="L151"><span class="lineNum">     151</span>              : the second path will degrades the performance</span>
+<span id="L152"><span class="lineNum">     152</span>              : */</span>
+<span id="L153"><span class="lineNum">     153</span>              : #if 1</span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">    12898538 : static inline int32_t WelsMedian (int32_t iX,  int32_t iY, int32_t iZ) {</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">    12898538 :   int32_t iMin = iX, iMax = iX;</span></span>
+<span id="L156"><span class="lineNum">     156</span>              : </span>
+<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">    12898538 :   if (iY &lt; iMin)</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">     3278933 :     iMin = iY;</span></span>
+<span id="L159"><span class="lineNum">     159</span>              :   else</span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">     9619605 :     iMax = iY;</span></span>
+<span id="L161"><span class="lineNum">     161</span>              : </span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">    12898538 :   if (iZ &lt; iMin)</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">     1670385 :     iMin = iZ;</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">    11228153 :   else if (iZ &gt; iMax)</span></span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">     1460028 :     iMax = iZ;</span></span>
+<span id="L166"><span class="lineNum">     166</span>              : </span>
+<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">    12898538 :   return (iX + iY + iZ) - (iMin + iMax);</span></span>
+<span id="L168"><span class="lineNum">     168</span>              : }</span>
+<span id="L169"><span class="lineNum">     169</span>              : #else</span>
+<span id="L170"><span class="lineNum">     170</span>              : static inline int32_t WelsMedian (int32_t iX,  int32_t iY, int32_t iZ) {</span>
+<span id="L171"><span class="lineNum">     171</span>              :   int32_t iTmp = (iX - iY) &amp; ((iX - iY) &gt;&gt; 31);</span>
+<span id="L172"><span class="lineNum">     172</span>              :   iX -= iTmp;</span>
+<span id="L173"><span class="lineNum">     173</span>              :   iY += iTmp;</span>
+<span id="L174"><span class="lineNum">     174</span>              :   iY -= (iY - iZ) &amp; ((iY - iZ) &gt;&gt; 31);</span>
+<span id="L175"><span class="lineNum">     175</span>              :   iY += (iX - iY) &amp; ((iX - iY) &gt;&gt; 31);</span>
+<span id="L176"><span class="lineNum">     176</span>              :   return iY;</span>
+<span id="L177"><span class="lineNum">     177</span>              : }</span>
+<span id="L178"><span class="lineNum">     178</span>              : </span>
+<span id="L179"><span class="lineNum">     179</span>              : #endif</span>
+<span id="L180"><span class="lineNum">     180</span>              : </span>
+<span id="L181"><span class="lineNum">     181</span>              : #ifndef NEG_NUM</span>
+<span id="L182"><span class="lineNum">     182</span>              : //#define NEG_NUM( num ) (-num)</span>
+<span id="L183"><span class="lineNum">     183</span>              : #define NEG_NUM(iX) (1+(~(iX)))</span>
+<span id="L184"><span class="lineNum">     184</span>              : #endif// NEG_NUM</span>
+<span id="L185"><span class="lineNum">     185</span>              : </span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">  1782819806 : static inline uint8_t WelsClip1 (int32_t iX) {</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">  1782819806 :   uint8_t uiTmp = (uint8_t) (((iX) &amp; ~255) ? (- (iX) &gt;&gt; 31) : (iX));</span></span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">  1782819806 :   return uiTmp;</span></span>
+<span id="L189"><span class="lineNum">     189</span>              : }</span>
+<span id="L190"><span class="lineNum">     190</span>              : </span>
+<span id="L191"><span class="lineNum">     191</span>              : #ifndef WELS_SIGN</span>
+<span id="L192"><span class="lineNum">     192</span>              : #define WELS_SIGN(iX) ((int32_t)(iX) &gt;&gt; 31)</span>
+<span id="L193"><span class="lineNum">     193</span>              : #endif //WELS_SIGN</span>
+<span id="L194"><span class="lineNum">     194</span>              : #ifndef WELS_ABS</span>
+<span id="L195"><span class="lineNum">     195</span>              : #if 1</span>
+<span id="L196"><span class="lineNum">     196</span>              : #define WELS_ABS(iX) ((iX)&gt;0 ? (iX) : -(iX))</span>
+<span id="L197"><span class="lineNum">     197</span>              : #else</span>
+<span id="L198"><span class="lineNum">     198</span>              : #define WELS_ABS(iX) ((WELS_SIGN(iX) ^ (int32_t)(iX)) - WELS_SIGN(iX))</span>
+<span id="L199"><span class="lineNum">     199</span>              : #endif</span>
+<span id="L200"><span class="lineNum">     200</span>              : #endif //WELS_ABS</span>
+<span id="L201"><span class="lineNum">     201</span>              : </span>
+<span id="L202"><span class="lineNum">     202</span>              : // WELS_CLIP3</span>
+<span id="L203"><span class="lineNum">     203</span>              : #ifndef WELS_CLIP3</span>
+<span id="L204"><span class="lineNum">     204</span>              : #define WELS_CLIP3(iX, iY, iZ) ((iX) &lt; (iY) ? (iY) : ((iX) &gt; (iZ) ? (iZ) : (iX)))</span>
+<span id="L205"><span class="lineNum">     205</span>              : #endif //WELS_CLIP3</span>
+<span id="L206"><span class="lineNum">     206</span>              : </span>
+<span id="L207"><span class="lineNum">     207</span>              : template&lt;typename T&gt; T WelsClip3(T iX, T iY, T iZ) {</span>
+<span id="L208"><span class="lineNum">     208</span>              :   if (iX &lt; iY)</span>
+<span id="L209"><span class="lineNum">     209</span>              :     return iY;</span>
+<span id="L210"><span class="lineNum">     210</span>              :   if (iX &gt; iZ)</span>
+<span id="L211"><span class="lineNum">     211</span>              :     return iZ;</span>
+<span id="L212"><span class="lineNum">     212</span>              :   return iX;</span>
+<span id="L213"><span class="lineNum">     213</span>              : }</span>
+<span id="L214"><span class="lineNum">     214</span>              : </span>
+<span id="L215"><span class="lineNum">     215</span>              : #define DISALLOW_COPY_AND_ASSIGN(cclass) \</span>
+<span id="L216"><span class="lineNum">     216</span>              : private:        \</span>
+<span id="L217"><span class="lineNum">     217</span>              : cclass(const cclass &amp;);     \</span>
+<span id="L218"><span class="lineNum">     218</span>              : cclass&amp; operator=(const cclass &amp;);</span>
+<span id="L219"><span class="lineNum">     219</span>              : </span>
+<span id="L220"><span class="lineNum">     220</span>              : /*</span>
+<span id="L221"><span class="lineNum">     221</span>              :  * Description: to check variable validation and return the specified result</span>
+<span id="L222"><span class="lineNum">     222</span>              :  *  iResult:    value to be checked</span>
+<span id="L223"><span class="lineNum">     223</span>              :  *  iExpected:  the expected value</span>
+<span id="L224"><span class="lineNum">     224</span>              :  */</span>
+<span id="L225"><span class="lineNum">     225</span>              : #ifndef WELS_VERIFY_RETURN_IFNEQ</span>
+<span id="L226"><span class="lineNum">     226</span>              : #define WELS_VERIFY_RETURN_IFNEQ(iResult, iExpected) \</span>
+<span id="L227"><span class="lineNum">     227</span>              :   if (iResult != iExpected) {                        \</span>
+<span id="L228"><span class="lineNum">     228</span>              :     return iResult;                                  \</span>
+<span id="L229"><span class="lineNum">     229</span>              :   }</span>
+<span id="L230"><span class="lineNum">     230</span>              : #endif//#if WELS_VERIFY_RETURN_IF</span>
+<span id="L231"><span class="lineNum">     231</span>              : </span>
+<span id="L232"><span class="lineNum">     232</span>              : /*</span>
+<span id="L233"><span class="lineNum">     233</span>              :  * Description: to check variable validation and return the specified result</span>
+<span id="L234"><span class="lineNum">     234</span>              :  *  iResult:    value to be return</span>
+<span id="L235"><span class="lineNum">     235</span>              :  *  bCaseIf:    negative condition to be verified</span>
+<span id="L236"><span class="lineNum">     236</span>              :  */</span>
+<span id="L237"><span class="lineNum">     237</span>              : #ifndef WELS_VERIFY_RETURN_IF</span>
+<span id="L238"><span class="lineNum">     238</span>              : #define WELS_VERIFY_RETURN_IF(iResult, bCaseIf) \</span>
+<span id="L239"><span class="lineNum">     239</span>              :   if (bCaseIf) {                                \</span>
+<span id="L240"><span class="lineNum">     240</span>              :     return iResult;                             \</span>
+<span id="L241"><span class="lineNum">     241</span>              :   }</span>
+<span id="L242"><span class="lineNum">     242</span>              : #endif//#if WELS_VERIFY_RETURN_IF</span>
+<span id="L243"><span class="lineNum">     243</span>              : </span>
+<span id="L244"><span class="lineNum">     244</span>              : /*</span>
+<span id="L245"><span class="lineNum">     245</span>              :  *  Description: to check variable validation and return the specified result</span>
+<span id="L246"><span class="lineNum">     246</span>              :  *      with correspoinding process advance.</span>
+<span id="L247"><span class="lineNum">     247</span>              :  *   result:    value to be return</span>
+<span id="L248"><span class="lineNum">     248</span>              :  *   case_if:   negative condition to be verified</span>
+<span id="L249"><span class="lineNum">     249</span>              :  *   proc:      process need perform</span>
+<span id="L250"><span class="lineNum">     250</span>              :  */</span>
+<span id="L251"><span class="lineNum">     251</span>              : #ifndef WELS_VERIFY_RETURN_PROC_IF</span>
+<span id="L252"><span class="lineNum">     252</span>              : #define WELS_VERIFY_RETURN_PROC_IF(iResult, bCaseIf, fProc) \</span>
+<span id="L253"><span class="lineNum">     253</span>              :   if (bCaseIf) {                                            \</span>
+<span id="L254"><span class="lineNum">     254</span>              :     fProc;                                                  \</span>
+<span id="L255"><span class="lineNum">     255</span>              :     return iResult;                                         \</span>
+<span id="L256"><span class="lineNum">     256</span>              :   }</span>
+<span id="L257"><span class="lineNum">     257</span>              : #endif//#if WELS_VERIFY_RETURN_PROC_IF</span>
+<span id="L258"><span class="lineNum">     258</span>              : </span>
+<span id="L259"><span class="lineNum">     259</span>              : static inline int32_t WELS_LOG2 (uint32_t v) {</span>
+<span id="L260"><span class="lineNum">     260</span>              :   int32_t r = 0;</span>
+<span id="L261"><span class="lineNum">     261</span>              :   while (v &gt;&gt;= 1) {</span>
+<span id="L262"><span class="lineNum">     262</span>              :     ++r;</span>
+<span id="L263"><span class="lineNum">     263</span>              :   }</span>
+<span id="L264"><span class="lineNum">     264</span>              :   return r;</span>
+<span id="L265"><span class="lineNum">     265</span>              : </span>
+<span id="L266"><span class="lineNum">     266</span>              : }</span>
+<span id="L267"><span class="lineNum">     267</span>              : </span>
+<span id="L268"><span class="lineNum">     268</span>              : #define CLIP3_QP_0_51(q) WELS_CLIP3(q, 0, 51) // ((q) &lt; (0) ? (0) : ((q) &gt; (51) ? (51) : (q)))</span>
+<span id="L269"><span class="lineNum">     269</span>              : #define   CALC_BI_STRIDE(width,bitcount)  ((((width * bitcount) + 31) &amp; ~31) &gt;&gt; 3)</span>
+<span id="L270"><span class="lineNum">     270</span>              : </span>
+<span id="L271"><span class="lineNum">     271</span>              : </span>
+<span id="L272"><span class="lineNum">     272</span>              : </span>
+<span id="L273"><span class="lineNum">     273</span>              : </span>
+<span id="L274"><span class="lineNum">     274</span>              : #ifndef BUTTERFLY1x2</span>
+<span id="L275"><span class="lineNum">     275</span>              : #define BUTTERFLY1x2(b) (((b)&lt;&lt;8) | (b))</span>
+<span id="L276"><span class="lineNum">     276</span>              : #endif//BUTTERFLY1x2</span>
+<span id="L277"><span class="lineNum">     277</span>              : </span>
+<span id="L278"><span class="lineNum">     278</span>              : #ifndef BUTTERFLY2x4</span>
+<span id="L279"><span class="lineNum">     279</span>              : #define BUTTERFLY2x4(wd) (((uint32_t)(wd)&lt;&lt;16) |(wd))</span>
+<span id="L280"><span class="lineNum">     280</span>              : #endif//BUTTERFLY2x4</span>
+<span id="L281"><span class="lineNum">     281</span>              : </span>
+<span id="L282"><span class="lineNum">     282</span>              : #ifndef BUTTERFLY4x8</span>
+<span id="L283"><span class="lineNum">     283</span>              : #define BUTTERFLY4x8(dw) (((uint64_t)(dw)&lt;&lt;32) | (dw))</span>
+<span id="L284"><span class="lineNum">     284</span>              : #endif//BUTTERFLY4x8</span>
+<span id="L285"><span class="lineNum">     285</span>              : </span>
+<span id="L286"><span class="lineNum">     286</span>              : static inline bool WELS_POWER2_IF (uint32_t v) {</span>
+<span id="L287"><span class="lineNum">     287</span>              :   return (v &amp;&amp; ! (v &amp; (v - 1)));</span>
+<span id="L288"><span class="lineNum">     288</span>              : }</span>
+<span id="L289"><span class="lineNum">     289</span>              : </span>
+<span id="L290"><span class="lineNum">     290</span>              : #if __GNUC__ &gt; 2 || (__GNUC__ == 2 &amp;&amp; __GNUC_MINOR__ &gt; 4)</span>
+<span id="L291"><span class="lineNum">     291</span>              : #define WELS_GCC_UNUSED  __attribute__((__unused__))</span>
+<span id="L292"><span class="lineNum">     292</span>              : #else</span>
+<span id="L293"><span class="lineNum">     293</span>              : #define WELS_GCC_UNUSED</span>
+<span id="L294"><span class="lineNum">     294</span>              : #endif</span>
+<span id="L295"><span class="lineNum">     295</span>              : </span>
+<span id="L296"><span class="lineNum">     296</span>              : inline bool CheckInRangeCloseOpen (const int16_t kiCurrent, const int16_t kiMin, const int16_t kiMax) {</span>
+<span id="L297"><span class="lineNum">     297</span>              :   return ((kiCurrent &gt;= kiMin) &amp;&amp; (kiCurrent &lt; kiMax));</span>
+<span id="L298"><span class="lineNum">     298</span>              : }</span>
+<span id="L299"><span class="lineNum">     299</span>              : </span>
+<span id="L300"><span class="lineNum">     300</span>              : static inline void WelsSetMemUint32_c (uint32_t* pDst, uint32_t iValue, int32_t iSizeOfData) {</span>
+<span id="L301"><span class="lineNum">     301</span>              :   for (int i = 0; i &lt; iSizeOfData; i++) {</span>
+<span id="L302"><span class="lineNum">     302</span>              :     pDst[i] = iValue;</span>
+<span id="L303"><span class="lineNum">     303</span>              :   }</span>
+<span id="L304"><span class="lineNum">     304</span>              : }</span>
+<span id="L305"><span class="lineNum">     305</span>              : </span>
+<span id="L306"><span class="lineNum">     306</span>              : static inline void WelsSetMemUint16_c (uint16_t* pDst, uint16_t iValue, int32_t iSizeOfData) {</span>
+<span id="L307"><span class="lineNum">     307</span>              :   for (int i = 0; i &lt; iSizeOfData; i++) {</span>
+<span id="L308"><span class="lineNum">     308</span>              :     pDst[i] = iValue;</span>
+<span id="L309"><span class="lineNum">     309</span>              :   }</span>
+<span id="L310"><span class="lineNum">     310</span>              : }</span>
+<span id="L311"><span class="lineNum">     311</span>              : </span>
+<span id="L312"><span class="lineNum">     312</span>              : inline void WelsSetMemMultiplebytes_c (void* pDst, uint32_t iValue, int32_t iSizeOfData, int32_t iDataLengthOfData) {</span>
+<span id="L313"><span class="lineNum">     313</span>              :   assert (4 == iDataLengthOfData || 2 == iDataLengthOfData || 1 == iDataLengthOfData);</span>
+<span id="L314"><span class="lineNum">     314</span>              : </span>
+<span id="L315"><span class="lineNum">     315</span>              :   // TODO: consider add assembly for these functions</span>
+<span id="L316"><span class="lineNum">     316</span>              :   if (0 != iValue) {</span>
+<span id="L317"><span class="lineNum">     317</span>              :     if (4 == iDataLengthOfData) {</span>
+<span id="L318"><span class="lineNum">     318</span>              :       WelsSetMemUint32_c (static_cast&lt;uint32_t*&gt; (pDst), static_cast&lt;uint32_t&gt; (iValue), iSizeOfData);</span>
+<span id="L319"><span class="lineNum">     319</span>              :     } else if (2 == iDataLengthOfData) {</span>
+<span id="L320"><span class="lineNum">     320</span>              :       WelsSetMemUint16_c (static_cast&lt;uint16_t*&gt; (pDst), static_cast&lt;uint16_t&gt; (iValue), iSizeOfData);</span>
+<span id="L321"><span class="lineNum">     321</span>              :     } else {</span>
+<span id="L322"><span class="lineNum">     322</span>              :       memset (static_cast&lt;uint8_t*&gt; (pDst), static_cast&lt;uint8_t&gt; (iValue), iSizeOfData);</span>
+<span id="L323"><span class="lineNum">     323</span>              :     }</span>
+<span id="L324"><span class="lineNum">     324</span>              :   } else {</span>
+<span id="L325"><span class="lineNum">     325</span>              :     memset (static_cast&lt;uint8_t*&gt; (pDst), 0, iSizeOfData * iDataLengthOfData);</span>
+<span id="L326"><span class="lineNum">     326</span>              :   }</span>
+<span id="L327"><span class="lineNum">     327</span>              : }</span>
+<span id="L328"><span class="lineNum">     328</span>              : </span>
+<span id="L329"><span class="lineNum">     329</span>              : #endif//WELS_MACRO_UTILIZATIONS_H__</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
