@@ -1,0 +1,80 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "" for node Body - skipping (line 1)                                                                                   
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "onoon" for node Body - skipping (line 1)                                                                              
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "="lace" for node Body - skipping (line 1)                                                                             
+[XMT Parsing] Warning: Node type Body doesn't match type UndefinedNode of node 1 (line 1)                                                                   
+[XMT Parsing] Warning: Unknown field "" for node Body - skipping (line 1)                                                                                   
+[XMT Parsing] Warning: Unknown field "="1e" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "oy" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "oon" for node Body - skipping (line 1)                                                                                
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 1)                                                                               
+[XMT Parsing] Warning: Unknown field "on" for node Body - skipping (line 1)                                                                                 
+[XMT Parsing] Warning: Unknown field "onoon" for node Body - skipping (line 1)                                                                              
+[XMT Parsing] Warning: Unknown field "onooShape" for node Body - skipping (line 1)                                                                          
+[XMT Parsing] Warning: Node type Body doesn't match type UndefinedNode of node 1 (line 1)                                                                   
+[XMT Parsing] Invalid XML document:  (line 1)                                                                                                               
+=================================================================                                                                                           
+==3905914==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b3915fe1270 at pc 0x7f1917a55382 bp 0x7ffd775cfac0 sp 0x7ffd775cfab8
+READ of size 8 at 0x7b3915fe1270 thread T0                                                                                                                  
+    #0 0x7f1917a55381 in gf_node_register scenegraph/base_scenegraph.c:769
+    #1 0x7f1918130b8e in load_xmt_done scene_manager/loader_xmt.c:3248
+    #2 0x55cf5f80f4b0 in EncodeFile /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3530
+    #3 0x55cf5f7d6cc4 in do_scene_encode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4764
+    #4 0x55cf5f7d6cc4 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6399
+    #5 0x7f1917433f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #6 0x7f1917434026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #7 0x55cf5f7b60b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 8d9486167c1b23c431a718a03d2ffc4f3b275ca0)
+
+0x7b3915fe1270 is located 0 bytes inside of 8-byte region [0x7b3915fe1270,0x7b3915fe1278)
+freed by thread T0 here:                                                                                                                                    
+    #0 0x7f191952340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f1917a58efc in gf_node_unregister scenegraph/base_scenegraph.c:759
+
+previously allocated by thread T0 here:
+    #0 0x7f191952435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f1917a5a341 in gf_sg_new_base_node scenegraph/base_scenegraph.c:1260
+    #2 0x7f1917a5a341 in gf_node_new scenegraph/base_scenegraph.c:1998
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:769 in gf_node_register
+Shadow bytes around the buggy address:
+  0x7b3915fe0f80: fa fa 00 00 fa fa 00 00 fa fa 00 01 fa fa 00 00
+  0x7b3915fe1000: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b3915fe1080: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b3915fe1100: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b3915fe1180: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x7b3915fe1200: fa fa fd fa fa fa fd fd fa fa fd fa fa fa[fd]fa
+  0x7b3915fe1280: fa fa fd fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3915fe1300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3915fe1380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3915fe1400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3915fe1480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3905914==ABORTING

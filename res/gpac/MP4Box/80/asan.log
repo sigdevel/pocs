@@ -1,0 +1,30 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==3901486==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x7f467133d9e2 bp 0x7c566f1e0180 sp 0x7ffc5ec4ded0 T0)
+==3901486==The signal is caused by a READ memory access.                                                                                                    
+==3901486==Hint: address points to the zero page.
+    #0 0x7f467133d9e2 in xmt_parse_element scene_manager/loader_xmt.c:1513
+    #1 0x7f46713440e3 in xmt_node_start scene_manager/loader_xmt.c:2682
+    #2 0x7f4670b8829c in xml_sax_node_start utils/xml_parser.c:307
+    #3 0x7f4670b8b28f in xml_sax_parse utils/xml_parser.c:862
+    #4 0x7f4670b8dc1d in gf_xml_sax_parse_intern utils/xml_parser.c:1108
+    #5 0x7f4670b8e1d7 in gf_xml_sax_parse utils/xml_parser.c:1136
+    #6 0x7f4670b8e533 in xml_sax_read_file utils/xml_parser.c:1223
+    #7 0x7f4670b8efe8 in gf_xml_sax_parse_file utils/xml_parser.c:1336
+    #8 0x7f4671336779 in load_xmt_run scene_manager/loader_xmt.c:3209
+    #9 0x55d276a744a6 in EncodeFile /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3529
+    #10 0x55d276a3bcc4 in do_scene_encode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4764
+    #11 0x55d276a3bcc4 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6399
+    #12 0x7f4670633f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7f4670634026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x55d276a1b0b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 8d9486167c1b23c431a718a03d2ffc4f3b275ca0)
+
+==3901486==Register values:
+rax = 0x0000000000000000  rbx = 0x00007c066f1e01c0  rcx = 0x0000000000000000  rdx = 0x0000000000000002  
+rdi = 0x0000000000000010  rsi = 0x0000000000000010  rbp = 0x00007c566f1e0180  rsp = 0x00007ffc5ec4ded0  
+ r8 = 0x00007f467077ad00   r9 = 0x0000000000000000  r10 = 0x000000000000000e  r11 = 0x00007f467291ac4c  
+r12 = 0x00007c566f1e0180  r13 = 0x00007c066f1e0101  r14 = 0x0000000000000000  r15 = 0x00000f68cdbfe1c0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/loader_xmt.c:1513 in xmt_parse_element
+==3901486==ABORTING
