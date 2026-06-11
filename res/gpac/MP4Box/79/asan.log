@@ -1,0 +1,29 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==3557314==ERROR: AddressSanitizer: SEGV on unknown address 0x7e16c7de0260 (pc 0x7ff5c917a4c7 bp 0x7d35c7de03ee sp 0x7ffcb79f7ae8 T0)
+==3557314==The signal is caused by a WRITE memory access.                                                                                                   
+    #0 0x7ff5c917a4c7 in __memmove_avx_unaligned_erms_rtm ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:540
+    #1 0x7ff5c958d3f3 in xml_sax_append_string utils/xml_parser.c:993
+    #2 0x7ff5c958d3f3 in gf_xml_sax_parse_intern utils/xml_parser.c:1101
+    #3 0x7ff5c958c951 in xml_sax_parse utils/xml_parser.c:920
+    #4 0x7ff5c958d432 in gf_xml_sax_parse_intern utils/xml_parser.c:1102
+    #5 0x7ff5c958c951 in xml_sax_parse utils/xml_parser.c:920
+    #6 0x7ff5c958dc1d in gf_xml_sax_parse_intern utils/xml_parser.c:1108
+    #7 0x7ff5c958e1d7 in gf_xml_sax_parse utils/xml_parser.c:1136
+    #8 0x7ff5c958e533 in xml_sax_read_file utils/xml_parser.c:1223
+    #9 0x7ff5c958efe8 in gf_xml_sax_parse_file utils/xml_parser.c:1336
+    #10 0x7ff5c9591568 in gf_xml_dom_parse utils/xml_parser.c:1904
+    #11 0x55bf3c94b17e in xml_bs_to_bin /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4034
+    #12 0x55bf3c968ecd in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6732
+    #13 0x7ff5c9033f74 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7ff5c9034026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55bf3c9450b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 8d9486167c1b23c431a718a03d2ffc4f3b275ca0)
+
+==3557314==Register values:
+rax = 0x00007e16c7de00fe  rbx = 0x0000000000000196  rcx = 0x00007e16c7de0200  rdx = 0x0000000000000196  
+rdi = 0x00007e16c7de00fe  rsi = 0x00007d35c7de00c2  rbp = 0x00007d35c7de03ee  rsp = 0x00007ffcb79f7ae8  
+ r8 = 0x0000000000000000   r9 = 0x00000fc358fb4050  r10 = 0x00000fc358fb4020  r11 = 0x00000fc358fb4020  
+r12 = 0x00007bf5c68f20e0  r13 = 0x00007d95c7de0080  r14 = 0x000000000000000a  r15 = 0x00007d35c7de0040  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:540 in __memmove_avx_unaligned_erms_rtm
+==3557314==ABORTING
