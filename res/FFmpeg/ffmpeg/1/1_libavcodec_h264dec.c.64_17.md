@@ -104,9 +104,9 @@ Specially crafted media file can cause ffmpeg to crash via a SEGV, such behavior
 
 link to the sample (github-url):
 
-[1_poc.mp4](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/1_poc.mp4)
+[1_poc.mp4](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/1/1_poc.mp4)
 
 #### Screenshots
-![screen](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/ffpmeg_1+2025-06-08_17-07.png?raw=true "screen")
+![screen](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/1/ffpmeg_1%2B2025-06-08_17-07.png?raw=true "screen")
 
-![screen](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/ffpmeg_1_clean+2025-06-08_17-07.png?raw=true "screen")
+![screen](https://github.com/sigdevel/pocs/blob/main/res/FFmpeg/ffmpeg/1/ffpmeg_1_clean%2B2025-06-08_17-07.png?raw=true "screen")
