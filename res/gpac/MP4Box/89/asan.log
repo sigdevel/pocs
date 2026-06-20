@@ -1,0 +1,38 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                           
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 304)                                                           
+[XMT Parsing] Warning: Unknown field "type" for node Valuator - skipping (line 508)                                                                         
+[XMT Parsing] Warning: Cannot locate node N23 for command Replace (line 516)                                                                                
+[XMT Parsing] Invalid XML document:  (line 548)                                                                                                             
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==539025==ERROR: AddressSanitizer: SEGV on unknown address (pc 0x7fae9af52bc0 bp 0x7bce997e27b00000 sp 0x7ffcdfe59b68 T0)
+==539025==The signal is caused by a READ memory access.                                                                                                     
+==539025==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
+    #0 0x7fae9af52bc0 in gf_list_count utils/list.c:664
+    #1 0x7fae9af53074 in gf_list_find utils/list.c:736
+    #2 0x7fae9b05a38f in gf_node_try_destroy scenegraph/base_scenegraph.c:663
+    #3 0x7fae9b066936 in gf_sg_command_del scenegraph/commands.c:120
+    #4 0x7fae9b72a443 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #5 0x7fae9b72a443 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #6 0x7fae9b72a443 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #7 0x7fae9b72a443 in gf_sm_del scene_manager/scene_manager.c:147
+    #8 0x7fae9bde0db7 in ctxload_process filters/load_bt_xmt.c:530
+    #9 0x7fae9bb591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #10 0x7fae9bb2d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #11 0x7fae9bb32632 in gf_fs_run filter_core/filter_session.c:2730
+    #12 0x7fae9b5f4a14 in gf_media_import media_tools/media_import.c:1307
+    #13 0x55e3606644b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #14 0x55e3606343a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #15 0x7fae9aa31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7fae9aa32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x55e3606100b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+==539025==Register values:
+rax = 0x0f79d32fc4f60001  rbx = 0x00007c0e997e24e0  rcx = 0x00000000000002e3  rdx = 0x7bce997e27b00008  
+rdi = 0x7bce997e27b00000  rsi = 0x00007c0e997e24e0  rbp = 0x7bce997e27b00000  rsp = 0x00007ffcdfe59b68  
+ r8 = 0x00007bce997e3720   r9 = 0x000000000003c3fe  r10 = 0x00007fae9cbce298  r11 = 0x00007fae9d01db18  
+r12 = 0x00000f8dd32fc0b8  r13 = 0x00007c0e997e24e0  r14 = 0x0000000000000000  r15 = 0x00007c6e997e05c0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV utils/list.c:664 in gf_list_count
+==539025==ABORTING

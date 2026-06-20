@@ -1,0 +1,59 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+=================================================================                                                                                           
+==531698==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c928c3e05f4 at pc 0x7fd28dc69e2e bp 0x7fff674736d0 sp 0x7fff674736c8
+READ of size 4 at 0x7c928c3e05f4 thread T0                                                                                                                  
+    #0 0x7fd28dc69e2d in gf_sg_command_apply scenegraph/commands.c:181
+    #1 0x7fd28e9e0d0d in ctxload_process filters/load_bt_xmt.c:622
+    #2 0x7fd28e7591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #3 0x7fd28e72d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #4 0x7fd28e732632 in gf_fs_run filter_core/filter_session.c:2730
+    #5 0x7fd28e1f4a14 in gf_media_import media_tools/media_import.c:1307
+    #6 0x5604ed6ed4b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #7 0x5604ed6bd3a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #8 0x7fd28d631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7fd28d632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x5604ed6990b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+0x7c928c3e05f4 is located 116 bytes inside of 120-byte region [0x7c928c3e0580,0x7c928c3e05f8)
+freed by thread T0 here:                                                                                                                                    
+    #0 0x7fd28f72340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fd28dd5fa3d in gf_sg_sfcommand_del scenegraph/vrml_tools.c:622
+
+previously allocated by thread T0 here:
+    #0 0x7fd28f72435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fd28dc665b2 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/commands.c:181 in gf_sg_command_apply
+Shadow bytes around the buggy address:
+  0x7c928c3e0300: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c928c3e0380: 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa fa
+  0x7c928c3e0400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c928c3e0480: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c928c3e0500: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+=>0x7c928c3e0580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]fa
+  0x7c928c3e0600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c928c3e0680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c928c3e0700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c928c3e0780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c928c3e0800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==531698==ABORTING
+                                         

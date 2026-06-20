@@ -1,0 +1,35 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Field scale not a member of node N0  (line 168)                                                                                      
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==633205==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000009 (pc 0x7f206353b3aa bp 0x7b90616135c0 sp 0x7fffeafca970 T0)
+==633205==The signal is caused by a READ memory access.                                                                                                     
+==633205==Hint: address points to the zero page.
+    #0 0x7f206353b3aa in xmt_node_end scene_manager/loader_xmt.c:2928
+    #1 0x7f206353b3aa in xmt_node_end scene_manager/loader_xmt.c:2701
+    #2 0x7f2062d889f2 in xml_sax_node_end utils/xml_parser.c:264
+    #3 0x7f2062d8c673 in xml_sax_parse utils/xml_parser.c:866
+    #4 0x7f2062d8e604 in gf_xml_sax_parse_intern utils/xml_parser.c:1083
+    #5 0x7f2062d8ef17 in gf_xml_sax_parse utils/xml_parser.c:1137
+    #6 0x7f2062d8f273 in xml_sax_read_file utils/xml_parser.c:1224
+    #7 0x7f2062d8fd28 in gf_xml_sax_parse_file utils/xml_parser.c:1337
+    #8 0x7f20635388b9 in load_xmt_run scene_manager/loader_xmt.c:3215
+    #9 0x7f2063be0980 in ctxload_process filters/load_bt_xmt.c:522
+    #10 0x7f20639591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #11 0x7f206392d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #12 0x7f2063932632 in gf_fs_run filter_core/filter_session.c:2730
+    #13 0x7f20633f4a14 in gf_media_import media_tools/media_import.c:1307
+    #14 0x563e574384b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #15 0x563e574083a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #16 0x7f2062831f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #17 0x7f2062832026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x563e573e40b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+==633205==Register values:
+rax = 0x0000000000000001  rbx = 0x00007c30615e9dc0  rcx = 0x00000000000003ca  rdx = 0x0000000000000000  
+rdi = 0x0000000000000009  rsi = 0x0000000000000001  rbp = 0x00007b90616135c0  rsp = 0x00007fffeafca970  
+ r8 = 0x0000000000000017   r9 = 0x0000000000000000  r10 = 0x00007c30615e9e58  r11 = 0x00007f2064c44740  
+r12 = 0x00007c30615e9df0  r13 = 0x00007cc0615f2080  r14 = 0x000000000000000c  r15 = 0x00007d50615e7118  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/loader_xmt.c:2928 in xmt_node_end
+==633205==ABORTING
