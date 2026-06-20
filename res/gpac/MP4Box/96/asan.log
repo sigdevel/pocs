@@ -1,0 +1,39 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |=========           | (45/100)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==769547==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f48a9f3da56 bp 0x7d68a7df8153 sp 0x7ffca82acc00 T0)
+==769547==The signal is caused by a WRITE memory access.
+==769547==Hint: address points to the zero page.
+    #0 0x7f48a9f3da56 in xmt_parse_bool scene_manager/loader_xmt.c:808
+    #1 0x7f48a9f3da56 in xmt_parse_sf_field scene_manager/loader_xmt.c:956
+    #2 0x7f48a9f3e610 in xmt_parse_mf_field scene_manager/loader_xmt.c:1090
+    #3 0x7f48a9f421ec in xmt_parse_element scene_manager/loader_xmt.c:1566
+    #4 0x7f48a9f46293 in xmt_node_start scene_manager/loader_xmt.c:2686
+    #5 0x7f48a978949c in xml_sax_node_start utils/xml_parser.c:307
+    #6 0x7f48a978d6d7 in xml_sax_parse_attribute utils/xml_parser.c:356
+    #7 0x7f48a978d6d7 in xml_sax_parse utils/xml_parser.c:939
+    #8 0x7f48a978e604 in gf_xml_sax_parse_intern utils/xml_parser.c:1083
+    #9 0x7f48a978ef17 in gf_xml_sax_parse utils/xml_parser.c:1137
+    #10 0x7f48a978f273 in xml_sax_read_file utils/xml_parser.c:1224
+    #11 0x7f48a978fd28 in gf_xml_sax_parse_file utils/xml_parser.c:1337
+    #12 0x7f48a9f388b9 in load_xmt_run scene_manager/loader_xmt.c:3215
+    #13 0x7f48aa5e0980 in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7f48aa3591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #15 0x7f48aa32d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #16 0x7f48aa332632 in gf_fs_run filter_core/filter_session.c:2730
+    #17 0x7f48a9df4a14 in gf_media_import media_tools/media_import.c:1307
+    #18 0x55bcd43734b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #19 0x55bcd43433a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #20 0x7f48a9231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f48a9232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55bcd431f0b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+==769547==Register values:
+rax = 0x0000000000000003  rbx = 0x00000f6914da2b80  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007f48a9f3d97a  rsi = 0x00007b48a6d15d20  rbp = 0x00007d68a7df8153  rsp = 0x00007ffca82acc00  
+ r8 = 0x0000000000000002   r9 = 0x00007b48a6d15e60  r10 = 0x0000000000000000  r11 = 0x0000000000000000  
+r12 = 0x00007b48a6d15d20  r13 = 0x00007c58a7de9dc0  r14 = 0x00007b48a6d15c00  r15 = 0x00007ffca82acc50  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/loader_xmt.c:808 in xmt_parse_bool
+==769547==ABORTING

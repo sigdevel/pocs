@@ -1,0 +1,34 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |====================| (100/100)
+                                                   
+=================================================================
+==1106760==ERROR: AddressSanitizer: attempting double-free on 0x7bf0d2de0580 in thread T0:
+    #0 0x7f30d612340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f30d475fa3d in gf_sg_sfcommand_del scenegraph/vrml_tools.c:622
+    #2 0x7f30d46d4b6a in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #3 0x7f30d46d4b6a in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37578
+    #4 0x7f30d4659b97 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #5 0x7f30d465c6be in gf_sg_reset scenegraph/base_scenegraph.c:404
+    #6 0x7f30d465c6be in gf_sg_reset scenegraph/base_scenegraph.c:328
+    #7 0x7f30d4fbdbab in gf_scene_disconnect compositor/scene.c:503
+    #8 0x7f30d4fb223d in gf_odm_disconnect compositor/object_manager.c:166
+    #9 0x7f30d519c667 in compose_finalize filters/compose.c:798
+    #10 0x7f30d5133c1c in gf_fs_del filter_core/filter_session.c:786
+    #11 0x7f30d4bf7e14 in gf_media_import media_tools/media_import.c:1373
+    #12 0x55ee471b74b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x55ee471873a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #14 0x7f30d4031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f30d4032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x55ee471630b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+0x7bf0d2de0580 is located 0 bytes inside of 120-byte region [0x7bf0d2de0580,0x7bf0d2de05f8)
+freed by thread T0 here:
+    #0 0x7f30d612340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f30d46669d6 in gf_sg_command_del scenegraph/commands.c:127
+
+previously allocated by thread T0 here:
+    #0 0x7f30d612435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f30d46665b2 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: double-free scenegraph/vrml_tools.c:622 in gf_sg_sfcommand_del
+==1106760==ABORTING

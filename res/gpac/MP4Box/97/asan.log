@@ -1,0 +1,67 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |=                   | (08/100)
+=================================================================
+==769550==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c5138bf3d74 at pc 0x7f013be85a23 bp 0x7ffc24bc9990 sp 0x7ffc24bc9160
+READ of size 310 at 0x7c5138bf3d74 thread T0
+    #0 0x7f013be85a22 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:425
+    #1 0x7f013ab376ad in xmt_parse_string scene_manager/loader_xmt.c:845
+    #2 0x7f013ab3e808 in xmt_parse_mf_field scene_manager/loader_xmt.c:1084
+    #3 0x7f013ab4225f in xmt_parse_element scene_manager/loader_xmt.c:1896
+    #4 0x7f013ab46293 in xmt_node_start scene_manager/loader_xmt.c:2686
+    #5 0x7f013a38949c in xml_sax_node_start utils/xml_parser.c:307
+    #6 0x7f013a38d6d7 in xml_sax_parse_attribute utils/xml_parser.c:356
+    #7 0x7f013a38d6d7 in xml_sax_parse utils/xml_parser.c:939
+    #8 0x7f013a38e9ca in gf_xml_sax_parse_intern utils/xml_parser.c:1109
+    #9 0x7f013a38ef17 in gf_xml_sax_parse utils/xml_parser.c:1137
+    #10 0x7f013a38f273 in xml_sax_read_file utils/xml_parser.c:1224
+    #11 0x7f013a38fd28 in gf_xml_sax_parse_file utils/xml_parser.c:1337
+    #12 0x7f013ab388b9 in load_xmt_run scene_manager/loader_xmt.c:3215
+    #13 0x7f013b1e0980 in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7f013af591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #15 0x7f013af2d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #16 0x7f013af32632 in gf_fs_run filter_core/filter_session.c:2730
+    #17 0x7f013a9f4a14 in gf_media_import media_tools/media_import.c:1307
+    #18 0x55a1296324b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #19 0x55a1296023a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #20 0x7f0139e31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f0139e32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55a1295de0b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+0x7c5138bf3d74 is located 0 bytes after 500-byte region [0x7c5138bf3b80,0x7c5138bf3d74)
+allocated by thread T0 here:
+    #0 0x7f013bf2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f013a38726c in xml_translate_xml_string utils/xml_parser.c:53
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow scene_manager/loader_xmt.c:845 in xmt_parse_string
+Shadow bytes around the buggy address:
+  0x7c5138bf3a80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7c5138bf3b00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c5138bf3b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c5138bf3c00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c5138bf3c80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7c5138bf3d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00[04]fa
+  0x7c5138bf3d80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c5138bf3e00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c5138bf3e80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c5138bf3f00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c5138bf3f80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==769550==ABORTING

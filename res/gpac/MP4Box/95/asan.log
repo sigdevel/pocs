@@ -1,0 +1,42 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |==                  | (13/100)
+XMT Parsing: |=====               | (27/100)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==769543==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fe7c4f42606 bp 0x7ffd0a1eced0 sp 0x7ffd0a1ec678 T0)
+==769543==The signal is caused by a READ memory access.
+==769543==Hint: address points to the zero page.
+    #0 0x7fe7c4f42606 in __sanitizer::internal_strlen(char const*) ../../../../src/libsanitizer/sanitizer_common/sanitizer_libc.cpp:176
+    #1 0x7fe7c4f1d756 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:613
+    #2 0x7fe7c3b3322d in xmt_new_od_link_from_node scene_manager/loader_xmt.c:286
+    #3 0x7fe7c3b37f7e in xmt_parse_url scene_manager/loader_xmt.c:912
+    #4 0x7fe7c3b3e834 in xmt_parse_mf_field scene_manager/loader_xmt.c:1086
+    #5 0x7fe7c3b4225f in xmt_parse_element scene_manager/loader_xmt.c:1896
+    #6 0x7fe7c3b46293 in xmt_node_start scene_manager/loader_xmt.c:2686
+    #7 0x7fe7c338949c in xml_sax_node_start utils/xml_parser.c:307
+    #8 0x7fe7c338d6d7 in xml_sax_parse_attribute utils/xml_parser.c:356
+    #9 0x7fe7c338d6d7 in xml_sax_parse utils/xml_parser.c:939
+    #10 0x7fe7c338e604 in gf_xml_sax_parse_intern utils/xml_parser.c:1083
+    #11 0x7fe7c338ef17 in gf_xml_sax_parse utils/xml_parser.c:1137
+    #12 0x7fe7c338f273 in xml_sax_read_file utils/xml_parser.c:1224
+    #13 0x7fe7c338fd28 in gf_xml_sax_parse_file utils/xml_parser.c:1337
+    #14 0x7fe7c3b388b9 in load_xmt_run scene_manager/loader_xmt.c:3215
+    #15 0x7fe7c41e0980 in ctxload_process filters/load_bt_xmt.c:522
+    #16 0x7fe7c3f591a3 in gf_filter_process_task filter_core/filter.c:3256
+    #17 0x7fe7c3f2d571 in gf_fs_thread_proc filter_core/filter_session.c:2422
+    #18 0x7fe7c3f32632 in gf_fs_run filter_core/filter_session.c:2730
+    #19 0x7fe7c39f4a14 in gf_media_import media_tools/media_import.c:1307
+    #20 0x55deb305d4b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #21 0x55deb302d3a9 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #22 0x7fe7c2e31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #23 0x7fe7c2e32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #24 0x55deb30090b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+==769543==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x00007c17c19eb658  rdx = 0x00007c07c19e4fb0  
+rdi = 0x0000000000000000  rsi = 0x0000000000000050  rbp = 0x00007ffd0a1eced0  rsp = 0x00007ffd0a1ec678  
+ r8 = 0x00007c07c19e4fb8   r9 = 0x0000000000000000  r10 = 0x000000000000001f  r11 = 0x00007fe7c548e510  
+r12 = 0x00007cf7c19e9dc0  r13 = 0x00007c17c19eb6b0  r14 = 0x00007be7c0638300  r15 = 0x00000f9ef833d3c4  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/loader_xmt.c:286 in xmt_new_od_link_from_node
+==769543==ABORTING
