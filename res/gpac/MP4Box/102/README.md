@@ -2,12 +2,6 @@
 
 26.03-DEV-rev386-g85a4cf824-master
 
-https://github.com/gpac/gpac/issues/3660
+https://github.com/gpac/gpac/issues/3661
 
 fix: 
-
-advisory: 
-
-publication: 
-
-oss-security: 
