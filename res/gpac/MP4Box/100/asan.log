@@ -1,27 +1,18 @@
-AddressSanitizer:DEADLYSIGNAL
 =================================================================
-==3533821==ERROR: AddressSanitizer: SEGV on unknown address 0x7bb970bff703 (pc 0x7fb8f4779de2 bp 0x0000ffffff03 sp 0x7ffc0ec8fa88 T0)
-==3533821==The signal is caused by a WRITE memory access.                                                                                                   
-    #0 0x7fb8f4779de2 in __memmove_avx_unaligned_erms_rtm ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:323
-    #1 0x7fb8f4b8e8f1 in xml_sax_append_string utils/xml_parser.c:994
-    #2 0x7fb8f4b8e8f1 in gf_xml_sax_parse_intern utils/xml_parser.c:1088
-    #3 0x7fb8f4b8db51 in xml_sax_parse utils/xml_parser.c:920
-    #4 0x7fb8f4b8e9ca in gf_xml_sax_parse_intern utils/xml_parser.c:1109
-    #5 0x7fb8f4b8ef17 in gf_xml_sax_parse utils/xml_parser.c:1137
-    #6 0x7fb8f4b8f273 in xml_sax_read_file utils/xml_parser.c:1224
-    #7 0x7fb8f4b8fd28 in gf_xml_sax_parse_file utils/xml_parser.c:1337
-    #8 0x7fb8f4b922a8 in gf_xml_dom_parse utils/xml_parser.c:1905
-    #9 0x55c2294ff17e in xml_bs_to_bin /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4034
-    #10 0x55c22951d3f2 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6570
-    #11 0x7fb8f4631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #12 0x7fb8f4632026 in __libc_start_main_impl ../csu/libc-start.c:360
-    #13 0x55c2294f90b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+==2630600==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000050 (pc 0x7f11f24b384f bp 0x000000000000 sp 0x7ffe65e6a630 T0)
+==2630600==The signal is caused by a READ memory access.                                                                                                    
+==2630600==Hint: address points to the zero page.
+    #0 0x7f11f24b384f in gf_isom_sdp_clean isomedia/hint_track.c:890
+    #1 0x55739ed7360d in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6817
+    #2 0x7f11f1a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x7f11f1a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #4 0x55739ed520b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
 
-==3533821==Register values:
-rax = 0x00007bb970bff703  rbx = 0x00007d58f31e0080  rcx = 0x00000f772e17fe26  rdx = 0x0000000000000001  
-rdi = 0x00007bb970bff703  rsi = 0x00007fb8f5fa0140  rbp = 0x00000000ffffff03  rsp = 0x00007ffc0ec8fa88  
- r8 = 0x00000f77ae177ee0   r9 = 0x00000ff79ebec000  r10 = 0x0000000000000000  r11 = 0x00007bb970bff703  
-r12 = 0x00007bb8f1cf20a0  r13 = 0x00007cc8f31e0106  r14 = 0x00000000ffffff04  r15 = 0x00007bb8f1cf2080  
+==2630600==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x0000000000000000  rdx = 0x000000000000000a  
+rdi = 0x0000000000000000  rsi = 0x000055739ee41da0  rbp = 0x0000000000000000  rsp = 0x00007ffe65e6a630  
+ r8 = 0x0000000000000000   r9 = 0x00000aaef3dc0a18  r10 = 0x0000000000000000  r11 = 0x00007f11f24b3830  
+r12 = 0x0000000000000000  r13 = 0x00007f11f1bf26a8  r14 = 0x0000000000000003  r15 = 0x00000f623df7e000  
 AddressSanitizer can not provide additional info.
-SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:323 in __memmove_avx_unaligned_erms_rtm
-==3533821==ABORTING
+SUMMARY: AddressSanitizer: SEGV isomedia/hint_track.c:890 in gf_isom_sdp_clean
+==2630600==ABORTING
