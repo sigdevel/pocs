@@ -1,0 +1,25 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==4144973==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7f804a67abd9 bp 0x7ffe260e2f00 sp 0x7ffe260e26b8 T0)
+==4144973==The signal is caused by a READ memory access.                                                                                                    
+==4144973==Hint: address points to the zero page.
+    #0 0x7f804a67abd9 in __strlen_avx2_rtm ../sysdeps/x86_64/multiarch/strlen-avx2.S:76
+    #1 0x7f8049e85937 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:423
+    #2 0x564a7e143f90 in cat_multiple_files /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3430
+    #3 0x564a7e154693 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2779
+    #4 0x564a7e15a35f in cat_playlist /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3479
+    #5 0x564a7e154805 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2776
+    #6 0x564a7e108c40 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4686
+    #7 0x564a7e10b477 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6377
+    #8 0x7f804a52ff76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7f804a530026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x564a7e0eb0b0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d0b0) (BuildId: 448a786c19792aeca106830ec5268448f6cb1d99)
+
+==4144973==Register values:
+rax = 0x0000000000000001  rbx = 0x0000000000000001  rcx = 0x00000f7088bc5a38  rdx = 0x0000000000000001  
+rdi = 0x0000000000000001  rsi = 0x00000f7088bc5a3e  rbp = 0x00007ffe260e2f00  rsp = 0x00007ffe260e26b8  
+ r8 = 0x0000000000000001   r9 = 0x00000f7088bc5a38  r10 = 0x0000000000000000  r11 = 0x00000f7088bc5a06  
+r12 = 0x00007b8045e6c030  r13 = 0x00007b8045e6d030  r14 = 0x0000000000000000  r15 = 0x00007b8045e6da40  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strlen-avx2.S:76 in __strlen_avx2_rtm
+==4144973==ABORTING
