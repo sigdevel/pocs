@@ -2,6 +2,6 @@
 
 26.03-DEV-rev386-g85a4cf824-master
 
-https://github.com/gpac/gpac/issues/
+https://github.com/gpac/gpac/issues/3651
 
 fix: https://github.com/gpac/gpac/commit/6f54ff86b2fdc045d6a683b93f9ced8928d8b35c
