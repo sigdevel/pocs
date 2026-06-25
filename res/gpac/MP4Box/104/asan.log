@@ -1,0 +1,72 @@
+...
+[XMT Parsing] Warning: Unknown field "onoo" for node Body - skipping (line 2)                                                                               
+[XMT Parsing] Warning: Unknown field "="rm="lace" for node Body - skipping (line 2)                                                                         
+=================================================================                                                                                           
+==1699682==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bcea49eaf90 at pc 0x7f9ea64579eb bp 0x7ffee6a40c60 sp 0x7ffee6a40c58
+READ of size 8 at 0x7bcea49eaf90 thread T0                                                                                                                  
+    #0 0x7f9ea64579ea in gf_node_get_name scenegraph/base_scenegraph.c:1298
+    #1 0x7f9ea6b3f407 in xmt_find_node scene_manager/loader_xmt.c:733
+    #2 0x7f9ea6b44982 in xmt_parse_element scene_manager/loader_xmt.c:1877
+    #3 0x7f9ea6b4a213 in xmt_node_start scene_manager/loader_xmt.c:2723
+    #4 0x7f9ea638945c in xml_sax_node_start utils/xml_parser.c:306
+    #5 0x7f9ea638e1d7 in xml_sax_parse_attribute utils/xml_parser.c:355
+    #6 0x7f9ea638e1d7 in xml_sax_parse utils/xml_parser.c:938
+    #7 0x7f9ea6389eb0 in gf_xml_sax_parse_intern utils/xml_parser.c:1108
+    #8 0x7f9ea638eef7 in gf_xml_sax_parse utils/xml_parser.c:1136
+    #9 0x7f9ea638f253 in xml_sax_read_file utils/xml_parser.c:1223
+    #10 0x7f9ea638fd08 in gf_xml_sax_parse_file utils/xml_parser.c:1336
+    #11 0x7f9ea6b3c2f5 in load_xmt_run scene_manager/loader_xmt.c:3262
+    #12 0x7f9ea71e496c in ctxload_process filters/load_bt_xmt.c:522
+    #13 0x7f9ea6f5d193 in gf_filter_process_task filter_core/filter.c:3255
+    #14 0x7f9ea6f316c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #15 0x7f9ea6f36782 in gf_fs_run filter_core/filter_session.c:2728
+    #16 0x7f9ea69f63b4 in gf_media_import media_tools/media_import.c:1305
+    #17 0x559de38db473 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #18 0x559de38ab339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6574
+    #19 0x7f9ea5e31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #20 0x7f9ea5e32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #21 0x559de3887070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+0x7bcea49eaf90 is located 0 bytes inside of 32-byte region [0x7bcea49eaf90,0x7bcea49eafb0)
+freed by thread T0 here:                                                                                                                                    
+    #0 0x7f9ea7f2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f9ea645a037 in gf_node_unregister scenegraph/base_scenegraph.c:760
+
+previously allocated by thread T0 here:
+    #0 0x7f9ea7f2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f9ea64ce2b2 in Body_Create scenegraph/mpeg4_nodes.c:21011
+    #2 0x7f9ea64ce2b2 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36918
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:1298 in gf_node_get_name
+Shadow bytes around the buggy address:
+  0x7bcea49ead00: fd fd fa fa fd fd fd fd fa fa fd fd fd fd fa fa
+  0x7bcea49ead80: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00
+  0x7bcea49eae00: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd
+  0x7bcea49eae80: fd fd fa fa fd fd fd fa fa fa 00 00 00 00 fa fa
+  0x7bcea49eaf00: 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd fd fd
+=>0x7bcea49eaf80: fa fa[fd]fd fd fd fa fa fd fd fd fd fa fa 00 00
+  0x7bcea49eb000: 00 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bcea49eb080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bcea49eb100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bcea49eb180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bcea49eb200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1699682==ABORTING

@@ -1,0 +1,28 @@
+[iso file] Box "emsg" (start 942) has 316 extra bytes
+[iso file] Box emsg wrote 14 bytes but size is 328
+[iso file] Box "xml " (start 16402) has 14 extra bytes                                                                                                      
+Saving /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output_crashes_cmin/id_000000_sig_11_src_008045_time_1789060_execs_934513_op_quick_pos_16336: 0.500 secs Interleaving                                                                                                                          
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==1429472==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000028 (pc 0x7fda443e7420 bp 0x7c0a425e1648 sp 0x7ffef31da8c0 T0)
+==1429472==The signal is caused by a READ memory access.                                                                                                    
+==1429472==Hint: address points to the zero page.
+    #0 0x7fda443e7420 in DoWriteMeta isomedia/isom_store.c:983
+    #1 0x7fda443ec0e1 in DoInterleave isomedia/isom_store.c:1754
+    #2 0x7fda443ee0a2 in WriteInterleaved isomedia/isom_store.c:2051
+    #3 0x7fda443ef143 in WriteToFile isomedia/isom_store.c:2716
+    #4 0x7fda443bae4e in gf_isom_write isomedia/isom_read.c:609
+    #5 0x7fda443bae4e in gf_isom_close isomedia/isom_read.c:633
+    #6 0x5584f41b5bec in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:7082
+    #7 0x7fda43a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7fda43a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5584f4194070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+==1429472==Register values:
+rax = 0x0000000000000000  rbx = 0x00007caa425e02b0  rcx = 0x0000000000000001  rdx = 0x0000000000000005  
+rdi = 0x0000000000000028  rsi = 0x0000000000009fff  rbp = 0x00007c0a425e1648  rsp = 0x00007ffef31da8c0  
+ r8 = 0x00007caa425e02f0   r9 = 0x0000000000000000  r10 = 0x0000000000000001  r11 = 0x00007bda4186c000  
+r12 = 0x00007c0a425e1634  r13 = 0x00007c0a425e1630  r14 = 0x00007bda4186c030  r15 = 0x00000f81484bc2c9  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_store.c:983 in DoWriteMeta
+==1429472==ABORTING

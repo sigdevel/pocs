@@ -1,0 +1,34 @@
+[AV1] non conformant bitstream detected while setting up frame refs: lastOrderHint(4) shall be stricly less than curFrameHint(4)
+....                           
+....                      
+[AV1] computed OBU size -1 (input value = 0). Skipping.                                                                                                     
+[AV1] av1C: could not parse AV1 OBU at position 3660. Leaving parsing.                                                                                      
+[ISOBMFF] AV1ConfigurationBox overflow read 3507 bytes, of box size 0.                                                                                      
+# Track 1 Info - ID 0 - TimeScale 0                                                                                                                         
+Media Duration 00:00:00.000 
+Track uses external data reference not supported by GPAC!
+Track flags: Disabled                                                                                                                                       
+Media Samples: 0
+Handler name: (null)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1359126==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000050 (pc 0x7f2f96c3cb84 bp 0x000000000001 sp 0x7fff9d3f7aa0 T0)
+==1359126==The signal is caused by a READ memory access.                                                                                                    
+==1359126==Hint: address points to the zero page.
+    #0 0x7f2f96c3cb84 in gf_isom_get_meta isomedia/meta.c:38
+    #1 0x7f2f96c3cb84 in gf_isom_get_meta_type isomedia/meta.c:45
+    #2 0x5610adc2ebb3 in DumpMetaItem /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:2496
+    #3 0x5610adc4faa1 in DumpTrackInfo /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:3902
+    #4 0x5610adc25ee4 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6682
+    #5 0x7f2f96231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #6 0x7f2f96232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #7 0x5610adc05070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+==1359126==Register values:
+rax = 0x0000000000000000  rbx = 0x00005610adcae180  rcx = 0x00000f6672805c00  rdx = 0x000000000000000a  
+rdi = 0x0000000000000050  rsi = 0x0000000000000000  rbp = 0x0000000000000001  rsp = 0x00007fff9d3f7aa0  
+ r8 = 0x00007f2f9637a800   r9 = 0x00000000000000f3  r10 = 0x0000000000000000  r11 = 0x00007f2f96c3ca90  
+r12 = 0x00007b2f93cf0560  r13 = 0x0000000000000000  r14 = 0x00007b2f9406d3e0  r15 = 0x00000f65f280d800  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/meta.c:38 in gf_isom_get_meta
+==1359126==ABORTING
