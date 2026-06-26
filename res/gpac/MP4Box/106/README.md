@@ -4,4 +4,4 @@
 
 https://github.com/gpac/gpac/issues/3666
 
-fix: 
+fix: https://github.com/gpac/gpac/commit/758b34ffb17df4d7583b5515241cce67b9278ed9
