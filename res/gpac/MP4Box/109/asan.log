@@ -1,0 +1,28 @@
+[iso file] Box "emsg" (start 942) has 316 extra bytes
+[iso file] Box emsg wrote 14 bytes but size is 328                                                                                                          
+[iso file] Box "xml " (start 16402) has 14 extra bytes  
+...
+...
+Unrecognized import option 95, ignoring                                                                                                                     
+Bad format TC=1 for timecode, ignoring                                                                                                                      
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==3277772==ERROR: AddressSanitizer: FPE on unknown address 0x564c7ba6a882 (pc 0x564c7ba6a882 bp 0x7b0b308f13e0 sp 0x7ffd812b4ac0 T0)
+    #0 0x564c7ba6a882 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2194      
+    #1 0x564c7ba6fbe1 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2794
+    #2 0x564c7ba752df in cat_playlist /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3476
+    #3 0x564c7ba6f775 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2773
+    #4 0x564c7ba23bb0 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4685
+    #5 0x564c7ba263e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #6 0x7f0b32c31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x7f0b32c32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #8 0x564c7ba06070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+==3277772==Register values:
+rax = 0x0000000000000001  rbx = 0x00007d8b317e4100  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007bdb317e03a4  rsi = 0x0000000000000001  rbp = 0x00007b0b308f13e0  rsp = 0x00007ffd812b4ac0  
+ r8 = 0x00007b0b304f5000   r9 = 0x0000000000000000  r10 = 0x0000000000000000  r11 = 0x0000000000000000  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x00007b0b308f19c0  r15 = 0x00007b0b308f1370  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2194 in import_file
+==3277772==ABORTING

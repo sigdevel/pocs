@@ -1,0 +1,42 @@
+[iso file] Box "emsg" (start 942) has 316 extra bytes
+[iso file] Box emsg wrote 14 bytes but size is 328                                                                                                          
+[iso file] Box "xml " (start 16402) has 14 extra bytes                                                                                                      
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option  VAG, ignoring                                                                                                                   
+Unrecognized import option G, ignoring                                                                                                                      
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option #, ignoring                                                                                                                      
+Unrecognized import option XID=<#�Srtp, ignoring                                                                                                            
+Unrecognized import option /9dd, ignoring                                                                                                                   
+Unrecognized import option N=, ignoring                                                                                                                     
+Unrecognized import option f.��, ignoring                                                                                                                   
+Unrecognized import option ::�.��=, ignoring                                                                                                                
+AddressSanitizer:DEADLYSIGNAL                                                                                                                               
+=================================================================
+==3291328==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000003b (pc 0x7f7031db7fbf bp 0x7d002fff4580 sp 0x7ffd134c8128 T0)
+==3291328==The signal is caused by a READ memory access.                                                                                                    
+==3291328==Hint: address points to the zero page.
+    #0 0x7f7031db7fbf in gf_isom_get_mode isomedia/isom_read.c:56
+    #1 0x7f7032825ba1 in mp4_mux_initialize filters/mux_isom.c:8148
+    #2 0x7f70325693f0 in gf_filter_new_finalize filter_core/filter.c:583
+    #3 0x7f703256a5b5 in gf_filter_new filter_core/filter.c:485
+    #4 0x7f7032527743 in gf_fs_load_filter_internal filter_core/filter_session.c:1395
+    #5 0x7f7031ff98ae in gf_media_import media_tools/media_import.c:1466
+    #6 0x55957fa67559 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1712
+    #7 0x55957fa6ebe1 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2794
+    #8 0x55957fa742df in cat_playlist /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3476
+    #9 0x55957fa6e775 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2773
+    #10 0x55957fa22bb0 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4685
+    #11 0x55957fa253e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #12 0x7f7031431f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7f7031432026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x55957fa05070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+==3291328==Register values:
+rax = 0x0000000000000000  rbx = 0x00007d002fff4a80  rcx = 0x000000006a42569a  rdx = 0x000000000000003b  
+rdi = 0x000000000000000b  rsi = 0x00000000ffffffff  rbp = 0x00007d002fff4580  rsp = 0x00007ffd134c8128  
+ r8 = 0x00007d002fff4f70   r9 = 0x00000000000f65fb  r10 = 0x0000000000000000  r11 = 0x00007f7031db7fa0  
+r12 = 0x00007cd02ffe1586  r13 = 0x00007f7033319a80  r14 = 0x00007d002fff4580  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV isomedia/isom_read.c:56 in gf_isom_get_mode
+==3291328==ABORTING

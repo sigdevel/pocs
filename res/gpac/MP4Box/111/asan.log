@@ -1,0 +1,83 @@
+[iso file] Box "emsg" (start 942) has 316 extra bytes
+[iso file] Box emsg wrote 14 bytes but size is 328
+[iso file] Box "xml " (start 16402) has 14 extra bytes
+Unrecognized import option Q4, ignoring
+Unrecognized import option Lhvc1T=, ignoring
+Unrecognized import option :::-::N:�t:.................., ignoring
+Unrecognized import option , ignoring
+Unrecognized import option A, ignoring
+Unrecognized import option FpSc=dpsg, ignoring
+Unrecognized import option vi, ignoring
+Unrecognized import option tp, ignoring
+Unrecognized import option ett, ignoring
+Unrecognized import option c=, ignoring
+Unrecognized import option pss, ignoring
+Bad format tc=99999 for timecode, ignoring
+Unrecognized import option Fp, ignoring
+Unrecognized import option ht, ignoring
+Unrecognized import option gfoqt, ignoring
+Unrecognized import option !!!!!!!!!!!!!!!!!!!!!!!!!!Q4, ignoring
+Unrecognized import option LT=, ignoring                                                                                                                    
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option , ignoring                                                                                                                       
+Unrecognized import option {~, ignoring                                                                                                                     
+Unrecognized import option z, ignoring                                                                                                                      
+=================================================================                                                                                           
+==3305118==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c4cd27e03bb at pc 0x55d5b54b3eb8 bp 0x7ffd9ae0b2f0 sp 0x7ffd9ae0b2e8
+READ of size 1 at 0x7c4cd27e03bb thread T0                                                                                                                  
+    #0 0x55d5b54b3eb7 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:952
+    #1 0x55d5b54bcbe1 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2794
+    #2 0x55d5b54c1feb in cat_enumerate /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3385
+    #3 0x7f5cd414d462 in gf_enum_directory utils/os_file.c:1002
+    #4 0x55d5b54ac048 in cat_multiple_files /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3446
+    #5 0x55d5b54bc603 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2776
+    #6 0x55d5b54c22df in cat_playlist /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:3476
+    #7 0x55d5b54bc775 in cat_isomedia_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:2773
+    #8 0x55d5b5470bb0 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4685
+    #9 0x55d5b54733e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #10 0x7f5cd3c31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f5cd3c32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55d5b5453070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: f681cc78d80c62a25566e48ad2bbc96517037ee3)
+
+0x7c4cd27e03bb is located 0 bytes after 171-byte region [0x7c4cd27e0310,0x7c4cd27e03bb)
+allocated by thread T0 here:                                                                                                                                
+    #0 0x7f5cd5d1da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x55d5b54b1641 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:792
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:952 in import_file
+Shadow bytes around the buggy address:
+  0x7c4cd27e0100: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x7c4cd27e0180: 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x7c4cd27e0200: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c4cd27e0280: 00 00 00 00 00 00 00 00 01 fa fa fa fa fa fa fa
+  0x7c4cd27e0300: fa fa 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7c4cd27e0380: 00 00 00 00 00 00 00[03]fa fa fa fa fa fa fa fa
+  0x7c4cd27e0400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c4cd27e0480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c4cd27e0500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c4cd27e0580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c4cd27e0600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3305118==ABORTING
