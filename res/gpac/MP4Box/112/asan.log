@@ -1,0 +1,60 @@
+...
+[BIFS] Node XXParticles not allowed as field/child of NDT type 23                                                                                          
+=================================================================                                                                                          
+==73220==ERROR: AddressSanitizer: heap-use-after-free on address 0x7ba58cde0b20 at pc 0x7f258e85a8f1 bp 0x7ffe6c566410 sp 0x7ffe6c566408
+READ of size 8 at 0x7ba58cde0b20 thread T0                                                                                                                 
+    #0 0x7f258e85a8f0 in gf_node_try_destroy scenegraph/base_scenegraph.c:664
+    #1 0x7f258e866e56 in gf_sg_command_del scenegraph/commands.c:123
+    #2 0x7f258ef2dd93 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #3 0x7f258ef2dd93 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #4 0x7f258ef2dd93 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #5 0x7f258ef2dd93 in gf_sm_del scene_manager/scene_manager.c:147
+    #6 0x555835ef0377 in dump_isom_scene /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:230
+    #7 0x555835ee2dff in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6661
+    #8 0x7f258e231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7f258e232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x555835ec2070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7ba58cde0b20 is located 0 bytes inside of 88-byte region [0x7ba58cde0b20,0x7ba58cde0b78)
+freed by thread T0 here:                                                                                                                                   
+    #0 0x7f259032340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f258e85a077 in gf_node_unregister scenegraph/base_scenegraph.c:760
+
+previously allocated by thread T0 here:
+    #0 0x7f259032435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f258e8d0d61 in Layer3D_Create scenegraph/mpeg4_nodes.c:8959
+    #2 0x7f258e8d0d61 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36816
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:664 in gf_node_try_destroy
+Shadow bytes around the buggy address:
+  0x7ba58cde0880: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7ba58cde0900: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7ba58cde0980: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7ba58cde0a00: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7ba58cde0a80: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7ba58cde0b00: fa fa fa fa[fd]fd fd fd fd fd fd fd fd fd fd fa
+  0x7ba58cde0b80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7ba58cde0c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7ba58cde0c80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7ba58cde0d00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7ba58cde0d80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==73220==ABORTING
