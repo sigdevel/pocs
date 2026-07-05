@@ -1,0 +1,70 @@
+==549089==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7b74f81f93a1 at pc 0x7f74fb2fc7cb bp 0x7fff929eca80 sp 0x7fff929eca78
+WRITE of size 1 at 0x7b74f81f93a1 thread T0                                                                                                                 
+    #0 0x7f74fb2fc7ca in gf_filter_pid_resolve_file_template_ex filter_core/filter_pid.c:9545
+    #1 0x7f74fb3c8dcc in dasher_setup_sources filters/dasher.c:4542
+    #2 0x7f74fb3d6fd1 in dasher_setup_period filters/dasher.c:8034
+    #3 0x7f74fb3f9a1f in dasher_switch_period filters/dasher.c:7341
+    #4 0x7f74fb4063a9 in dasher_process filters/dasher.c:11243
+    #5 0x7f74fb35d153 in gf_filter_process_task filter_core/filter.c:3257
+    #6 0x7f74fb331681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #7 0x7f74fb336742 in gf_fs_run filter_core/filter_session.c:2728
+    #8 0x7f74fad4268d in gf_dasher_process media_tools/dash_segmenter.c:1274
+    #9 0x55e7e48c7d89 in do_dash /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4926
+    #10 0x55e7e48e390c in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6425
+    #11 0x7f74fa231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7f74fa232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x55e7e48c3070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+Address 0x7b74f81f93a1 is located in stack of thread T0 at offset 5025 in frame
+    #0 0x7f74fb3c726f in dasher_setup_sources filters/dasher.c:4145
+
+  This frame has 14 object(s):
+    [48, 56) 'opath' (line 4736)
+    [80, 88) 'ipath' (line 4736)
+    [112, 132) 'szRawExt' (line 4414)
+    [176, 196) 'szStrName' (line 4552)
+    [240, 260) 'szStrName' (line 4557)
+    [304, 324) 'szExName' (line 4686)
+    [368, 568) 'szSetFileSuffix' (line 4152)
+    [640, 860) 'szDASHSuffix' (line 4152)
+    [928, 5024) 'szDASHTemplate' (line 4146) <== Memory access at offset 5025 overflows this variable
+    [5152, 9248) 'szTemplate' (line 4147)
+    [9376, 13472) 'szSegmentName' (line 4148)
+    [13600, 17696) 'szInitSegmentTemplate' (line 4149)
+    [17824, 21920) 'szInitSegmentFilename' (line 4150)
+    [22048, 26144) 'szIndexSegmentName' (line 4151)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow filter_core/filter_pid.c:9545 in gf_filter_pid_resolve_file_template_ex
+Shadow bytes around the buggy address:
+  0x7b74f81f9100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7b74f81f9380: 00 00 00 00[f2]f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+  0x7b74f81f9400: f2 f2 f2 f2 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b74f81f9600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==549089==ABORTING
