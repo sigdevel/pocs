@@ -1,0 +1,79 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)
+[XMT Parsing] ROUTE: Cannot find origin node N6 (line 615)
+[XMT Parsing] Invalid XML document:  (line 616)
+=================================================================
+==1649716==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c68b73e42a0 at pc 0x7f08b8c5a929 bp 0x7fff518a1cb0 sp 0x7fff518a1ca8
+READ of size 8 at 0x7c68b73e42a0 thread T0
+    #0 0x7f08b8c5a928 in gf_node_try_destroy scenegraph/base_scenegraph.c:663
+    #1 0x7f08b8c66e96 in gf_sg_command_del scenegraph/commands.c:123
+    #2 0x7f08b8d5fec4 in gf_sg_sfcommand_del scenegraph/vrml_tools.c:619
+    #3 0x7f08b8cd3245 in InputSensor_Del scenegraph/mpeg4_nodes.c:22695
+    #4 0x7f08b8cd3245 in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37849
+    #5 0x7f08b8c5a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #6 0x7f08b8c5a95f in gf_node_unregister_children scenegraph/base_scenegraph.c:1375
+    #7 0x7f08b8d5e1f3 in gf_sg_vrml_parent_destroy scenegraph/vrml_tools.c:161
+    #8 0x7f08b8cd760c in OrderedGroup_Del scenegraph/mpeg4_nodes.c:10353
+    #9 0x7f08b8cd760c in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37696
+    #10 0x7f08b8c5a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #11 0x7f08b8c66e96 in gf_sg_command_del scenegraph/commands.c:123
+    #12 0x7f08b932ddd3 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #13 0x7f08b932ddd3 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #14 0x7f08b932ddd3 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #15 0x7f08b932ddd3 in gf_sm_del scene_manager/scene_manager.c:147
+    #16 0x7f08b99e4eb7 in ctxload_process filters/load_bt_xmt.c:530
+    #17 0x7f08b975d153 in gf_filter_process_task filter_core/filter.c:3257
+    #18 0x7f08b9731681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #19 0x7f08b9736742 in gf_fs_run filter_core/filter_session.c:2728
+    #20 0x7f08b91f86af in gf_media_import media_tools/media_import.c:1632
+    #21 0x557c181b7579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #22 0x557c18172f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #23 0x557c181753e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #24 0x7f08b8631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #25 0x7f08b8632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #26 0x557c18155070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7c68b73e42a0 is located 32 bytes inside of 520-byte region [0x7c68b73e4280,0x7c68b73e4488)
+freed by thread T0 here:
+    #0 0x7f08ba72340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f08b8d24acf in gf_sg_proto_del scenegraph/vrml_proto.c:155
+
+previously allocated by thread T0 here:
+    #0 0x7f08ba72435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f08b8c5576a in gf_sg_new scenegraph/base_scenegraph.c:53
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:663 in gf_node_try_destroy
+Shadow bytes around the buggy address:
+  0x7c68b73e4000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c68b73e4080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c68b73e4100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c68b73e4180: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x7c68b73e4200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x7c68b73e4280: fd fd fd fd[fd]fd fd fd fd fd fd fd fd fd fd fd
+  0x7c68b73e4300: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c68b73e4380: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c68b73e4400: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c68b73e4480: fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c68b73e4500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1649716==ABORTING

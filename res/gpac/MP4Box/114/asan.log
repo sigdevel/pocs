@@ -1,0 +1,40 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 79)
+[XMT Parsing] Invalid child descriptor (line 82)
+[XMT Parsing] Invalid child descriptor (line 84)
+[XMT Parsing] Invalid child descriptor (line 92)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1649700==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7fb35df3d183 bp 0x7cc35bdeae00 sp 0x7ffd126b9ce0 T0)
+==1649700==The signal is caused by a READ memory access.
+==1649700==Hint: address points to the zero page.
+    #0 0x7fb35df3d183 in xmt_node_end scene_manager/loader_xmt.c:2924
+    #1 0x7fb35df3d183 in xmt_node_end scene_manager/loader_xmt.c:2755
+    #2 0x7fb35d7889f2 in xml_sax_node_end utils/xml_parser.c:265
+    #3 0x7fb35d78d1b3 in xml_sax_parse utils/xml_parser.c:867
+    #4 0x7fb35d789ef0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #5 0x7fb35d78ef37 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #6 0x7fb35d78f293 in xml_sax_read_file utils/xml_parser.c:1225
+    #7 0x7fb35d78fd48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #8 0x7fb35df3c335 in load_xmt_run scene_manager/loader_xmt.c:3279
+    #9 0x7fb35e5e4acc in ctxload_process filters/load_bt_xmt.c:522
+    #10 0x7fb35e35d153 in gf_filter_process_task filter_core/filter.c:3257
+    #11 0x7fb35e331681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #12 0x7fb35e336742 in gf_fs_run filter_core/filter_session.c:2728
+    #13 0x7fb35ddf86af in gf_media_import media_tools/media_import.c:1632
+    #14 0x561b0bf5c579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #15 0x561b0bf17f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #16 0x561b0bf1a3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #17 0x7fb35d231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #18 0x7fb35d232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0x561b0befa070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+==1649700==Register values:
+rax = 0x0000000000000000  rbx = 0x00007bb35aa4c300  rcx = 0x0000000000000001  rdx = 0x00007c135bde3920  
+rdi = 0x00007cc35bdeae98  rsi = 0x00007de35bde710b  rbp = 0x00007cc35bdeae00  rsp = 0x00007ffd126b9ce0  
+ r8 = 0x00000ff66bd7ab2c   r9 = 0x00000ff6ebd72b28  r10 = 0x00007fb35ebd5967  r11 = 0x0000000000000000  
+r12 = 0x00007ffd126b9d40  r13 = 0x00000f766b549860  r14 = 0x00007cc35bdeae04  r15 = 0x00007de35bde7100  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scene_manager/loader_xmt.c:2924 in xmt_node_end
+==1649700==ABORTING

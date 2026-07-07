@@ -1,0 +1,197 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 90)
+[XMT Parsing] Invalid child descriptor (line 93)
+[XMT Parsing] Invalid child descriptor (line 97)
+[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 187)
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 187)
+[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 188)
+[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 189)
+[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 190)
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 216)
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 221)
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 226)
+[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 270)
+[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 271)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer2D (line 272)
+[XMT Parsing] Warning: top-node already assigned - discarding node Form (line 273)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layout (line 274)
+[XMT Parsing] Warning: top-node already assigned - discarding node PathLayout (line 275)
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Unknown proto field _field1 - skipping (line 278)
+[XMT Parsing] Warning: Unknown proto field _field2 - skipping (line 279)
+[XMT Parsing] Warning: Unknown proto field _field3 - skipping (line 280)
+[XMT Parsing] Warning: Unknown proto field _field4 - skipping (line 281)
+[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 288)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 297)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 306)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 310)
+[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 314)
+[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 324)
+[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 325)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 342)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 361)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 377)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 393)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 409)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 421)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 426)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 441)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 446)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 451)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 456)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 461)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 473)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 486)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 495)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 504)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 505)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 506)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 507)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 508)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 509)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 510)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 511)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 512)
+[XMT Parsing] Warning: top-node already assigned - discarding node InputSensor (line 523)
+[XMT Parsing] Warning: top-node already assigned - discarding node InputSensor (line 530)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer3D (line 537)
+[XMT Parsing] Warning: top-node already assigned - discarding node Collision (line 546)
+[XMT Parsing] Warning: top-node already assigned - discarding node CylinderSensor (line 547)
+[XMT Parsing] Warning: top-node already assigned - discarding node SphereSensor (line 548)
+[XMT Parsing] Warning: top-node already assigned - discarding node PlaneSensor (line 549)
+[XMT Parsing] Warning: top-node already assigned - discarding node VisibilitySensor (line 550)
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform (line 551)
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 552)
+[XMT Parsing] Warning: Unknown field "justify" for node Script - skipping (line 553)
+[XMT Parsing] Warning: Unknown field "size" for node Script - skipping (line 553)
+[XMT Parsing] Warning: top-node already assigned - discarding node Script (line 553)
+[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 561)
+[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 571)
+[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 572)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 589)
+[XMT Parsing] Warning: Node COORDS has been defined several times - IDs may get corrupted (line 604)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 608)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 624)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 640)
+[XMT Parsing] Warning: Node N15 has been defined several times - IDs may get corrupted (line 645)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 656)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 668)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 673)
+[XMT Parsing] Warning: Node SOMEAPP has been defined several times - IDs may get corrupted (line 676)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 688)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 693)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 698)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 703)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 708)
+[XMT Parsing] Warning: Node N16 has been defined several times - IDs may get corrupted (line 713)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 720)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 732)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 741)
+[XMT Parsing] Warning: Node N17 has been defined several times - IDs may get corrupted (line 746)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 750)
+[XMT Parsing] Warning: Node N18 has been defined several times - IDs may get corrupted (line 751)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 751)
+[XMT Parsing] Warning: Node N19 has been defined several times - IDs may get corrupted (line 752)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 752)
+[XMT Parsing] Warning: Node N20 has been defined several times - IDs may get corrupted (line 753)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 753)
+[XMT Parsing] Warning: Node N21 has been defined several times - IDs may get corrupted (line 754)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 754)
+[XMT Parsing] Warning: Node COORDS has been defined several times - IDs may get corrupted (line 771)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 775)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 791)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 807)
+[XMT Parsing] Warning: Node N15 has been defined several times - IDs may get corrupted (line 812)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 823)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 835)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 840)
+[XMT Parsing] Warning: Node SOMEAPP has been defined several times - IDs may get corrupted (line 843)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 855)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 860)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 865)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 870)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 875)
+[XMT Parsing] Warning: Node N16 has been defined several times - IDs may get corrupted (line 880)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 887)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 899)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 908)
+[XMT Parsing] Warning: Node N17 has been defined several times - IDs may get corrupted (line 913)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 917)
+[XMT Parsing] Warning: Node N18 has been defined several times - IDs may get corrupted (line 918)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 918)
+[XMT Parsing] Warning: Node N19 has been defined several times - IDs may get corrupted (line 919)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 919)
+[XMT Parsing] Warning: Node N20 has been defined several times - IDs may get corrupted (line 920)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 920)
+[XMT Parsing] Warning: Node N21 has been defined several times - IDs may get corrupted (line 921)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 921)
+[XMT Parsing] Warning: Node N22 has been defined several times - IDs may get corrupted (line 922)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 922)
+[XMT Parsing] Warning: Node N23 has been defined several times - IDs may get corrupted (line 923)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 923)
+[XMT Parsing] Warning: Node N24 has been defined several times - IDs may get corrupted (line 924)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 924)
+[XMT Parsing] Warning: Node N25 has been defined several times - IDs may get corrupted (line 925)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 925)
+[XMT Parsing] Warning: Field inSFInt���� value="0 not a member of node N20  (line 928)
+Wrong doc_type 1 with no command
+=================================================================
+==1629856==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c9dd73e3048 at pc 0x7fddd953c0db bp 0x7ffd7e8d06d0 sp 0x7ffd7e8d06c8
+READ of size 4 at 0x7c9dd73e3048 thread T0
+    #0 0x7fddd953c0da in xmt_resolve_routes scene_manager/loader_xmt.c:1164
+    #1 0x7fddd953c3d3 in load_xmt_run scene_manager/loader_xmt.c:3294
+    #2 0x7fddd9be4acc in ctxload_process filters/load_bt_xmt.c:522
+    #3 0x7fddd995d153 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7fddd9931681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7fddd9936742 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7fddd93f86af in gf_media_import media_tools/media_import.c:1632
+    #7 0x55a2d3c79579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #8 0x55a2d3c34f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #9 0x55a2d3c373e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #10 0x7fddd8831f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7fddd8832026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55a2d3c17070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7c9dd73e3048 is located 8 bytes inside of 120-byte region [0x7c9dd73e3040,0x7c9dd73e30b8)
+freed by thread T0 here:
+    #0 0x7fddda92340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fddd8e66f36 in gf_sg_command_del scenegraph/commands.c:130
+
+previously allocated by thread T0 here:
+    #0 0x7fddda92435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fddd8e66ad2 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:1164 in xmt_resolve_routes
+Shadow bytes around the buggy address:
+  0x7c9dd73e2d80: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c9dd73e2e00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7c9dd73e2e80: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c9dd73e2f00: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c9dd73e2f80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+=>0x7c9dd73e3000: fa fa fa fa fa fa fa fa fd[fd]fd fd fd fd fd fd
+  0x7c9dd73e3080: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c9dd73e3100: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7c9dd73e3180: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c9dd73e3200: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c9dd73e3280: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1629856==ABORTING

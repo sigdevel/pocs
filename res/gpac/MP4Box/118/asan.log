@@ -1,0 +1,40 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 302)
+[XMT Parsing] Warning: Unknown field "translation" for node WorldInfo - skipping (line 563)
+[XMT Parsing] Invalid XML document:  (line 564)
+[CtxLoad] Failed to load context for file /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/118/118_gf_sg_sfcommand_del_scenegraph_vrml_tools_c_622: Unknown BIFS Node
+[Compositor] Could not detect end of stream(s) in the 10000 ms, aborting
+=================================================================
+==1629649==ERROR: AddressSanitizer: attempting double-free on 0x7c2c1a1e0700 in thread T0:
+    #0 0x7f6c1d52340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f6c1bb5fedd in gf_sg_sfcommand_del scenegraph/vrml_tools.c:622
+    #2 0x7f6c1bad4f8a in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #3 0x7f6c1bad4f8a in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37567
+    #4 0x7f6c1ba5a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #5 0x7f6c1ba5d013 in gf_sg_reset scenegraph/base_scenegraph.c:481
+    #6 0x7f6c1ba5d013 in gf_sg_reset scenegraph/base_scenegraph.c:328
+    #7 0x7f6c1c3c1c6b in gf_scene_disconnect compositor/scene.c:503
+    #8 0x7f6c1c3b62fd in gf_odm_disconnect compositor/object_manager.c:166
+    #9 0x7f6c1c5a06c7 in compose_finalize filters/compose.c:798
+    #10 0x7f6c1c537d2c in gf_fs_del filter_core/filter_session.c:786
+    #11 0x7f6c1bffa597 in gf_media_import media_tools/media_import.c:1642
+    #12 0x564856633579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #13 0x5648565eef89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #14 0x5648565f13e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #15 0x7f6c1b431f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7f6c1b432026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x5648565d1070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7c2c1a1e0700 is located 0 bytes inside of 120-byte region [0x7c2c1a1e0700,0x7c2c1a1e0778)
+freed by thread T0 here:
+    #0 0x7f6c1d52340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f6c1ba66f36 in gf_sg_command_del scenegraph/commands.c:130
+
+previously allocated by thread T0 here:
+    #0 0x7f6c1d52435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f6c1ba66ad2 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: double-free scenegraph/vrml_tools.c:622 in gf_sg_sfcommand_del
+==1629649==ABORTING

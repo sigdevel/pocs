@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY mytext "SuperText to replace!">
+<?GPAC?>
+<!-- XMT-A Scene Dump -->
+<XMT-A xmlns="urn:mpeg:mpeg4:xmta:schema:2002" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg4:xmta:schema:22222222002 xmt-a.xsd">
+ <Header>
+ <InitialObjectDescriptor objectDescriptorID="od1" binaryID="1" >
+  <Profiles audioProfileLevelIndication="255" visualProfileLevelIndication="254" sceneProfileLevelIndication="254" graphicsProfileLevelIndication="254" ODProfileLevelIndication="255" />
+  <Descr>
+   <esDescr>
+    <ES_Descriptor>ES_ID="es1" binaryID="1" >
+     <decConfigDescr>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="3" >
+       <decSpecificInfo>
+        <BIFSConfig >
+          <commandStream pixelMetric="true" >
+           <size pixelWidth="320" pixelHeight="240" />
+          </commandStream>
+        </BIFSConfig>
+       </decSpecificInfo>
+      </DecoderConfigDescriptor>
+       <XCurve2D type="4">
+         <point>
+          <CigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+    <ES_Descriptor ES_ID="es2" binaryID="2" >
+     <decConfigDescr>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="1" >
+      </DecoderConfigDescriptor>
+     </decConfigDescr>
+     <slConfigDescr>
+     <SLConfigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+   </esDescr>
+  </Descr>
+ </InitialObjectDescriptor>
+ </Header>
+ <Body>
+ <par begin="0">
+ <ObjectDescriptorUpdate >
+   <OD>
+    <ObjectDescriptor objectDescriptorID="od10" binaryID="10" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es20" binaryID="20" >
+        <StreamSource url="../auxiliary_files/logo.png" >
+         <MP4MuxHints />
+        </StreamSource>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+    <ObjectDescriptor objectDescriptorID="od20" binaryID="20" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es5" binaryID="5" >
+        <decCoÿÿÿÿDescr>
+         <Decoderaphic="890"
+               v-mathematical="54657"
+        >
+          <decSpecificInfo>
+           <UIConfig deviceName="KeySensor" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+<![CDATA[not used]]>
+
+    <ObjectDescriptor objectDescriptorID="od30" binaryID="30" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es6" binaryID="6" >
+        <decConfigDescr>
+         <DecoderConfigDescriptor objectTypeIndication="0" streamType="10" >
+          <decSpecificInfo>
+           <UIConfig deviceName="Mouse" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+   </OD>
+ </ObjectDescriptorUpdate>
+  <Replace>
+   <Scene>
+    <ProtoDeclare name="Proto0" protoID="1" locations="&quot;bifs-externproto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+   Hint="eventIn"/>
+     <field name="_field1" type="Boolean" vrml97Hint="eventIn"/>
+     <field name="_field2" type="Vector2" vrml97Hint="exposedField" vector2Value="0 0"/>
+     <field name="_field3" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field4" type="Color" vrml97Hint="exposedField" colorValue="1 1 1"/>
+     <field name="_d2D backColor="0 1 1"/>
+</Replace>
+  <Replace atNode="TR_SW" atField="children" atIndexNode="SW" atIndexField="wlocations="&quot;bifs-externproto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+   Hint="eventIn"/>
+     <field name="_field1" type="Boovrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field7" type="Color" vrml97Hint="exposedField" colorValue="0 0 0"/proto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+   Hint="eventIn"/>
+     <field name="_field1" type="Boolean" vrmrule="evenodd"
+       clip="auto"
+       color-interpolation-filters="sRGB"
+       color-interpolation="linearRGB"
+       color-profile="inherit"
+       color-rendering="optimizeSpeed"
+       color="inherit"
+       cursor="crosshair"
+       direction="ltr"
+       display="block"
+       dominant-baseline="use-scriradius="25"/>
+       </geometry>
+      </Shape>
+      <Shape>
+       <geometry>
+        <ElevationGrid height="17 14 16 12 14 21 20 11 9 16 13 13 22 14 17 12 15 21 17 10 14 12 19 16 17 11 13 11 9 13 11 11 17 9 15 11 9 8 6 10 7 12 15 8 11 5 7 9 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 2 0 -2 -6 -12 -11 -7 -2 0 1 6 9 3 -1 -4 -9 -15 -13 -11 -4 -1 3 9 11 8 1 -5 -11 -15 -11 -9 -7 -1 5 7 9 8 -2 -10 -9 -9 -11 -13 -9 1 8 6" creaseAngle="2" xDimension="12" xSpacing="15" zDimension="11" zSpacing="8"/>
+       </geometry>
+      </Shape>
+      <Shape>
+       <geometry>
+ sion creaseAngle="1" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 -0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" endCap="false" scale="1.8 1.8 1.95 1.95 2 2 1.95 1.95 1.8 1.8 1.5 1.5 1.2 1.2 1.05 1.05 1 1 1.05 1.05 1.15 1.15" solid="false" spine="0 0 0 0 0.4 0 0 0.8 0 0 1.2 0 0 1.6 0 0 2 0 0 2.4 0 0 2.8 0 0 3.2 0 0 3.6 0 0 4 0"/>
+       </geometry>
+      </Shape>
+      <Shape>
+       <geometry>
+        <IndexedFaceSet coordIndex="0 1 2 3 -1 1 7 4 2 -1 7 6 5 4 -1 0 3 5 6 -1 3 2 4 5 -1 6 7 1 0 -1">
+         <color>
+          <Color DEF="N16" color="1 0 0 0 1 0 0 0 1 1 1 0 1 0 >
+          <Coordinate point="-1 -1 1 1 -1 1 1 1 1 -1 1 1 1 1 -1 -1 1 -1 -1 -1 -1 1 -1 -1pt"
+       enable-background="accumulate"
+       fill-opacity="0.467"
+       fill-rule="nonzero"
+       fill="red"
+       filter="none"
+       flood-color="currentColor"
+       flood-opacity="0.5"
+       font-family="monospace, Times New Roman"
+       font-size-adjust="none"
+       font-size="10%"
+       font-stretch="condensed"
+       font-style="italic"
+       font-variant="small-caps"
+       font-weight="600"
+       glyph-orientation-horizontal="45"
+       glviewBox=yph-orientation-vertical="auto"
+       image-rendering="optimizeQuality"
+       kerning="2em"
+       letter-spacing="2cm"
+       lighting-color="inherit"
+       marker-end="none"
+       marker-mid="inherit"
+       marker-start="none"
+       mask="none"
+       opacity="inherit"
+       overflow="hidden"
+       pointer-events="visiblePainted"
+       shape-rendering="crispEdges"
+       stop-color="currentColor"
+       stop-opacity=".9"
+       stroke-dasharray="30 45 5"
+       stroke-dashoffset="34%"
+       stroke-linecap="butt"
+       stroke-linejoin="miter"
+       stroke-miterlimit="4"
+       stroke-opacity="1"
+       stroke-width="34mm"
+       stroke="#000"
+       text-anchor="middle"
+       text-decoration="line-through"
+       text-rendering="optimizeLegibility"
+       unicode-bidi="embed"
+ mh="100"
+               slope="50"
+               cap-height="20"
+               x-height="60"
+               ascent="50"
+               descent="100"
+               alphabetic="0" 
+               bbox="10, 0, 30, 100"
+               hanging="450"
+               ideographic="123"
+               mathematical="456"
+               overline-position="123"
+               overline-thickness="6578"
+               strikethrough-position="345"
+               strikethrough-thickness="900"
+               underline-position="12"
+               underline-thickness="9840"
+               v-alphabetic="42"
+               v-hanging="342"
+               v-ideographic="890"
+               v-mathematical="54657"
+               widths="U+0-7FFFFFFF 0 0 0, U+0-7FFFFFFF 0 0 0"
+               />
+               
+    <animate xlink:href="Somref"
+             attributeName="width" 
+             begin="2" 
+             by="10" 
+             calcMode="discrete" 
+             attributeType="XML" 
+             accumul"
+           type="text/css"
+           />
+           
+    <textPath method="align"
+              spacing="exact"
+              startOffset="432"
+              textLength="-0"
+              xlink:href="Somref"
+              />
+             
+    <animateMotion keyPoints="0,0 0"
+                   origin="default"
+                   path="z"
+                   rotate="auto-reverse
+                   />
+
+    <glyph glyph-name="name1, name2, name3" 
+           arabic-form="initial" 
+           d="M100,0L300,5z"
+           horiz-adv-x="340"
+           lang="fre"
+           orientation="h"
+           unicode="ffl"
+           vert-adv-y="323"
+           vert-orig-x="456"
+           vert-orig-y="789"
+           />
+           
+    <missing-glyph d="M100,0L300,5z"
+                   />
+                   
+    <altGlyph xlink:actuate="onRequest"
+              xlink:show="SomeWord"
+              xlink:href="someref"
+              string="ttttt" 
+              dx="100 0 0 0 0 0" 
+              dy="-2 4" 
+              format="MyFormat"
+              rotate="0 0 0 0 34.5"
+              x="21"            
+              y="213"            
+             />
+
+    <cursor x="213" 
+            y="213" 
+            xlink:href="someref"
+            />
+              
+t2D>
+       </geometry>
+      </Shape>
+      <Shape>
+       <appearance>
+        <Appearance>
+         <texture>
+          <LinearGradient key="0 0.45 0.5 0.55 1" keyValue="0.2118 0.447 0.039 0.2118 0.447 0.039 0.2627 0.933 0 0.2392 0.3098 0.04313 0.2392 0.3098 0.04313" startPoint="-1 0"/>
+         </texture>
+        </Appearance>
+       </appearance>
+       <geometry>
+        <IndexedFaceSet2D>
+         <coord>
+          <Coordinate2D point="-50 0 -25 25 0 80 50 0"/>
+         </coord>
+        </IndexedFaceSet2D>
+       </geoTetry>
+      </Shape>
+      <Shape>
+       <appearance>
+        <Appearance>
+         <texture>
+          <RadialGradient DEF="N15" focalPoint="0 0.5" key="0 0.5 1" keyValue="0 0 1 1 0 0 0 1 0"/
+        </Shape>
+       </proxy>
+      </Collision>
+      <CylinderSensor/>
+      <SphereSensor/>
+      <PlaneSensor/>ectTypeIndication="0" streamType="10" >
+          <decSpecificInfo>
+           <UIConfig deviceName="KeySensor
+      <VisibilitySensor DEF="N27"/>
+      <Transform scaleOrientation="1 0 0 0.2"/>
+      <Transform2D DEF="TR_QP"/>
+      <Script DEF="N28" url="javascript:function set_time(value,text) {}function initialize() {if (1) {} else {}for (i=0; i&lt;10; i++) {continue;}while (0) {break;}var myvar;myvar=true;myvar=10;myvar--;myvar-=1;myvar++;++myvar;--myvar;myvar+=2;myvar/=2;myvar*=2;myvar%=2;myvar=myvar + 2;myvar=myvar - 2;myvar=myvar * 2;myvar=myvar / 2;myvar=myvar | myvar;myvar=myvar ^ myvar;myvar=myvar &amp; myvar;myvar=2 &lt;&lt; 4;myvar&lt;&lt;=2;myvar=2 &gt;&gt; 4;myvar&gt;&gt;=2;myvar&gt;&gt;&gt;=2;myvar=2 &gt;&gt;&gt; 4;myvar&amp;=2;myvar=myvar ? myvar : myvar;myvar=(myvar==2) ? myvar : myvar;myvar=~myvar;myvar=!myvar;myvar=-myvar;myvar|=myvar;myvar^=myvar;myvar=8;myvar%=myvar;myvar=myvar%2;myvar=myvar ? 0 : 1;if (myvar &lt;=2) {}if (myvar &gt;=2) {}if (myvar &lt;2) {}if (myvar &gt;2) {}if (myvar ==2) {}if (myvar !=2) {}if (myvar || myvar) {}if (myvar &amp;&amp; myvar) {}if (! myvar) {}switch (myvar) {case 1: return;default: break;}myvar= &apos;toto&apos;;myvauot;bifs-externproto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+   Hint="eventIn"/>
+     <fier=new Date();myvar.getDate();myvar[1]=&apos;string&apos;;tes = myvar[0];myvar = myvar.empty;myvar.push(&apos;test&apos;);set_time(0,0);myvar.fun = function() { };}       ">
+       <field name="set_time" type="Time" vrml97Hint="eventIn"/>
+       <field name="str" type="Node" vrml97Hint="field">
+<node>        <VisibilitySensor USE="N27"/>
+</node></field>
+             </Script>
+      <ProtoInstance name="Proto1" DEF="N29">
+       <fieldValue name="_field2"  vector2Value="100 0"/>
+       <fieldValue name="_field3"  floatValue="0.78"/>
+       <fieldValue name="_field4"  colorValue="1 0 1"/>
+       <fieldValue name="_field5"  booleanValue="true"/>
+       <fieldValue name="_field6"  floatValue="0.75"/>
+      ion="100 0"/>
+      <Transform2D DEF="TR3"/>
+      <EnvironmentTest DEF="EV1" parameter="2"/>
+      <Transform2D DEF="TR_SW">
+       <Switch DEF="SW" whichChoicr>
+<par begin="0

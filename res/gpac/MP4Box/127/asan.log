@@ -1,0 +1,76 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 34)
+[XMT Parsing] Invalid child descriptor (line 46)
+[XMT Parsing] Invalid child descriptor (line 49)
+[XMT Parsing] Invalid child descriptor (line 50)
+[XMT Parsing] Invalid child descriptor (line 59)
+[XMT Parsing] Invalid child descriptor (line 61)
+[XMT Parsing] Invalid child descriptor (line 78)
+=================================================================
+==1629762==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b4b433e46d8 at pc 0x7f2b44d618f5 bp 0x7ffeb72127d0 sp 0x7ffeb72127c8
+READ of size 8 at 0x7b4b433e46d8 thread T0
+    #0 0x7f2b44d618f4 in gf_sg_vrml_mf_reset scenegraph/vrml_tools.c:1122
+    #1 0x7f2b45342628 in xmt_parse_mf_field scene_manager/loader_xmt.c:1072
+    #2 0x7f2b45346bec in xmt_parse_script_field scene_manager/loader_xmt.c:1415
+    #3 0x7f2b45346bec in xmt_parse_element scene_manager/loader_xmt.c:1569
+    #4 0x7f2b4534a1c3 in xmt_node_start scene_manager/loader_xmt.c:2740
+    #5 0x7f2b44b8949c in xml_sax_node_start utils/xml_parser.c:308
+    #6 0x7f2b44b8e217 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #7 0x7f2b44b8e217 in xml_sax_parse utils/xml_parser.c:940
+    #8 0x7f2b44b89ef0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #9 0x7f2b44b8ef37 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #10 0x7f2b44b8f293 in xml_sax_read_file utils/xml_parser.c:1225
+    #11 0x7f2b44b8fd48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #12 0x7f2b4533c335 in load_xmt_run scene_manager/loader_xmt.c:3279
+    #13 0x7f2b459e4acc in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7f2b4575d153 in gf_filter_process_task filter_core/filter.c:3257
+    #15 0x7f2b45731681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #16 0x7f2b45736742 in gf_fs_run filter_core/filter_session.c:2728
+    #17 0x7f2b451f86af in gf_media_import media_tools/media_import.c:1632
+    #18 0x55d2fb845579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #19 0x55d2fb800f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #20 0x55d2fb8033e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #21 0x7f2b44631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #22 0x7f2b44632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #23 0x55d2fb7e3070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7b4b433e46dc is located 0 bytes after 12-byte region [0x7b4b433e46d0,0x7b4b433e46dc)
+allocated by thread T0 here:
+    #0 0x7f2b4672435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f2b44d5ebf9 in NewSFVec3f scenegraph/vrml_tools.c:324
+    #2 0x7f2b44d5ebf9 in gf_sg_vrml_field_pointer_new scenegraph/vrml_tools.c:503
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow scenegraph/vrml_tools.c:1122 in gf_sg_vrml_mf_reset
+Shadow bytes around the buggy address:
+  0x7b4b433e4400: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b4b433e4480: fa fa 00 00 fa fa 00 01 fa fa 00 00 fa fa 00 00
+  0x7b4b433e4500: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b4b433e4580: fa fa 00 00 fa fa 00 00 fa fa 07 fa fa fa 00 fa
+  0x7b4b433e4600: fa fa 04 fa fa fa 00 fa fa fa 04 fa fa fa 00 fa
+=>0x7b4b433e4680: fa fa 04 fa fa fa 00 fa fa fa 00[04]fa fa 00 fa
+  0x7b4b433e4700: fa fa 04 fa fa fa 00 fa fa fa fa fa fa fa fa fa
+  0x7b4b433e4780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b4b433e4800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b4b433e4880: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b4b433e4900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1629762==ABORTING

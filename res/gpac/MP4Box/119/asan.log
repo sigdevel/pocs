@@ -1,0 +1,42 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1629736==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fc4dbd7cbd9 bp 0x7ffeebc312b0 sp 0x7ffeebc30a68 T0)
+==1629736==The signal is caused by a READ memory access.
+==1629736==Hint: address points to the zero page.
+    #0 0x7fc4dbd7cbd9 in __strlen_avx2_rtm ../sysdeps/x86_64/multiarch/strlen-avx2.S:76
+    #1 0x7fc4ddc85937 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:423
+    #2 0x7fc4dc942635 in xmt_parse_mf_field scene_manager/loader_xmt.c:1074
+    #3 0x7fc4dc94b19c in xmt_parse_command scene_manager/loader_xmt.c:2492
+    #4 0x7fc4dc94b19c in xmt_node_start scene_manager/loader_xmt.c:2728
+    #5 0x7fc4dc18949c in xml_sax_node_start utils/xml_parser.c:308
+    #6 0x7fc4dc18dbdc in xml_sax_parse_attribute utils/xml_parser.c:397
+    #7 0x7fc4dc18dbdc in xml_sax_parse utils/xml_parser.c:940
+    #8 0x7fc4dc189afe in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #9 0x7fc4dc18ef37 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #10 0x7fc4dc18f293 in xml_sax_read_file utils/xml_parser.c:1225
+    #11 0x7fc4dc18fd48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #12 0x7fc4dc93c335 in load_xmt_run scene_manager/loader_xmt.c:3279
+    #13 0x7fc4dcfe4acc in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7fc4dcd5d153 in gf_filter_process_task filter_core/filter.c:3257
+    #15 0x7fc4dcd31681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #16 0x7fc4dcd36742 in gf_fs_run filter_core/filter_session.c:2728
+    #17 0x7fc4dc7f86af in gf_media_import media_tools/media_import.c:1632
+    #18 0x55ad479a6579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #19 0x55ad47961f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #20 0x55ad479643e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #21 0x7fc4dbc31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #22 0x7fc4dbc32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #23 0x55ad47944070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+==1629736==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x00007bc4d9739700  rdx = 0x0000000000000000  
+rdi = 0x0000000000000000  rsi = 0x0000000000000026  rbp = 0x00007ffeebc312b0  rsp = 0x00007ffeebc30a68  
+ r8 = 0x00007bc4d9816094   r9 = 0x00000000000000f3  r10 = 0x0000000000000000  r11 = 0x00000f789b2e72e0  
+r12 = 0x00007cd4da9eb080  r13 = 0x00007bc4d9816090  r14 = 0x00007ffeebc314e0  r15 = 0x00000f789b302c00  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strlen-avx2.S:76 in __strlen_avx2_rtm
+==1629736==ABORTING

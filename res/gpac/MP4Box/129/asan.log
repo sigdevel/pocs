@@ -1,0 +1,92 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 180)
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 180)
+[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 181)
+[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 182)
+[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 183)
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 210)
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 215)
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 220)
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 300)
+[XMT Parsing] Warning: closing element Shape doesn't match created node Appearance (line 539)
+[XMT Parsing] Warning: closing element Transform2D doesn't match created node Appearance (line 541)
+[XMT Parsing] Warning: closing element QuantizationParameter doesn't match created node Appearance (line 552)
+[XMT Parsing] Warning: closing element Appearance doesn't match created node Shape (line 562)
+[XMT Parsing] Warning: closing element Coordinate2D doesn't match created node Shape (line 567)
+[XMT Parsing] Warning: closing element IndexedFaceSet2D doesn't match created node Shape (line 569)
+Service gpac:///home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[Texture 0x7c6932be0a90] No output frame in 10000 ms, considering stream not available
+=================================================================
+==1629768==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b9932be51f8 at pc 0x7f793465c148 bp 0x7fff3b030cd0 sp 0x7fff3b030cc8
+READ of size 8 at 0x7b9932be51f8 thread T0
+    #0 0x7f793465c147 in ReplaceDEFNode scenegraph/base_scenegraph.c:825
+    #1 0x7f793465c3f1 in gf_node_replace scenegraph/base_scenegraph.c:960
+    #2 0x7f793465cb75 in gf_sg_reset scenegraph/base_scenegraph.c:397
+    #3 0x7f793465cb75 in gf_sg_reset scenegraph/base_scenegraph.c:328
+    #4 0x7f793465d83d in gf_sg_del scenegraph/base_scenegraph.c:164
+    #5 0x7f7934724acf in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #6 0x7f7934666e1f in gf_sg_command_del scenegraph/commands.c:117
+    #7 0x7f793475fec4 in gf_sg_sfcommand_del scenegraph/vrml_tools.c:619
+    #8 0x7f79346d3245 in InputSensor_Del scenegraph/mpeg4_nodes.c:22695
+    #9 0x7f79346d3245 in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37849
+    #10 0x7f793465a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #11 0x7f793465a95f in gf_node_unregister_children scenegraph/base_scenegraph.c:1375
+    #12 0x7f793475e1f3 in gf_sg_vrml_parent_destroy scenegraph/vrml_tools.c:161
+    #13 0x7f79346d29bf in Billboard_Del scenegraph/mpeg4_nodes.c:1963
+    #14 0x7f79346d29bf in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37540
+    #15 0x7f793465a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+    #16 0x7f7934d370cc in load_xmt_done scene_manager/loader_xmt.c:3343
+    #17 0x7f79353e11c1 in ctxload_finalize filters/load_bt_xmt.c:829
+    #18 0x7f7935137d2c in gf_fs_del filter_core/filter_session.c:786
+    #19 0x7f7934bfa1eb in gf_media_import media_tools/media_import.c:1672
+    #20 0x556bbc1a8579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #21 0x556bbc163f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #22 0x556bbc1663e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #23 0x7f7934031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #24 0x7f7934032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #25 0x556bbc146070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7b9932be51f8 is located 8 bytes inside of 16-byte region [0x7b9932be51f0,0x7b9932be5200)
+freed by thread T0 here:
+    #0 0x7f793612340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f793465a97a in gf_node_unregister_children scenegraph/base_scenegraph.c:1378
+
+previously allocated by thread T0 here:
+    #0 0x7f793612435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f7934658122 in gf_node_list_add_child_last scenegraph/base_scenegraph.c:1496
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:825 in ReplaceDEFNode
+Shadow bytes around the buggy address:
+  0x7b9932be4f00: fa fa 00 00 fa fa 03 fa fa fa 00 00 fa fa 06 fa
+  0x7b9932be4f80: fa fa 00 00 fa fa 00 00 fa fa 03 fa fa fa 00 00
+  0x7b9932be5000: fa fa 03 fa fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b9932be5080: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7b9932be5100: fa fa 00 00 fa fa fd fd fa fa 00 00 fa fa 03 fa
+=>0x7b9932be5180: fa fa 00 00 fa fa 00 00 fa fa 04 fa fa fa fd[fd]
+  0x7b9932be5200: fa fa fd fd fa fa 04 fa fa fa fd fd fa fa 00 00
+  0x7b9932be5280: fa fa 00 00 fa fa 00 00 fa fa fd fd fa fa fd fd
+  0x7b9932be5300: fa fa 03 fa fa fa fd fd fa fa fd fd fa fa 00 00
+  0x7b9932be5380: fa fa 00 00 fa fa 00 00 fa fa 07 fa fa fa 00 00
+  0x7b9932be5400: fa fa 04 fa fa fa 00 00 fa fa 00 00 fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1629768==ABORTING

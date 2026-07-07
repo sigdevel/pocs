@@ -1,0 +1,72 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)
+[XMT Parsing] Warning: closing element NavigationInfo doesn't match created node Script (line 223)
+=================================================================
+==1629871==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bba351e4358 at pc 0x7f5a3734c41b bp 0x7ffca3c6f530 sp 0x7ffca3c6f528
+WRITE of size 8 at 0x7bba351e4358 thread T0
+    #0 0x7f5a3734c41a in xmt_node_start scene_manager/loader_xmt.c:2655
+    #1 0x7f5a36b8949c in xml_sax_node_start utils/xml_parser.c:308
+    #2 0x7f5a36b8e217 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #3 0x7f5a36b8e217 in xml_sax_parse utils/xml_parser.c:940
+    #4 0x7f5a36b89afe in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #5 0x7f5a36b8ef37 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #6 0x7f5a36b8f293 in xml_sax_read_file utils/xml_parser.c:1225
+    #7 0x7f5a36b8fd48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #8 0x7f5a3733c335 in load_xmt_run scene_manager/loader_xmt.c:3279
+    #9 0x7f5a379e4acc in ctxload_process filters/load_bt_xmt.c:522
+    #10 0x7f5a3775d153 in gf_filter_process_task filter_core/filter.c:3257
+    #11 0x7f5a37731681 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #12 0x7f5a37736742 in gf_fs_run filter_core/filter_session.c:2728
+    #13 0x7f5a371f86af in gf_media_import media_tools/media_import.c:1632
+    #14 0x562b53dfc579 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #15 0x562b53db7f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #16 0x562b53dba3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #17 0x7f5a36631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #18 0x7f5a36632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0x562b53d9a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 7c561012bd3258d58335187e5fb200fd4437b7d5)
+
+0x7bba351e4358 is located 24 bytes inside of 64-byte region [0x7bba351e4340,0x7bba351e4380)
+freed by thread T0 here:
+    #0 0x7f5a3872340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f5a36c5a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:760
+
+previously allocated by thread T0 here:
+    #0 0x7f5a3872435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f5a36ccdf8e in InputSensor_Create scenegraph/mpeg4_nodes.c:22790
+    #2 0x7f5a36ccdf8e in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36938
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:2655 in xmt_node_start
+Shadow bytes around the buggy address:
+  0x7bba351e4080: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bba351e4100: 00 00 00 00 00 00 00 00 fa fa fa fa fd fd fd fd
+  0x7bba351e4180: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fa
+  0x7bba351e4200: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bba351e4280: 00 00 00 00 00 00 00 fa fa fa fa fa 00 00 00 00
+=>0x7bba351e4300: 00 00 00 fa fa fa fa fa fd fd fd[fd]fd fd fd fd
+  0x7bba351e4380: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bba351e4400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bba351e4480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bba351e4500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bba351e4580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1629871==ABORTING
