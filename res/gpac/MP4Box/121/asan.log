@@ -1,0 +1,74 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing                                                                                             
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)                            
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)                            
+[XMT Parsing] connect: Proto field _field7 is not defined (line 150)                                                        
+[XMT Parsing] Invalid XML document:  (line 184)                                                                             
+=================================================================                                                           
+==1086112==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c235d614580 at pc 0x7fb35f05a7d9 bp 0x7ffdfc44e310 sp 0x7ffdfc44e308                                                                                                              
+READ of size 8 at 0x7c235d614580 thread T0                                                                                  
+    #0 0x7fb35f05a7d8 in gf_node_unregister scenegraph/base_scenegraph.c:689
+    #1 0x7fb35f1249f8 in gf_sg_proto_del scenegraph/vrml_proto.c:117
+    #2 0x7fb35f05d0e2 in gf_sg_reset scenegraph/base_scenegraph.c:503
+    #3 0x7fb35f05d0e2 in gf_sg_reset scenegraph/base_scenegraph.c:337
+    #4 0x7fb35f05d841 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #5 0x7fb35f124cdf in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #6 0x7fb35f06701f in gf_sg_command_del scenegraph/commands.c:125
+    #7 0x7fb35f72e463 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #8 0x7fb35f72e463 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #9 0x7fb35f72e463 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #10 0x7fb35f72e463 in gf_sm_del scene_manager/scene_manager.c:147
+    #11 0x7fb35fde6987 in ctxload_process filters/load_bt_xmt.c:530
+    #12 0x7fb35fb5ec53 in gf_filter_process_task filter_core/filter.c:3257
+    #13 0x7fb35fb33181 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #14 0x7fb35fb38242 in gf_fs_run filter_core/filter_session.c:2728
+    #15 0x7fb35f5f894f in gf_media_import media_tools/media_import.c:1632
+    #16 0x559145a09599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #17 0x5591459c4f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #18 0x5591459c73e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #19 0x7fb35ea31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #20 0x7fb35ea32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #21 0x5591459a7070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 1e5b0c4f59da75420dad39af4adb680fbe271151)
+
+0x7c235d614580 is located 0 bytes inside of 80-byte region [0x7c235d614580,0x7c235d6145d0)
+freed by thread T0 here:                                                                                                    
+    #0 0x7fb360b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fb35f05a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:769
+
+previously allocated by thread T0 here:
+    #0 0x7fb360b2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fb35f0be06a in Transform2D_Create scenegraph/mpeg4_nodes.c:14997
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:689 in gf_node_unregister
+Shadow bytes around the buggy address:
+  0x7c235d614300: 00 00 00 00 00 00 fa fa fa fa 00 00 00 00 00 00
+  0x7c235d614380: 00 00 00 00 fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c235d614400: fd fd fa fa fa fa fd fd fd fd fd fd fd fd fd fd
+  0x7c235d614480: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fa fa
+  0x7c235d614500: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+=>0x7c235d614580:[fd]fd fd fd fd fd fd fd fd fd fa fa fa fa fd fd
+  0x7c235d614600: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7c235d614680: fd fd fd fd fd fd fa fa fa fa 00 00 00 00 00 00
+  0x7c235d614700: 00 00 00 00 fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c235d614780: fd fd fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x7c235d614800: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1086112==ABORTING
