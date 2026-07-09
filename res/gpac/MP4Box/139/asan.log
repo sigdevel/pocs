@@ -1,0 +1,60 @@
+MPEG-4 BIFS Scene Parsing
+[ODF] Reading bifs config: shift in sizes (invalid descriptor)                                                              
+Analysing Scene                                                                                                             
+=================================================================
+==1030637==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c475f3e22b0 at pc 0x7fd760c5aaa8 bp 0x7ffd27bf0e10 sp 0x7ffd27bf0e08                                                                                                              
+READ of size 8 at 0x7c475f3e22b0 thread T0                                                                                  
+    #0 0x7fd760c5aaa7 in gf_node_get_field_count scenegraph/base_scenegraph.c:1936
+    #1 0x7fd760c5bcfb in ReplaceDEFNode scenegraph/base_scenegraph.c:813
+    #2 0x7fd760c5ce4f in gf_sg_reset scenegraph/base_scenegraph.c:466
+    #3 0x7fd760c5ce4f in gf_sg_reset scenegraph/base_scenegraph.c:337
+    #4 0x7fd760c5d841 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #5 0x55e44dbd8e12 in dump_isom_scene_stats /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/filedump.c:489
+    #6 0x55e44dbcae45 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6667
+    #7 0x7fd760631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7fd760632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x55e44dbaa070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 1e5b0c4f59da75420dad39af4adb680fbe271151)
+
+0x7c475f3e22b0 is located 0 bytes inside of 72-byte region [0x7c475f3e22b0,0x7c475f3e22f8)
+freed by thread T0 here:                                                                                                    
+    #0 0x7fd76272340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fd760c5a0b7 in gf_node_unregister scenegraph/base_scenegraph.c:769
+
+previously allocated by thread T0 here:
+    #0 0x7fd76272435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fd760cd1047 in Layer2D_Create scenegraph/mpeg4_nodes.c:8795
+    #2 0x7fd760cd1047 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36814
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:1936 in gf_node_get_field_count
+Shadow bytes around the buggy address:
+  0x7c475f3e2000: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+  0x7c475f3e2080: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fd fd
+  0x7c475f3e2100: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7c475f3e2180: fd fd fd fd fd fd fa fa fa fa fd fd fd fd fd fd
+  0x7c475f3e2200: fd fd fd fd fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x7c475f3e2280: 00 00 fa fa fa fa[fd]fd fd fd fd fd fd fd fd fa
+  0x7c475f3e2300: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fa fa
+  0x7c475f3e2380: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+  0x7c475f3e2400: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fd fd
+  0x7c475f3e2480: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7c475f3e2500: fd fd fd fd fd fd fa fa fa fa fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1030637==ABORTING
