@@ -1,0 +1,101 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing                                                                                             
+[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 180)                                
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 180)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 181)                                  
+[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 182)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 183)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 210)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 215)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 220)                                   
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 300)                           
+[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 604)                                
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 604)                                      
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 605)                            
+[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 607)                            
+[XMT Parsing] Warning: Field set_bind not a member of node N1  (line 642)                                                   
+[XMT Parsing] Warning: closing element LineProperties doesn't match created node InputSensor (line 653)                     
+[XMT Parsing] Warning: closing element Material2D doesn't match created node InputSensor (line 655)                         
+[XMT Parsing] Warning: closing element Appearance doesn't match created node InputSensor (line 657)                         
+[XMT Parsing] Warning: closing element Rectangle doesn't match created node InputSensor (line 660)                          
+[XMT Parsing] Warning: closing element Shape doesn't match created node InputSensor (line 662)                              
+[XMT Parsing] Warning: closing element ImageTexture doesn't match created node InputSensor (line 673)                       
+[XMT Parsing] Warning: closing element XLineProperties doesn't match created node InputSensor (line 675)                    
+[XMT Parsing] Warning: closing element Material2D doesn't match created node InputSensor (line 677)                         
+[XMT Parsing] Warning: closing element Appearance doesn't match created node InputSensor (line 679)                         
+[XMT Parsing] Warning: closing element Rectangle doesn't match created node InputSensor (line 682)                          
+[XMT Parsing] Warning: closing element Shape doesn't match created node InputSensor (line 684)                              
+[XMT Parsing] Warning: closing element ColorTransform doesn't match created node InputSensor (line 686)                     
+[XMT Parsing] Warning: closing element Clipper2D doesn't match created node InputSensor (line 688)                          
+[XMT Parsing] Warning: closing element Layer2D doesn't match created node InputSensor (line 689)                            
+[XMT Parsing] Warning: closing element Form doesn't match created node InputSensor (line 690)                               
+[XMT Parsing] Warning: closing element Layout doesn't match created node InputSensor (line 691)                             
+[XMT Parsing] Warning: closing element PathLayout doesn't match created node InputSensor (line 692)                         
+[XMT Parsing] Warning: closing element Circle doesn't match created node InputSensor (line 703)                             
+[XMT Parsing] Warning: closing element FontStyle doesn't match created node InputSensor (line 710)                          
+[XMT Parsing] Warning: closing element Text doesn't match created node InputSensor (line 712)                               
+[XMT Parsing] Warning: closing element Shape doesn't match created node InputSensor (line 714)                              
+[XMT Parsing] Invalid XML document:  (line 723)                                                                             
+=================================================================                                                           
+==310535==ERROR: AddressSanitizer: heap-use-after-free on address 0x7ca6015e0700 at pc 0x7fe602e68b2a bp 0x7ffebd66f160 sp 0x7ffebd66f158                                                                                                               
+READ of size 8 at 0x7ca6015e0700 thread T0                                                                                  
+    #0 0x7fe602e68b29 in gf_sg_command_del scenegraph/commands.c:61
+    #1 0x7fe60352e5a3 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #2 0x7fe60352e5a3 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #3 0x7fe60352e5a3 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #4 0x7fe60352e5a3 in gf_sm_del scene_manager/scene_manager.c:147
+    #5 0x7fe603be4297 in ctxload_process filters/load_bt_xmt.c:530
+    #6 0x7fe60395ee13 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7fe603933341 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7fe603938402 in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7fe6033f8a8f in gf_media_import media_tools/media_import.c:1632
+    #10 0x556c592a5599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #11 0x556c59260f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #12 0x556c592633e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #13 0x7fe602831f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7fe602832026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x556c59243070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d23703ed1b1b8e59e778b0eb0c8e88e4c08d4940)
+
+0x7ca6015e0700 is located 0 bytes inside of 120-byte region [0x7ca6015e0700,0x7ca6015e0778)
+freed by thread T0 here:                                                                                                    
+    #0 0x7fe60492340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fe602f610ed in gf_sg_sfcommand_del scenegraph/vrml_tools.c:628
+
+previously allocated by thread T0 here:
+    #0 0x7fe60492435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fe602e682b7 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/commands.c:61 in gf_sg_command_del
+Shadow bytes around the buggy address:
+  0x7ca6015e0480: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7ca6015e0500: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x7ca6015e0580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7ca6015e0600: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7ca6015e0680: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+=>0x7ca6015e0700:[fd]fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7ca6015e0780: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7ca6015e0800: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x7ca6015e0880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7ca6015e0900: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7ca6015e0980: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==310535==ABORTING
