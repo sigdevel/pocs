@@ -1,0 +1,72 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "vector2Value" for node Transform - skipping (line 272)
+[XMT Parsing] Warning: fieldValue not a valid node (line 273)
+[XMT Parsing] Warning: fieldValue not a valid node (line 274)
+[XMT Parsing] Warning: fieldValue not a valid node (line 275)
+[XMT Parsing] Warning: fieldValue not a valid node (line 276)
+[XMT Parsing] Warning: fieldValue not a valid node (line 277)
+[XMT Parsing] Warning: fieldValue not a valid node (line 278)
+[XMT Parsing] Warning: fieldValue not a valid node (line 279)
+[XMT Parsing] Warning: fieldValue not a valid node (line 280)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 301)
+[XMT Parsing] Warning: Unknown proto field _field4 - skipping (line 735)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 760)
+=================================================================
+==1946773==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c13545e27a8 at pc 0x7fb35673b449 bp 0x7fff420900a0 sp 0x7fff42090098
+READ of size 4 at 0x7c13545e27a8 thread T0
+    #0 0x7fb35673b448 in xmt_resolve_od_links scene_manager/loader_xmt.c:585
+    #1 0x7fb35673d29b in load_xmt_run scene_manager/loader_xmt.c:3420
+    #2 0x7fb356de3eec in ctxload_process filters/load_bt_xmt.c:522
+    #3 0x7fb356b5ee53 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7fb356b33381 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7fb356b38442 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7fb3565f6754 in gf_media_import media_tools/media_import.c:1305
+    #7 0x55ab853f64b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x55ab853c6339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6574
+    #9 0x7fb355a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7fb355a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x55ab853a2070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d23703ed1b1b8e59e778b0eb0c8e88e4c08d4940)
+
+0x7c13545e27a8 is located 40 bytes inside of 64-byte region [0x7c13545e2780,0x7c13545e27c0)
+freed by thread T0 here:
+    #0 0x7fb357b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fb35605b5d7 in gf_node_unregister scenegraph/base_scenegraph.c:792
+
+previously allocated by thread T0 here:
+    #0 0x7fb357b2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fb3560d1f55 in Background2D_Create scenegraph/mpeg4_nodes.c:1944
+    #2 0x7fb3560d1f55 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36730
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:585 in xmt_resolve_od_links
+Shadow bytes around the buggy address:
+  0x7c13545e2500: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fa
+  0x7c13545e2580: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7c13545e2600: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7c13545e2680: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c13545e2700: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+=>0x7c13545e2780: fd fd fd fd fd[fd]fd fd fa fa fa fa fd fd fd fd
+  0x7c13545e2800: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c13545e2880: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7c13545e2900: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+  0x7c13545e2980: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fa
+  0x7c13545e2a00: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1946773==ABORTING

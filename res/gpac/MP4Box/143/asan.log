@@ -1,0 +1,39 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "backColor" for node Background - skipping (line 184)
+[XMT Parsing] Warning: Unknown field "url" for node Background - skipping (line 184)
+[XMT Parsing] Warning: Unknown field "title" for node Background - skipping (line 184)
+[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 325)
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 326)
+[XMT Parsing] Invalid XML document: Markup error - Line 327: /sts (line 327)
+[CtxLoad] Failed to load context for file ./143_gf_sg_sfcommand_del_scenegraph_vrml_tools_c_628: Corrupted Data in file/stream
+=================================================================
+==1949949==ERROR: AddressSanitizer: attempting double-free on 0x7c87767e0580 in thread T0:
+    #0 0x7fc779b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fc7781610ed in gf_sg_sfcommand_del scenegraph/vrml_tools.c:628
+    #2 0x7fc7780d686a in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #3 0x7fc7780d686a in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37567
+    #4 0x7fc77805b5d7 in gf_node_unregister scenegraph/base_scenegraph.c:792
+    #5 0x7fc77805e697 in gf_sg_reset scenegraph/base_scenegraph.c:513
+    #6 0x7fc77805e697 in gf_sg_reset scenegraph/base_scenegraph.c:337
+    #7 0x7fc7789c396b in gf_scene_disconnect compositor/scene.c:503
+    #8 0x7fc7789b7ffd in gf_odm_disconnect compositor/object_manager.c:166
+    #9 0x7fc778ba1e77 in compose_finalize filters/compose.c:798
+    #10 0x7fc778b39a2c in gf_fs_del filter_core/filter_session.c:786
+    #11 0x7fc7785f9b64 in gf_media_import media_tools/media_import.c:1371
+    #12 0x562a3ddc94b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x562a3dd99339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6574
+    #14 0x7fc777a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7fc777a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x562a3dd75070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d23703ed1b1b8e59e778b0eb0c8e88e4c08d4940)
+
+0x7c87767e0580 is located 0 bytes inside of 120-byte region [0x7c87767e0580,0x7c87767e05f8)
+freed by thread T0 here:
+    #0 0x7fc779b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fc778068806 in gf_sg_command_del scenegraph/commands.c:138
+
+previously allocated by thread T0 here:
+    #0 0x7fc779b2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc7780682b7 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: double-free scenegraph/vrml_tools.c:628 in gf_sg_sfcommand_del
+==1949949==ABORTING

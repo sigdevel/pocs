@@ -1,0 +1,69 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)
+[XMT Parsing] Warning: geomed is not a valid node - skipping (line 465)
+[XMT Parsing] Warning: closing element Color doesn't match created node OrderedGroup (line 472)
+[XMT Parsing] Warning: closing element Coordinate doesn't match created node OrderedGroup (line 475)
+[XMT Parsing] Warning: closing element IndexedFaceSet doesn't match created node OrderedGroup (line 477)
+[XMT Parsing] Invalid XML document:  (line 556)
+=================================================================
+==1947108==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c5e933e05c0 at pc 0x7f9e94c68aa5 bp 0x7ffca776bb10 sp 0x7ffca776bb08
+READ of size 8 at 0x7c5e933e05c0 thread T0
+    #0 0x7f9e94c68aa4 in gf_sg_command_del scenegraph/commands.c:124
+    #1 0x7f9e9532e5e3 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #2 0x7f9e9532e5e3 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #3 0x7f9e9532e5e3 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #4 0x7f9e9532e5e3 in gf_sm_del scene_manager/scene_manager.c:147
+    #5 0x7f9e959e42d7 in ctxload_process filters/load_bt_xmt.c:530
+    #6 0x7f9e9575ee53 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7f9e95733381 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f9e95738442 in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7f9e951f6754 in gf_media_import media_tools/media_import.c:1305
+    #10 0x55ffc6eec4b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #11 0x55ffc6ebc339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6574
+    #12 0x7f9e94631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7f9e94632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x55ffc6e98070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d23703ed1b1b8e59e778b0eb0c8e88e4c08d4940)
+
+0x7c5e933e05c0 is located 64 bytes inside of 120-byte region [0x7c5e933e0580,0x7c5e933e05f8)
+freed by thread T0 here:
+    #0 0x7f9e9672340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f9e94d610ed in gf_sg_sfcommand_del scenegraph/vrml_tools.c:628
+
+previously allocated by thread T0 here:
+    #0 0x7f9e9672435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f9e94c682b7 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/commands.c:124 in gf_sg_command_del
+Shadow bytes around the buggy address:
+  0x7c5e933e0300: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c5e933e0380: 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa fa
+  0x7c5e933e0400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c5e933e0480: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c5e933e0500: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+=>0x7c5e933e0580: fd fd fd fd fd fd fd fd[fd]fd fd fd fd fd fd fa
+  0x7c5e933e0600: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c5e933e0680: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x7c5e933e0700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c5e933e0780: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c5e933e0800: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1947108==ABORTING
