@@ -1,0 +1,99 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Invalid child descriptor (line 29)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 31)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 35)
+[0mXMT Parsing: |======              | (32/100)
+[33m[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 201)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 201)
+[0m[33m[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 202)
+[0m[33m[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 204)
+[0mXMT Parsing: |=============       | (66/100)
+[31m[XMT Parsing] Warning: buffer is not a valid node - skipping (line 228)
+[0m[31m[XMT Parsing] Warning: closing element Conditional doesn't match created node DiscSensor (line 231)
+[0m[31m[XMT Parsing] Warning: closing element Conditional doesn't match created node DiscSensor (line 236)
+[0mXMT Parsing: |====================| (100/100)
+                                                   
+[31m[XMT Parsing] Invalid XML document: Invalid character '>' for attribute name - Line 280: nameolorTr (line 280)
+[0m=================================================================
+==954415==ERROR: AddressSanitizer: heap-use-after-free on address 0x7be87c213b70 at pc 0x7f787da5c0d6 bp 0x7fff3dcb7480 sp 0x7fff3dcb7478
+READ of size 8 at 0x7be87c213b70 thread T0
+    #0 0x7f787da5c0d5 in gf_node_try_destroy scenegraph/base_scenegraph.c:704
+    #1 0x7f787da68836 in gf_sg_command_del scenegraph/commands.c:131
+    #2 0x7f787db61194 in gf_sg_sfcommand_del scenegraph/vrml_tools.c:625
+    #3 0x7f787dad693a in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #4 0x7f787dad693a in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37567
+    #5 0x7f787da5b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+    #6 0x7f787da5c0ff in gf_node_unregister_children scenegraph/base_scenegraph.c:1416
+    #7 0x7f787db5f4f6 in gf_sg_vrml_parent_destroy scenegraph/vrml_tools.c:167
+    #8 0x7f787dad436f in Billboard_Del scenegraph/mpeg4_nodes.c:1963
+    #9 0x7f787dad436f in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37540
+    #10 0x7f787da5b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+    #11 0x7f787da5e7b3 in gf_sg_reset scenegraph/base_scenegraph.c:522
+    #12 0x7f787da5e7b3 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #13 0x7f787da5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #14 0x7f787db2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #15 0x7f787da5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #16 0x7f787da5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #17 0x7f787da5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #18 0x7f787db2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #19 0x7f787da687bf in gf_sg_command_del scenegraph/commands.c:125
+    #20 0x7f787e12e8f3 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #21 0x7f787e12e8f3 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #22 0x7f787e12e8f3 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #23 0x7f787e12e8f3 in gf_sm_del scene_manager/scene_manager.c:147
+    #24 0x7f787e7e4a17 in ctxload_process filters/load_bt_xmt.c:530
+    #25 0x7f787e55f893 in gf_filter_process_task filter_core/filter.c:3257
+    #26 0x7f787e533dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #27 0x7f787e538e82 in gf_fs_run filter_core/filter_session.c:2728
+    #28 0x7f787dff8d4f in gf_media_import media_tools/media_import.c:1632
+    #29 0x5631dd679599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #30 0x5631dd634f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #31 0x5631dd6373e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #32 0x7f787d431f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #33 0x7f787d432026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #34 0x5631dd617070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7be87c213b70 is located 0 bytes inside of 72-byte region [0x7be87c213b70,0x7be87c213bb8)
+freed by thread T0 here:
+    #0 0x7f787f52340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f787da5b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+
+previously allocated by thread T0 here:
+    #0 0x7f787f52435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f787dad1b0b in Conditional_Create scenegraph/mpeg4_nodes.c:3193
+    #2 0x7f787dad1b0b in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36750
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:704 in gf_node_try_destroy
+Shadow bytes around the buggy address:
+  0x7be87c213880: fd fd fd fd fd fd fa fa fa fa fd fd fd fd fd fd
+  0x7be87c213900: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7be87c213980: fd fd fa fa fa fa fd fd fd fd fd fd fd fd fd fd
+  0x7be87c213a00: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fa fa
+  0x7be87c213a80: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+=>0x7be87c213b00: fd fd fd fd fd fd fd fd fd fa fa fa fa fa[fd]fd
+  0x7be87c213b80: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+  0x7be87c213c00: fd fd fd fd fd fd fa fa fa fa 00 00 00 00 00 00
+  0x7be87c213c80: 00 00 00 00 fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7be87c213d00: fd fd fa fa fa fa fd fd fd fd fd fd fd fd fd fd
+  0x7be87c213d80: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954415==ABORTING

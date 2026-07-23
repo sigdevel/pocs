@@ -1,0 +1,208 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Invalid child descriptor (line 28)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 30)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 34)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 90)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 93)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 97)
+[0mXMT Parsing: |=                   | (09/100)
+[33m[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 187)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 187)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 188)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 189)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 190)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 217)
+[0mXMT Parsing: |===                 | (19/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 222)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 227)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 271)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 272)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Layer2D (line 273)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Form (line 274)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Layout (line 275)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node PathLayout (line 276)
+[0m[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Unknown proto field _field1 - skipping (line 279)
+[0m[33m[XMT Parsing] Warning: Unknown proto field _field2 - skipping (line 280)
+[0m[33m[XMT Parsing] Warning: Unknown proto field _field3 - skipping (line 281)
+[0m[33m[XMT Parsing] Warning: Unknown proto field _field4 - skipping (line 282)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 289)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 298)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 311)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 315)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 325)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 326)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 343)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 362)
+[0mXMT Parsing: |=====               | (29/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 378)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 394)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 410)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 422)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 427)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 442)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 447)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 452)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 457)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 462)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 474)
+[0mXMT Parsing: |=======             | (39/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 487)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 496)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 505)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 506)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 507)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 508)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 509)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 510)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 511)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 512)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 513)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node InputSensor (line 524)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node InputSensor (line 531)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Layer3D (line 538)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Collision (line 547)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node CylinderSensor (line 548)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node SphereSensor (line 549)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node PlaneSensor (line 550)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node VisibilitySensor (line 551)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Transform (line 552)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 553)
+[0m[33m[XMT Parsing] Warning: Unknown field "justify" for node Script - skipping (line 554)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Script - skipping (line 554)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Script (line 554)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 562)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 572)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 573)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 590)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 609)
+[0mXMT Parsing: |=========           | (49/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 625)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 641)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 657)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 669)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 674)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 689)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 694)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 699)
+[0m[33m[XMT Parsing] Warning: Unknown field "endCap" for node IndexedFaceSet - skipping (line 704)
+[0m[33m[XMT Parsing] Warning: Unknown field "scale" for node IndexedFaceSet - skipping (line 704)
+[0m[33m[XMT Parsing] Warning: Unknown field "spine" for node IndexedFaceSet - skipping (line 704)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 706)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 718)
+[0mXMT Parsing: |===========         | (59/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 730)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 739)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 748)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 749)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 750)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 751)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 752)
+[0mXMT Parsing: |============        | (61/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 773)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 789)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 805)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 821)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 833)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 838)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 853)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 857)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 862)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 867)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 872)
+[0mXMT Parsing: |==============      | (71/100)
+[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 884)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 896)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 905)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 914)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 915)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 916)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 917)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 918)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 919)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 920)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 921)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 922)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node InputSensor (line 933)
+[0mXMT Parsing: |===============     | (77/100)
+[31m[XMT Parsing] Warning: closing element Curve2D doesn't match created node InputSensor (line 940)
+[0m[31m[XMT Parsing] Warning: closing element Shape doesn't match created node InputSensor (line 942)
+[0m[31m[XMT Parsing] Warning: closing element PixelTexture doesn't match created node InputSensor (line 947)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 948)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 949)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 950)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 951)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 952)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 953)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 954)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 959)
+[0m[31m[XMT Parsing] Warning: closing element Valuator doesn't match created node InputSensor (line 960)
+[0m[33m[XMT Parsing] Warning: node InputSensor defined outside scene scope - skipping (line 961)
+[0m=================================================================
+==954626==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b8f197ec098 at pc 0x7f2f1b94ea20 bp 0x7fffc9d4c780 sp 0x7fffc9d4c778
+WRITE of size 8 at 0x7b8f197ec098 thread T0
+    #0 0x7f2f1b94ea1f in xmt_node_start scene_manager/loader_xmt.c:2770
+    #1 0x7f2f1b18a59c in xml_sax_node_start utils/xml_parser.c:308
+    #2 0x7f2f1b18f317 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #3 0x7f2f1b18f317 in xml_sax_parse utils/xml_parser.c:940
+    #4 0x7f2f1b18abfe in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #5 0x7f2f1b190037 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #6 0x7f2f1b190393 in xml_sax_read_file utils/xml_parser.c:1225
+    #7 0x7f2f1b190e48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #8 0x7f2f1b93d7b5 in load_xmt_run scene_manager/loader_xmt.c:3444
+    #9 0x7f2f1bfe462c in ctxload_process filters/load_bt_xmt.c:522
+    #10 0x7f2f1bd5f893 in gf_filter_process_task filter_core/filter.c:3257
+    #11 0x7f2f1bd33dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #12 0x7f2f1bd38e82 in gf_fs_run filter_core/filter_session.c:2728
+    #13 0x7f2f1b7f8d4f in gf_media_import media_tools/media_import.c:1632
+    #14 0x55b8bf483599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #15 0x55b8bf43ef89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #16 0x55b8bf4413e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #17 0x7f2f1ac31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #18 0x7f2f1ac32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0x55b8bf421070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7b8f197ec098 is located 24 bytes inside of 64-byte region [0x7b8f197ec080,0x7b8f197ec0c0)
+freed by thread T0 here:
+    #0 0x7f2f1cd2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f2f1b25b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+
+previously allocated by thread T0 here:
+    #0 0x7f2f1cd2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f2f1b2cf93e in InputSensor_Create scenegraph/mpeg4_nodes.c:22790
+    #2 0x7f2f1b2cf93e in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36938
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:2770 in xmt_node_start
+Shadow bytes around the buggy address:
+  0x7b8f197ebe00: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fa
+  0x7b8f197ebe80: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7b8f197ebf00: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+  0x7b8f197ebf80: fd fd fd fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7b8f197ec000: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+=>0x7b8f197ec080: fd fd fd[fd]fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7b8f197ec100: fd fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b8f197ec180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b8f197ec200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b8f197ec280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b8f197ec300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954626==ABORTING

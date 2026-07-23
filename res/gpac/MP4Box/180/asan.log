@@ -1,0 +1,379 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Invalid child descriptor (line 79)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 101)
+[0mXMT Parsing: |                    | (03/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 153)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 155)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 158)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 158)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 158)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 159)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 159)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 159)
+[0mXMT Parsing: |=                   | (07/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 263)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 265)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 268)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 268)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 268)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 269)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 269)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 269)
+[0mXMT Parsing: |==                  | (10/100)
+[33m[XMT Parsing] Invalid child descriptor (line 343)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 349)
+[0mXMT Parsing: |==                  | (14/100)
+[33m[XMT Parsing] Invalid child descriptor (line 399)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 421)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 472)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 474)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 474)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 474)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 474)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 474)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 474)
+[0mXMT Parsing: |===                 | (17/100)
+[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 477)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 477)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 477)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 478)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 478)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 478)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 524)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 556)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 569)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 577)
+[0mXMT Parsing: |====                | (21/100)
+[33m[XMT Parsing] Invalid child descriptor (line 583)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 633)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 655)
+[0mXMT Parsing: |====                | (24/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 706)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 708)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 711)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 711)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 711)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 712)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 712)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 712)
+[0mXMT Parsing: |=====               | (28/100)
+[33m[XMT Parsing] Invalid child descriptor (line 786)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 792)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 820)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 858)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 860)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 860)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 860)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 860)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 860)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 860)
+[0mXMT Parsing: |======              | (32/100)
+[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 863)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 863)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 863)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 864)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 864)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 864)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 942)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 948)
+[0mXMT Parsing: |=======             | (35/100)
+[33m[XMT Parsing] Invalid child descriptor (line 998)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1020)
+[0mXMT Parsing: |=======             | (39/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 1071)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 1073)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1076)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 1076)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 1076)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1077)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1077)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1077)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1151)
+[0mXMT Parsing: |========            | (42/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1158)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1169)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1180)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 1218)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 1220)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1223)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 1223)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 1223)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1224)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1224)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1224)
+[0mXMT Parsing: |=========           | (45/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1298)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1304)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1354)
+[0mXMT Parsing: |=========           | (49/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1376)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 1427)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 1429)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1432)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 1432)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 1432)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1433)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1433)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1433)
+[0mXMT Parsing: |==========          | (53/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1479)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1511)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1524)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1532)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1538)
+[0mXMT Parsing: |===========         | (56/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1588)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1610)
+[0mXMT Parsing: |============        | (60/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 1661)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 1663)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1666)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 1666)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 1666)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1667)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1667)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1667)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1741)
+[0mXMT Parsing: |============        | (63/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1747)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1775)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 1813)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1815)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 1815)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1815)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1815)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 1815)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 1815)
+[0mXMT Parsing: |=============       | (67/100)
+[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1818)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 1818)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 1818)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 1819)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 1819)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 1819)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1893)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1899)
+[0mXMT Parsing: |==============      | (70/100)
+[33m[XMT Parsing] Invalid child descriptor (line 1949)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 1971)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 2022)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2024)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 2024)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2024)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2024)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 2024)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 2024)
+[0mXMT Parsing: |==============      | (74/100)
+[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2027)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 2027)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 2027)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2028)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2028)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2028)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 2074)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 2096)
+[0mXMT Parsing: |===============     | (77/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 2147)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 2149)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2152)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 2152)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 2152)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2153)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2153)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2153)
+[0mXMT Parsing: |================    | (81/100)
+[33m[XMT Parsing] Invalid child descriptor (line 2241)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 2263)
+[0m[33m[XMT Parsing] connect: Missing proto field - skipping (line 2314)
+[0mXMT Parsing: |================    | (84/100)
+[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 2316)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2319)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 2319)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 2319)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2320)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2320)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2320)
+[0mXMT Parsing: |=================   | (85/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 2355)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 2357)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2360)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 2360)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 2360)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2361)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2361)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2361)
+[0mXMT Parsing: |=================   | (89/100)
+[33m[XMT Parsing] Warning: descriptor InitialObjectDescriptor defined outside scene scope - skipping (line 2435)
+[0mXMT Parsing: |==================  | (92/100)
+[33m[XMT Parsing] connect: Missing proto field - skipping (line 2519)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "size" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "backColor" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node Viewpoint - skipping (line 2521)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2524)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignmenfit" for node Viewpoint - skipping (line 2524)
+[0m[33m[XMT Parsing] Warning: Unknown field "title" for node Viewpoint - skipping (line 2524)
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Viewpoint - skipping (line 2525)
+[0m[33m[XMT Parsing] Warning: Unknown field "alignment" for node Viewpoint - skipping (line 2525)
+[0m[33m[XMT Parsing] Warning: Unknown field "fit" for node Viewpoint - skipping (line 2525)
+[0mXMT Parsing: |=================== | (96/100)
+[31m[XMT Parsing] Warning: Descr is not a valid node - skipping (line 2595)
+[0mXMT Parsing: |====================| (100/100)
+                                                   
+=================================================================
+==954618==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c86871e4180 at pc 0x7fc688c5f34a bp 0x7ffd9438c9d0 sp 0x7ffd9438c9c8
+WRITE of size 8 at 0x7c86871e4180 thread T0
+    #0 0x7fc688c5f349 in gf_sg_del scenegraph/base_scenegraph.c:202
+    #1 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #2 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #3 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #4 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #5 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #6 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #7 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #8 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #9 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #10 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #11 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #12 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #13 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #14 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #15 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #16 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #17 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #18 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #19 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #20 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #21 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #22 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #23 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #24 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #25 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #26 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #27 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #28 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #29 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #30 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #31 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #32 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #33 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #34 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #35 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #36 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #37 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #38 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #39 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #40 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #41 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #42 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:535
+    #43 0x7fc688c5e882 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #44 0x7fc688c5efe1 in gf_sg_del scenegraph/base_scenegraph.c:164
+    #45 0x7fc688d2690f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+    #46 0x7fc688c6c52f in gf_sg_command_apply scenegraph/commands.c:215
+    #47 0x7fc6899e4b26 in ctxload_process filters/load_bt_xmt.c:622
+    #48 0x7fc68975f893 in gf_filter_process_task filter_core/filter.c:3257
+    #49 0x7fc689733dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #50 0x7fc689738e82 in gf_fs_run filter_core/filter_session.c:2728
+    #51 0x7fc6891f8d4f in gf_media_import media_tools/media_import.c:1632
+    #52 0x55fbd1ab7599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #53 0x55fbd1a72f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #54 0x55fbd1a753e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #55 0x7fc688631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #56 0x7fc688632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #57 0x55fbd1a55070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7c86871e4180 is located 0 bytes inside of 120-byte region [0x7c86871e4180,0x7c86871e41f8)
+freed by thread T0 here:
+    #0 0x7fc68a72340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fc688d611ad in gf_sg_sfcommand_del scenegraph/vrml_tools.c:628
+
+previously allocated by thread T0 here:
+    #0 0x7fc68a72435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc688c68387 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:202 in gf_sg_del
+Shadow bytes around the buggy address:
+  0x7c86871e3f00: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c86871e3f80: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa
+  0x7c86871e4000: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c86871e4080: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c86871e4100: 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa fa
+=>0x7c86871e4180:[fd]fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7c86871e4200: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c86871e4280: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x7c86871e4300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c86871e4380: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c86871e4400: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954618==ABORTING

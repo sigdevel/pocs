@@ -1,0 +1,81 @@
+
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Invalid child descriptor (line 53)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 55)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 57)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 63)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 72)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 75)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 77)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 79)
+[0m[33m[XMT Parsing] Invalid child descriptor (line 85)
+[0mXMT Parsing: |===                 | (19/100)XMT Parsing: |=======             | (39/100)[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Unknown field "" for node Fog - skipping (line 290)
+[0mXMT Parsing: |===========         | (59/100)XMT Parsing: |===============     | (79/100)[33m[XMT Parsing] Warning: Unknown field "" for node AnimationStream - skipping (line 298)
+[0m[33m[XMT Parsing] Warning: Unknown field "atField" for node AnimationStream - skipping (line 298)
+[0m[31m[XMT Parsing] Warning: Cannot locate node N21 for command Replace (line 305)
+[0mXMT Parsing: |=================   | (89/100)[33m[XMT Parsing] WARNING: OD ID 20 not assigned (line 345)
+[0m[31m[XMT Parsing] Invalid XML document:  (line 345)
+[0m=================================================================
+==835210==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c87095e0688 at pc 0x7fc70ae68c5a bp 0x7ffd9dd0c700 sp 0x7ffd9dd0c6f8
+READ of size 8 at 0x7c87095e0688 thread T0
+    #0 0x7fc70ae68c59 in gf_sg_command_del scenegraph/commands.c:134
+    #1 0x7fc70b52e8f3 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #2 0x7fc70b52e8f3 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #3 0x7fc70b52e8f3 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #4 0x7fc70b52e8f3 in gf_sm_del scene_manager/scene_manager.c:147
+    #5 0x7fc70bbe4a17 in ctxload_process filters/load_bt_xmt.c:530
+    #6 0x7fc70b95f893 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7fc70b933dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7fc70b938e82 in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7fc70b3f8d4f in gf_media_import media_tools/media_import.c:1632
+    #10 0x55bbbd0cc599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #11 0x55bbbd087f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #12 0x55bbbd08a3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #13 0x7fc70cf31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7fc70cf32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55bbbd06a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7c87095e0688 is located 72 bytes inside of 120-byte region [0x7c87095e0640,0x7c87095e06b8)
+freed by thread T0 here:
+    #0 0x7fc70c92340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fc70af611ad in gf_sg_sfcommand_del scenegraph/vrml_tools.c:628
+
+previously allocated by thread T0 here:
+    #0 0x7fc70c92435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc70ae68387 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/commands.c:134 in gf_sg_command_del
+Shadow bytes around the buggy address:
+  0x7c87095e0400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c87095e0480: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c87095e0500: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c87095e0580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7c87095e0600: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+=>0x7c87095e0680: fd[fd]fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c87095e0700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c87095e0780: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c87095e0800: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x7c87095e0880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c87095e0900: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==835210==ABORTING

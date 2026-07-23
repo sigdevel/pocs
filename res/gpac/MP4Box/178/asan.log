@@ -1,0 +1,81 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |                    | (01/100)
+XMT Parsing: |                    | (03/100)
+XMT Parsing: |                    | (04/100)
+XMT Parsing: |=                   | (06/100)
+XMT Parsing: |=                   | (08/100)
+[33m[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 427)
+[0m[33m[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 428)
+[0m[33m[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 430)
+[0mXMT Parsing: |==                  | (10/100)
+=================================================================
+==954612==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b5366fe6570 at pc 0x7f3368a58bcb bp 0x7ffdbac10970 sp 0x7ffdbac10968
+READ of size 8 at 0x7b5366fe6570 thread T0
+    #0 0x7f3368a58bca in gf_node_get_name scenegraph/base_scenegraph.c:1340
+    #1 0x7f336913e707 in xmt_find_node scene_manager/loader_xmt.c:733
+    #2 0x7f336914e13e in xmt_parse_command scene_manager/loader_xmt.c:2446
+    #3 0x7f336914e13e in xmt_node_start scene_manager/loader_xmt.c:2843
+    #4 0x7f336898a59c in xml_sax_node_start utils/xml_parser.c:308
+    #5 0x7f336898f317 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #6 0x7f336898f317 in xml_sax_parse utils/xml_parser.c:940
+    #7 0x7f336898abfe in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #8 0x7f3368990037 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #9 0x7f3368990393 in xml_sax_read_file utils/xml_parser.c:1225
+    #10 0x7f3368990e48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #11 0x7f336913d7b5 in load_xmt_run scene_manager/loader_xmt.c:3444
+    #12 0x7f33697e462c in ctxload_process filters/load_bt_xmt.c:522
+    #13 0x7f336955f893 in gf_filter_process_task filter_core/filter.c:3257
+    #14 0x7f3369533dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #15 0x7f3369538e82 in gf_fs_run filter_core/filter_session.c:2728
+    #16 0x7f3368ff8d4f in gf_media_import media_tools/media_import.c:1632
+    #17 0x5570f216d599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #18 0x5570f2128f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #19 0x5570f212b3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #20 0x7f3368431f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f3368432026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x5570f210b070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7b5366fe6570 is located 0 bytes inside of 16-byte region [0x7b5366fe6570,0x7b5366fe6580)
+freed by thread T0 here:
+    #0 0x7f336a52340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f3368a5b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+
+previously allocated by thread T0 here:
+    #0 0x7f336a52435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f3368ad0aac in Rectangle_Create scenegraph/mpeg4_nodes.c:12626
+    #2 0x7f3368ad0aac in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36862
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:1340 in gf_node_get_name
+Shadow bytes around the buggy address:
+  0x7b5366fe6280: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x7b5366fe6300: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x7b5366fe6380: fa fa fd fd fa fa fd fa fa fa fd fa fa fa fd fa
+  0x7b5366fe6400: fa fa fd fd fa fa fd fa fa fa fd fa fa fa fd fd
+  0x7b5366fe6480: fa fa fd fa fa fa fd fd fa fa 00 00 fa fa 04 fa
+=>0x7b5366fe6500: fa fa fd fd fa fa fd fd fa fa fd fd fa fa[fd]fd
+  0x7b5366fe6580: fa fa fd fa fa fa fd fd fa fa fd fd fa fa fd fd
+  0x7b5366fe6600: fa fa 00 fa fa fa 00 00 fa fa 00 fa fa fa 06 fa
+  0x7b5366fe6680: fa fa fd fa fa fa fd fa fa fa 06 fa fa fa fd fa
+  0x7b5366fe6700: fa fa 07 fa fa fa 00 00 fa fa fd fd fa fa 07 fa
+  0x7b5366fe6780: fa fa 04 fa fa fa 00 00 fa fa 00 00 fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954612==ABORTING

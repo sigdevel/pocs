@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY mytext "SuperText to replace!">
+<?GPAC?>
+<!-- XMT-A Scene Dump -->
+<XMT-A xmlns="urn:mpeg:mpeg4:xmta:schema:2002" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg4:xmta:schema:2002 xmt-a.xsd">
+ <Header>
+ ¿InitialObjectDescriptor objectDescriptorID="od1" binaryID="1" >
+  <Profiles audioProfileLevelIndication="255" visualProfileLevelIndication="254" sceneProfileLevelIndication="254" graphicsProfileLevelIndication="254" ODProfileLevelIndication="255" />
+  <Descr>
+   <esDescr>
+    <ES_Descriptor ES_ID="es1" binaryID="1" >
+     <decConfigDes#r>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="3" >
+       <decSpecificInfo>
+        <BIFSConfig >
+          <commandStream pixelMetric="true" >
+           <size pixelWidth="320" pixelHeight="240" />
+          </commandStream>
+        </BIFSConfig>
+       </decSpecificInfo>
+      </DecoderConfigDescriptor>
+     </decConfigDescr>
+     <slConfigDescr>
+     <SLConfigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+    <ES_Descriptor ES_ID="es2" binaryID="2" >
+     <decConfigDescr>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="1" >
+      </DecoderConfigDescriptor>
+     </decConfigDescr>
+     <slConfigDescr>
+     <SLConfigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+   </esDescr>
+  </Descr>
+ </InitialObjectDescriptor>
+ </Header>
+ <Body>
+ <par begin="0">
+ <ObjectDescriptorUpdate >
+   <OD>
+    <ObjectDescriptor objectDescriptorID="od10" binaryID="10" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es20" binaryID="20" >
+        <StreamSource url="../auxiliary_files/logo.png" >
+         <MP4MuxHints />
+        </StreamSource>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+    <ObjectDescriptor objectDescriptorID="od20" binaryID="20" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es5" binaryID="5" >
+        <decConfigDescr>
+         <DecoderConfigDescriptor objectTypeIndication="0" streamType="10" >
+          <decSpecificInfo>
+           <UIConfig deviceName="KeySensor" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+<![CDATA[not used]]>
+
+    <ObjectDescriptor objectDescriptorID="od30" binaryID="30" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="ater"/>
+     <field name="_field9" type="Node" vrml97Hint="exposedField">
+<node>NULL</node></field>
+              <Transform2D>
+          <decSpecificInfo>
+           <UIConfig deviceName="Mouse" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptttttttttttttttttttttttttttor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+   </OD>
+ </ObjectDescriptorUpdate>
+  <Replace>
+   <Scene>
+    <ProtoDeclare name="Proto0" protoID="1" locations="&quot;bifs-externproto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+     <field name="_field0" type="Vector2" vrml97Hint="exposedField" vector2Value="0 0"/>
+     <field name="_field1" type="Vector2" vrml97Hint="exposedField" vector2Value="1 1"/>
+     <field name="_field2" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field3" type="Color" vrml97Hint="exposedField" colorValue="1 1 1"/>
+     <field name="_field4" type="Boolean" vrml97Hint="exposedField" booleanValue="true"/>
+     <field name="_field5" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field6" type="Color" vrml97Hint="exposedField" colorValue="0 0 0"/>
+     <field name="_field7" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field8" type="Node" vrml97Hint="exposedField">
+<node>NULL</node></field>
+         </ProtoDeclare>
+    <ProtoDeclare name="Proto1" protoID="2">
+     <field name="_field0" type="Boolean" vrml97Hint="eventIn"/>
+     <field name="_field1" type="Boolean" vrml97Hint="eventIn"/>
+     <field name="_field2" type="Vector2" vrml97Hint="exposedField" vector2Value="0 0"/>
+     <field name="_field3" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field4" type="Color" vrml97Hint="exposedField" colorValue="1 1 1"/>
+     <field name="_field5" type="Boolean" vrml97Hint="exposedField" booleanValue="true"/>
+     <field name="_field6" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field7" type="Color" vrml97Hint="exposedField" colorValue="0 0 0"/>
+     <field name="_field8" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field9" type="Node" vrml97Hint="exposedField">
+<node>NULL</node></field>
+              <Transform2D DEF="N0" scale="2 1">
+      <IS>
+       <connect nodeField="rotationAngle" protoField="_field3"/>
+       <connect nodeField="translation" protoField="_field2"/>
+      </IS>
+      <children>
+       <Shape DEF="N1">
+        <IS>
+        </IS>
+        <appearance>
+         <Appearance>
+          <material>
+           <Material2D>
+                              <connect nodeField="emissiveColor" protoField="_field4"/>
+             <connect nodeField="filled" protoField="_field5"/>
+             <connect nodeField="transparency" protoField="_field6"/>
+            </IS>
+            <lineProps>
+             <LineProperties>
+              <IS>
+               <connect nodeField="lineColor" protoField="_field7"/>
+               <connect nodeField="width" protoField="_field8"/>
+              </IS>
+             </LineProperties>
+            </lineProps>
+           </Material2D>
+          </material>
+         </Appearance>
+        </appearance>
+        <IS>
+         <connect nodeField="geometry" protoField="_field9"/>
+        </IS>
+       </Shape>
+      </children>
+     </Transform2D>
+     <Conditional DEF="N2">
+      <IS>
+       <connect nodeField="activate" protoField="_field0"/>
+      </IS>
+      <buffer>
+       <Replace atNode="N0" atField="scale"  value="1 1"/>
+      </buffer>
+     </Conditional>
+     <Conditional D5F="N3">
+      <IS>
+       <connect nodeField="reverseActivate" protoField="_field1"/>
+      </IS>
+      <buffer>
+       <Replace atNode="N0" atField="scale"  value="2 1"/>
+      </bufferexNode="SW" atIndexField="whichChoice" atChildField="activate" value="true"/>
+  <Replace atNode="MYMAT2" atField="emissiveColor" fromNode="MYMAT" fromField="emissiveColor"/>
+  <Ins]rt atNode="COORDS" atField="point" position="BEGIN" value="-50 -50"/>
+ </par>
+<par begin="1.6">
+  <In>
+     </Conditional>
+    </ProtoDeclare>
+    <OrderedGroup DEF="OG">
+     <children>
+      <Background2D DEF="N0" backColor="1 0 1" url="&quot;../auxiliary_files/logo.png&quot;"/>
+      <Background2D DEF="N1" backColor="1 0 0" url="&quot;od://od10&quot;"/>
+      <WorldGroup/></Scersion="?><XMT><></Xcy/ce><><Body>#Rce><Scene><Group/><Layer2D size="20 20"/>
+      <Form size="100 200" groups="1 -1 2 -1" constraints="&quot;AT&quot; &quot;AB&quot; &quot;A     <Layout/>
+      <PathLayout alignment="0 1"/>
+      <ProtoInstancšßŒž’šÂÝ¯‹ÏÝÁõßßßßßßßÃ™–š“›©ž“Ššß‘ž’šÂÝ ™–š“›ÏÝßß‰šœ‹Í©ž“Šš="20 50"/>
+
+       <fieldValue name="_field1"  vector2Value="1 1"/>
+       <fieldValue name="_field2"  floatValue="0"/>
+      <Clipper2D inside="false"/>
+      <Layer2D size="20 20"/>
+      <Form size="100 200" groups="1 -1 2 -1" constraints="&quot;AT&quot; &quot;AB&quot; &quot;A     <Layout/>
+      <alue name="_field2"  floatValue="0"/>
+       <fieldValue name="_field3"  colorValue="0 1 0"/>
+       <fieldValue name="_field4"  booleanValue="true/>
+ er2D size="20 20"/>
+      <Form size="100 200" groups="1 -1 2 -1" </Scession="1.<XMT><></XMT-Rep/></Scersion="1.<XMT><></XMT-Replacy/ce><><Body>><Scene><Gro»p/></Scession="?><XMT><></e><><Body><Replace><Scene><Group/></Scersion="1.0?><XMT><></XMT-Replacy/ce><><Body>#Replace><Scene><Group/><"1.0?><XMT><></?><XMT-A><dInfo info="
+      <Viewport DEF="N2" size=">
+      <Transform2D DEF="TR">
+    <Appearance DEF="N4">
+                  <Material2D DEF="MYMA     <Conditional DEF="N7">
+    >
+      <Conditional DEF="N8">
+  <Appearance DEF="APP">
+               <ColorTransform DEF="N9"      <Material2D DEF="MYMAT2">
+           <XLineProperties DEF="N10" width="20">              <ImageTexture DEF="N11" url="&quot<Text string="&mle DEF="N13" jus       <FontStyle DEF="N13" just          <Coordinate2D DEF="COORDS" p

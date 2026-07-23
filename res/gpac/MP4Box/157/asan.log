@@ -1,0 +1,41 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |====                | (24/100)
+[33m[XMT Parsing] Warning: Unknown field "pixelHeight" for node Background2D - skipping (line 165)
+[0mXMT Parsing: |=========           | (48/100)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==954543==ERROR: AddressSanitizer: SEGV on unknown address (pc 0x7f544f8590af bp 0x7c644ddea2c0 sp 0x7ffdfd989260 T0)
+==954543==The signal is caused by a READ memory access.
+==954543==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
+    #0 0x7f544f8590af in gf_node_list_get_child scenegraph/base_scenegraph.c:1490
+    #1 0x7f544ff4e4a5 in xmt_parse_command scene_manager/loader_xmt.c:2574
+    #2 0x7f544ff4e4a5 in xmt_node_start scene_manager/loader_xmt.c:2843
+    #3 0x7f544f78a59c in xml_sax_node_start utils/xml_parser.c:308
+    #4 0x7f544f78f317 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #5 0x7f544f78f317 in xml_sax_parse utils/xml_parser.c:940
+    #6 0x7f544f78aff0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #7 0x7f544f790037 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #8 0x7f544f790393 in xml_sax_read_file utils/xml_parser.c:1225
+    #9 0x7f544f790e48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #10 0x7f544ff3d7b5 in load_xmt_run scene_manager/loader_xmt.c:3444
+    #11 0x7f54505e462c in ctxload_process filters/load_bt_xmt.c:522
+    #12 0x7f545035f893 in gf_filter_process_task filter_core/filter.c:3257
+    #13 0x7f5450333dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #14 0x7f5450338e82 in gf_fs_run filter_core/filter_session.c:2728
+    #15 0x7f544fdf8d4f in gf_media_import media_tools/media_import.c:1632
+    #16 0x55faa34ad599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #17 0x55faa3468f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #18 0x55faa346b3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #19 0x7f544f231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #20 0x7f544f232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #21 0x55faa344b070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+==954543==Register values:
+rax = 0x0000000000000000  rbx = 0x00007b544ccd68e0  rcx = 0x00000000ffffffff  rdx = 0x07f0000000000000  
+rdi = 0x3f80000000000000  rsi = 0x00000000fffffffe  rbp = 0x00007c644ddea2c0  rsp = 0x00007ffdfd989260  
+ r8 = 0x00007c644ddea2c4   r9 = 0x00000fb109bb4e28  r10 = 0x0000000000000000  r11 = 0x00007f544f859050  
+r12 = 0x00007b544ccd6800  r13 = 0x00007b544ccd6890  r14 = 0x00007ffdfd989310  r15 = 0x00000f6a8999ad00  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/base_scenegraph.c:1490 in gf_node_list_get_child
+==954543==ABORTING

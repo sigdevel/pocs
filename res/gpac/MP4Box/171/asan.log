@@ -1,0 +1,74 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |==                  | (12/100)
+[33m[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 180)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 180)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 181)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 182)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 183)
+[0m=================================================================
+==954589==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7dfdebc05101 at pc 0x7faded592547 bp 0x7fff4b565660 sp 0x7fff4b565658
+READ of size 1 at 0x7dfdebc05101 thread T0
+    #0 0x7faded592546 in gf_xml_sax_peek_node utils/xml_parser.c:1596
+    #1 0x7fadedd3e774 in xmt_find_node scene_manager/loader_xmt.c:735
+    #2 0x7fadedd3edea in xmt_parse_route scene_manager/loader_xmt.c:1225
+    #3 0x7fadedd4617c in xmt_parse_element scene_manager/loader_xmt.c:1663
+    #4 0x7fadedd4c8d1 in xmt_node_start scene_manager/loader_xmt.c:2855
+    #5 0x7faded58a59c in xml_sax_node_start utils/xml_parser.c:308
+    #6 0x7faded58f317 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #7 0x7faded58f317 in xml_sax_parse utils/xml_parser.c:940
+    #8 0x7faded58aff0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #9 0x7faded590037 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #10 0x7faded590393 in xml_sax_read_file utils/xml_parser.c:1225
+    #11 0x7faded590e48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #12 0x7fadedd3d7b5 in load_xmt_run scene_manager/loader_xmt.c:3444
+    #13 0x7fadee3e462c in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7fadee15f893 in gf_filter_process_task filter_core/filter.c:3257
+    #15 0x7fadee133dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #16 0x7fadee138e82 in gf_fs_run filter_core/filter_session.c:2728
+    #17 0x7fadedbf8d4f in gf_media_import media_tools/media_import.c:1632
+    #18 0x5643c11f8599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #19 0x5643c11b3f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #20 0x5643c11b63e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #21 0x7faded031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #22 0x7faded032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #23 0x5643c1196070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7dfdebc05101 is located 0 bytes after 8193-byte region [0x7dfdebc03100,0x7dfdebc05101)
+allocated by thread T0 here:
+    #0 0x7fadef12365f in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:81
+    #1 0x7faded5921b8 in gf_xml_sax_peek_node utils/xml_parser.c:1521
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow utils/xml_parser.c:1596 in gf_xml_sax_peek_node
+Shadow bytes around the buggy address:
+  0x7dfdebc04e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7dfdebc04f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7dfdebc04f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7dfdebc05000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7dfdebc05080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7dfdebc05100:[01]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7dfdebc05180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7dfdebc05200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7dfdebc05280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7dfdebc05300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7dfdebc05380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954589==ABORTING

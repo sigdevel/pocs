@@ -1,0 +1,74 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: node AudioBuffer is from an unrelated scene - skipping in command (line 247)                         
+[XMT Parsing] Invalid XML document: Invalid character ' ' for attribute name - Line 249: posi <Shap (line 249)              
+[CtxLoad] Failed to load context for file /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/0125/125_gf_node_try_destroy_scenegraph_base_scenegraph_c_695: Corrupted Data in file/stream                         
+=================================================================                                                           
+==1019712==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bac20a132b0 at pc 0x7f3c2225c0d6 bp 0x7ffccf591c70 sp 0x7ffccf591c68                                                                                                              
+READ of size 8 at 0x7bac20a132b0 thread T0                                                                                  
+    #0 0x7f3c2225c0d5 in gf_node_try_destroy scenegraph/base_scenegraph.c:704
+    #1 0x7f3c22268836 in gf_sg_command_del scenegraph/commands.c:131
+    #2 0x7f3c22361194 in gf_sg_sfcommand_del scenegraph/vrml_tools.c:625
+    #3 0x7f3c222d693a in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #4 0x7f3c222d693a in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37567
+    #5 0x7f3c2225b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+    #6 0x7f3c2225c0ff in gf_node_unregister_children scenegraph/base_scenegraph.c:1416
+    #7 0x7f3c2235f4f6 in gf_sg_vrml_parent_destroy scenegraph/vrml_tools.c:167
+    #8 0x7f3c222d436f in Billboard_Del scenegraph/mpeg4_nodes.c:1963
+    #9 0x7f3c222d436f in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37540
+    #10 0x7f3c2225b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+    #11 0x7f3c2225e7b3 in gf_sg_reset scenegraph/base_scenegraph.c:522
+    #12 0x7f3c2225e7b3 in gf_sg_reset scenegraph/base_scenegraph.c:364
+    #13 0x7f3c22bc40ab in gf_scene_disconnect compositor/scene.c:503
+    #14 0x7f3c22bb873d in gf_odm_disconnect compositor/object_manager.c:166
+    #15 0x7f3c22da28b7 in compose_finalize filters/compose.c:798
+    #16 0x7f3c22d3a46c in gf_fs_del filter_core/filter_session.c:786
+    #17 0x7f3c227f9de4 in gf_media_import media_tools/media_import.c:1371
+    #18 0x55bf230984b3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #19 0x55bf23068339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6574
+    #20 0x7f3c21c31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f3c21c32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55bf23044070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7bac20a132b0 is located 0 bytes inside of 72-byte region [0x7bac20a132b0,0x7bac20a132f8)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f3c23d2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f3c2225b637 in gf_node_unregister scenegraph/base_scenegraph.c:801
+
+previously allocated by thread T0 here:
+    #0 0x7f3c23d2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f3c222d1b0b in Conditional_Create scenegraph/mpeg4_nodes.c:3193
+    #2 0x7f3c222d1b0b in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36750
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:704 in gf_node_try_destroy
+Shadow bytes around the buggy address:
+  0x7bac20a13000: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+  0x7bac20a13080: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fd fd
+  0x7bac20a13100: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7bac20a13180: fd fd fd fd fd fa fa fa fa fa fd fd fd fd fd fd
+  0x7bac20a13200: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+=>0x7bac20a13280: fd fd fa fa fa fa[fd]fd fd fd fd fd fd fd fd fa
+  0x7bac20a13300: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fa fa
+  0x7bac20a13380: fa fa fd fd fd fd fd fd fd fd fd fd fa fa fa fa
+  0x7bac20a13400: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fd fd
+  0x7bac20a13480: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7bac20a13500: fd fd fd fd fd fd fa fa fa fa fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1019712==ABORTING

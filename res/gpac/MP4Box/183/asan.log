@@ -1,0 +1,82 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |=                   | (09/100)
+XMT Parsing: |===                 | (19/100)
+[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)
+[0mXMT Parsing: |=====               | (29/100)
+XMT Parsing: |=======             | (39/100)
+XMT Parsing: |=========           | (49/100)
+XMT Parsing: |===========         | (59/100)
+[33m[XMT Parsing] Warning: Unknown field "height" for node QuantizationParameter - skipping (line 792)
+[0m[33m[XMT Parsing] Warning: Unknown field "radius" for node QuantizationParameter - skipping (line 792)
+[0mXMT Parsing: |=============       | (69/100)
+[33m[XMT Parsing] Warning: node InputSensor defined outside scene scope - skipping (line 871)
+[0mXMT Parsing: |===============     | (78/100)
+=================================================================
+==954627==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bbfa3de8b08 at pc 0x7effa5f514be bp 0x7ffc9dad8ed0 sp 0x7ffc9dad8ec8
+READ of size 4 at 0x7bbfa3de8b08 thread T0
+    #0 0x7effa5f514bd in xmt_parse_command scene_manager/loader_xmt.c:2272
+    #1 0x7effa5f514bd in xmt_node_start scene_manager/loader_xmt.c:2843
+    #2 0x7effa578a59c in xml_sax_node_start utils/xml_parser.c:308
+    #3 0x7effa578f317 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #4 0x7effa578f317 in xml_sax_parse utils/xml_parser.c:940
+    #5 0x7effa578aff0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #6 0x7effa5790037 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #7 0x7effa5790393 in xml_sax_read_file utils/xml_parser.c:1225
+    #8 0x7effa5790e48 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #9 0x7effa5f3d7b5 in load_xmt_run scene_manager/loader_xmt.c:3444
+    #10 0x7effa65e462c in ctxload_process filters/load_bt_xmt.c:522
+    #11 0x7effa635f893 in gf_filter_process_task filter_core/filter.c:3257
+    #12 0x7effa6333dc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #13 0x7effa6338e82 in gf_fs_run filter_core/filter_session.c:2728
+    #14 0x7effa5df8d4f in gf_media_import media_tools/media_import.c:1632
+    #15 0x562f5a548599 in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1713
+    #16 0x562f5a503f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4632
+    #17 0x562f5a5063e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6376
+    #18 0x7effa5231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0x7effa5232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0x562f5a4e6070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 6cf4ec0a1f4678684c742bb31496122f9e5b5f7a)
+
+0x7bbfa3de8b08 is located 8 bytes inside of 120-byte region [0x7bbfa3de8b00,0x7bbfa3de8b78)
+freed by thread T0 here:
+    #0 0x7effa732340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7effa58688d6 in gf_sg_command_del scenegraph/commands.c:138
+
+previously allocated by thread T0 here:
+    #0 0x7effa732435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7effa5868387 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:2272 in xmt_parse_command
+Shadow bytes around the buggy address:
+  0x7bbfa3de8880: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7bbfa3de8900: 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa fa
+  0x7bbfa3de8980: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa
+  0x7bbfa3de8a00: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7bbfa3de8a80: 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa fa
+=>0x7bbfa3de8b00: fd[fd]fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x7bbfa3de8b80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bbfa3de8c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bbfa3de8c80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bbfa3de8d00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bbfa3de8d80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==954627==ABORTING
