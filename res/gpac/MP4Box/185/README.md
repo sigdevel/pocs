@@ -3,3 +3,5 @@
 26.03-DEV-rev436-g9bfcd1340-master
 
 https://github.com/gpac/gpac/issues/3792
+
+fix: https://github.com/gpac/gpac/commit/3e535640b48ed3218e74929cbf3e42250fce3ddf
