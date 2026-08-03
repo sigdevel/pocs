@@ -1,0 +1,40 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |===                 | (16/100)XMT Parsing: |======              | (33/100)[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)
+XMT Parsing: |=========           | (49/100)XMT Parsing: |=============       | (66/100)XMT Parsing: |================    | (83/100)AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==477954==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000037c (pc 0x7f950ccdee2a bp 0x0f72a12e57a0 sp 0x7fff55f533f0 T0)
+==477954==The signal is caused by a READ memory access.
+==477954==Hint: address points to the zero page.
+    #0 0x7f950ccdee2a in envtest_evaluate compositor/mpeg4_sensors.c:1515
+    #1 0x7f950cde0536 in gf_scene_node_callback compositor/scene_node_init.c:342
+    #2 0x7f950c45bdf1 in gf_node_changed_internal scenegraph/base_scenegraph.c:1947
+    #3 0x7f950c45bdf1 in gf_node_changed scenegraph/base_scenegraph.c:1953
+    #4 0x7f950cb4ace1 in xmt_parse_element scene_manager/loader_xmt.c:2106
+    #5 0x7f950cb50ce3 in xmt_node_start scene_manager/loader_xmt.c:2896
+    #6 0x7f950c38a60c in xml_sax_node_start utils/xml_parser.c:308
+    #7 0x7f950c38ed4c in xml_sax_parse_attribute utils/xml_parser.c:397
+    #8 0x7f950c38ed4c in xml_sax_parse utils/xml_parser.c:940
+    #9 0x7f950c38b060 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #10 0x7f950c3900a7 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #11 0x7f950c390403 in xml_sax_read_file utils/xml_parser.c:1225
+    #12 0x7f950c390eb8 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #13 0x7f950cb409b5 in load_xmt_run scene_manager/loader_xmt.c:3609
+    #14 0x7f950d1e91ec in ctxload_process filters/load_bt_xmt.c:522
+    #15 0x7f950cf64193 in gf_filter_process_task filter_core/filter.c:3257
+    #16 0x7f950cf385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #17 0x7f950cf3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #18 0x7f950c9f9bcc in gf_media_import media_tools/media_import.c:1305
+    #19 0x55e4a47ff5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #20 0x55e4a47cf339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #21 0x7f950be31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #22 0x7f950be32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #23 0x55e4a47ab070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==477954==Register values:
+rax = 0x0000000000000007  rbx = 0x00007b950972bd00  rcx = 0x00000f73212dd7c0  rdx = 0x0000000000000000  
+rdi = 0x000000000000037c  rsi = 0x00000000000000f3  rbp = 0x00000f72a12e57a0  rsp = 0x00007fff55f533f0  
+ r8 = 0x0000000000000000   r9 = 0x00000000000000f3  r10 = 0x0000000000000000  r11 = 0x0000000000000070  
+r12 = 0x00007cc50a9e0900  r13 = 0x00007b950972bd40  r14 = 0x00007b950972bdc0  r15 = 0x00007bf50a9ea700  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_sensors.c:1515 in envtest_evaluate
+==477954==ABORTING

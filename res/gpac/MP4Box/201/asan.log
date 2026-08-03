@@ -1,0 +1,82 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 71)
+[XMT Parsing] Invalid child descriptor (line 73)
+[XMT Parsing] Invalid child descriptor (line 75)
+XMT Parsing: |==                  | (12/100)XMT Parsing: |====                | (24/100)XMT Parsing: |=======             | (36/100)XMT Parsing: |=========           | (45/100)XMT Parsing: |===========         | (58/100)[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 547)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 548)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 549)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 550)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 551)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 552)
+XMT Parsing: |=================   | (86/100)XMT Parsing: |=================   | (87/100)[XMT Parsing] Warning: closing element TouchSensor doesn't match created node InputSensor (line 576)
+[XMT Parsing] Warning: closing element DiscSensor doesn't match created node InputSensor (line 577)
+XMT Parsing: |=================   | (88/100)XMT Parsing: |====================| (100/100)                                                   XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 71)
+[XMT Parsing] Invalid child descriptor (line 73)
+[XMT Parsing] Invalid child descriptor (line 75)
+XMT Parsing: |==                  | (12/100)XMT Parsing: |====                | (24/100)XMT Parsing: |=======             | (36/100)XMT Parsing: |=========           | (45/100)XMT Parsing: |===========         | (58/100)[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 547)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 548)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 549)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 550)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 551)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 552)
+XMT Parsing: |=================   | (86/100)XMT Parsing: |=================   | (87/100)[XMT Parsing] Warning: closing element TouchSensor doesn't match created node InputSensor (line 576)
+[XMT Parsing] Warning: closing element DiscSensor doesn't match created node InputSensor (line 577)
+XMT Parsing: |=================   | (88/100)XMT Parsing: |====================| (100/100)                                                   =================================================================
+==477929==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b7d9bbeb480 at pc 0x7f4d9dfa6d1b bp 0x7ffc95713780 sp 0x7ffc95713778
+READ of size 4 at 0x7b7d9bbeb480 thread T0
+    #0 0x7f4d9dfa6d1a in gf_event_target_get_node compositor/media_object.c:1670
+    #1 0x7f4d9dfc8abb in gf_scene_disconnect compositor/scene.c:461
+    #2 0x7f4d9dfbcf3d in gf_odm_disconnect compositor/object_manager.c:166
+    #3 0x7f4d9e1a74c7 in compose_finalize filters/compose.c:798
+    #4 0x7f4d9e13ec6c in gf_fs_del filter_core/filter_session.c:786
+    #5 0x7f4d9dbfd024 in gf_media_import media_tools/media_import.c:1373
+    #6 0x55fdc63145d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #7 0x55fdc62e4339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #8 0x7f4d9d031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7f4d9d032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x55fdc62c0070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7b7d9bbeb480 is located 16 bytes inside of 24-byte region [0x7b7d9bbeb470,0x7b7d9bbeb488)
+freed by thread T0 here:
+    #0 0x7f4d9f12340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f4d9d65a7c5 in gf_node_free scenegraph/base_scenegraph.c:1673
+
+previously allocated by thread T0 here:
+    #0 0x7f4d9f12435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f4d9d809b62 in gf_dom_event_target_new scenegraph/dom_events.c:953
+    #2 0x7f4d9d809b62 in gf_dom_event_get_target_from_node scenegraph/dom_events.c:979
+
+SUMMARY: AddressSanitizer: heap-use-after-free compositor/media_object.c:1670 in gf_event_target_get_node
+Shadow bytes around the buggy address:
+  0x7b7d9bbeb200: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00
+  0x7b7d9bbeb280: fa fa 00 00 00 00 fa fa fd fd fd fa fa fa 00 00
+  0x7b7d9bbeb300: 00 00 fa fa 00 00 00 03 fa fa 00 00 00 fa fa fa
+  0x7b7d9bbeb380: 00 00 01 fa fa fa 00 00 01 fa fa fa 00 00 01 fa
+  0x7b7d9bbeb400: fa fa fd fd fd fa fa fa fd fd fd fd fa fa fd fd
+=>0x7b7d9bbeb480:[fd]fa fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa
+  0x7b7d9bbeb500: 00 00 02 fa fa fa 00 00 00 00 fa fa fd fd fd fd
+  0x7b7d9bbeb580: fa fa fd fd fd fd fa fa fd fd fd fa fa fa fd fd
+  0x7b7d9bbeb600: fd fa fa fa fd fd fd fa fa fa fd fd fd fa fa fa
+  0x7b7d9bbeb680: fd fd fd fd fa fa fd fd fd fa fa fa fd fd fd fd
+  0x7b7d9bbeb700: fa fa fd fd fd fa fa fa fd fd fd fd fa fa fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==477929==ABORTING

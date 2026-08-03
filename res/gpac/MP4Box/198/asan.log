@@ -1,0 +1,69 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[XMT Parsing] Invalid child descriptor (line 34)
+[XMT Parsing] Invalid child descriptor (line 46)
+[XMT Parsing] Invalid child descriptor (line 49)
+[XMT Parsing] Invalid child descriptor (line 50)
+[XMT Parsing] Invalid child descriptor (line 57)
+[XMT Parsing] Invalid child descriptor (line 60)
+[XMT Parsing] Invalid child descriptor (line 62)
+XMT Parsing: |========            | (40/100)XMT Parsing: |===============     | (76/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   =================================================================
+==477860==ERROR: AddressSanitizer: heap-use-after-free on address 0x7cbc111e13d0 at pc 0x7f5c12e06dba bp 0x7ffce64f3e90 sp 0x7ffce64f3e88
+READ of size 8 at 0x7cbc111e13d0 thread T0
+    #0 0x7f5c12e06db9 in gf_dom_listener_process_add scenegraph/dom_events.c:239
+    #1 0x7f5c12e06db9 in gf_dom_event_fire_ex scenegraph/dom_events.c:545
+    #2 0x7f5c13437fd6 in gf_sc_render_frame compositor/compositor.c:2635
+    #3 0x7f5c134403ab in gf_sc_draw_frame compositor/compositor.c:345
+    #4 0x7f5c137a790e in compose_process filters/compose.c:111
+    #5 0x7f5c13764193 in gf_filter_process_task filter_core/filter.c:3257
+    #6 0x7f5c137385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #7 0x7f5c1373d682 in gf_fs_run filter_core/filter_session.c:2728
+    #8 0x7f5c131f9bcc in gf_media_import media_tools/media_import.c:1305
+    #9 0x556295b775d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #10 0x556295b47339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #11 0x7f5c12631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7f5c12632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x556295b23070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7cbc111e13d0 is located 336 bytes inside of 528-byte region [0x7cbc111e1280,0x7cbc111e1490)
+freed by thread T0 here:
+    #0 0x7f5c1472340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f5c12d2937f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+
+previously allocated by thread T0 here:
+    #0 0x7f5c1472435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f5c12c576fa in gf_sg_new scenegraph/base_scenegraph.c:53
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/dom_events.c:239 in gf_dom_listener_process_add
+Shadow bytes around the buggy address:
+  0x7cbc111e1100: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cbc111e1180: fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7cbc111e1200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7cbc111e1280: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cbc111e1300: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7cbc111e1380: fd fd fd fd fd fd fd fd fd fd[fd]fd fd fd fd fd
+  0x7cbc111e1400: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cbc111e1480: fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7cbc111e1500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7cbc111e1580: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cbc111e1600: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==477860==ABORTING

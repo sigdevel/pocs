@@ -1,0 +1,72 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)                            
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)                            
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 299)                           
+[XMT Parsing] Warning: Node type VisibilitySensor doesn't match type Script of node N28 (line 547)                          
+[XMT Parsing] Warning: Cannot find Object Descriptor od10 - skipping (line 620)                                             
+[XMT Parsing] Warning: Cannot locate proto 3 - skipping (line 701)                                                          
+[XMT Parsing] WARNING: OD ID 1 not assigned (line 711)                                                                      
+[XMT Parsing] WARNING: OD ID 10 not assigned (line 711)                                                                     
+[JS] SyntaxError: unexpected character                                                                                      
+    at inline_script:1:148                                                                                                  
+                                                                                                                            
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found                                                          
+=================================================================                                                           
+==368160==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bbc397e3654 at pc 0x7f9c3bb9213f bp 0x7ffd92070990 sp 0x7ffd92070988                                                                                                               
+READ of size 4 at 0x7bbc397e3654 thread T0                                                                                  
+    #0 0x7f9c3bb9213e in gf_input_sensor_setup_object compositor/mpeg4_inputsensor.c:155
+    #1 0x7f9c3be2a5d3 in ODS_SetupOD filters/dec_odf.c:212
+    #2 0x7f9c3bfe83c5 in ctxload_process filters/load_bt_xmt.c:699
+    #3 0x7f9c3bd64193 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7f9c3bd385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7f9c3bd3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7f9c3b7f9bcc in gf_media_import media_tools/media_import.c:1305
+    #7 0x55b070faa5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x55b070f7a339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #9 0x7f9c3ac31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f9c3ac32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x55b070f56070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7bbc397e3654 is located 4 bytes inside of 16-byte region [0x7bbc397e3650,0x7bbc397e3660)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f9c3cd2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f9c3b6e0aff in gf_odf_del_default odf/odf_code.c:1274
+
+previously allocated by thread T0 here:
+    #0 0x7f9c3cd2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f9c3b6e0a3d in gf_odf_new_default odf/odf_code.c:1259
+
+SUMMARY: AddressSanitizer: heap-use-after-free compositor/mpeg4_inputsensor.c:155 in gf_input_sensor_setup_object
+Shadow bytes around the buggy address:
+  0x7bbc397e3380: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fa
+  0x7bbc397e3400: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fa
+  0x7bbc397e3480: fa fa fd fd fa fa fd fd fa fa 00 00 fa fa 00 00
+  0x7bbc397e3500: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa fd fd
+  0x7bbc397e3580: fa fa fd fa fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x7bbc397e3600: fa fa fd fa fa fa 00 00 fa fa[fd]fd fa fa 00 00
+  0x7bbc397e3680: fa fa fd fd fa fa 00 00 fa fa fd fd fa fa fd fd
+  0x7bbc397e3700: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7bbc397e3780: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7bbc397e3800: fa fa 00 01 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x7bbc397e3880: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==368160==ABORTING

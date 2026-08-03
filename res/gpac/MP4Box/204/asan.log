@@ -1,0 +1,57 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 53)
+[XMT Parsing] Invalid child descriptor (line 55)
+[XMT Parsing] Invalid child descriptor (line 57)
+[XMT Parsing] Invalid child descriptor (line 63)
+[XMT Parsing] Invalid child descriptor (line 72)
+[XMT Parsing] Invalid child descriptor (line 75)
+[XMT Parsing] Invalid child descriptor (line 77)
+[XMT Parsing] Invalid child descriptor (line 79)
+[XMT Parsing] Invalid child descriptor (line 85)
+XMT Parsing: |======              | (33/100)[XMT Parsing] connect: Missing proto field - skipping (line 136)
+XMT Parsing: |=============       | (66/100)[XMT Parsing] Warning: Unknown field "groupb" for node Form - skipping (line 261)
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: unspecified proto field name - skipping (line 269)
+[XMT Parsing] Warning: Unknown field "" for node Fog - skipping (line 294)
+[XMT Parsing] Warning: Unknown field "justify" for node Fog - skipping (line 294)
+[XMT Parsing] Warning: Unknown field "translation" for node Fog - skipping (line 294)
+[XMT Parsing] Warning: children is not a valid node - skipping (line 295)
+[XMT Parsing] Warning: closing element Text doesn't match created node Fog (line 296)
+XMT Parsing: |=================   | (88/100)XMT Parsing: |====================| (100/100)                                                   Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==478002==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000001c (pc 0x7f71b1aa07b1 bp 0x7b71ae7934f0 sp 0x7ffdb8d5e870 T0)
+==478002==The signal is caused by a READ memory access.
+==478002==Hint: address points to the zero page.
+    #0 0x7f71b1aa07b1 in at_apply compositor/mpeg4_form.c:599
+    #1 0x7f71b1aa31bd in form_apply compositor/mpeg4_form.c:171
+    #2 0x7f71b1aa31bd in TraverseForm compositor/mpeg4_form.c:309
+    #3 0x7f71b125dcec in gf_node_traverse scenegraph/base_scenegraph.c:1149
+    #4 0x7f71b1ab8a53 in group_2d_traverse compositor/mpeg4_grouping.c:170
+    #5 0x7f71b1abe635 in traverse_transform compositor/mpeg4_grouping_2d.c:144
+    #6 0x7f71b125dcec in gf_node_traverse scenegraph/base_scenegraph.c:1149
+    #7 0x7f71b1ab8a53 in group_2d_traverse compositor/mpeg4_grouping.c:170
+    #8 0x7f71b125dcec in gf_node_traverse scenegraph/base_scenegraph.c:1149
+    #9 0x7f71b1b42e84 in visual_2d_draw_frame compositor/visual_manager_2d.c:891
+    #10 0x7f71b1a2eda3 in gf_sc_draw_scene compositor/compositor.c:2468
+    #11 0x7f71b1a3aa65 in gf_sc_render_frame compositor/compositor.c:2965
+    #12 0x7f71b1a403ab in gf_sc_draw_frame compositor/compositor.c:345
+    #13 0x7f71b1da790e in compose_process filters/compose.c:111
+    #14 0x7f71b1d64193 in gf_filter_process_task filter_core/filter.c:3257
+    #15 0x7f71b1d385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #16 0x7f71b1d3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #17 0x7f71b17f9bcc in gf_media_import media_tools/media_import.c:1305
+    #18 0x55e7ff9215d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #19 0x55e7ff8f1339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #20 0x7f71b0c31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f71b0c32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55e7ff8cd070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==478002==Register values:
+rax = 0x0000000000000007  rbx = 0x00007b71ae7934f4  rcx = 0x0000000000000000  rdx = 0x00007b91af7e52f8  
+rdi = 0x000000000000001c  rsi = 0x0000000000000000  rbp = 0x00007b71ae7934f0  rsp = 0x00007ffdb8d5e870  
+ r8 = 0x0000000000000000   r9 = 0x0000000000000001  r10 = 0x00007f71b26cd804  r11 = 0x00000000ffffffff  
+r12 = 0x00000f7a35efc891  r13 = 0x00007b71ae7934f8  r14 = 0x00007b91af7e5150  r15 = 0x00007bd1af7e4460  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_form.c:599 in at_apply
+==478002==ABORTING

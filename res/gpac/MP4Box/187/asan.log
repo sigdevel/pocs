@@ -1,0 +1,78 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 43)                                                                            
+[XMT Parsing] Invalid child descriptor (line 46)                                                                            
+[XMT Parsing] Invalid child descriptor (line 53)                                                                            
+[XMT Parsing] Invalid child descriptor (line 56)                                                                            
+[XMT Parsing] Invalid child descriptor (line 58)                                                                            
+[XMT Parsing] Invalid child descriptor (line 60)                                                                            
+[XMT Parsing] Invalid child descriptor (line 66)                                                                            
+[XMT Parsing] Invalid child descriptor (line 75)                                                                            
+[XMT Parsing] Invalid child descriptor (line 90)                                                                            
+[XMT Parsing] connect: Missing proto field - skipping (line 134)                                                            
+[VRML] error in IS - node field Material2D.filled - inType SFFloat - outType SFBool                                         
+[XMT Parsing] connect: Invalid Proto Interface (line 149)                                                                   
+[XMT Parsing] Invalid XML document:  (line 150)                                                                             
+=================================================================                                                           
+==310147==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bc8037e23c0 at pc 0x7f680505cbad bp 0x7ffd5d8a2c40 sp 0x7ffd5d8a2c38                                                                                                               
+READ of size 8 at 0x7bc8037e23c0 thread T0                                                                                  
+    #0 0x7f680505cbac in gf_node_unregister scenegraph/base_scenegraph.c:740
+    #1 0x7f6805129098 in gf_sg_proto_del scenegraph/vrml_proto.c:117
+    #2 0x7f680506af5f in gf_sg_command_del scenegraph/commands.c:131
+    #3 0x7f6805731b33 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #4 0x7f6805731b33 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #5 0x7f6805731b33 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #6 0x7f6805731b33 in gf_sm_del scene_manager/scene_manager.c:147
+    #7 0x7f6805de95d7 in ctxload_process filters/load_bt_xmt.c:530
+    #8 0x7f6805b64193 in gf_filter_process_task filter_core/filter.c:3257
+    #9 0x7f6805b385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #10 0x7f6805b3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #11 0x7f68055f9bcc in gf_media_import media_tools/media_import.c:1305
+    #12 0x556b609295d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x556b608f9339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #14 0x7f6807130f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f6807131026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x556b608d5070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7bc8037e23c0 is located 0 bytes inside of 64-byte region [0x7bc8037e23c0,0x7bc8037e2400)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f6806b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f680505c937 in gf_node_unregister scenegraph/base_scenegraph.c:821
+
+previously allocated by thread T0 here:
+    #0 0x7f6806b2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f68050d2998 in VisibilitySensor_Create scenegraph/mpeg4_nodes.c:15769
+    #2 0x7f68050d2998 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36902
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:740 in gf_node_unregister
+Shadow bytes around the buggy address:
+  0x7bc8037e2100: fa fa fa fa fd fd fd fd fd fd fd fd fa fa fa fa
+  0x7bc8037e2180: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x7bc8037e2200: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7bc8037e2280: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc8037e2300: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+=>0x7bc8037e2380: fd fd fd fa fa fa fa fa[fd]fd fd fd fd fd fd fd
+  0x7bc8037e2400: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc8037e2480: fd fd fd fd fd fd fd fa fa fa fa fa 00 00 00 00
+  0x7bc8037e2500: 00 00 00 00 fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7bc8037e2580: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc8037e2600: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==310147==ABORTING

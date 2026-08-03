@@ -1,0 +1,84 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |==                  | (12/100)XMT Parsing: |====                | (24/100)[XMT Parsing] Warning: fieldValue not a valid node (line 272)
+[XMT Parsing] Warning: fieldValue not a valid node (line 273)
+[XMT Parsing] Warning: fieldValue not a valid node (line 274)
+[XMT Parsing] Warning: fieldValue not a valid node (line 275)
+[XMT Parsing] Warning: fieldValue not a valid node (line 276)
+[XMT Parsing] Warning: fieldValue not a valid node (line 277)
+[XMT Parsing] Warning: fieldValue not a valid node (line 278)
+[XMT Parsing] Warning: fieldValue not a valid node (line 279)
+[XMT Parsing] Warning: fieldValue not a valid node (line 280)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 301)
+XMT Parsing: |=======             | (36/100)XMT Parsing: |=========           | (45/100)XMT Parsing: |===========         | (58/100)XMT Parsing: |=================   | (86/100)XMT Parsing: |=================   | (87/100)[XMT Parsing] Warning: closing element TouchSensor doesn't match created node InputSensor (line 594)
+[XMT Parsing] Warning: closing element DiscSensor doesn't match created node InputSensor (line 595)
+XMT Parsing: |=================   | (88/100)XMT Parsing: |====================| (100/100)                                                   [XMT Parsing] WARNING: OD ID 20 not assigned (line 595)
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |==                  | (12/100)XMT Parsing: |====                | (24/100)[XMT Parsing] Warning: fieldValue not a valid node (line 272)
+[XMT Parsing] Warning: fieldValue not a valid node (line 273)
+[XMT Parsing] Warning: fieldValue not a valid node (line 274)
+[XMT Parsing] Warning: fieldValue not a valid node (line 275)
+[XMT Parsing] Warning: fieldValue not a valid node (line 276)
+[XMT Parsing] Warning: fieldValue not a valid node (line 277)
+[XMT Parsing] Warning: fieldValue not a valid node (line 278)
+[XMT Parsing] Warning: fieldValue not a valid node (line 279)
+[XMT Parsing] Warning: fieldValue not a valid node (line 280)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 301)
+XMT Parsing: |=======             | (36/100)XMT Parsing: |=========           | (45/100)XMT Parsing: |===========         | (58/100)XMT Parsing: |=================   | (86/100)XMT Parsing: |=================   | (87/100)[XMT Parsing] Warning: closing element TouchSensor doesn't match created node InputSensor (line 594)
+[XMT Parsing] Warning: closing element DiscSensor doesn't match created node InputSensor (line 595)
+XMT Parsing: |=================   | (88/100)XMT Parsing: |====================| (100/100)                                                   [XMT Parsing] WARNING: OD ID 20 not assigned (line 595)
+=================================================================
+==477791==ERROR: AddressSanitizer: heap-use-after-free on address 0x7d1ecf1e3a70 at pc 0x7fbed0c5cb9c bp 0x7ffc0e4ca4c0 sp 0x7ffc0e4ca4b8
+READ of size 8 at 0x7d1ecf1e3a70 thread T0
+    #0 0x7fbed0c5cb9b in gf_node_unregister scenegraph/base_scenegraph.c:768
+    #1 0x7fbed133ae0c in load_xmt_done scene_manager/loader_xmt.c:3673
+    #2 0x7fbed19e58e1 in ctxload_finalize filters/load_bt_xmt.c:831
+    #3 0x7fbed173ec6c in gf_fs_del filter_core/filter_session.c:786
+    #4 0x7fbed11fd024 in gf_media_import media_tools/media_import.c:1373
+    #5 0x55870b1c85d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #6 0x55870b198339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #7 0x7fbed0631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7fbed0632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x55870b174070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7d1ecf1e3a70 is located 240 bytes inside of 528-byte region [0x7d1ecf1e3980,0x7d1ecf1e3b90)
+freed by thread T0 here:
+    #0 0x7fbed272340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fbed0d2937f in gf_sg_proto_del scenegraph/vrml_proto.c:155
+
+previously allocated by thread T0 here:
+    #0 0x7fbed272435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fbed0c576fa in gf_sg_new scenegraph/base_scenegraph.c:53
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:768 in gf_node_unregister
+Shadow bytes around the buggy address:
+  0x7d1ecf1e3780: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7d1ecf1e3800: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7d1ecf1e3880: fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa
+  0x7d1ecf1e3900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d1ecf1e3980: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7d1ecf1e3a00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]fd
+  0x7d1ecf1e3a80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7d1ecf1e3b00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7d1ecf1e3b80: fd fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d1ecf1e3c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d1ecf1e3c80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==477791==ABORTING

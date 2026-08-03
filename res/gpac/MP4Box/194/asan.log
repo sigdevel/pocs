@@ -1,0 +1,70 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 10)
+XMT Parsing: |===                 | (15/100)XMT Parsing: |======              | (30/100)[XMT Parsing] Invalid child descriptor (line 255)
+[XMT Parsing] Invalid child descriptor (line 258)
+[XMT Parsing] Invalid child descriptor (line 262)
+[XMT Parsing] Invalid child descriptor (line 264)
+[XMT Parsing] Invalid child descriptor (line 297)
+XMT Parsing: |=========           | (45/100)XMT Parsing: |============        | (60/100)XMT Parsing: |===============     | (75/100)XMT Parsing: |==================  | (90/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+=================================================================
+==477766==ERROR: AddressSanitizer: heap-use-after-free on address 0x7ba3c45e0a10 at pc 0x7f63c64c2f95 bp 0x7ffd927ff3a0 sp 0x7ffd927ff398
+READ of size 1 at 0x7ba3c45e0a10 thread T0
+    #0 0x7f63c64c2f94 in gf_odf_delete_descriptor odf/desc_private.c:167
+    #1 0x7f63c64dfee2 in gf_odf_del_dcd odf/odf_code.c:1120
+    #2 0x7f63c64d9e1c in gf_odf_del_esd odf/odf_code.c:145
+    #3 0x7f63c64c6b6f in gf_odf_delete_descriptor_list odf/descriptors.c:140
+    #4 0x7f63c64dca77 in gf_odf_del_od odf/odf_code.c:609
+    #5 0x7f63c6de82c8 in ctxload_process filters/load_bt_xmt.c:701
+    #6 0x7f63c6b64193 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7f63c6b385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f63c6b3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7f63c65f9bcc in gf_media_import media_tools/media_import.c:1305
+    #10 0x55d8cdd0e5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #11 0x55d8cdcde339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #12 0x7f63c5a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7f63c5a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x55d8cdcba070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7ba3c45e0a10 is located 0 bytes inside of 48-byte region [0x7ba3c45e0a10,0x7ba3c45e0a40)
+freed by thread T0 here:
+    #0 0x7f63c7b2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f63c64e296e in gf_odf_del_bifs_cfg odf/odf_code.c:1700
+
+previously allocated by thread T0 here:
+    #0 0x7f63c7b2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f63c64e287a in gf_odf_new_bifs_cfg odf/odf_code.c:1682
+
+SUMMARY: AddressSanitizer: heap-use-after-free odf/desc_private.c:167 in gf_odf_delete_descriptor
+Shadow bytes around the buggy address:
+  0x7ba3c45e0780: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0800: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0880: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0900: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0980: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+=>0x7ba3c45e0a00: fa fa[fd]fd fd fd fd fd fa fa fd fd fd fd fd fa
+  0x7ba3c45e0a80: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0b00: fa fa 00 00 00 00 00 fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0b80: fa fa 00 00 00 00 00 fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0c00: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x7ba3c45e0c80: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==477766==ABORTING

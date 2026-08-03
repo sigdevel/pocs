@@ -1,0 +1,47 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 306)                           
+[XMT Parsing] Warning: Field =myvar | myvar;myvar=myvar ^ myvar;myvar=myvar & myvar;myvar=2 << 4;myvar<<=2;myvar=2 &g�;> 4;myvar>>=2;myvar>>>=2;myvar=2 >>> 4;myvar&=2;myvar=myvar ? myvar : myvar;myvar=(myvar==2) ? myvar : myvar;myvar=~myvar;myvar=!myvar;myvar=-myvar;myvar|=myvar;myvar^=myvar;myvar=8;myvar%=myvar;myvar=myvar%2;myvar=myvar ? 0 : 1;if (myvar <=2) {}if (myvar >=2) {}if (myvar <2) -2 -6 -yvar >2) {}if (myvar ==2) {}if (myvar !=2) {}if (myvar || myvar) {}if (myvar && myvar) {}if (! myvar) {}switch (myvar) {case 1: return;default: break;}myvar= 'toto';myvar=new Date();myvar.getDate();myvar[1]=&isActive not a member of node N22  (line 517)                                                                                        
+[XMT Parsing] Warning: closing element Material2D doesn't match created node InputSensor (line 533)                         
+[XMT Parsing] Warning: closing element Appearance doesn't match created node InputSensor (line 535)                         
+[XMT Parsing] Warning: closing element Rectangle doesn't match created node InputSensor (line 538)                          
+[XMT Parsing] Warning: closing element Shape doesn't match created node InputSensor (line 540) 
+...
+...
+...
+[XMT Parsing] Warning: closing element Transform doesn't match created node OrderedGroup (line 1009)                        
+[XMT Parsing] Warning: closing element Transform2D doesn't match created node OrderedGroup (line 1010)                      
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found                                                          
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found           
+AddressSanitizer:DEADLYSIGNAL                                                                                               
+=================================================================
+==353664==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f3ad5ea1600 bp 0x7b9ad3de4520 sp 0x7ffee7acb630 T0)                                                                                                                    
+==353664==The signal is caused by a READ memory access.                                                                     
+==353664==Hint: address points to the zero page.
+    #0 0x7f3ad5ea1600 in TraverseForm compositor/mpeg4_form.c:303
+    #1 0x7f3ad565dcec in gf_node_traverse scenegraph/base_scenegraph.c:1149
+    #2 0x7f3ad5eb8a53 in group_2d_traverse compositor/mpeg4_grouping.c:170
+    #3 0x7f3ad565dcec in gf_node_traverse scenegraph/base_scenegraph.c:1149
+    #4 0x7f3ad5f42e84 in visual_2d_draw_frame compositor/visual_manager_2d.c:891
+    #5 0x7f3ad5e2eda3 in gf_sc_draw_scene compositor/compositor.c:2468
+    #6 0x7f3ad5e3aa65 in gf_sc_render_frame compositor/compositor.c:2965
+    #7 0x7f3ad5e403ab in gf_sc_draw_frame compositor/compositor.c:345
+    #8 0x7f3ad61a790e in compose_process filters/compose.c:111
+    #9 0x7f3ad6164193 in gf_filter_process_task filter_core/filter.c:3257
+    #10 0x7f3ad61385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #11 0x7f3ad613d682 in gf_fs_run filter_core/filter_session.c:2728
+    #12 0x7f3ad5bf9bcc in gf_media_import media_tools/media_import.c:1305
+    #13 0x5611316865d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #14 0x561131656339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #15 0x7f3ad5031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7f3ad5032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x561131632070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==353664==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x0000000000000000  rdx = 0x0000000000000003  
+rdi = 0x00007b3ad2d6c4f0  rsi = 0x0000000000000000  rbp = 0x00007b9ad3de4520  rsp = 0x00007ffee7acb630  
+ r8 = 0x0000000000000000   r9 = 0x00000f67da5a58d0  r10 = 0x0000000000000000  r11 = 0x0000000000000000  
+r12 = 0x00007bead3de1d20  r13 = 0x00007b3ad2d6c4f0  r14 = 0x00007b3ad2d6c6e0  r15 = 0x00007b3ad2d6c6e0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_form.c:303 in TraverseForm
+==353664==ABORTING

@@ -1,0 +1,70 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |===                 | (19/100)[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 219)
+XMT Parsing: |=======             | (39/100)[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 264)
+[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 265)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer2D (line 266)
+[XMT Parsing] Warning: top-node already assigned - discarding node Form (line 267)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layout (line 268)
+[XMT Parsing] Warning: top-node already assigned - discarding node PathLayout (line 269)
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 282)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 291)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 304)
+[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 308)
+[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 318)
+[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 319)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 336)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 355)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 371)
+XMT Parsing: |===========         | (59/100)[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 388)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 404)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 416)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 421)
+XMT Parsing: |=============       | (66/100)[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 425)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 434)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 435)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 436)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 437)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 438)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 439)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 440)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 441)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 442)
+[XMT Parsing] Warning: Unknown field "urH" for node InputSensor - skipping (line 443)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==477743==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7f18eb38e6d4 bp 0x0f631cf61588 sp 0x7ffe8b938de0 T0)
+==477743==The signal is caused by a READ memory access.
+==477743==Hint: address points to the zero page.
+    #0 0x7f18eb38e6d4 in InputSensorRegister compositor/mpeg4_inputsensor.c:457
+    #1 0x7f18eb3e0536 in gf_scene_node_callback compositor/scene_node_init.c:342
+    #2 0x7f18eaa5bdf1 in gf_node_changed_internal scenegraph/base_scenegraph.c:1947
+    #3 0x7f18eaa5bdf1 in gf_node_changed scenegraph/base_scenegraph.c:1953
+    #4 0x7f18eb14ace1 in xmt_parse_element scene_manager/loader_xmt.c:2106
+    #5 0x7f18eb150ce3 in xmt_node_start scene_manager/loader_xmt.c:2896
+    #6 0x7f18ea98a60c in xml_sax_node_start utils/xml_parser.c:308
+    #7 0x7f18ea98e13f in xml_sax_parse utils/xml_parser.c:863
+    #8 0x7f18ea98ac6e in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #9 0x7f18ea9900a7 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #10 0x7f18ea990403 in xml_sax_read_file utils/xml_parser.c:1225
+    #11 0x7f18ea990eb8 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #12 0x7f18eb1409b5 in load_xmt_run scene_manager/loader_xmt.c:3609
+    #13 0x7f18eb7e91ec in ctxload_process filters/load_bt_xmt.c:522
+    #14 0x7f18eb564193 in gf_filter_process_task filter_core/filter.c:3257
+    #15 0x7f18eb5385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #16 0x7f18eb53d682 in gf_fs_run filter_core/filter_session.c:2728
+    #17 0x7f18eaff9bcc in gf_media_import media_tools/media_import.c:1305
+    #18 0x55df90b665d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #19 0x55df90b36339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #20 0x7f18ea431f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0x7f18ea432026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55df90b12070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==477743==Register values:
+rax = 0x0000000000000000  rbx = 0x00007b18e7b0ac00  rcx = 0x00000f639cf59590  rdx = 0x0000000000000001  
+rdi = 0x0000000000000008  rsi = 0x00000000000000f3  rbp = 0x00000f631cf61588  rsp = 0x00007ffe8b938de0  
+ r8 = 0x00007b48e8fec6d8   r9 = 0x00007b48e8fec6d0  r10 = 0x0000000000000000  r11 = 0x0000000000008a10  
+r12 = 0x00007c48e8fe0900  r13 = 0x00007ffe8b938ed0  r14 = 0x00007b78e8fe7be0  r15 = 0x00007b18e7b0ac40  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_inputsensor.c:457 in InputSensorRegister
+==477743==ABORTING

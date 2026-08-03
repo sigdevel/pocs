@@ -1,0 +1,48 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |====                | (21/100)XMT Parsing: |========            | (43/100)[XMT Parsing] Warning: Unknown field "alignment" for node Layout - skipping (line 270)
+[XMT Parsing] Warning: fieldValue not a valid node (line 271)
+[XMT Parsing] Warning: fieldValue not a valid node (line 272)
+[XMT Parsing] Warning: fieldValue not a valid node (line 275)
+[XMT Parsing] Warning: fieldValue not a valid node (line 276)
+[XMT Parsing] Warning: fieldValue not a valid node (line 277)
+[XMT Parsing] Warning: fieldValue not a valid node (line 278)
+[XMT Parsing] Warning: fieldValue not a valid node (line 279)
+[XMT Parsing] Warning: fieldValue not a valid node (line 280)
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==477838==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000060 (pc 0x7fe7178d2367 bp 0x7dc7155f7480 sp 0x7ffccc9d3e50 T0)
+==477838==The signal is caused by a READ memory access.
+==477838==Hint: address points to the zero page.
+    #0 0x7fe7178d2367 in compositor_layout_modified compositor/mpeg4_layout.c:841
+    #1 0x7fe7179e0536 in gf_scene_node_callback compositor/scene_node_init.c:342
+    #2 0x7fe71705bdf1 in gf_node_changed_internal scenegraph/base_scenegraph.c:1947
+    #3 0x7fe71705bdf1 in gf_node_changed scenegraph/base_scenegraph.c:1953
+    #4 0x7fe71774ace1 in xmt_parse_element scene_manager/loader_xmt.c:2106
+    #5 0x7fe717750ce3 in xmt_node_start scene_manager/loader_xmt.c:2896
+    #6 0x7fe716f8a60c in xml_sax_node_start utils/xml_parser.c:308
+    #7 0x7fe716f8f387 in xml_sax_parse_attribute utils/xml_parser.c:357
+    #8 0x7fe716f8f387 in xml_sax_parse utils/xml_parser.c:940
+    #9 0x7fe716f8ac6e in gf_xml_sax_parse_intern utils/xml_parser.c:1084
+    #10 0x7fe716f900a7 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #11 0x7fe716f90403 in xml_sax_read_file utils/xml_parser.c:1225
+    #12 0x7fe716f90eb8 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #13 0x7fe7177409b5 in load_xmt_run scene_manager/loader_xmt.c:3609
+    #14 0x7fe717de91ec in ctxload_process filters/load_bt_xmt.c:522
+    #15 0x7fe717b64193 in gf_filter_process_task filter_core/filter.c:3257
+    #16 0x7fe717b385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #17 0x7fe717b3d682 in gf_fs_run filter_core/filter_session.c:2728
+    #18 0x7fe7175f9bcc in gf_media_import media_tools/media_import.c:1305
+    #19 0x55a6ce86f5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #20 0x55a6ce83f339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #21 0x7fe716a31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #22 0x7fe716a32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #23 0x55a6ce81b070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==477838==Register values:
+rax = 0x0000000000000000  rbx = 0x00007c97155e1d20  rcx = 0x00007fe7179e04a0  rdx = 0x0000000000000000  
+rdi = 0x00007c97155e1d88  rsi = 0x00007c97155e1d20  rbp = 0x00007dc7155f7480  rsp = 0x00007ffccc9d3e50  
+ r8 = 0x00007fe716b7a800   r9 = 0x00000000000000f3  r10 = 0x0000000000000000  r11 = 0x00007fe717059c20  
+r12 = 0x00007d17155e0900  r13 = 0x00007ffccc9d3e80  r14 = 0x00007c97155e1d20  r15 = 0x00007d47155e0f80  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_layout.c:841 in compositor_layout_modified
+==477838==ABORTING

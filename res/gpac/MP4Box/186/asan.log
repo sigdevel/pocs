@@ -1,0 +1,119 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 303)                           
+[XMT Parsing] Warning: Unknown field "atField" for node InputSensor - skipping (line 521)                                   
+[XMT Parsing] Warning: Unknown field "value" for node InputSensor - skipping (line 521)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer3D (line 524)                                       
+[XMT Parsing] Warning: top-node already assigned - discarding node Viewpoint (line 525)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Background (line 526)                                    
+[XMT Parsing] Warning: top-node already assigned - discarding node Collision (line 537)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node CylinderSensor (line 538)                                
+[XMT Parsing] Warning: top-node already assigned - discarding node SphereSensor (line 539)                                  
+[XMT Parsing] Warning: top-node already assigned - discarding node PlaneSensor (line 540)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node VisibilitySensor (line 541)                              
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform (line 542)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 543)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Script (line 549)                                        
+[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 562)                                 
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 579)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 580)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 581)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 582)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node EnvironmentTest (line 583)                               
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 588)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Switch (line 589)                                        
+[XMT Parsing] Warning: Unknown field "D1F" for node OrderedGroup - skipping (line 837)                                      
+[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 839)                            
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 840)                            
+[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 842)                            
+[XMT Parsing] Warning: Node TR has been defined several times - IDs may get corrupted (line 843)                            
+[XMT Parsing] Warning: Node N4 has been defined several times - IDs may get corrupted (line 854)                            
+[XMT Parsing] Warning: Node MYMAT has been defined several times - IDs may get corrupted (line 856)                         
+[XMT Parsing] Warning: Node N5 has been defined several times - IDs may get corrupted (line 861)                            
+[XMT Parsing] Warning: Node N6 has been defined several times - IDs may get corrupted (line 864)                            
+[XMT Parsing] Warning: Node N7 has been defined several times - IDs may get corrupted (line 870)                            
+[XMT Parsing] Warning: Node N8 has been defined several times - IDs may get corrupted (line 875)                            
+[XMT Parsing] Warning: Node APP has been defined several times - IDs may get corrupted (line 884)                           
+[XMT Parsing] Warning: Node N9 has been defined several times - IDs may get corrupted (line 898)                            
+[XMT Parsing] Warning: Node MYMAT2 has been defined several times - IDs may get corrupted (line 904)                        
+[XMT Parsing] Warning: Node N10 has been defined several times - IDs may get corrupted (line 906)                           
+[XMT Parsing] Warning: Node N11 has been defined several times - IDs may get corrupted (line 908)                           
+[XMT Parsing] Warning: Node N12 has been defined several times - IDs may get corrupted (line 939)                           
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 946)                           
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 959)                           
+[XMT Parsing] Warning: Node COORDS has been defined several times - IDs may get corrupted (line 1010)                       
+[XMT Parsing] Warning: Node N15 has been defined several times - IDs may get corrupted (line 1051)                          
+[XMT Parsing] Warning: Node SOMEAPP has been defined several times - IDs may get corrupted (line 1082)                      
+[XMT Parsing] Warning: Node N16 has been defined several times - IDs may get corrupted (line 1119)                          
+[XMT Parsing] Warning: Node N17 has been defined several times - IDs may get corrupted (line 1152)                          
+[XMT Parsing] Warning: Node N18 has been defined several times - IDs may get corrupted (line 1157)                          
+[XMT Parsing] Warning: Node N19 has been defined several times - IDs may get corrupted (line 1158)                          
+[XMT Parsing] Warning: Node N20 has been defined several times - IDs may get corrupted (line 1159)                          
+[XMT Parsing] Warning: Node N21 has been defined several times - IDs may get corrupted (line 1160)                          
+[XMT Parsing] Warning: Node N22 has been defined several times - IDs may get corrupted (line 1161)                          
+[XMT Parsing] Warning: Node N23 has been defined several times - IDs may get corrupted (line 1162)                          
+[XMT Parsing] Warning: Node N24 has been defined several times - IDs may get corrupted (line 1163)                          
+[XMT Parsing] Warning: Node N25 has been defined several times - IDs may get corrupted (line 1164)                          
+[XMT Parsing] Warning: node OrderedGroup defined outside scene scope - skipping (line 1250)                                 
+[XMT Parsing] Warning: Node M1 has been defined several times - IDs may get corrupted (line 1269)                           
+[XMT Parsing] Warning: Node TR_1 has been defined several times - IDs may get corrupted (line 1285)                         
+[XMT Parsing] Warning: Node TR_2 has been defined several times - IDs may get corrupted (line 1302)                         
+=================================================================                                                           
+==303772==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bc0bedf4b68 at pc 0x7f60c0d3f2b9 bp 0x7ffc84794570 sp 0x7ffc84794568                                                                                                               
+READ of size 4 at 0x7bc0bedf4b68 thread T0                                                                                  
+    #0 0x7f60c0d3f2b8 in xmt_resolve_od_links scene_manager/loader_xmt.c:585
+    #1 0x7f60c0d40a5b in load_xmt_run scene_manager/loader_xmt.c:3625
+    #2 0x7f60c13e91ec in ctxload_process filters/load_bt_xmt.c:522
+    #3 0x7f60c1164193 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7f60c11385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7f60c113d682 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7f60c0bf9bcc in gf_media_import media_tools/media_import.c:1305
+    #7 0x5626d78235d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x5626d77f3339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #9 0x7f60c0031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f60c0032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x5626d77cf070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7bc0bedf4b68 is located 40 bytes inside of 64-byte region [0x7bc0bedf4b40,0x7bc0bedf4b80)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f60c212340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f60c065c937 in gf_node_unregister scenegraph/base_scenegraph.c:821
+
+previously allocated by thread T0 here:
+    #0 0x7f60c212435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f60c06d23be in InputSensor_Create scenegraph/mpeg4_nodes.c:22790
+    #2 0x7f60c06d23be in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36938
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:585 in xmt_resolve_od_links
+Shadow bytes around the buggy address:
+  0x7bc0bedf4880: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc0bedf4900: 00 00 00 00 00 00 00 fa fa fa fa fa fd fd fd fd
+  0x7bc0bedf4980: fd fd fd fa fa fa fa fa 00 00 00 00 00 00 00 fa
+  0x7bc0bedf4a00: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc0bedf4a80: 00 00 00 00 00 00 00 fa fa fa fa fa fd fd fd fd
+=>0x7bc0bedf4b00: fd fd fd fa fa fa fa fa fd fd fd fd fd[fd]fd fd
+  0x7bc0bedf4b80: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc0bedf4c00: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+  0x7bc0bedf4c80: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fa
+  0x7bc0bedf4d00: fa fa fa fa fd fd fd fd fd fd fd fa fa fa fa fa
+  0x7bc0bedf4d80: fd fd fd fd fd fd fd fa fa fa fa fa fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==303772==ABORTING

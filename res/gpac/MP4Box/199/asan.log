@@ -1,0 +1,34 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |===                 | (16/100)[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 179)
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 179)
+[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 180)
+[XMT Parsing] Warning: Unknown field "toNode" for node WorldInfo - skipping (line 181)
+[XMT Parsing] Warning: Unknown field "toField" for node WorldInfo - skipping (line 181)
+[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 181)
+XMT Parsing: |======              | (32/100)XMT Parsing: |=======             | (36/100)XMT Parsing: |====================| (100/100)                                                   [XMT Parsing] Cannot resolve GF_Route DEF R1 (line 259)
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==477884==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7ffaf9c6e978 bp 0x0f7f5ee3fe25 sp 0x7ffeff712530 T0)
+==477884==The signal is caused by a READ memory access.
+==477884==Hint: address points to the zero page.
+    #0 0x7ffaf9c6e978 in gf_sg_command_apply scenegraph/commands.c:273
+    #1 0x7ffafa9e96e6 in ctxload_process filters/load_bt_xmt.c:624
+    #2 0x7ffafa764193 in gf_filter_process_task filter_core/filter.c:3257
+    #3 0x7ffafa7385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #4 0x7ffafa73d682 in gf_fs_run filter_core/filter_session.c:2728
+    #5 0x7ffafa1f9bcc in gf_media_import media_tools/media_import.c:1305
+    #6 0x563cb54135d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #7 0x563cb53e3339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #8 0x7ffaf9631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7ffaf9632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x563cb53bf070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==477884==Register values:
+rax = 0x00007bfaf71ff128  rbx = 0x00007cbaf81e1840  rcx = 0x0000000000000000  rdx = 0x00000f7f5ee3fe25  
+rdi = 0x0000000000000000  rsi = 0x0000000000000000  rbp = 0x00000f7f5ee3fe25  rsp = 0x00007ffeff712530  
+ r8 = 0x0000000000000000   r9 = 0x00007cbaf81e1848  r10 = 0x0000000000000024  r11 = 0x00007bfaf71ff124  
+r12 = 0x00007cbaf81e1840  r13 = 0x00007bfaf71ff4a0  r14 = 0x00007c3af81e0c90  r15 = 0x00007cbaf81e1850  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/commands.c:273 in gf_sg_command_apply
+==477884==ABORTING

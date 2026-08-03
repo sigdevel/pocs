@@ -1,0 +1,30 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)
+XMT Parsing: |=====               | (29/100)XMT Parsing: |===========         | (55/100)[XMT Parsing] Warning: Unknown field "floatValue" for node Script - skipping (line 208)
+XMT Parsing: |=================   | (87/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==477908==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f4ab5e5e4be bp 0x000000000000 sp 0x7fff096abf00 T0)
+==477908==The signal is caused by a READ memory access.
+==477908==Hint: address points to the zero page.
+    #0 0x7f4ab5e5e4be in gf_node_get_field scenegraph/base_scenegraph.c:2148
+    #1 0x7f4ab5e6c8ff in gf_sg_command_apply scenegraph/commands.c:257
+    #2 0x7f4ab6be96e6 in ctxload_process filters/load_bt_xmt.c:624
+    #3 0x7f4ab6964193 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7f4ab69385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7f4ab693d682 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7f4ab63f9bcc in gf_media_import media_tools/media_import.c:1305
+    #7 0x557ea578e5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x557ea575e339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #9 0x7f4ab5831f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f4ab5832026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x557ea573a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+==477908==Register values:
+rax = 0x0000000000000000  rbx = 0x00007b4ab33fe120  rcx = 0x00000f69d6677c28  rdx = 0x0000000000000024  
+rdi = 0x00007b4ab33fe124  rsi = 0x0000000000000000  rbp = 0x0000000000000000  rsp = 0x00007fff096abf00  
+ r8 = 0x0000000000000000   r9 = 0x00007c0ab43e19c8  r10 = 0x0000000000000024  r11 = 0x00007b4ab33fe124  
+r12 = 0x0000000000000007  r13 = 0x00007b4ab33fe4a0  r14 = 0x00007b8ab43e1790  r15 = 0x00007c0ab43e19d0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/base_scenegraph.c:2148 in gf_node_get_field
+==477908==ABORTING

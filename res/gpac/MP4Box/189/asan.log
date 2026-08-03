@@ -1,0 +1,77 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 10)                                                                            
+[XMT Parsing] Invalid child descriptor (line 19)                                                                            
+[XMT Parsing] Invalid child descriptor (line 23)                                                                            
+[XMT Parsing] Invalid child descriptor (line 25)                                                                            
+[XMT Parsing] Invalid child descriptor (line 29)                                                                            
+[XMT Parsing] Invalid child descriptor (line 41)                                                                            
+[XMT Parsing] Invalid child descriptor (line 44)                                                                            
+[XMT Parsing] Invalid child descriptor (line 45)                                                                            
+[XMT Parsing] Invalid child descriptor (line 55)                                                                            
+[XMT Parsing] Invalid child descriptor (line 57)                                                                            
+[XMT Parsing] Invalid child descriptor (line 59)                                                                            
+[XMT Parsing] Invalid child descriptor (line 65)                                                                            
+[XMT Parsing] Invalid child descriptor (line 74)                                                                            
+[XMT Parsing] Invalid child descriptor (line 77)                                                                            
+[XMT Parsing] Invalid child descriptor (line 79)                                                                            
+[XMT Parsing] Invalid child descriptor (line 81)                                                                            
+[XMT Parsing] Invalid child descriptor (line 87)                                                                            
+[XMT Parsing] WARNING: OD ID 10 not assigned (line 459)                                                                     
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found           
+=================================================================                                                           
+==364079==ERROR: AddressSanitizer: heap-use-after-free on address 0x7cdb6ede0e40 at pc 0x7fab70fbd8db bp 0x7fffbd459720 sp 0x7fffbd459718                                                                                                               
+READ of size 8 at 0x7cdb6ede0e40 thread T0                                                                                  
+    #0 0x7fab70fbd8da in gf_odm_disconnect compositor/object_manager.c:148
+    #1 0x7fab70faed10 in scene_ns_remove_object compositor/scene_ns.c:432
+    #2 0x7fab71118d63 in gf_fs_user_task filter_core/filter_session.c:4514
+    #3 0x7fab711385c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #4 0x7fab7113d682 in gf_fs_run filter_core/filter_session.c:2728
+    #5 0x7fab70bf9bcc in gf_media_import media_tools/media_import.c:1305
+    #6 0x55f4363b15d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #7 0x55f436381339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #8 0x7fab70031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7fab70032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x55f43635d070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7cdb6ede0e40 is located 0 bytes inside of 360-byte region [0x7cdb6ede0e40,0x7cdb6ede0fa8)
+freed by thread T0 here:                                                                                                    
+    #0 0x7fab7212340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fab70fbd2b5 in gf_odm_disconnect compositor/object_manager.c:269
+
+previously allocated by thread T0 here:
+    #0 0x7fab7212435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fab70fb3cca in gf_odm_new compositor/object_manager.c:36
+
+SUMMARY: AddressSanitizer: heap-use-after-free compositor/object_manager.c:148 in gf_odm_disconnect
+Shadow bytes around the buggy address:
+  0x7cdb6ede0b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7cdb6ede0c00: 00 00 00 00 00 fa fa fa fa fa fa fa fa fa fa fa
+  0x7cdb6ede0c80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7cdb6ede0d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7cdb6ede0d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa
+=>0x7cdb6ede0e00: fa fa fa fa fa fa fa fa[fd]fd fd fd fd fd fd fd
+  0x7cdb6ede0e80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cdb6ede0f00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7cdb6ede0f80: fd fd fd fd fd fa fa fa fa fa fa fa fa fa fa fa
+  0x7cdb6ede1000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7cdb6ede1080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==364079==ABORTING

@@ -1,0 +1,100 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 35)                                                                            
+[XMT Parsing] Invalid child descriptor (line 47)                                                                            
+[XMT Parsing] Invalid child descriptor (line 50)                                                                            
+[XMT Parsing] Invalid child descriptor (line 51)                                                                            
+[XMT Parsing] Invalid child descriptor (line 58)                                                                            
+[XMT Parsing] Invalid child descriptor (line 61)                                                                            
+[XMT Parsing] Invalid child descriptor (line 63)                                                                            
+[XMT Parsing] Invalid child descriptor (line 77)                                                                            
+[XMT Parsing] Invalid child descriptor (line 80)                                                                            
+[XMT Parsing] Invalid child descriptor (line 82)                                                                            
+[XMT Parsing] Invalid child descriptor (line 90)                                                                            
+[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 263)                             
+[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 264)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer2D (line 265)                                       
+[XMT Parsing] Warning: top-node already assigned - discarding node Form (line 266)                                          
+[XMT Parsing] Warning: top-node already assigned - discarding node Layout (line 267)                                        
+[XMT Parsing] Warning: top-node already assigned - discarding node PathLayout (line 268)                                    
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 281)                                 
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 290)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 303)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 307)                               
+[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 317)                                       
+[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 318)                                    
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 335)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 354)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 371)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 387)                                         
+[XMT Parsing] Warning: Unknown field "pnint" for node Coordinate2D - skipping (line 399)                                    
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 403)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 415)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 420)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 435)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 440)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 445)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 450)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 455)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 467)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 479)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 488)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 497)                                         
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 498)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 499)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 500)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 501)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 502)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 503)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 504)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 505)                                      
+[XMT Parsing] inSFInt32: Number expected (line 508)                                                                         
+[XMT Parsing] Warning: closing element NavigationInfo doesn't match created node OrderedGroup (line 524)                    
+[XMT Parsing] Warning: closing element Viewpoint doesn't match created node OrderedGroup (line 525)                         
+[XMT Parsing] Warning: closing element Background doesn't match created node OrderedGroup (line 526)                        
+[XMT Parsing] Warning: closing element Layer3D doesn't match created node OrderedGroup (line 528)                           
+[XMT Parsing] Warning: closing element Sphere doesn't match created node OrderedGroup (line 533)                            
+[XMT Parsing] Warning: closing element Shape doesn't match created node OrderedGroup (line 535)                             
+[XMT Parsing] Warning: closing element Collision doesn't match created node OrderedGroup (line 537)                         
+[XMT Parsing] Warning: closing element CylinderSensor doesn't match created node OrderedGroup (line 538)                    
+[XMT Parsing] Warning: closing element SphereSensor doesn't match created node OrderedGroup (line 539)                      
+[XMT Parsing] Warning: closing element PlaneSensor doesn't match created node OrderedGroup (line 540)                       
+[XMT Parsing] Warning: closing element VisibilitySensor doesn't match created node OrderedGroup (line 541)                  
+[XMT Parsing] Warning: closing element Transform doesn't match created node OrderedGroup (line 542)                         
+[XMT Parsing] Warning: closing element Transform2D doesn't match created node OrderedGroup (line 543)                       
+[XMT Parsing] Warning: closing element VisibilitySensor doesn't match created node OrderedGroup (line 547)                  
+[XMT Parsing] Warning: closing element Script doesn't match created node OrderedGroup (line 549)                            
+[XMT Parsing] Warning: closing element Circle doesn't match created node OrderedGroup (line 559)                            
+[XMT Parsing] WARNING: OD ID 10 not assigned (line 565)                                                                     
+[XMT Parsing] WARNING: OD ID 20 not assigned (line 565)                                                                     
+=================================================================                                                           
+==371513==ERROR: AddressSanitizer: attempting double-free on 0x7bc73bbe0580 in thread T0:
+    #0 0x7f073f12340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51                                    
+    #1 0x7f073d763e8d in gf_sg_sfcommand_del scenegraph/vrml_tools.c:632
+    #2 0x7f073d6d93ba in Conditional_Del scenegraph/mpeg4_nodes.c:3097
+    #3 0x7f073d6d93ba in gf_sg_mpeg4_node_del scenegraph/mpeg4_nodes.c:37567
+    #4 0x7f073d65c937 in gf_node_unregister scenegraph/base_scenegraph.c:821
+    #5 0x7f073d65f973 in gf_sg_reset scenegraph/base_scenegraph.c:541
+    #6 0x7f073d65f973 in gf_sg_reset scenegraph/base_scenegraph.c:383
+    #7 0x7f073dfc88ab in gf_scene_disconnect compositor/scene.c:503
+    #8 0x7f073dfbcf3d in gf_odm_disconnect compositor/object_manager.c:166
+    #9 0x7f073e1a74c7 in compose_finalize filters/compose.c:798
+    #10 0x7f073e13ec6c in gf_fs_del filter_core/filter_session.c:786
+    #11 0x7f073dbfd024 in gf_media_import media_tools/media_import.c:1373
+    #12 0x56377988e5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x56377985e339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #14 0x7f073d031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f073d032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x56377983a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: d49dc4d8484a6cd8bd1f435605e445620385cb38)
+
+0x7bc73bbe0580 is located 0 bytes inside of 120-byte region [0x7bc73bbe0580,0x7bc73bbe05f8)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f073f12340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f073d66b074 in gf_sg_command_del scenegraph/commands.c:144
+
+previously allocated by thread T0 here:
+    #0 0x7f073f12435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f073d66aac7 in gf_sg_command_new scenegraph/commands.c:38
+
+SUMMARY: AddressSanitizer: double-free scenegraph/vrml_tools.c:632 in gf_sg_sfcommand_del
+==371513==ABORTING
