@@ -3,3 +3,5 @@
 26.08-DEV-rev18-g60016d381-master
 
 https://github.com/gpac/gpac/issues/3843
+
+fix: https://github.com/gpac/gpac/commit/6fc2832ba83467bbf89349395e89de1353ab5b77
