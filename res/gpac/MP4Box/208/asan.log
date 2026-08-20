@@ -1,0 +1,103 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |===                 | (19/100)[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 219)
+XMT Parsing: |=======             | (39/100)[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 264)
+[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 265)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layer2D (line 266)
+[XMT Parsing] Warning: top-node already assigned - discarding node Form (line 267)
+[XMT Parsing] Warning: top-node already assigned - discarding node Layout (line 268)
+[XMT Parsing] Warning: top-node already assigned - discarding node PathLayout (line 269)
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: top-node already assigned - discarding node ProtoInstance (line 282)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 291)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 304)
+[XMT Parsing] Warning: top-node already assigned - discarding node AnimationStream (line 308)
+[XMT Parsing] Warning: top-node already assigned - discarding node Sound2D (line 318)
+[XMT Parsing] Warning: top-node already assigned - discarding node TimeSensor (line 319)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 336)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 355)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 371)
+XMT Parsing: |============        | (60/100)[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 388)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 404)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 416)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 421)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 436)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 441)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 445)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 450)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 455)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 467)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 479)
+XMT Parsing: |===============     | (79/100)[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 488)
+[XMT Parsing] Warning: top-node already assigned - discarding node Shape (line 497)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 498)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 499)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 500)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 501)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 502)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 503)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 504)
+[XMT Parsing] Warning: top-node already assigned - discarding node Valuator (line 505)
+Service od:#/od20 Cannot find filter for service: Requested URL is not valid or cannot be found
+XMT Parsing: |=================   | (85/100)XMT Parsing: |====================| (100/100)                                                   Service gpac:///home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+=================================================================
+==614200==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c40eaa194c8 at pc 0x7f20ecd90d87 bp 0x7ffd487fb640 sp 0x7ffd487fb638
+READ of size 8 at 0x7c40eaa194c8 thread T0
+    #0 0x7f20ecd90d86 in InputSensorRegister compositor/mpeg4_inputsensor.c:467
+    #1 0x7f20ec45df0c in gf_node_traverse scenegraph/base_scenegraph.c:1155
+    #2 0x7f20ecc30d4a in gf_sc_draw_scene compositor/compositor.c:2457
+    #3 0x7f20ecc3cb15 in gf_sc_render_frame compositor/compositor.c:2966
+    #4 0x7f20ecc4245b in gf_sc_draw_frame compositor/compositor.c:345
+    #5 0x7f20ecfaa28e in compose_process filters/compose.c:111
+    #6 0x7f20ecf66b13 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7f20ecf3af41 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f20ecf40002 in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7f20ec9fa30c in gf_media_import media_tools/media_import.c:1305
+    #10 0x556b3d58b5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #11 0x556b3d55b339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #12 0x7f20ebe31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7f20ebe32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x556b3d537070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+0x7c40eaa194c8 is located 8 bytes inside of 296-byte region [0x7c40eaa194c0,0x7c40eaa195e8)
+freed by thread T0 here:
+    #0 0x7f20edf2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f20ecdcc072 in gf_scene_remove_object compositor/scene.c:714
+
+previously allocated by thread T0 here:
+    #0 0x7f20edf2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f20ecd9deaa in gf_mo_new compositor/media_object.c:202
+
+SUMMARY: AddressSanitizer: heap-use-after-free compositor/mpeg4_inputsensor.c:467 in InputSensorRegister
+Shadow bytes around the buggy address:
+  0x7c40eaa19200: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c40eaa19280: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c40eaa19300: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x7c40eaa19380: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c40eaa19400: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7c40eaa19480: fa fa fa fa fa fa fa fa fd[fd]fd fd fd fd fd fd
+  0x7c40eaa19500: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7c40eaa19580: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x7c40eaa19600: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c40eaa19680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c40eaa19700: 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==614200==ABORTING

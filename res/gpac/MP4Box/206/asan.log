@@ -1,0 +1,69 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |=====               | (27/100)[XMT Parsing] Warning: Node type VisibilitySensor doesn't match type Circle2D of node N27 (line 114)
+[XMT Parsing] Warning: Node type VisibilitySensor doesn't match type Circle2D of node N27 (line 129)
+[XMT Parsing] Warning: children is not a valid node - skipping (line 133)
+XMT Parsing: |======              | (34/100)[XMT Parsing] Invalid XML document:  (line 133)
+=================================================================
+==614180==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b49189ead50 at pc 0x7f191a25cd2d bp 0x7ffeb9a16bc0 sp 0x7ffeb9a16bb8
+READ of size 8 at 0x7b49189ead50 thread T0
+    #0 0x7f191a25cd2c in gf_node_unregister scenegraph/base_scenegraph.c:744
+    #1 0x7f191a3296cf in gf_sg_proto_del scenegraph/vrml_proto.c:131
+    #2 0x7f191a26b18f in gf_sg_command_del scenegraph/commands.c:131
+    #3 0x7f191a932273 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #4 0x7f191a932273 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #5 0x7f191a932273 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #6 0x7f191a932273 in gf_sm_del scene_manager/scene_manager.c:147
+    #7 0x7f191afec2c7 in ctxload_process filters/load_bt_xmt.c:552
+    #8 0x7f191ad66b13 in gf_filter_process_task filter_core/filter.c:3257
+    #9 0x7f191ad3af41 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #10 0x7f191ad40002 in gf_fs_run filter_core/filter_session.c:2728
+    #11 0x7f191a7fa30c in gf_media_import media_tools/media_import.c:1305
+    #12 0x563d6194e5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #13 0x563d6191e339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #14 0x7f1919c31f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f1919c32026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x563d618fa070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+0x7b49189ead50 is located 0 bytes inside of 24-byte region [0x7b49189ead50,0x7b49189ead68)
+freed by thread T0 here:
+    #0 0x7f191bd2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f191a25cab7 in gf_node_unregister scenegraph/base_scenegraph.c:825
+
+previously allocated by thread T0 here:
+    #0 0x7f191bd2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f191a39089c in Circle2D_Create scenegraph/x3d_nodes.c:1223
+    #2 0x7f191a39089c in gf_sg_x3d_node_new scenegraph/x3d_nodes.c:14284
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/base_scenegraph.c:744 in gf_node_unregister
+Shadow bytes around the buggy address:
+  0x7b49189eaa80: 00 00 00 fa fa fa 00 00 00 00 fa fa 00 00 00 fa
+  0x7b49189eab00: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa fd fd
+  0x7b49189eab80: fd fa fa fa fd fd fd fd fa fa fd fd fd fd fa fa
+  0x7b49189eac00: fd fd fd fd fa fa fd fd fd fd fa fa fd fd fd fd
+  0x7b49189eac80: fa fa fd fd fd fd fa fa fd fd fd fa fa fa fd fd
+=>0x7b49189ead00: fd fd fa fa fd fd fd fd fa fa[fd]fd fd fa fa fa
+  0x7b49189ead80: fd fd fd fd fa fa 00 00 00 fa fa fa fa fa fa fa
+  0x7b49189eae00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b49189eae80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b49189eaf00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b49189eaf80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==614180==ABORTING

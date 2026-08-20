@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY mytext "SuperText to replace!">
+<?GPAC?>
+<!-- X-->
+<XMT-A xmlns="urn:mpeg:mpeg4:xmta:schema:2002" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg4:xmta:schema:2002 xmt-a.xsd">
+ <Header>
+ <InitialObjectDescriptor objectDescriptorID="od1" binaryID="1" >
+  <Profiles audioProfileLevelIndication="255" visualProfileLevelIndication="254" sceneProfileLevelIndication="254" graphicsProfileLevelIndication="254" ODProfileLevelIndication="255" />
+  <Descr>
+   <esDescr>
+    <ES_Descriptor ES_ID="es1" binaryID="1" >
+     <decConfigDescr>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="3" >
+       <decSpecificInfo>
+        <BIFSConfig >
+          <commandStream pixelMetric="true" >
+           <size pixelWidth="320" pixelHeight="240" />
+          </commandStream>
+        </BIFSConfig>
+       </decSpecificInfo>
+      </DecoderConfigDescriptor>
+     </decConfigDescr>
+     <slConfigDescr>
+     <SLConfigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+    <ES_Descriptor ES_ID="es2" binaryID="2" >
+     <decConfigDescr>
+      <DecoderConfigDescriptor objectTypeIndication="0" streamType="1" >
+      </DecoderConfigDescriptor>
+     </decConfigDescr>
+     <slConfigDescr>
+     <SLConfigDescriptor >
+     </SLConfigDescriptor>
+     </slConfigDescr>
+    </ES_Descriptor>
+   </esDescr>
+  </Descr>
+ </InitialObjectDescriptor>
+ </Header>
+ <Body>
+ <par begin="0">
+ <ObjectDescriptorUpdate >
+   <OD>
+    <ObjectDescriptor objectDescriptorID="od10" binaryID="10" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es20" binaryID="20" >
+        <StreamSource url="../auxiliary_files/logptor objectDescriptorID="oints />
+        </StreamSource>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+    <ObjectDescriptor objectDescriptorID="od20" binaryID="20" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es5" binaryID="5" >
+        <decConfigDescr>
+         <DecoderConfigDescriptor objectTypeIndication="0" streamType="10" >
+          <decSpecificInfo>
+           <UIConfig deviceName="KeySensor" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+<![CDATA[not used]]>
+
+    <ObjectDescriptor objectDescriptorID="od30" binaryID="30" >
+     <Descr>
+      <esDescr>
+       <ES_Descriptor ES_ID="es6" binaryID="6" >
+        <decConfigDescr>
+         <DecoderConfigDescriptor objectTypeIndication="0" streamType="10" >
+          <decSpecificInfo>
+           <UIConfig deviceName="Mouse" >
+           </UIConfig>
+          </decSpecificInfo>
+         </DecoderConfigDescriptor>
+        </decConfigDescr>
+        <slConfigDescr>
+        <SLConfigDescriptor >
+        </SLConfigDescriptor>
+        </slConfigDescr>
+       </ES_Descriptor>
+      </esDescr>
+     </Descr>
+    </ObjectDescriptor>
+   </OD>
+ </ObjectDescriptorUpdate>
+  <Replace>
+   <Scene>
+    <ProtoDeclare name="Proto0" protoID="1" locations="&quot;bifs-externproto-nood-lib.bt#GEOMETRY_PROTO&quot;">
+     <field name="_field0" type="Vector2" vrml97Hint="exposedField" vector2Value="0 0"/>
+     <field name="_field1" type="Vector2" vrml97Hint="exposedField" vector2Value="1 1"/>
+     <field name="_field2" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field3" type="Color" vrml97Hint="exposedField" colorValue="1 1 1"/>
+     <field name="_field4" type="Boolean" vrml97Hint="exposedField" booleanValue="true"/>
+     <field name="_field5" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field6" type="Color" vrml97Hint="exposedField" colorValue="0 0 0"/>
+     <field name="_field7" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field8" type="Node" vrml97Hint="exposedField">
+<node>NULL</node></field>
+         </ProtoDeclare>
+    <ProtoDeclare name="Proto1" protoID="2">
+     <field name="_field0" type="Boolean" vrml97Hint="eventIn"/>
+     <field name="_field1" type="Boolean" vrml97Hint="eventIn"/>
+     <field name="_field2" type="Vector2" vrml97Hint="exposedField" vector2Value="0 0"/>
+     <field name="_field3" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field4" type="Color" vrml97Hint="exposedField" colorValue="1 1 1"/>
+     <field name="_field5" type="Boolean" vrml97Hint="exposedField" booleanValue="true"/>
+     <field name="_field6" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field7" type="Color" vrml97Hint="exposedField" colorValue="0 0 0"/>
+     <field name="_field8" type="Float" vrml97Hint="exposedField" floatValue="0"/>
+     <field name="_field9" type="Node" vrml97Hint="exposedField">
+<node>NULL</node></field>
+              <Transform2D DEF="N0" scale="2 1">
+      <IS>
+       <connect nodeField="rotationAngle" protoField="_field3"/>
+       <connect nodeField="translation" protoField="_field2"/>
+      </IS>
+      <children>
+       <Shape DEF="N1">
+        <IS>
+        </IS>
+        <appearance>
+         <Appearance>
+          <material>
+           <Material2D>
+            <IS>
+             <connect nodeField="emissiveColor" protoField="_field4"/>
+             <connect nodeField="filled" protoField="_field5"/>
+             <connect nodeField="transparency" protoField="_field6"/>
+            </IS>
+            <lineProps>
+             <LineProperties>
+              <IS>
+               <connect nodeField="lineColor" protoField="_field7"/>
+               <connect nodeField="width" protoField="_field8"/>
+              </IS>
+             </LineProperties>
+            </lineProps>
+           </Material2D>
+          </material>
+         </Appearance>
+        </appearance>
+        <IS>
+         <connect nodeField="geometry" protoField="_field9"/>
+        </IS>
+       </Shape>
+      </children>
+     </Transform2D>
+     <Conditional DEF="N2">
+      <IS>
+       <connect nodeField="activate" protoField="_field0"/>
+      </IS>
+      <buffer>
+       <Replace atNode="N0" atField="scale"  value="1 1"/>
+      </buffer>
+     </Conditional>
+     <Conditional DEF="N3">
+      <IS>
+       <connect nodeField="reverseActivate" protoField="_field1"/>
+      </IS>
+      <buffer>
+       <Replace atNode="N0" atField="scale"  value="2 1"/>
+      </buffer>
+     </Conditional>
+    </ProtoDeclare>
+    <OrderedGroup DEF="Ohref=    <children>
+      <Background2D DEF="N0" backColor="1 0 1" url="&quot;../auxiliary_files/logo.png&quot;"/>
+      <Background2D DEF="N1" backColor="1 0 0" url="&quot;od://od10&quot;"/>
+      <WorldInfo info="&quot;This tests encoding of BIFS nodes and commands and OD commands&quot; &quot;Not all bifs nodes are tested, but most encoding syntax of BIFS is&quot; &quot;&quot; &quot;GPAC Regression Tests&quot; &quot;(C* 2019 GPAC Team&quot;" title="Encoding Test"/>
+      <Viewport DEF="N2" size="200 200" orientation="0.5" alignment="0 0" fit="2" description="basic Viewport"/>
+      <Transform2D DEF="TR">
+       <children>
+
+        <Conditional>
+        <buffer>
+         <Replace atNode="N7" atField="activate" value="true"/>
+        </buffer>
+        </Conditional>
+
+        <Shape>
+         <appearance>
+          <Appearance DEF="N4">
+           <material>
+            <Material2D DEF="MYMAT" emissiveColor="0 1 0" filled="true"/>
+           </material>
+          </Appearance>
+         </appearance>
+         <geometry>
+          <Rectangle DEF="N5" size="100 100"/>
+         </geometry>
+        </Shape>
+        <TouchSensor DEF="N6"/>
+        <DiscSensor autoOffset="false"/>
+        <PlaneSensor2D/>
+        <ProximitySensor2D/>
+       </children>
+      </Transform2D>
+      <Conditional DEF="N7">
+       <buffer>
+        <ReplavvvvvvvvvvvvvvvvvField="set_bind"  value="true"/>
+       </buffer>
+      </Conditional>
+      <Conditional DEF="N8">
+       <buffer>
+        <Replace atNode="N1" atField="set_bind"  value="true"/>
+       </buffer>
+      </Conditional>
+      <TransformMatrix2D>
+       <children>
+        <Shape>
+         <appearance>
+          <Appearance DEF="APP">
+           <material>
+            <Material2D>
+             <lineProps>
+              <LineProperties width="15"/>
+             </lineProps>
+            </Material2D>
+           </material>
+          </Appearance>
+         </appearance>
+         <geometry>
+          <Rectangle USE="N5"/>
+         </geometry>
+        </Shape>
+        <ColorTransform DEF="N9" mrr="0" mgb="0" mbb="0" maa="0" ta="1">
+         <children>
+          <Shape>
+           <appearance>
+            <Appearance>
+             <material>
+              <Material2D DEF="MYMAT2">
+               <lineProps>
+                <XLineProperties DEF="N10" width="20">
+                 <texture>
+                  <ImageTexture DeF="N11" url="&quot;od://od10&quot;" repeatS="false" repeatT="false"/>
+                 </texture>
+                </XLineProperties>
+               </lineProps>
+              </Material2D>
+             </material>
+            </Appearance>
+           </appearance>
+           <geometry>
+            <Rectangle USE="N5"/>
+           </geometry>
+          </Shape>
+         </children>
+        </ColorTransform>
+       </children>
+      </TransformMatrix2D>
+      <Clipper2D inside="falsoOffset="false"/>
+        <PlaneSensor2D/>
+        <ProximitySensor2D/>
+       </children>
+      </Transform2D>
+      <Conditional DEF="N7">
+       <buffer>
+        <ReplavvvvvvvvvvvvvvvvvField="set_bind"  value="true"/>
+       </buffer>
+      </Conditional>
+      <Conditional DEF="N8">
+       <buffer>
+        <Replace atNode="N1" atField="set_bind"  value="true"/>
+       </buffer>
+      </Conditional>
+      <TransformMatrix2D>
+       <children>
+        <Shape>
+         <appearance>
+          <Appearance DEF="APP">
+           <material>
+            <Material2D>
+             <lineProps>
+              <LineProperties width="15"/>
+             </lineProps>
+            </Material2D>
+           </material>
+          </Appearance>
+         </appearance>
+         <geometry>
+          <Rectangle USE="N5"/>
+         </geometry>
+        </Shape>
+        <ColorTransform DEF="N9" mrr="0" mgb="0" mbb="0" maa="0" ta="1">
+         <children>
+          <Shape>
+           <appearance>
+            <Appearance>
+             <material>
+              <Material2D DEF="MYMAT2">
+               <lineProps>
+                <XLineProperties DEF="N10" width="20">
+                 <texture>
+                  <ImageTexture DEF="N11" url="&quot;od://od10&quot;" repeatS="false" repeatT="false"/>
+                 </texture>
+                </XLineProperties>
+               </lineProps>
+              </Material2D>
+             </material>
+            </Appeae"/>
+      <Layer2D size="20 20"/>
+      <Form size="100 200" groups="1 -1 2 -1" constraints="&quot;AT&quot; &quot;AB&quot; &quot;AH&quot;" groupsIndex="0 1 -1 0 2 -1 1 2 -1"/>
+      <Layout/>
+      <PathLayout alignment="0 1"/>
+      <ProtoInstance name="Proto0">
+       <fieldValue name="_field0"  vector2Value="20 50"/>
+       <fieldValue name="_field1"  vector2Value="1 1"/>
+       <fieldValue name="_field2"  floatValue="0"/>
+       <fieldValue name="_field3"  colorValue="0 1 0"/>
+       <fieldValue name="_field4"  booleanValue="true"/>
+       <fieldValue name="_field5"  floatValue="0"/>
+       <fieldValue name="_field6"  colorValue="0 0 0"/>
+       <fieldValue name="_field7"  floatValue="0"/>
+       <fieldValue name="_field8" >
+<node>        <Circle DEF="N12" radius="75"/>
+</node>       </fieldValue>
+      </ProtoInstance>
+      <Shape>
+       <geometry>
+        <Text string="&mytext;">
+         <fontStyle>
+          <FontStyle DEF="N13" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="12"/>
+         </fontStyle>
+        </Text>
+       </geometry>
+      </Shape>
+      <Shape>
+       <geometry>
+        <Text>
+        some text
+    on 
+several
+lines
+         <fontStyle>
+          <FontStyle DEF="N13" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="12"/>
+         </fontStyle>
+        </Text>
+       </geometry>
+      </Shape>
+
+<!-- comments
+ignoredar>
+<par begin="2.8">
+  <R

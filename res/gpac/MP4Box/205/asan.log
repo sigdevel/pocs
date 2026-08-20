@@ -1,0 +1,93 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 53)                                                                            
+[XMT Parsing] Invalid child descriptor (line 55)                                                                            
+[XMT Parsing] Invalid child descriptor (line 57)                                                                            
+[XMT Parsing] Invalid child descriptor (line 63)                                                                            
+[XMT Parsing] Invalid child descriptor (line 72)                                                                            
+[XMT Parsing] Invalid child descriptor (line 75)                                                                            
+[XMT Parsing] Invalid child descriptor (line 77)                                                                            
+[XMT Parsing] Invalid child descriptor (line 79)                                                                            
+[XMT Parsing] Invalid child descriptor (line 85)                                                                            
+[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 173)                                
+[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 173)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 174)                                  
+[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 175)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 176)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 203)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 208)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 213)                                   
+[XMT Parsing] Warning: Unknown field "DeF" for node ImageTexture - skipping (line 243)                                      
+[XMT Parsing] Warning: top-node already assigned - discarding node TransformMatrix2D (line 258)                             
+[XMT Parsing] Warning: top-node already assigned - discarding node Clipper2D (line 259)                                     
+[XMT Parsing] Warning: top-node already assigned - discarding node PlaneSensor2D (line 260)                                 
+[XMT Parsing] Warning: top-node already assigned - discarding node ProximitySensor2D (line 261)                             
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 268)                                   
+[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 273)                                   
+[XMT Parsing] Warning: /Appeae" is not a valid node - skipping (line 308)                                                   
+[XMT Parsing] Warning: closing element Layer2D doesn't match created node Appearance (line 309)                             
+[XMT Parsing] Warning: closing element Form doesn't match created node Appearance (line 310)                                
+[XMT Parsing] Warning: closing element Layout doesn't match created node Appearance (line 311)                              
+[XMT Parsing] Warning: closing element PathLayout doesn't match created node Appearance (line 312)                          
+[XMT Parsing] Warning: closing element Circle doesn't match created node Appearance (line 323)                              
+[XMT Parsing] Warning: closing element FontStyle doesn't match created node Appearance (line 330)                           
+[XMT Parsing] Warning: closing element Text doesn't match created node Appearance (line 332)                                
+[XMT Parsing] Warning: closing element Shape doesn't match created node Appearance (line 334)                               
+=================================================================                                                           
+==627933==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bae59deb508 at pc 0x7f7e5bf3eef9 bp 0x7ffc143dd660 sp 0x7ffc143dd658                                                                                                               
+READ of size 4 at 0x7bae59deb508 thread T0                                                                                  
+    #0 0x7f7e5bf3eef8 in xmt_resolve_od_links scene_manager/loader_xmt.c:597
+    #1 0x7f7e5bf41e1f in load_xmt_run scene_manager/loader_xmt.c:3711
+    #2 0x7f7e5c5ebedc in ctxload_process filters/load_bt_xmt.c:544
+    #3 0x7f7e5c366b13 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7f7e5c33af41 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7f7e5c340002 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7f7e5bdfa30c in gf_media_import media_tools/media_import.c:1305
+    #7 0x55725e2ca5d9 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x55725e29a339 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #9 0x7f7e5b231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7f7e5b232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x55725e276070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+0x7bae59deb508 is located 8 bytes inside of 32-byte region [0x7bae59deb500,0x7bae59deb520)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f7e5d32340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f7e5b85cab7 in gf_node_unregister scenegraph/base_scenegraph.c:825
+
+previously allocated by thread T0 here:
+    #0 0x7f7e5d32435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f7e5b8d552f in ImageTexture_Create scenegraph/mpeg4_nodes.c:7679
+    #2 0x7f7e5b8d552f in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36800
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:597 in xmt_resolve_od_links
+Shadow bytes around the buggy address:
+  0x7bae59deb280: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x7bae59deb300: 00 00 fa fa 00 00 00 00 fa fa fd fd fd fa fa fa
+  0x7bae59deb380: 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd fd fd
+  0x7bae59deb400: fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00
+  0x7bae59deb480: 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa
+=>0x7bae59deb500: fd[fd]fd fd fa fa 00 00 00 fa fa fa fd fd fd fd
+  0x7bae59deb580: fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00
+  0x7bae59deb600: 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa
+  0x7bae59deb680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bae59deb700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bae59deb780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==627933==ABORTING
