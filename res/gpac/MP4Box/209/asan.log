@@ -1,0 +1,60 @@
+==234471==ERROR: AddressSanitizer: heap-use-after-free on address 0x7c72481e2e68 at pc 0x7fc249d2ad93 bp 0x7ffd20cb0b20 sp 0x7ffd20cb0b18
+READ of size 8 at 0x7c72481e2e68 thread T0
+    #0 0x7fc249d2ad92 in gf_sg_proto_del scenegraph/vrml_proto.c:108
+    #1 0x7fc249c6c60f in gf_sg_command_del scenegraph/commands.c:131
+    #2 0x7fc24a333883 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #3 0x7fc24a333883 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #4 0x7fc24a333883 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #5 0x7fc24a333883 in gf_sm_del scene_manager/scene_manager.c:147
+    #6 0x7fc24a9e9e50 in ctxload_finalize filters/load_bt_xmt.c:864
+    #7 0x7fc24a7430ac in gf_fs_del filter_core/filter_session.c:786
+    #8 0x7fc24a1ff75c in gf_media_import media_tools/media_import.c:1674
+    #9 0x561564b9764c in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1730
+    #10 0x561564b52f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4633
+    #11 0x561564b553e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6377
+    #12 0x7fc249631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #13 0x7fc249632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #14 0x561564b35070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+0x7c72481e2e68 is located 24 bytes inside of 104-byte region [0x7c72481e2e50,0x7c72481e2eb8)
+freed by thread T0 here:
+    #0 0x7fc24b72340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7fc249d2aca7 in gf_sg_proto_del scenegraph/vrml_proto.c:163
+
+previously allocated by thread T0 here:
+    #0 0x7fc24b72435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc249d2a60e in gf_sg_proto_new scenegraph/vrml_proto.c:49
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/vrml_proto.c:108 in gf_sg_proto_del
+Shadow bytes around the buggy address:
+  0x7c72481e2b80: fa fa 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c72481e2c00: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c72481e2c80: 00 00 00 00 00 00 fa fa fa fa fa fa fa fa 00 00
+  0x7c72481e2d00: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x7c72481e2d80: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7c72481e2e00: fd fd fa fa fa fa fa fa fa fa fd fd fd[fd]fd fd
+  0x7c72481e2e80: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7c72481e2f00: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x7c72481e2f80: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x7c72481e3000: 00 00 00 00 fa fa fa fa fa fa fa fa 00 00 00 00
+  0x7c72481e3080: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==234471==ABORTING

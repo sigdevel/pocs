@@ -1,0 +1,37 @@
+==234519==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7fd98bd2e32f bp 0x7c898a1e14e0 sp 0x7ffe3ac5cde0 T0)
+==234519==The signal is caused by a READ memory access.
+==234519==Hint: address points to the zero page.
+    #0 0x7fd98bd2e32f in gf_sg_proto_create_node scenegraph/vrml_proto.c:821
+    #1 0x7fd98bd32fd8 in gf_vrml_node_clone scenegraph/vrml_proto.c:417
+    #2 0x7fd98bd2ca5e in gf_sg_proto_instantiate scenegraph/vrml_proto.c:697
+    #3 0x7fd98bd2e864 in gf_sg_proto_load_code scenegraph/vrml_proto.c:848
+    #4 0x7fd98c34f401 in xmt_parse_element scene_manager/loader_xmt.c:2182
+    #5 0x7fd98c3543d3 in xmt_node_start scene_manager/loader_xmt.c:2978
+    #6 0x7fd98bb8b64c in xml_sax_node_start utils/xml_parser.c:308
+    #7 0x7fd98bb8fd8c in xml_sax_parse_attribute utils/xml_parser.c:397
+    #8 0x7fd98bb8fd8c in xml_sax_parse utils/xml_parser.c:940
+    #9 0x7fd98bb8c0a0 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #10 0x7fd98bb910e7 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #11 0x7fd98bb91443 in xml_sax_read_file utils/xml_parser.c:1225
+    #12 0x7fd98bb91ef8 in gf_xml_sax_parse_file utils/xml_parser.c:1338
+    #13 0x7fd98c343379 in load_xmt_run scene_manager/loader_xmt.c:3698
+    #14 0x7fd98c9ed99c in ctxload_process filters/load_bt_xmt.c:544
+    #15 0x7fd98c7685d3 in gf_filter_process_task filter_core/filter.c:3257
+    #16 0x7fd98c73ca01 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #17 0x7fd98c741ac2 in gf_fs_run filter_core/filter_session.c:2728
+    #18 0x7fd98c1fdc02 in gf_media_import media_tools/media_import.c:1634
+    #19 0x55e2bbe7c64c in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1730
+    #20 0x55e2bbe37f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4633
+    #21 0x55e2bbe3a3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6377
+    #22 0x7fd98b631f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #23 0x7fd98b632026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #24 0x55e2bbe1a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+==234519==Register values:
+rax = 0x0000000000000000  rbx = 0x00007c398a1f4fc0  rcx = 0x00007c098a1f12c8  rdx = 0x0000000000000000  
+rdi = 0x0000000000000008  rsi = 0x000000000000000a  rbp = 0x00007c898a1e14e0  rsp = 0x00007ffe3ac5cde0  
+ r8 = 0x00000f7fb1436000   r9 = 0x00007fd98d8b1940  r10 = 0x0000000000000004  r11 = 0x00007bf98a1f07f0  
+r12 = 0x00007bd988d16fe0  r13 = 0x00007c098a1f12c8  r14 = 0x00007c098a1f12c0  r15 = 0x00007c098a1f12c1  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/vrml_proto.c:821 in gf_sg_proto_create_node
+==234519==ABORTING

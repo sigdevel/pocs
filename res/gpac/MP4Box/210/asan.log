@@ -1,0 +1,24 @@
+==234483==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fe6fa8713b5 bp 0x7d46f8de0f80 sp 0x7fff1f788770 T0)
+==234483==The signal is caused by a READ memory access.
+==234483==Hint: address points to the zero page.
+    #0 0x7fe6fa8713b5 in gf_sg_command_apply scenegraph/commands.c:603
+    #1 0x7fe6fb5ede96 in ctxload_process filters/load_bt_xmt.c:646
+    #2 0x7fe6fb3685d3 in gf_filter_process_task filter_core/filter.c:3257
+    #3 0x7fe6fb33ca01 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #4 0x7fe6fb341ac2 in gf_fs_run filter_core/filter_session.c:2728
+    #5 0x7fe6fadfdc02 in gf_media_import media_tools/media_import.c:1634
+    #6 0x564bc5f7c64c in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1730
+    #7 0x564bc5f37f89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4633
+    #8 0x564bc5f3a3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6377
+    #9 0x7fe6fa231f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7fe6fa232026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x564bc5f1a070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+==234483==Register values:
+rax = 0x0000000000000000  rbx = 0x00007ca6f8de67d0  rcx = 0x000000000000002a  rdx = 0x0000000000000000  
+rdi = 0x0000000000000000  rsi = 0x00007c56f8e1b7b8  rbp = 0x00007d46f8de0f80  rsp = 0x00007fff1f788770  
+ r8 = 0x00007be6f7e06944   r9 = 0x00007c26f8de2dd0  r10 = 0x0000000000000024  r11 = 0x0000000000000000  
+r12 = 0x00007ca6f8de67c0  r13 = 0x00007be6f7e06cc0  r14 = 0x0000000000000000  r15 = 0x00007be6f7e06800  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/commands.c:603 in gf_sg_command_apply
+==234483==ABORTING

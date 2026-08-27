@@ -1,0 +1,24 @@
+==234504==ERROR: AddressSanitizer: SEGV on unknown address (pc 0x7ff24e554cd4 bp 0x7ca24cbe1748 sp 0x7ffd65d7e6b0 T0)
+==234504==The signal is caused by a READ memory access.
+==234504==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
+    #0 0x7ff24e554cd4 in gf_list_get utils/list.c:670
+    #1 0x7ff24f3ec907 in ctxload_process filters/load_bt_xmt.c:673
+    #2 0x7ff24f1685d3 in gf_filter_process_task filter_core/filter.c:3257
+    #3 0x7ff24f13ca01 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #4 0x7ff24f141ac2 in gf_fs_run filter_core/filter_session.c:2728
+    #5 0x7ff24ebfdc02 in gf_media_import media_tools/media_import.c:1634
+    #6 0x564b424a164c in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1730
+    #7 0x564b4245cf89 in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4633
+    #8 0x564b4245f3e7 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6377
+    #9 0x7ff24e031f76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #10 0x7ff24e032026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x564b4243f070 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d070) (BuildId: 242225adaf89cfc96ee3ff579912c720e58fddcf)
+
+==234504==Register values:
+rax = 0x001e002800000001  rbx = 0x00000f944997c2e9  rcx = 0x00007c124cbe35f0  rdx = 0x00f0014000000009  
+rdi = 0x00f0014000000001  rsi = 0x0000000000000000  rbp = 0x00007ca24cbe1748  rsp = 0x00007ffd65d7e6b0  
+ r8 = 0x00000f8c499826c7   r9 = 0x00000f8c499826c6  r10 = 0x0000000000000000  r11 = 0x00007c624cc1363f  
+r12 = 0x0000000000000000  r13 = 0x00007c124cbe35d0  r14 = 0x00007bf24bede050  r15 = 0x00007c324cbe1610  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV utils/list.c:670 in gf_list_get
+==234504==ABORTING
