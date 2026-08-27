@@ -3,3 +3,5 @@
 26.08-DEV-rev38-g6fed75dfd-master
 
 https://github.com/gpac/gpac/issues/3866
+
+fix: https://github.com/sysfce2/gpac/commit/944c1ed158118fdebc3ed4ebc06332daac79811e
