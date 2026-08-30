@@ -1,0 +1,154 @@
+truncated
+....
+....
+....
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+POC    0 LId:  0 TId: 0 ( I-SLICE, QP 34 ) [DT  0.090] [L0 ] [L1 ] 
+=================================================================
+==544885==ERROR: AddressSanitizer: heap-use-after-free on address 0x7e97f6de02a8 at pc 0x55e19539ea22 bp 0x7bd7f47fead0 sp 0x7bd7f47feac8                                                                                                               
+READ of size 8 at 0x7e97f6de02a8 thread T1                                                                                  
+POC   16 LId:  0 TId: 1 ERROR
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::InputBitstream::load_next_bits(int)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/BitStream.h:193: Exceeded FIFO size
+ERROR CONDITION: m_fifo_idx + required_bytes > m_fifo.size()
+You can try to pass in more data to start decoding from the first RAP.
+
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+Warning, the first slice of a picture might have been lost!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::Slice::constructSingleRefPicList(const PicList &, RefPicList)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/Slice.cpp:520: The picture referred to by each active entry in RefPicList[ 0 ] or RefPicList[ 1 ] shall be present in the DPB and shall have TemporalId less than or equal to that of the current picture.
+ERROR CONDITION: !m_apcRefPicList[listId][ii] || m_apcRefPicList[listId][ii]->getTLayer() > getTLayer()
+You can try to pass in more data to start decoding from the first RAP.
+
+    #0 0x55e19539ea21 in vvdec::DecLibRecon::createSubPicRefBufs(vvdec::Picture*, vvdec::Picture const*)::$_0::operator()(int, void*) const /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:409:10
+    #1 0x55e19539ea21 in vvdec::DecLibRecon::createSubPicRefBufs(vvdec::Picture*, vvdec::Picture const*)::$_0::__invoke(int, void*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:406:24
+    #2 0x55e195478561 in vvdec::ThreadPool::processTask(int, vvdec::ThreadPool::Slot&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:347:26
+    #3 0x55e195476048 in vvdec::ThreadPool::threadProc(int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:266:7
+    #4 0x7fd7f7eed085  (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed085) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #5 0x55e19506a78a in asan_thread_start(void*) asan_interceptors.cpp.o
+    #6 0x7fd7f7ba9288 in start_thread nptl/pthread_create.c:448:8
+    #7 0x7fd7f7c27d07 in __GI___clone3 /build/reproducible-path/glibc-2.42/misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+0x7e97f6de02a8 is located 168 bytes inside of 28672-byte region [0x7e97f6de0200,0x7e97f6de7200)
+freed by thread T0 here:                                                                                                    
+    #0 0x55e1950b1db6 in operator delete(void*, unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x616db6) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x55e195391f4e in std::__new_allocator<vvdec::SubPicExtTask>::deallocate(vvdec::SubPicExtTask*, unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/new_allocator.h:172:2
+    #2 0x55e195391f4e in std::allocator_traits<std::allocator<vvdec::SubPicExtTask>>::deallocate(std::allocator<vvdec::SubPicExtTask>&, vvdec::SubPicExtTask*, unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/alloc_traits.h:649:13
+    #3 0x55e195391f4e in std::_Vector_base<vvdec::SubPicExtTask, std::allocator<vvdec::SubPicExtTask>>::_M_deallocate(vvdec::SubPicExtTask*, unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:396:4
+    #4 0x55e195391f4e in std::vector<vvdec::SubPicExtTask, std::allocator<vvdec::SubPicExtTask>>::reserve(unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/vector.tcc:93:4
+    #5 0x55e19538d19e in vvdec::DecLibRecon::decompressPicture(vvdec::Picture*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:541:22
+    #6 0x55e19531fa27 in vvdec::DecLib::reconPicture(vvdec::Picture*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:623:20
+    #7 0x55e19531da50 in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:208:7
+    #8 0x55e1950fa2ee in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #9 0x55e1950ef328 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #10 0x55e1950eee37 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #11 0x55e1950bfa78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #12 0x7fd7f7b3df76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x7ffd75379e63  (<unknown module>)
+
+previously allocated by thread T0 here:
+    #0 0x55e1950b1131 in operator new(unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x616131) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x55e195391eda in std::__new_allocator<vvdec::SubPicExtTask>::allocate(unsigned long, void const*) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/new_allocator.h:151:27
+    #2 0x55e195391eda in std::allocator_traits<std::allocator<vvdec::SubPicExtTask>>::allocate(std::allocator<vvdec::SubPicExtTask>&, unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/alloc_traits.h:614:20
+    #3 0x55e195391eda in std::_Vector_base<vvdec::SubPicExtTask, std::allocator<vvdec::SubPicExtTask>>::_M_allocate(unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/stl_vector.h:387:20
+    #4 0x55e195391eda in std::vector<vvdec::SubPicExtTask, std::allocator<vvdec::SubPicExtTask>>::reserve(unsigned long) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/vector.tcc:79:22
+    #5 0x55e19538d19e in vvdec::DecLibRecon::decompressPicture(vvdec::Picture*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:541:22
+    #6 0x55e19531fa27 in vvdec::DecLib::reconPicture(vvdec::Picture*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:623:20
+    #7 0x55e19531da50 in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:208:7
+    #8 0x55e1950fa2ee in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #9 0x55e1950ef328 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #10 0x55e1950eee37 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #11 0x55e1950bfa78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #12 0x7fd7f7b3df76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x7ffd75379e63  (<unknown module>)
+
+Thread T1 created by T0 here:
+    #0 0x55e195051055 in pthread_create (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5b6055) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x7fd7f7eed158 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State>>, void (*)()) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed158) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #2 0x55e195474bd1 in vvdec::ThreadPool::ThreadPool(int, char const*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:107:9
+    #3 0x55e19531c60b in vvdec::DecLib::create(int, int, vvdec::UserAllocator const&, vvdec::ErrHandlingFlags) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:126:33
+    #4 0x55e1950f467a in vvdec::VVDecImpl::init(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:143:16
+    #5 0x55e1950ec707 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t>(int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #6 0x55e1950ebd27 in vvdec_decoder_open /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:204:21
+    #7 0x55e1950bd9d3 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:646:13
+    #8 0x7fd7f7b3df76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7ffd75379e63  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:409:10 in vvdec::DecLibRecon::createSubPicRefBufs(vvdec::Picture*, vvdec::Picture const*)::$_0::operator()(int, void*) const
+Shadow bytes around the buggy address:
+  0x7e97f6de0000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7e97f6de0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7e97f6de0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7e97f6de0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7e97f6de0200: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7e97f6de0280: fd fd fd fd fd[fd]fd fd fd fd fd fd fd fd fd fd
+  0x7e97f6de0300: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e97f6de0380: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e97f6de0400: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e97f6de0480: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e97f6de0500: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==544885==ABORTING

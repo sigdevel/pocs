@@ -1,0 +1,91 @@
+VVdeC, the Fraunhofer VVC/H.266 decoder, version 3.3.0-dev [THREADS=3; PARSE_DELAY=4; SIMD=AVX2]
+=================================================================
+==504830==ERROR: AddressSanitizer: heap-use-after-free on address 0x7e03437e7f6d at pc 0x559310107d94 bp 0x7bb3401fc5a0 sp 0x7bb3401fc598                                                                                                               
+READ of size 1 at 0x7e03437e7f6d thread T3                                                                                  
+    #0 0x559310107d93 in vvdec::AdaptiveLoopFilter::reconstructCoeff(vvdec::AlfSliceParam&, vvdec::ChannelType, int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/AdaptiveLoopFilter.cpp:894:42
+    #1 0x559310106a34 in vvdec::AdaptiveLoopFilter::reconstructCoeffAPSs(vvdec::Slice&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/AdaptiveLoopFilter.cpp:870:7
+    #2 0x55930fe477ff in vvdec::DecSlice::parseSlice(vvdec::Slice*, vvdec::InputBitstream*, int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecSlice.cpp:88:3
+    #3 0x55930fe04618 in vvdec::DecLibParser::xDecodeSliceMain(vvdec::InputNALUnit&)::$_0::operator()(int, void*) const /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:961:31
+    #4 0x55930fe0ee33 in vvdec::DecLibParser::xDecodeSliceMain(vvdec::InputNALUnit&)::$_0::__invoke(int, void*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:948:33
+    #5 0x55930ff1b561 in vvdec::ThreadPool::processTask(int, vvdec::ThreadPool::Slot&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:347:26
+    #6 0x55930ff19048 in vvdec::ThreadPool::threadProc(int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:266:7
+    #7 0x7fb3446ed085  (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed085) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #8 0x55930fb0d78a in asan_thread_start(void*) asan_interceptors.cpp.o
+    #9 0x7fb344471288 in start_thread nptl/pthread_create.c:448:8
+    #10 0x7fb3444efd07 in __GI___clone3 /build/reproducible-path/glibc-2.42/misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+0x7e03437e7f6d is located 1645 bytes inside of 8040-byte region [0x7e03437e7900,0x7e03437e9868)
+freed by thread T0 here:                                                                                                    
+    #0 0x55930fb54db6 in operator delete(void*, unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x616db6) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x55930fcc0579 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release_last_use() /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/shared_ptr_base.h:174:2
+    #2 0x55930fcc0579 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release_last_use_cold() /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/shared_ptr_base.h:198:9
+    #3 0x55930fe180de in std::__shared_ptr<vvdec::APS, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr() /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/shared_ptr_base.h:1531:31
+    #4 0x55930fe180de in std::enable_if<__sp_is_constructible<vvdec::APS, vvdec::APS>::value, void>::type std::__shared_ptr<vvdec::APS, (__gnu_cxx::_Lock_policy)2>::reset<vvdec::APS>(vvdec::APS*) /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/bits/shared_ptr_base.h:1657:4
+    #5 0x55930fe180de in vvdec::ParameterSetMap<vvdec::APS, 64>::storePS(int, vvdec::APS*, std::vector<unsigned char, vvdec::AlignedAllocator<unsigned char>>&&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/../CommonLib/ParameterSetManager.h:97:40
+    #6 0x55930fdee52b in vvdec::DecLibParser::xDecodeAPS(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1583:25
+    #7 0x55930fdd973a in vvdec::DecLibParser::parse(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:203:5
+    #8 0x55930fdc060d in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:189:29
+    #9 0x55930fb9d2ee in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #10 0x55930fb92328 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #11 0x55930fb91e37 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #12 0x55930fb62a78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #13 0x7fb344405f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7ffc27f6ee61  (<unknown module>)
+
+previously allocated by thread T0 here:
+    #0 0x55930fb54131 in operator new(unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x616131) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x55930fdee1e4 in vvdec::DecLibParser::xDecodeAPS(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1574:29
+    #2 0x55930fdd973a in vvdec::DecLibParser::parse(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:203:5
+    #3 0x55930fdc060d in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:189:29
+    #4 0x55930fb9d2ee in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #5 0x55930fb92328 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #6 0x55930fb91e37 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #7 0x55930fb62a78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #8 0x7fb344405f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7ffc27f6ee61  (<unknown module>)
+
+Thread T3 created by T0 here:
+    #0 0x55930faf4055 in pthread_create (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5b6055) (BuildId: ce3964a0bc90769d7a961c6cb63e7324a5115777)
+    #1 0x7fb3446ed158 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State>>, void (*)()) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed158) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #2 0x55930ff17bd1 in vvdec::ThreadPool::ThreadPool(int, char const*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:107:9
+    #3 0x55930fdbf60b in vvdec::DecLib::create(int, int, vvdec::UserAllocator const&, vvdec::ErrHandlingFlags) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:126:33
+    #4 0x55930fb9767a in vvdec::VVDecImpl::init(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:143:16
+    #5 0x55930fb8f707 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t>(int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #6 0x55930fb8ed27 in vvdec_decoder_open /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:204:21
+    #7 0x55930fb609d3 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:646:13
+    #8 0x7fb344405f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7ffc27f6ee61  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/AdaptiveLoopFilter.cpp:894:42 in vvdec::AdaptiveLoopFilter::reconstructCoeff(vvdec::AlfSliceParam&, vvdec::ChannelType, int)
+Shadow bytes around the buggy address:
+  0x7e03437e7c80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e7d00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e7d80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e7e00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e7e80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7e03437e7f00: fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]fd fd
+  0x7e03437e7f80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e8000: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e8080: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e8100: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x7e03437e8180: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==504830==ABORTING
