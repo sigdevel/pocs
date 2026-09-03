@@ -1,0 +1,57 @@
+=================================================================
+==2457679==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c96b27e0200 at pc 0x55caa411b071 bp 0x7ffdbddf73d0 sp 0x7ffdbddf73c8
+READ of size 1 at 0x7c96b27e0200 thread T0
+    #0 0x55caa411b070 in template_image_compose_opt /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_image.c:259:26
+    #1 0x55caa411b070 in jbig2_image_compose_opt_OR /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_image.c:292:9
+    #2 0x55caa41181e0 in jbig2_image_compose /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_image.c:442:9
+    #3 0x55caa4114ae9 in jbig2_page_add_result /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_page.c:308:12
+    #4 0x55caa4143494 in jbig2_text_region /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_text.c:996:16
+    #5 0x55caa4127e60 in jbig2_data_in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2.c:436:20
+    #6 0x55caa40cf2b5 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2dec.c:706:17
+    #7 0x7f56b3657f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7f56b3658026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x55caa3fe36e0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2dec+0x856e0) (BuildId: e70d60482bbe3384087710cc24c4fd49f77a6019)
+
+0x7c96b27e0200 is located 0 bytes after 448-byte region [0x7c96b27e0040,0x7c96b27e0200)
+allocated by thread T0 here:
+    #0 0x55caa4088c88 in malloc (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2dec+0x12ac88) (BuildId: e70d60482bbe3384087710cc24c4fd49f77a6019)
+    #1 0x55caa4116232 in jbig2_image_new /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_image.c:59:19
+    #2 0x55caa4110dcf in jbig2_page_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_page.c:160:23
+    #3 0x55caa4127e60 in jbig2_data_in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2.c:436:20
+    #4 0x55caa40cf2b5 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2dec.c:706:17
+    #5 0x7f56b3657f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #6 0x7ffdbddf9c86  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/jbig2dec/jbig2dec_asan/jbig2_image.c:259:26 in template_image_compose_opt
+Shadow bytes around the buggy address:
+  0x7c96b27dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c96b27e0000: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7c96b27e0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c96b27e0100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c96b27e0180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7c96b27e0200:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c96b27e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c96b27e0300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c96b27e0380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c96b27e0400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c96b27e0480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2457679==ABORTING
