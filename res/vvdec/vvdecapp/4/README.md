@@ -2,4 +2,4 @@
 
 https://github.com/fraunhoferhhi/vvdec/issues/394
 
-fix: 
+fix: https://github.com/fraunhoferhhi/vvdec/pull/398
