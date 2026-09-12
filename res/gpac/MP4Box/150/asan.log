@@ -1,0 +1,464 @@
+[32mTrack Importing RawVideo - Width 320 Height 240 FPS 30/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |==                  | (11/100)[33m[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 180)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 180)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 181)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 182)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 183)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 210)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 215)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 220)
+[0mXMT Parsing: |====                | (22/100)[33m[XMT Parsing] Warning: Unknown field "DE" for node ImageTexture - skipping (line 250)
+[0m[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 300)
+[0mXMT Parsing: |======              | (33/100)XMT Parsing: |========            | (44/100)XMT Parsing: |===========         | (55/100)[33m[XMT Parsing] Warning: Unknown field "backColor" for node OrderedGroup - skipping (line 663)
+[0m[33m[XMT Parsing] Warning: Unknown field "url" for node OrderedGroup - skipping (line 663)
+[0m[33m[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 664)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Background2D (line 664)
+[0mXMT Parsing: |=============       | (66/100)[33m[XMT Parsing] Warning: top-node already assigned - discarding node WorldInfo (line 665)
+[0m[33m[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 666)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Viewport (line 666)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Transform2D (line 693)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 698)
+[0m[33m[XMT Parsing] Warning: top-node already assigned - discarding node Conditional (line 703)
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 782)
+[0mXMT Parsing: |===============     | (78/100)[31m[XMT Parsing] Warning: closing element Shape doesn't match created node Curve2D (line 837)
+[0m[31m[XMT Parsing] Warning: closing element PixelTexture doesn't match created node Curve2D (line 842)
+[0m[31m[XMT Parsing] Warning: closing element Appearance doesn't match created node Curve2D (line 844)
+[0m[31m[XMT Parsing] Warning: closing element IndexedLineSet2D doesn't match created node Shape (line 851)
+[0m[31m[XMT Parsing] Warning: closing element LinearGradient doesn't match created node TransformMatrix2D (line 858)
+[0m[31m[XMT Parsing] Warning: closing element Appearance doesn't match created node TransformMatrix2D (line 860)
+[0mXMT Parsing: |=================   | (89/100)[31m[XMT Parsing] Invalid XML document:  (line 954)
+[0m[31m[CtxLoad] Failed to load context for file /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/limb/150/150_xmt_node_end_scene_manager_loader_xmt_c_3536.xmt: BitStream Not Compliant
+[0m[33m[Compositor] Could not detect end of stream(s) in the 10000 ms, aborting
+[0m[33m[Importer] Error importing /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/limb/150/150_xmt_node_end_scene_manager_loader_xmt_c_3536.xmt
+[0m[31mFailure while importing media: Internal Service Error
+[0m[31mError importing /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/limb/150/150_xmt_node_end_scene_manager_loader_xmt_c_3536.xmt: Internal Service Error
+[0m
+=================================================================
+==349461==ERROR: LeakSanitizer: detected memory leaks
+
+Indirect leak of 8800 byte(s) in 110 object(s) allocated from:
+    #0 0x7f78c312365f in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:81
+    #1 0x7f78c1360d64 in realloc_chain utils/list.c:643
+    #2 0x7f78c1360d64 in gf_list_add utils/list.c:652
+
+Indirect leak of 6272 byte(s) in 98 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1465ded in gf_node_setup scenegraph/base_scenegraph.c:1319
+
+Indirect leak of 2672 byte(s) in 167 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1360b1d in gf_list_new utils/list.c:612
+
+Indirect leak of 2240 byte(s) in 10 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1c33639 in new_mesh compositor/mesh.c:107
+
+Indirect leak of 1820 byte(s) in 25 object(s) allocated from:
+    #0 0x7f78c312365f in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:81
+    #1 0x7f78c1571ad4 in gf_sg_vrml_mf_insert scenegraph/vrml_tools.c:1100
+
+Indirect leak of 1536 byte(s) in 96 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1464c93 in gf_node_register scenegraph/base_scenegraph.c:840
+
+Indirect leak of 1200 byte(s) in 10 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1c335ea in new_mesh compositor/mesh.c:103
+
+Indirect leak of 1056 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c146403a in gf_sg_new scenegraph/base_scenegraph.c:53
+
+Indirect leak of 840 byte(s) in 7 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1477517 in gf_sg_command_new scenegraph/commands.c:38
+
+Indirect leak of 832 byte(s) in 13 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c141975d in gf_path_new utils/path2d.c:35
+
+Indirect leak of 752 byte(s) in 47 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1466a02 in gf_node_list_add_child_last scenegraph/base_scenegraph.c:1562
+
+Indirect leak of 576 byte(s) in 24 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dffd3 in Shape_Create scenegraph/mpeg4_nodes.c:12956
+    #2 0x7f78c14dffd3 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36868
+
+Indirect leak of 544 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d07839 in compositor_init_audiobuffer compositor/mpeg4_audio.c:606
+
+Indirect leak of 464 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1c14 in IndexedFaceSet_Create scenegraph/mpeg4_nodes.c:7938
+    #2 0x7f78c14e1c14 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36802
+
+Indirect leak of 448 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d6a599 in compositor_init_movietexture compositor/mpeg4_textures.c:177
+
+Indirect leak of 432 byte(s) in 18 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c153909e in gf_sg_proto_create_node scenegraph/vrml_proto.c:804
+
+Indirect leak of 416 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d07319 in compositor_init_audiosource compositor/mpeg4_audio.c:252
+
+Indirect leak of 416 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d06f79 in compositor_init_audioclip compositor/mpeg4_audio.c:124
+
+Indirect leak of 384 byte(s) in 8 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1cd92e3 in drawable_new compositor/drawable.c:148
+
+Indirect leak of 384 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d67963 in compositor_init_text compositor/mpeg4_text.c:720
+
+Indirect leak of 384 byte(s) in 8 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1cd937b in drawable_new compositor/drawable.c:158
+
+Indirect leak of 352 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d6a9cd in compositor_init_imagetexture compositor/mpeg4_textures.c:414
+
+Indirect leak of 320 byte(s) in 10 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1c33685 in new_mesh compositor/mesh.c:109
+
+Indirect leak of 320 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d4d4d2 in compositor_init_layout compositor/mpeg4_layout.c:814
+
+Indirect leak of 288 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dd6ae in TransformMatrix2D_Create scenegraph/mpeg4_nodes.c:31738
+    #2 0x7f78c14dd6ae in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:37040
+
+Indirect leak of 280 byte(s) in 7 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1477ed2 in gf_sg_command_field_new scenegraph/commands.c:953
+
+Indirect leak of 256 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c13e60c4 in gf_mx_new utils/os_thread.c:531
+
+Indirect leak of 256 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d3a68d in compositor_init_transformmatrix2d compositor/mpeg4_grouping_2d.c:281
+
+Indirect leak of 256 byte(s) in 8 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1cd9336 in drawable_new compositor/drawable.c:155
+
+Indirect leak of 240 byte(s) in 5 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1cd9240 in drawable_init_ex compositor/drawable.c:141
+
+Indirect leak of 224 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dfbca in Text_Create scenegraph/mpeg4_nodes.c:14106
+    #2 0x7f78c14dfbca in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36884
+
+Indirect leak of 224 byte(s) in 7 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e196c in Appearance_Create scenegraph/mpeg4_nodes.c:424
+    #2 0x7f78c14e196c in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36712
+
+Indirect leak of 224 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1869 in AudioSource_Create scenegraph/mpeg4_nodes.c:1454
+    #2 0x7f78c14e1869 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36724
+
+Indirect leak of 224 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14cbeef in Layout_Create scenegraph/mpeg4_nodes.c:9184
+
+Indirect leak of 208 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e29f4 in Form_Create scenegraph/mpeg4_nodes.c:7464
+    #2 0x7f78c14e29f4 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36796
+
+Indirect leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14c9c9a in Extrusion_Create scenegraph/mpeg4_nodes.c:5097
+
+Indirect leak of 192 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1c1c052 in gf_mixer_new compositor/audio_mixer.c:101
+
+Indirect leak of 192 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14d9f7a in PathLayout_Create scenegraph/mpeg4_nodes.c:31140
+
+Indirect leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d311b3 in compositor_init_linear_gradient compositor/mpeg4_gradients.c:340
+
+Indirect leak of 184 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d6b0e3 in compositor_init_pixeltexture compositor/mpeg4_textures.c:576
+
+Indirect leak of 176 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14c858a in AudioBuffer_Create scenegraph/mpeg4_nodes.c:613
+
+Indirect leak of 160 byte(s) in 5 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1cd91ff in drawable_init_ex compositor/drawable.c:138
+
+Indirect leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e20bb in IndexedFaceSet2D_Create scenegraph/mpeg4_nodes.c:8135
+    #2 0x7f78c14e20bb in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36804
+
+Indirect leak of 160 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dd990 in Clipper2D_Create scenegraph/mpeg4_nodes.c:30271
+    #2 0x7f78c14dd990 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:37026
+
+Indirect leak of 144 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e09c2 in MovieTexture_Create scenegraph/mpeg4_nodes.c:9942
+    #2 0x7f78c14e09c2 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36828
+
+Indirect leak of 144 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d6c683 in compositor_init_timesensor compositor/mpeg4_timesensor.c:172
+
+Indirect leak of 144 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1b6f in AudioClip_Create scenegraph/mpeg4_nodes.c:770
+    #2 0x7f78c14e1b6f in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36716
+
+Indirect leak of 144 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d40292 in compositor_init_layer2d compositor/mpeg4_layer_2d.c:357
+
+Indirect leak of 144 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1e87 in Layer2D_Create scenegraph/mpeg4_nodes.c:8795
+    #2 0x7f78c14e1e87 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36814
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dfad4 in TimeSensor_Create scenegraph/mpeg4_nodes.c:14494
+    #2 0x7f78c14dfad4 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36890
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d04219 in compositor_init_animationstream compositor/mpeg4_animstream.c:177
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e19a3 in AnimationStream_Create scenegraph/mpeg4_nodes.c:313
+    #2 0x7f78c14e19a3 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36710
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1538b79 in gf_sg_proto_create_node scenegraph/vrml_proto.c:783
+
+Indirect leak of 128 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d1ee72 in compositor_init_form compositor/mpeg4_form.c:387
+
+Indirect leak of 112 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d50852 in compositor_init_path_layout compositor/mpeg4_path_layout.c:274
+
+Indirect leak of 112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e205f in IndexedLineSet_Create scenegraph/mpeg4_nodes.c:8289
+    #2 0x7f78c14e205f in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36806
+
+Indirect leak of 112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e2695 in ElevationGrid_Create scenegraph/mpeg4_nodes.c:4716
+    #2 0x7f78c14e2695 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36772
+
+Indirect leak of 112 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e2003 in IndexedLineSet2D_Create scenegraph/mpeg4_nodes.c:8442
+    #2 0x7f78c14e2003 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36808
+
+Indirect leak of 104 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d14312 in compositor_init_bitmap compositor/mpeg4_bitmap.c:338
+
+Indirect leak of 96 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1029 in Coordinate2D_Create scenegraph/mpeg4_nodes.c:3509
+    #2 0x7f78c14e1029 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36756
+
+Indirect leak of 88 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14d9dda in LinearGradient_Create scenegraph/mpeg4_nodes.c:30942
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e0f96 in Curve2D_Create scenegraph/mpeg4_nodes.c:3881
+    #2 0x7f78c14e0f96 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36762
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dfc26 in TextureTransform_Create scenegraph/mpeg4_nodes.c:14343
+    #2 0x7f78c14dfc26 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36888
+
+Indirect leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e000a in Sound2D_Create scenegraph/mpeg4_nodes.c:13301
+    #2 0x7f78c14e000a in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36872
+
+Indirect leak of 80 byte(s) in 10 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1dc7542 in drawable_3d_new compositor/visual_manager_3d.c:38
+
+Indirect leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14defde in InputSensor_Create scenegraph/mpeg4_nodes.c:22790
+    #2 0x7f78c14defde in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36938
+
+Indirect leak of 64 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1d5f in ImageTexture_Create scenegraph/mpeg4_nodes.c:7679
+    #2 0x7f78c14e1d5f in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36800
+
+Indirect leak of 64 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1d5eeb2 in compositor_init_sound2d compositor/mpeg4_sound.c:84
+
+Indirect leak of 60 byte(s) in 15 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c156f16f in NewSFBool scenegraph/vrml_tools.c:298
+    #2 0x7f78c156f16f in gf_sg_vrml_field_pointer_new scenegraph/vrml_tools.c:501
+
+Indirect leak of 56 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14de3c0 in NonLinearDeformer_Create scenegraph/mpeg4_nodes.c:25285
+    #2 0x7f78c14de3c0 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36972
+
+Indirect leak of 48 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c156f249 in NewSFVec3f scenegraph/vrml_tools.c:334
+    #2 0x7f78c156f249 in gf_sg_vrml_field_pointer_new scenegraph/vrml_tools.c:513
+
+Indirect leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c16160e3 in gf_dom_event_target_new scenegraph/dom_events.c:953
+
+Indirect leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1097 in Coordinate_Create scenegraph/mpeg4_nodes.c:3410
+    #2 0x7f78c14e1097 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36754
+
+Indirect leak of 44 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c311da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x7f78c1bb810e in xmt_parse_string scene_manager/loader_xmt.c:864
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14dd64a in XCurve2D_Create scenegraph/mpeg4_nodes.c:32059
+    #2 0x7f78c14dd64a in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:37044
+
+Indirect leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e084c in PixelTexture_Create scenegraph/mpeg4_nodes.c:10690
+    #2 0x7f78c14e084c in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36840
+
+Indirect leak of 36 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1571a49 in gf_sg_vrml_mf_insert scenegraph/vrml_tools.c:1091
+
+Indirect leak of 36 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c311da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x7f78c13e61e7 in gf_mx_new utils/os_thread.c:550
+
+Indirect leak of 32 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1473 in Circle_Create scenegraph/mpeg4_nodes.c:2361
+    #2 0x7f78c14e1473 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36738
+
+Indirect leak of 32 byte(s) in 4 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c156f1d1 in NewSFDouble scenegraph/vrml_tools.c:310
+    #2 0x7f78c156f1d1 in gf_sg_vrml_field_pointer_new scenegraph/vrml_tools.c:505
+
+Indirect leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e0e94 in Cylinder_Create scenegraph/mpeg4_nodes.c:4002
+    #2 0x7f78c14e0e94 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36764
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e01da in PointSet2D_Create scenegraph/mpeg4_nodes.c:11400
+    #2 0x7f78c14e01da in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36850
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1e0e085 in InitInputSensor compositor/mpeg4_inputsensor.c:525
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e0211 in PointSet_Create scenegraph/mpeg4_nodes.c:11301
+    #2 0x7f78c14e0211 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36848
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e13d8 in Color_Create scenegraph/mpeg4_nodes.c:2594
+    #2 0x7f78c14e13d8 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36742
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e10ce in Cone_Create scenegraph/mpeg4_nodes.c:3307
+    #2 0x7f78c14e10ce in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36752
+
+Indirect leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e14cf in Box_Create scenegraph/mpeg4_nodes.c:2260
+    #2 0x7f78c14e14cf in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36736
+
+Indirect leak of 18 byte(s) in 6 object(s) allocated from:
+    #0 0x7f78c311da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x7f78c1bb845f in xmt_parse_string scene_manager/loader_xmt.c:890
+
+Indirect leak of 16 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14cbfae in Layout_Create scenegraph/mpeg4_nodes.c:9193
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14c9ff1 in Extrusion_Create scenegraph/mpeg4_nodes.c:5119
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14e1580 in Bitmap_Create scenegraph/mpeg4_nodes.c:2172
+    #2 0x7f78c14e1580 in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36734
+
+Indirect leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c1bbdf26 in xmt_parse_sf_field scene_manager/loader_xmt.c:1036
+
+Indirect leak of 14 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c311da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x7f78c1538c74 in gf_sg_proto_create_node scenegraph/vrml_proto.c:794
+
+Indirect leak of 12 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c311da04 in strdup ../../../../src/libsanitizer/asan/asan_interceptors.cpp:617
+    #1 0x7f78c14cbffe in Layout_Create scenegraph/mpeg4_nodes.c:9195
+
+Indirect leak of 8 byte(s) in 2 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14c864f in AudioBuffer_Create scenegraph/mpeg4_nodes.c:622
+
+Indirect leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x7f78c312435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f78c14d9e5f in LinearGradient_Create scenegraph/mpeg4_nodes.c:30949
+
+SUMMARY: AddressSanitizer: 41172 byte(s) leaked in 856 allocation(s).
