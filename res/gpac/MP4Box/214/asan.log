@@ -1,0 +1,28 @@
+[avilib] error - only 8 audio tracks supported
+AddressSanitizer:DEADLYSIGNAL                                                                                               
+=================================================================
+==379351==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000496 (pc 0x7f94f0170dbd bp 0x7d44ee3f14f0 sp 0x7ffd378a84c0 T0)                                                                                                                    
+==379351==The signal is caused by a READ memory access.                                                                     
+==379351==Hint: address points to the zero page.
+    #0 0x7f94f0170dbd in AVI_close media_tools/avilib.c:1782
+    #1 0x7f94f01734c9 in avi_parse_input_file media_tools/avilib.c:2081
+    #2 0x7f94f0178cd3 in AVI_open_input_file media_tools/avilib.c:1845
+    #3 0x7f94f06dcf7e in avidmx_process filters/dmx_avi.c:492
+    #4 0x7f94f05e0093 in gf_filter_process_task filter_core/filter.c:3257
+    #5 0x7f94f05b44c1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #6 0x7f94f05b9582 in gf_fs_run filter_core/filter_session.c:2728
+    #7 0x7f94f0070e1c in gf_media_import media_tools/media_import.c:1305
+    #8 0x55e609cbb5f3 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #9 0x55e609c8b351 in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6575
+    #10 0x7f94f1d2ef76 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f94f1d2f026 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x55e609c67080 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4d080) (BuildId: 1651312aefdad6adf454cb6d555ab16d3e0fe1b8)
+
+==379351==Register values:
+rax = 0x0000000000000092  rbx = 0x0000000000000476  rcx = 0x000000000000036a  rdx = 0x00000fa89dc7e2a1  
+rdi = 0x0000000000000496  rsi = 0x00007d44ee3f151c  rbp = 0x00007d44ee3f14f0  rsp = 0x00007ffd378a84c0  
+ r8 = 0x00007ce4ee3f2ef0   r9 = 0x000000000001bdc3  r10 = 0x00007f94f17ce298  r11 = 0x00007f94f1a72448  
+r12 = 0x00007d44ee3f1180  r13 = 0x0000000000000008  r14 = 0x00000000000003f8  r15 = 0x00000fa89dc7e2a3  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV media_tools/avilib.c:1782 in AVI_close
+==379351==ABORTING
