@@ -1,0 +1,118 @@
+VVdeC, the Fraunhofer VVC/H.266 decoder, version 3.3.0-dev [THREADS=72; PARSE_DELAY=48; SIMD=AVX2]
+Warning: MAIN_10_444 and MAIN_10_444_STILL_PICTURE is still experimental.
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "auto vvdec::HLSyntaxReader::parseSPS(SPS *, const ParameterSetManager *)::(anonymous class)::operator()() const" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/HLSyntaxReader.cpp:1812: sps_log2_diff_max_tt_min_qt_intra_slice_luma out of bounds (read:5).
+ERROR CONDITION: (sps_log2_diff_max_tt_min_qt_intra_slice_luma) < (0) || (sps_log2_diff_max_tt_min_qt_intra_slice_luma) > (std::min( 6, CtbLog2SizeY ) - MinQtLog2SizeIntraY)
+You can try to pass in more data to start decoding from the first RAP.
+
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "const T *vvdec::ParameterSetMap<vvdec::SPS, 16>::getPS(int) const [T = vvdec::SPS, MAX_ID = 16]" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/../CommonLib/ParameterSetManager.h:139: Missing Parameter Set (id:0)
+ERROR CONDITION: !ps
+You can try to pass in more data to start decoding from the first RAP.
+
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "const T *vvdec::ParameterSetMap<vvdec::PPS, 64>::getPS(int) const [T = vvdec::PPS, MAX_ID = 64]" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/../CommonLib/ParameterSetManager.h:139: Missing Parameter Set (id:0)
+ERROR CONDITION: !ps
+You can try to pass in more data to start decoding from the first RAP.
+
+
+WARNING: In function "static int vvdec::VVDecImpl::xReadNalUnitHeader(InputNALUnit &)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:1490: forbidden_zero_bit shall be equal to 0.
+WARNING CONDITION: nalu.m_forbiddenZeroBit != 0
+
+WARNING: In function "static int vvdec::VVDecImpl::xReadNalUnitHeader(InputNALUnit &)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:1493: nuh_reserved_zero_bit shall be equal to 0.
+WARNING CONDITION: nalu.m_forbiddenZeroBit != 0
+Received suffix SEI but no picture currently active.
+Warning: MAIN_10_444 and MAIN_10_444_STILL_PICTURE is still experimental.
+Unknown prefix SEI message (payloadType = 218) was found!
+Unknown prefix SEI message (payloadType = 192) was found!
+Unknown prefix SEI message (payloadType = 29) was found!
+Unknown prefix SEI message (payloadType = 169) was found!
+Unknown prefix SEI message (payloadType = 158) was found!
+Unknown prefix SEI message (payloadType = 44) was found!
+vvdecapp [warning]: (possibly recoverable) exception (decoder input data error) detail: Exception while tuning in: 
+ERROR: In function "void vvdec::SEIReader::xParseSEIFramePacking(vvdecSEI *, uint32_t, std::ostream *)" in /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/SEIread.cpp:1039: Invalid arrangement type
+ERROR CONDITION: ( sei->arrangementType <= 2 ) || ( sei->arrangementType >= 6 )
+You can try to pass in more data to start decoding from the first RAP.
+
+Received suffix SEI but no picture currently active.
+Warning: MAIN_10_444 and MAIN_10_444_STILL_PICTURE is still experimental.
+Unknown prefix SEI message (payloadType = 157) was found!
+Unknown prefix SEI message (payloadType = 146) was found!
+Unknown prefix SEI message (payloadType = 65) was found!
+....
+....
+....
+Unknown prefix SEI message (payloadType = 47) was found!
+Unknown prefix SEI message (payloadType = 66) was found!
+Unknown prefix SEI message (payloadType = 182) was found!
+=================================================================
+==706393==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7d812cbe0560 at pc 0x5634d5d322de bp 0x7ffd2c4a7d10 sp 0x7ffd2c4a7d08                                                                                                              
+READ of size 8 at 0x7d812cbe0560 thread T0                                                                                  
+    #0 0x5634d5d322dd in vvdec::SEI_internal::deleteSEI(vvdecSEI*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/SEI_internal.cpp:130:18
+    #1 0x5634d5f3c912 in vvdec::SEIReader::xReadSEImessage(std::__cxx11::list<vvdecSEI*, std::allocator<vvdecSEI*>>&, vvdec::NalUnitType, unsigned int, unsigned int, vvdec::VPS const*, vvdec::SPS const*, vvdec::HRD&, std::ostream*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/SEIread.cpp:383:5
+    #2 0x5634d5f3a7ad in vvdec::SEIReader::parseSEImessage(vvdec::InputBitstream*, std::__cxx11::list<vvdecSEI*, std::allocator<vvdecSEI*>>&, vvdec::NalUnitType, unsigned int, unsigned int, vvdec::VPS const*, vvdec::SPS const*, vvdec::HRD&, std::ostream*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/SEIread.cpp:148:5
+    #3 0x5634d5e56a73 in vvdec::DecLibParser::xParsePrefixSEImessages() /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1497:17
+    #4 0x5634d5e470f3 in vvdec::DecLibParser::xActivateParameterSets(int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1049:5
+    #5 0x5634d5e32ee3 in vvdec::DecLibParser::xDecodeSliceHead(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:640:3
+    #6 0x5634d5e2b3f4 in vvdec::DecLibParser::parse(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:155:12
+    #7 0x5634d5e1229d in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:189:29
+    #8 0x5634d5bee41e in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #9 0x5634d5be3458 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #10 0x5634d5be2f67 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #11 0x5634d5bb3a78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #12 0x7fe12d805f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x7fe12d806026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #14 0x5634d5abb960 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x52c960) (BuildId: 5c581dc1d9af3a7234711e30b5488f0eeb5b8561)
+
+0x7d812cbe0560 is located 0 bytes after 1248-byte region [0x7d812cbe0080,0x7d812cbe0560)
+allocated by thread T0 here:                                                                                                
+    #0 0x5634d5b60f08 in malloc (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5d1f08) (BuildId: 5c581dc1d9af3a7234711e30b5488f0eeb5b8561)
+    #1 0x5634d5d32951 in vvdec::SEI_internal::allocSEIPayload(vvdecSEI*, int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/SEI_internal.cpp:181:18
+    #2 0x5634d5d326bc in vvdec::SEI_internal::allocSEI(vvdecSEIPayloadType) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/SEI_internal.cpp:164:12
+    #3 0x5634d5f3bf31 in vvdec::SEIReader::xReadSEImessage(std::__cxx11::list<vvdecSEI*, std::allocator<vvdecSEI*>>&, vvdec::NalUnitType, unsigned int, unsigned int, vvdec::VPS const*, vvdec::SPS const*, vvdec::HRD&, std::ostream*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/SEIread.cpp:258:15
+    #4 0x5634d5f3a7ad in vvdec::SEIReader::parseSEImessage(vvdec::InputBitstream*, std::__cxx11::list<vvdecSEI*, std::allocator<vvdecSEI*>>&, vvdec::NalUnitType, unsigned int, unsigned int, vvdec::VPS const*, vvdec::SPS const*, vvdec::HRD&, std::ostream*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/SEIread.cpp:148:5
+    #5 0x5634d5e56a73 in vvdec::DecLibParser::xParsePrefixSEImessages() /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1497:17
+    #6 0x5634d5e470f3 in vvdec::DecLibParser::xActivateParameterSets(int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:1049:5
+    #7 0x5634d5e32ee3 in vvdec::DecLibParser::xDecodeSliceHead(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:640:3
+    #8 0x5634d5e2b3f4 in vvdec::DecLibParser::parse(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:155:12
+    #9 0x5634d5e1229d in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:189:29
+    #10 0x5634d5bee41e in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:429:30
+    #11 0x5634d5be3458 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #12 0x5634d5be2f67 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:294:13
+    #13 0x5634d5bb3a78 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #14 0x7fe12d805f76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #15 0x7ffd2c4aae79  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/SEI_internal.cpp:130:18 in vvdec::SEI_internal::deleteSEI(vvdecSEI*)
+Shadow bytes around the buggy address:
+  0x7d812cbe0280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d812cbe0300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d812cbe0380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d812cbe0400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d812cbe0480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7d812cbe0500: 00 00 00 00 00 00 00 00 00 00 00 00[fa]fa fa fa
+  0x7d812cbe0580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d812cbe0600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d812cbe0680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d812cbe0700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d812cbe0780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==706393==ABORTING
