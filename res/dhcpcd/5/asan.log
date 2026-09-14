@@ -1,0 +1,110 @@
+unknown option: 0
+unknown option: 0"
+unknown option: nti
+unknown option: cccccccAAAAAAAAAA>AAAAAA3
+unknown option: reqtdÑ˛s01a
+unknown option: .
+unknown option: ""
+unknown option: "\l
+unknown option: ve
+unknown option: sy::1
+unknown option: t"
+incomplete request type
+unknown option: v
+unknown option: statdÑtatic
+unknown option: st
+invalid code: nd
+unknown option: recoçfigure0
+unknown option: worameˇˇ
+unknown option: v
+unknown option: t"
+incomplete array type
+unknown option: v
+static assignment required
+unknown option: s
+IA with IAID must belong in an interface block
+IA with IAID must belong in an interface block
+unknown option: stars
+unknown option: ia_ars
+IA with IAID must belong in an interface block
+unknown option: 6
+unknown option: qsAACd
+unknown option: clie66666666666666…666ien8
+unknown option: scs=0::1
+unknown option: st
+invalid code: nd
+unknown option: stars
+unknown option: 6
+unknown option: qsBACC
+unknown option: client\d
+unknown option: aequest
+unknown option: noi1
+unknown option: stars
+unknown option: noipv601\
+IA with IAID must belong in an interface block
+unknown option: 6
+unknown option: qs††††††††††††††††01\02:'"
+unknown option: clieeeeeee
+unknown option: 2,eeeeeeeeeeeeeeeeeeeeeee
+invalid IP address: nacccccccccccccmanagerccccccccc$cccouteês=14
+unknown option: st
+unknown option: stosst
+invalid IP address: nacccccccccccccccccccccc duid ut)d
+unknown option: !
+unknown option: s
+unknown option: 0Ç
+unknown option: rez∑zecoia_pdcoäa_pd
+unknown option: _Rs
+unknown option: 0
+unknown option: noi8ri24
+unknown option: sss=0::1
+unknown option: t
+unknown type: requesd
+unknown option: v
+unknown option: sexittatddtatic
+unknown option: st
+unknown option: stodefinend
+unknown option: recoçfigure0
+unknown option: 0
+unknown option: nd_address=0::100000000e
+unknown option: noi1
+unknown option: s000:000.10/24
+unknown option: estinatioo
+unknown option: sys
+unknown option: Öoi1
+unknown option: t"
+incomplete request type
+unknown option: v
+unknown option: statdÑtatic
+unknown option: st
+invalid code: nd
+unknown option: recoçfigurb0
+unknown option: worameˇˇ
+unknown option: v
+unknown option: t"
+unknown type: nodhcp6
+unknown option: s
+unknown option: sta`ic
+bitflag string too long ===================D==========================================sta`ic
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1266523==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x559c0f7ab3e0 bp 0x7fff924f1570 sp 0x7fff924f0d20 T0)
+==1266523==The signal is caused by a READ memory access.
+==1266523==Hint: address points to the zero page.
+    #0 0x559c0f7ab3e0 in strcasecmp (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd+0x6c3e0) (BuildId: b0997b3a3ac7480d192ccade97ea1fd3d69df25f)
+    #1 0x559c0f8b163b in parse_option /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2120:8
+    #2 0x559c0f8a2648 in parse_config_line /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:2680:10
+    #3 0x559c0f8a2648 in read_config /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/if-options.c:3023:3
+    #4 0x559c0f88aece in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd.c:2271:8
+    #5 0x7fa785f3bf76 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #6 0x7fa785f3c026 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #7 0x559c0f78f8a0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd+0x508a0) (BuildId: b0997b3a3ac7480d192ccade97ea1fd3d69df25f)
+
+==1266523==Register values:
+rax = 0x000000000f9a1001  rbx = 0x0000559c0f9a1020  rcx = 0x0000000000000001  rdx = 0x0000000000000001  
+rdi = 0x0000000000000000  rsi = 0x0000559c0f9a1020  rbp = 0x00007fff924f1570  rsp = 0x00007fff924f0d20  
+ r8 = 0x0000000000000000   r9 = 0x0000000000000005  r10 = 0x0000559c10362940  r11 = 0x00000fc370a34170  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x0000000000040000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/dhcpcd/dhcpcd_asan/src/dhcpcd+0x6c3e0) (BuildId: b0997b3a3ac7480d192ccade97ea1fd3d69df25f) in strcasecmp
+==1266523==ABORTING
