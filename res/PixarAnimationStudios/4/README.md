@@ -2,4 +2,6 @@
 
 OpenUSD version 28.08
 
+https://github.com/PixarAnimationStudios/OpenUSD/issues/4217
+
 fix:
