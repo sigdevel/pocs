@@ -1,0 +1,73 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 133)                            
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 327)                           
+[XMT Parsing] Warning: Unknown field "DdddddddddddddddEF" for node Color - skipping (line 488)                              
+[JS] SyntaxError: unexpected token in expression: ''                                                                        
+    at inline_script:1:417                                                                                                  
+                                                                                                                            
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found                                                                 
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/auxiliary_files/logo.jpg Cannot find filter for service: Requested URL is not valid or cannot be found                                                                 
+[Compositor] No support for OpenGL framebuffer object, cannot run in GL mode.                                               
+[Compositor] Failed to setup FBO object: FBO status 00000000                                                                
+[Compositor] Failed to setup FBO object: FBO status 00000000                                                                
+=================================================================                                                           
+==3777615==ERROR: AddressSanitizer: heap-use-after-free on address 0x7bc51dde2e68 at pc 0x7f151f7369a3 bp 0x7ffdfc8bb050 sp 0x7ffdfc8bb048                                                                                                              
+READ of size 8 at 0x7bc51dde2e68 thread T0                                                                                  
+    #0 0x7f151f7369a2 in gf_sg_proto_del scenegraph/vrml_proto.c:108
+    #1 0x7f151f6789af in gf_sg_command_del scenegraph/commands.c:131
+    #2 0x7f151fdb1733 in gf_sm_au_del scene_manager/scene_manager.c:113
+    #3 0x7f151fdb1733 in gf_sm_reset_stream scene_manager/scene_manager.c:126
+    #4 0x7f151fdb1733 in gf_sm_delete_stream scene_manager/scene_manager.c:133
+    #5 0x7f151fdb1733 in gf_sm_del scene_manager/scene_manager.c:147
+    #6 0x7f152046b190 in ctxload_finalize filters/load_bt_xmt.c:872
+    #7 0x7f15201c136c in gf_fs_del filter_core/filter_session.c:786
+    #8 0x7f151fc75964 in gf_media_import media_tools/media_import.c:1373
+    #9 0x55c8c3312d53 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #10 0x55c8c32e2a9d in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6645
+    #11 0x7f151f033fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #12 0x7f151f0340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x55c8c32be0c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: bd97ac0401e54cf584a9d869fd4669f0be7d84d5)
+
+0x7bc51dde2e68 is located 24 bytes inside of 104-byte region [0x7bc51dde2e50,0x7bc51dde2eb8)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f152132340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f151f7368b7 in gf_sg_proto_del scenegraph/vrml_proto.c:163
+
+previously allocated by thread T0 here:
+    #0 0x7f152132435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f151f73621e in gf_sg_proto_new scenegraph/vrml_proto.c:49
+
+SUMMARY: AddressSanitizer: heap-use-after-free scenegraph/vrml_proto.c:108 in gf_sg_proto_del
+Shadow bytes around the buggy address:
+  0x7bc51dde2b80: fa fa 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bc51dde2c00: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x7bc51dde2c80: 00 00 00 00 00 00 fa fa fa fa fa fa fa fa 00 00
+  0x7bc51dde2d00: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x7bc51dde2d80: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x7bc51dde2e00: fd fd fa fa fa fa fa fa fa fa fd fd fd[fd]fd fd
+  0x7bc51dde2e80: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x7bc51dde2f00: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x7bc51dde2f80: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x7bc51dde3000: 00 00 00 00 fa fa fa fa fa fa fa fa 00 00 00 00
+  0x7bc51dde3080: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3777615==ABORTING

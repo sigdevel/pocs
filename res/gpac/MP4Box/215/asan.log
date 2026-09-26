@@ -1,0 +1,89 @@
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: Unknown field "mak" for node ColorTransform - skipping (line 244)                                    
+Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found                                                                                                                       
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 305)                           
+[XMT Parsing] Warning: Unknown field "objectTypeIndicatioW" for node CacheTexture - skipping (line 433)                     
+[XMT Parsing] Warning: Unknown proto field _field3" floatValue="0.78 - skipping (line 557)                                  
+[XMT Parsing] Warning: Node SW has been defined several times - IDs may get corrupted (line 760)                            
+[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 958)                            
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 959)                            
+[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 961)                            
+[XMT Parsing] Warning: Unknown field "mak" for node ColorTransform - skipping (line 1017)                                   
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 1078)                          
+[XMT Parsing] Warning: Unknown field "objectTypeIndicatioW" for node CacheTexture - skipping (line 1206)                    
+[XMT Parsing] Warning: Unknown field "whichhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhChoice" for node Switch - skipping (line 1366)                                                
+[XMT Parsing] Warning: Node SW has been defined several times - IDs may get corrupted (line 1521)                           
+[XMT Parsing] Warning: Node M1 has been defined several times - IDs may get corrupted (line 1542)                           
+[XMT Parsing] Warning: Node TR_1 has been defined several times - IDs may get corrupted (line 1557)                         
+[XMT Parsing] Warning: Node M1 has been defined several times - IDs may get corrupted (line 1602)                           
+[XMT Parsing] Warning: Node TR_1 has been defined several times - IDs may get corrupted (line 1617)                         
+[XMT Parsing] Warning: Node TR_2 has been defined several times - IDs may get corrupted (line 1634)                         
+[XMT Parsing] Warning: Node SW has been defined several times - IDs may get corrupted (line 1747)                           
+[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 1945)                           
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 1946)                           
+[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 1948)                           
+[XMT Parsing] Warning: Unknown field "mak" for node ColorTransform - skipping (line 2004)                                   
+[XMT Parsing] Warning: Unknown field "justify" for node XLineProperties - skipping (line 2012)                              
+[XMT Parsing] Warning: Unknown field "size" for node XLineProperties - skipping (line 2012)                                 
+[XMT Parsing] Warning: closing element Text doesn't match created node Material2D (line 2014)                               
+[XMT Parsing] Warning: closing element Shape doesn't match created node Material2D (line 2016)                              
+[XMT Parsing] Warning: closing element AnimationStream doesn't match created node Material2D (line 2020)                    
+=================================================================                                                           
+==3089513==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b504e9eb688 at pc 0x7f20509be33e bp 0x7ffcb2d3cb70 sp 0x7ffcb2d3cb68                                                                                                              
+READ of size 4 at 0x7b504e9eb688 thread T0                                                                                  
+    #0 0x7f20509be33d in xmt_resolve_od_links scene_manager/loader_xmt.c:596
+    #1 0x7f20509c127f in load_xmt_run scene_manager/loader_xmt.c:3728
+    #2 0x7f205106ed43 in ctxload_process filters/load_bt_xmt.c:544
+    #3 0x7f2050de6893 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7f2050dbacc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7f2050dbfd82 in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7f205087245c in gf_media_import media_tools/media_import.c:1305
+    #7 0x55a47658dd53 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #8 0x55a47655da9d in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6645
+    #9 0x7f204fc33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #10 0x7f204fc340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #11 0x55a4765390c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: bd97ac0401e54cf584a9d869fd4669f0be7d84d5)
+
+0x7b504e9eb688 is located 8 bytes inside of 32-byte region [0x7b504e9eb680,0x7b504e9eb6a0)
+freed by thread T0 here:                                                                                                    
+    #0 0x7f2051f2340f in free ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:51
+    #1 0x7f205026a2d7 in gf_node_unregister scenegraph/base_scenegraph.c:825
+
+previously allocated by thread T0 here:
+    #0 0x7f2051f2435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7f20502e2d5f in ImageTexture_Create scenegraph/mpeg4_nodes.c:7679
+    #2 0x7f20502e2d5f in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:36800
+
+SUMMARY: AddressSanitizer: heap-use-after-free scene_manager/loader_xmt.c:596 in xmt_resolve_od_links
+Shadow bytes around the buggy address:
+  0x7b504e9eb400: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x7b504e9eb480: 00 00 fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa
+  0x7b504e9eb500: 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd fd fd
+  0x7b504e9eb580: fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00
+  0x7b504e9eb600: 00 00 fa fa 00 00 00 00 fa fa fd fd fd fd fa fa
+=>0x7b504e9eb680: fd[fd]fd fd fa fa fd fd fd fd fa fa 00 00 00 fa
+  0x7b504e9eb700: fa fa fd fd fd fa fa fa fd fd fd fa fa fa fd fd
+  0x7b504e9eb780: fd fd fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa
+  0x7b504e9eb800: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x7b504e9eb880: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x7b504e9eb900: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3089513==ABORTING

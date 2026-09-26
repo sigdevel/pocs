@@ -1,0 +1,33 @@
+[AC4] n_objects_code exceeds maximum supported (7)
+[AC4] n_objects_code exceeds maximum supported (7)                                                                          
+[AC4] This is a Dolby AC-4 bitstreams signal immersive stereo content.                                                      
+AddressSanitizer:DEADLYSIGNAL                                                                                               
+=================================================================
+==3170792==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000003 (pc 0x7f1e4f8d531d bp 0x7b9e4d9e04a0 sp 0x7ffe934d10f0 T0)                                                                                                                   
+==3170792==The signal is caused by a READ memory access.                                                                    
+==3170792==Hint: address points to the zero page.
+    #0 0x7f1e4f8d531d in gf_odf_ac4_cfg_substream_dsi odf/descriptors.c:2003
+    #1 0x7f1e4f8d531d in gf_odf_ac4_cfg_substream_group_dsi odf/descriptors.c:2068
+    #2 0x7f1e4f8e8332 in gf_odf_ac4_cfg_presentation_v1_dsi odf/descriptors.c:2144
+    #3 0x7f1e4f8e8332 in gf_odf_ac4_cfg_dsi_v1 odf/descriptors.c:2336
+    #4 0x7f1e4f8e8b6e in gf_odf_ac4_cfg_write odf/descriptors.c:2393
+    #5 0x7f1e503ac6eb in ac4dmx_check_pid filters/reframe_ac4.c:464
+    #6 0x7f1e503ad458 in ac4dmx_process filters/reframe_ac4.c:635
+    #7 0x7f1e4ffe6893 in gf_filter_process_task filter_core/filter.c:3257
+    #8 0x7f1e4ffbacc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #9 0x7f1e4ffbfd82 in gf_fs_run filter_core/filter_session.c:2728
+    #10 0x7f1e4fa7245c in gf_media_import media_tools/media_import.c:1305
+    #11 0x55bd03793d53 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #12 0x55bd03763a9d in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6645
+    #13 0x7f1e4ee33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #14 0x7f1e4ee340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55bd0373f0c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: bd97ac0401e54cf584a9d869fd4669f0be7d84d5)
+
+==3170792==Register values:
+rax = 0x0000000000000000  rbx = 0x00007c2e4d9e9f00  rcx = 0x0000000000000003  rdx = 0x0000000000000000  
+rdi = 0x0000000000000003  rsi = 0x000000000000000b  rbp = 0x00007b9e4d9e04a0  rsp = 0x00007ffe934d10f0  
+ r8 = 0x0000000000000000   r9 = 0x00000000000000f3  r10 = 0x0000000000000004  r11 = 0x0000000000000001  
+r12 = 0x000000000000000b  r13 = 0x00007b9e4d9e04e9  r14 = 0x0000000000000000  r15 = 0x00007c6e4d9fbd8c  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV odf/descriptors.c:2003 in gf_odf_ac4_cfg_substream_dsi
+==3170792==ABORTING

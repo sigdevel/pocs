@@ -1,0 +1,47 @@
+....
+....
+....
+[XMT Parsing] Warning: closing element VisibilitySensor doesn't match created node Curve2D (line 506)                       
+[XMT Parsing] Warning: closing element Transform doesn't match created node Curve2D (line 507)                              
+[XMT Parsing] Warning: closing element Transform2D doesn't match created node Curve2D (line 508)                            
+Service gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found                                                                 
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found           
+AddressSanitizer:DEADLYSIGNAL                                                                                               
+=================================================================
+==4016019==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000005 (pc 0x7fc008129834 bp 0x000000000000 sp 0x7ffcda7d0b10 T0)                                                                                                                   
+==4016019==The signal is caused by a READ memory access.                                                                    
+==4016019==Hint: address points to the zero page.
+    #0 0x7fc008129834 in curve2d_check_changes compositor/mpeg4_geometry_2d.c:512
+    #1 0x7fc00812b58f in TraverseCurve2D compositor/mpeg4_geometry_2d.c:617
+    #2 0x7fc00786b72c in gf_node_traverse scenegraph/base_scenegraph.c:1155
+    #3 0x7fc0081260b6 in TraverseShape compositor/mpeg4_geometry_2d.c:82
+    #4 0x7fc0081260b6 in TraverseShape compositor/mpeg4_geometry_2d.c:59
+    #5 0x7fc00786b72c in gf_node_traverse scenegraph/base_scenegraph.c:1155
+    #6 0x7fc00813db65 in parent_node_traverse compositor/mpeg4_grouping.c:750
+    #7 0x7fc008122893 in TraverseForm compositor/mpeg4_form.c:265
+    #8 0x7fc00786b72c in gf_node_traverse scenegraph/base_scenegraph.c:1155
+    #9 0x7fc00813a513 in group_2d_traverse compositor/mpeg4_grouping.c:170
+    #10 0x7fc00786b72c in gf_node_traverse scenegraph/base_scenegraph.c:1155
+    #11 0x7fc0081c4db4 in visual_2d_draw_frame compositor/visual_manager_2d.c:891
+    #12 0x7fc0080b0703 in gf_sc_draw_scene compositor/compositor.c:2469
+    #13 0x7fc0080bc345 in gf_sc_render_frame compositor/compositor.c:2966
+    #14 0x7fc0080c1c8b in gf_sc_draw_frame compositor/compositor.c:345
+    #15 0x7fc00842a00e in compose_process filters/compose.c:111
+    #16 0x7fc0083e6893 in gf_filter_process_task filter_core/filter.c:3257
+    #17 0x7fc0083bacc1 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #18 0x7fc0083bfd82 in gf_fs_run filter_core/filter_session.c:2728
+    #19 0x7fc007e7245c in gf_media_import media_tools/media_import.c:1305
+    #20 0x556448639d53 in convert_file_info /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:131
+    #21 0x556448609a9d in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6645
+    #22 0x7fc007233fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #23 0x7fc0072340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #24 0x5564485e50c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: bd97ac0401e54cf584a9d869fd4669f0be7d84d5)
+
+==4016019==Register values:
+rax = 0x0000000000000008  rbx = 0x0000000000000000  rcx = 0x0000000000000009  rdx = 0x00007da005df7480  
+rdi = 0x0000000000000005  rsi = 0x0000000000000000  rbp = 0x0000000000000000  rsp = 0x00007ffcda7d0b10  
+ r8 = 0x00007c0005de1110   r9 = 0x00007bf005debd20  r10 = 0x0000000000000040  r11 = 0x00007c2005de5f00  
+r12 = 0x00007c0005de1128  r13 = 0x0000000000000000  r14 = 0x00007c4005de0ea0  r15 = 0x00007c0005de1150  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV compositor/mpeg4_geometry_2d.c:512 in curve2d_check_changes
+==4016019==ABORTING
