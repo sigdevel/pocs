@@ -1,0 +1,45 @@
+/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterPrediction.cpp:796:5: runtime error: applying non-zero offset 32 to null pointer                                                                        
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterPrediction.cpp:796:5 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==224669==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000020 (pc 0x7f2d006643c9 bp 0x7b2cfd1fe040 sp 0x7b2cfd1fd7f8 T1)                                                                                                                    
+==224669==The signal is caused by a READ memory access.                                                                     
+==224669==Hint: address points to the zero page.
+    #0 0x7f2d006643c9 in __memcpy_avx_unaligned_erms_rtm /build/reproducible-path/glibc-2.43/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:265
+    #1 0x56340d9a48ff in __asan_memcpy (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5d08ff) (BuildId: 07e2280824be18932a10c3498e915efac123a091)
+    #2 0x56340dea8339 in void vvdec::copyBuffer_SSE<(vvdec::x86_simd::X86_VEXT)4>(char const*, long, char*, long, int, int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/x86/avx2/../BufferX86.h:596:5
+    #3 0x56340db11dbd in vvdec::InterpolationFilter::filterHor(vvdec::ComponentID, short const*, long, short*, long, int, int, int, bool, vvdec::ChromaFormat, vvdec::ClpRngTemplate<short> const&, int, bool) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterpolationFilter.cpp:1062:7
+    #4 0x56340dfd96e1 in void vvdec::InterPrediction::xPredInterBlk<false, false>(vvdec::ComponentID const&, vvdec::CodingUnit const&, vvdec::Picture const*, vvdec::Mv, vvdec::AreaBuf<short>&, bool, vvdec::ClpRngTemplate<short> const&, bool, bool, bool, unsigned int, unsigned int, bool, short*, long) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterPrediction.cpp:830:10
+    #5 0x56340dfcd318 in vvdec::InterPrediction::xPredInterUni(vvdec::CodingUnit const&, vvdec::RefPicList const&, vvdec::UnitBuf<short>&, bool const&, bool const&, bool, bool) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterPrediction.cpp:680:9
+    #6 0x56340dfc9049 in vvdec::InterPrediction::motionCompensation(vvdec::CodingUnit&, vvdec::UnitBuf<short>&, bool, bool) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/CommonLib/InterPrediction.cpp:1452:5
+    #7 0x56340e0d6947 in vvdec::DecCu::predAndReco(vvdec::CodingUnit&, bool) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecCu.cpp:440:24
+    #8 0x56340e0d2303 in vvdec::DecCu::TaskInterCtu(vvdec::CodingStructure&, int, vvdec::UnitArea const&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecCu.cpp:131:7
+    #9 0x56340dcd11f7 in bool vvdec::DecLibRecon::ctuTask<false>(int, void*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibRecon.cpp:864:54
+    #10 0x56340ddb4d61 in vvdec::ThreadPool::processTask(int, vvdec::ThreadPool::Slot&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:347:26
+    #11 0x56340ddb2848 in vvdec::ThreadPool::threadProc(int) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:266:7
+    #12 0x7f2d008ed085  (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed085) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #13 0x56340d9a47aa in asan_thread_start(void*) asan_interceptors.cpp.o
+    #14 0x7f2d00589057 in start_thread nptl/pthread_create.c:454:8
+    #15 0x7f2d00607217 in __GI___clone3 /build/reproducible-path/glibc-2.43/misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+==224669==Register values:
+rax = 0x00007b2cfdd42d40  rbx = 0x0000000000000000  rcx = 0x00000f661fba05ab  rdx = 0x0000000000000020  
+rdi = 0x00007b2cfdd42d40  rsi = 0x0000000000000020  rbp = 0x00007b2cfd1fe040  rsp = 0x00007b2cfd1fd7f8  
+ r8 = 0x00000f659fba85a8   r9 = 0x00007b2cfdd42d5f  r10 = 0x00000f659fba85ab  r11 = 0x00000f661fba05a8  
+r12 = 0x00000f661fba05a8  r13 = 0xffffffffffffffdf  r14 = 0x00007b2cfdd43180  r15 = 0x00007b2cfdd43180  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /build/reproducible-path/glibc-2.43/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:265 in __memcpy_avx_unaligned_erms_rtm
+Thread T1 created by T0 here:
+    #0 0x56340d98b075 in pthread_create (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5b7075) (BuildId: 07e2280824be18932a10c3498e915efac123a091)
+    #1 0x7f2d008ed158 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State>>, void (*)()) (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0xed158) (BuildId: 3925a4b2640c4998377c37a5d17e7a3ff6e860b5)
+    #2 0x56340ddb13d1 in vvdec::ThreadPool::ThreadPool(int, char const*) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/Utilities/ThreadPool.cpp:107:9
+    #3 0x56340dc584cb in vvdec::DecLib::create(int, int, vvdec::UserAllocator const&, vvdec::ErrHandlingFlags) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:126:33
+    #4 0x56340da2e7aa in vvdec::VVDecImpl::init(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:143:16
+    #5 0x56340da26837 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t>(int (vvdec::VVDecImpl::*)(vvdecParams const&, void* (*)(void*, vvdecComponentType, unsigned int, unsigned int, void**), void (*)(void*, void*)), vvdecParams, std::nullptr_t, std::nullptr_t) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #6 0x56340da25e57 in vvdec_decoder_open /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:201:21
+    #7 0x56340d9f79f3 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:646:13
+    #8 0x7f2d0051dfb9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #9 0x7ffd5e3c2e28  (<unknown module>)
+    #10 0x2f726573752f6168  (<unknown module>)
+
+==224669==ABORTING
