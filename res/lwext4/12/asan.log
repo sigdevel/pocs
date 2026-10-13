@@ -1,0 +1,29 @@
+=================================================================
+==1070297==ERROR: AddressSanitizer: FPE on unknown address 0x55c0667a73e2 (pc 0x55c0667a73e2 bp 0x7ffe8e11a580 sp 0x7ffe8e11a470 T0)                                                                                                                    
+    #0 0x55c0667a73e2 in ext4_fs_init_inode_table lwext4/src/ext4_fs.c:449                                                  
+    #1 0x55c0667a8a64 in ext4_fs_get_block_group_ref lwext4/src/ext4_fs.c:631
+    #2 0x55c0667a9df4 in __ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:749
+    #3 0x55c0667aa536 in ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:800
+    #4 0x55c0667520fc in ext4_generic_open2 lwext4/src/ext4.c:974
+    #5 0x55c066753313 in ext4_generic_open lwext4/src/ext4.c:1133
+    #6 0x55c066756e31 in ext4_dir_open lwext4/src/ext4.c:3182
+    #7 0x55c066749db8 in ext4g_cd src/ext4_glue.c:655
+    #8 0x55c06674799b in __ext4g_mount src/ext4_glue.c:375
+    #9 0x55c066747ae9 in ext4g_mount src/ext4_glue.c:415
+    #10 0x55c06674c2f3 in FSH_MountPart src/fs_helper.c:314
+    #11 0x55c0667bebff in test_lwext4 TestCollection/lwext4/test_Lwext4.c:62
+    #12 0x55c0667c7e25 in Test_Collect_Exec TestCollection/TestCollection.c:63
+    #13 0x55c0667c87f1 in Test_Arr_Execute TestCollection/TestCollection.c:121
+    #14 0x55c0667be6f2 in main /home/uadmin/fuzzers/fuzz_targets/TSM.d/livetsm_tests/main.c:13
+    #15 0x7ff17c033fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #16 0x7ff17c0340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x55c0667438a4 in _start (/cache/stand_tests+0x1448a4) (BuildId: a84955d8dc23d341973b3ca982eb70c107d86c4e)
+
+==1070297==Register values:
+rax = 0x0000000000000002  rbx = 0x00007bf179bf0200  rcx = 0x00007ff17c21cdab  rdx = 0x0000000000000000  
+rdi = 0x000055c0667a73d7  rsi = 0x00007ffe8e11a460  rbp = 0x00007ffe8e11a580  rsp = 0x00007ffe8e11a470  
+ r8 = 0x00007ffe8e119ead   r9 = 0x000000000000005e  r10 = 0x0000000000000000  r11 = 0x0000000000000202  
+r12 = 0x00007bf179bf0280  r13 = 0x00000f7e2f37e040  r14 = 0x0000000000000000  r15 = 0x0000000000000001  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE lwext4/src/ext4_fs.c:449 in ext4_fs_init_inode_table
+==1070297==ABORTING

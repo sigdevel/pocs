@@ -1,0 +1,82 @@
+=================================================================
+==590502==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7df5d87e3900 at pc 0x5621c936b80e bp 0x7ffc4b385e70 sp 0x7ffc4b385e68                                                                                                              
+READ of size 1 at 0x7df5d87e3900 thread T0                                                                                  
+    #0 0x5621c936b80d in ext4_bmap_bit_set lwext4/include/ext4_bitmap.h:54
+    #1 0x5621c936e3cb in ext4_fs_init_block_bitmap lwext4/src/ext4_fs.c:370
+    #2 0x5621c9370773 in ext4_fs_get_block_group_ref lwext4/src/ext4_fs.c:612
+    #3 0x5621c9371df4 in __ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:749
+    #4 0x5621c9372536 in ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:800
+    #5 0x5621c931a0fc in ext4_generic_open2 lwext4/src/ext4.c:974
+    #6 0x5621c931b313 in ext4_generic_open lwext4/src/ext4.c:1133
+    #7 0x5621c931ee31 in ext4_dir_open lwext4/src/ext4.c:3182
+    #8 0x5621c9311db8 in ext4g_cd src/ext4_glue.c:655
+    #9 0x5621c930f99b in __ext4g_mount src/ext4_glue.c:375
+    #10 0x5621c930fae9 in ext4g_mount src/ext4_glue.c:415
+    #11 0x5621c93142f3 in FSH_MountPart src/fs_helper.c:314
+    #12 0x5621c9386bff in test_lwext4 TestCollection/lwext4/test_Lwext4.c:62
+    #13 0x5621c938fe25 in Test_Collect_Exec TestCollection/TestCollection.c:63
+    #14 0x5621c93907f1 in Test_Arr_Execute TestCollection/TestCollection.c:121
+    #15 0x5621c93866f2 in main /home/uadmin/fuzzers/fuzz_targets/TSM.d/livetsm_tests/main.c:13
+    #16 0x7fe5d9833fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #17 0x7fe5d98340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x5621c930b8a4 in _start (/cache/stand_tests+0x1448a4) (BuildId: a84955d8dc23d341973b3ca982eb70c107d86c4e)
+
+0x7df5d87e3900 is located 0 bytes after 4096-byte region [0x7df5d87e2900,0x7df5d87e3900)
+allocated by thread T0 here:                                                                                                
+    #0 0x7fe5da32435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x5621c9338ad0 in ext4_buf_alloc lwext4/src/ext4_bcache.c:126
+    #2 0x5621c9339d93 in ext4_bcache_alloc lwext4/src/ext4_bcache.c:252
+    #3 0x5621c933e2e9 in ext4_block_get_noread lwext4/src/ext4_blockdev.c:235
+    #4 0x5621c9385d4d in ext4_trans_block_get_noread lwext4/src/ext4_trans.c:71
+    #5 0x5621c936d889 in ext4_fs_init_block_bitmap lwext4/src/ext4_fs.c:318
+    #6 0x5621c9370773 in ext4_fs_get_block_group_ref lwext4/src/ext4_fs.c:612
+    #7 0x5621c9371df4 in __ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:749
+    #8 0x5621c9372536 in ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:800
+    #9 0x5621c931a0fc in ext4_generic_open2 lwext4/src/ext4.c:974
+    #10 0x5621c931b313 in ext4_generic_open lwext4/src/ext4.c:1133
+    #11 0x5621c931ee31 in ext4_dir_open lwext4/src/ext4.c:3182
+    #12 0x5621c9311db8 in ext4g_cd src/ext4_glue.c:655
+    #13 0x5621c930f99b in __ext4g_mount src/ext4_glue.c:375
+    #14 0x5621c930fae9 in ext4g_mount src/ext4_glue.c:415
+    #15 0x5621c93142f3 in FSH_MountPart src/fs_helper.c:314
+    #16 0x5621c9386bff in test_lwext4 TestCollection/lwext4/test_Lwext4.c:62
+    #17 0x5621c938fe25 in Test_Collect_Exec TestCollection/TestCollection.c:63
+    #18 0x5621c93907f1 in Test_Arr_Execute TestCollection/TestCollection.c:121
+    #19 0x5621c93866f2 in main /home/uadmin/fuzzers/fuzz_targets/TSM.d/livetsm_tests/main.c:13
+    #20 0x7fe5d9833fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #21 0x7ffc4b388fc7  (<unknown module>)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow lwext4/include/ext4_bitmap.h:54 in ext4_bmap_bit_set
+Shadow bytes around the buggy address:
+  0x7df5d87e3680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7df5d87e3700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7df5d87e3780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7df5d87e3800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7df5d87e3880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7df5d87e3900:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7df5d87e3980: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7df5d87e3a00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7df5d87e3a80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7df5d87e3b00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7df5d87e3b80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==590502==ABORTING
+                     

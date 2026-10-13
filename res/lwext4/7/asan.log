@@ -1,0 +1,30 @@
+=================================================================
+==3284664==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000078 (pc 0x5615c296fff4 bp 0x7ffc877cecf0 sp 0x7ffc877cebb0 T0)                                                                                                                   
+==3284664==The signal is caused by a READ memory access.                                                                    
+==3284664==Hint: address points to the zero page.
+    #0 0x5615c296fff4 in ext4_extent_get_blocks lwext4/src/ext4_extent.c:2058
+    #1 0x5615c297d3c5 in ext4_fs_get_inode_dblk_idx_internal lwext4/src/ext4_fs.c:1379
+    #2 0x5615c297e020 in ext4_fs_get_inode_dblk_idx lwext4/src/ext4_fs.c:1476
+    #3 0x5615c295362b in ext4_dir_dx_find_entry lwext4/src/ext4_dir_idx.c:723
+    #4 0x5615c294bdaa in ext4_dir_find_entry lwext4/src/ext4_dir.c:464
+    #5 0x5615c29202cb in ext4_generic_open2 lwext4/src/ext4.c:995
+    #6 0x5615c2921313 in ext4_generic_open lwext4/src/ext4.c:1133
+    #7 0x5615c29251b2 in ext4_dir_open_set_next_offset lwext4/src/ext4.c:3196
+    #8 0x5615c291627d in ext4g_dir_nonrecursive_ls src/ext4_glue.c:505
+    #9 0x5615c2919a03 in FSH_Ls_All src/fs_helper.c:263
+    #10 0x5615c298cc35 in test_lwext4 TestCollection/lwext4/test_Lwext4.c:66
+    #11 0x5615c2995e25 in Test_Collect_Exec TestCollection/TestCollection.c:63
+    #12 0x5615c29967f1 in Test_Arr_Execute TestCollection/TestCollection.c:121
+    #13 0x5615c298c6f2 in main /home/uadmin/fuzzers/fuzz_targets/TSM.d/livetsm_tests/main.c:13
+    #14 0x7f3e85233fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #15 0x7f3e852340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x5615c29118a4 in _start (/cache/stand_tests+0x1448a4) (BuildId: a84955d8dc23d341973b3ca982eb70c107d86c4e)
+
+==3284664==Register values:
+rax = 0x0000000000000078  rbx = 0x00007b3e82df0320  rcx = 0x0000000000000001  rdx = 0x0000000000000000  
+rdi = 0x00007d4e841e2a00  rsi = 0x0000000000000000  rbp = 0x00007ffc877cecf0  rsp = 0x00007ffc877cebb0  
+ r8 = 0x00007c3e841e0030   r9 = 0x0000000000002f68  r10 = 0x00007f3e85dce298  r11 = 0x00007f3e861deb5c  
+r12 = 0x00007b3e82df0280  r13 = 0x00000f67d05be050  r14 = 0x0000000000000040  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV lwext4/src/ext4_extent.c:2058 in ext4_extent_get_blocks
+==3284664==ABORTING

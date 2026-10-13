@@ -1,0 +1,31 @@
+=================================================================
+==810124==ERROR: AddressSanitizer: SEGV on unknown address 0x7d4e63fe4901 (pc 0x558a7887a80e bp 0x7ffe021de1a0 sp 0x7ffe021de170 T0)                                                                                                                    
+==810124==The signal is caused by a READ memory access.                                                                     
+    #0 0x558a7887a80e in ext4_bmap_bit_set lwext4/include/ext4_bitmap.h:54
+    #1 0x558a7887d2a5 in ext4_fs_init_block_bitmap lwext4/src/ext4_fs.c:364
+    #2 0x558a7887f773 in ext4_fs_get_block_group_ref lwext4/src/ext4_fs.c:612
+    #3 0x558a78880df4 in __ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:749
+    #4 0x558a78881536 in ext4_fs_get_inode_ref lwext4/src/ext4_fs.c:800
+    #5 0x558a788290fc in ext4_generic_open2 lwext4/src/ext4.c:974
+    #6 0x558a7882a313 in ext4_generic_open lwext4/src/ext4.c:1133
+    #7 0x558a7882de31 in ext4_dir_open lwext4/src/ext4.c:3182
+    #8 0x558a78820db8 in ext4g_cd src/ext4_glue.c:655
+    #9 0x558a7881e99b in __ext4g_mount src/ext4_glue.c:375
+    #10 0x558a7881eae9 in ext4g_mount src/ext4_glue.c:415
+    #11 0x558a788232f3 in FSH_MountPart src/fs_helper.c:314
+    #12 0x558a78895bff in test_lwext4 TestCollection/lwext4/test_Lwext4.c:62
+    #13 0x558a7889ee25 in Test_Collect_Exec TestCollection/TestCollection.c:63
+    #14 0x558a7889f7f1 in Test_Arr_Execute TestCollection/TestCollection.c:121
+    #15 0x558a788956f2 in main /home/uadmin/fuzzers/fuzz_targets/TSM.d/livetsm_tests/main.c:13
+    #16 0x7f3e64c33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #17 0x7f3e64c340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x558a7881a8a4 in _start (/cache/stand_tests+0x1448a4) (BuildId: a84955d8dc23d341973b3ca982eb70c107d86c4e)
+
+==810124==Register values:
+rax = 0x00007d4e63fe4901  rbx = 0x00007d4e63fe4901  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007d4e63be2900  rsi = 0x0000000000000001  rbp = 0x00007ffe021de1a0  rsp = 0x00007ffe021de170  
+ r8 = 0x0000010000000000   r9 = 0x00000faa4c774720  r10 = 0x0000000000001000  r11 = 0x00007d4e63be2900  
+r12 = 0x000000000201000b  r13 = 0x0000000000000008  r14 = 0x0000000059008000  r15 = 0x00000000000007fd  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV lwext4/include/ext4_bitmap.h:54 in ext4_bmap_bit_set
+==810124==ABORTING
