@@ -1,5 +1,7 @@
 6cb4e86540eca0d9ba62500a298385c9d863c8be
 
+https://github.com/superfly/litefs/issues/452
+
 littlefs (https://github.com/littlefs-project/littlefs), built with `LFS_MIGRATE`:
 
 - v2.2.0 – v2.11.3 (latest, master `6cb4e86`): affected. Confirmed under ASan on every release tag: stack-buffer-overflow READ in `lfs_dir_traverse()` (`lfs.c:752` in v2.2.x … `lfs.c:1059` in v2.11.3).
