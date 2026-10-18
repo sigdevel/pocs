@@ -1,0 +1,21 @@
+==1692670==ERROR: AddressSanitizer: FPE on unknown address 0x55e246feb2cf (pc 0x55e246feb2cf bp 0x7ffe5e1a6ed0 sp 0x7ffe5e1a6d60 T0)                                                                                                                    
+    #0 0x55e246feb2cf in lfs_mount_ /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/../../lfs.c:4645:38
+    #1 0x55e246feb2cf in lfs_mount /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/../../lfs.c:6032:11
+    #2 0x55e246fe605c in try_mount /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/fuzz_image_mount_read.c:263:9
+    #3 0x55e246fe605c in LLVMFuzzerTestOneInput /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/fuzz_image_mount_read.c:304:13
+    #4 0x55e246ef028f in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/build_vanilla/lfs_image_mount_read_fuzz+0xa428f) (BuildId: 4e62739cfabfc574e2df3931807b5786eba1e788)
+    #5 0x55e246ed8c43 in fuzzer::RunOneTest(fuzzer::Fuzzer*, char const*, unsigned long) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/build_vanilla/lfs_image_mount_read_fuzz+0x8cc43) (BuildId: 4e62739cfabfc574e2df3931807b5786eba1e788)
+    #6 0x55e246edebbc in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/build_vanilla/lfs_image_mount_read_fuzz+0x92bbc) (BuildId: 4e62739cfabfc574e2df3931807b5786eba1e788)
+    #7 0x55e246f08b06 in main (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/build_vanilla/lfs_image_mount_read_fuzz+0xbcb06) (BuildId: 4e62739cfabfc574e2df3931807b5786eba1e788)
+    #8 0x7f571e71dfb9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #9 0x7f571e71e0d6 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x55e246ed3960 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/build_vanilla/lfs_image_mount_read_fuzz+0x87960) (BuildId: 4e62739cfabfc574e2df3931807b5786eba1e788)
+
+==1692670==Register values:
+rax = 0x000000006d9aec26  rbx = 0x00007ffe5e1a6d60  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007ffe5e1a60b8  rsi = 0x0000000000000000  rbp = 0x00007ffe5e1a6ed0  rsp = 0x00007ffe5e1a6d60  
+ r8 = 0xffffff0000000000   r9 = 0x000000000000007c  r10 = 0xafffff00000fffff  r11 = 0x0000000000000246  
+r12 = 0x0000000000000001  r13 = 0x0000000000000000  r14 = 0x000000006d9aec26  r15 = 0x00007b571c700190  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/littlefs/littlefs/fuzz/image_mount_read/../../lfs.c:4645:38 in lfs_mount_
+==1692670==ABORTING
