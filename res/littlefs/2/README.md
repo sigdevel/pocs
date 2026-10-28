@@ -1,5 +1,7 @@
 6cb4e86540eca0d9ba62500a298385c9d863c8be
 
+https://github.com/superfly/litefs/issues/453
+
 littlefs (https://github.com/littlefs-project/littlefs), when mounted with `cfg.block_count = 0`:
 
 - v2.8.0 – v2.11.3 (latest, master `6cb4e86`): affected. Confirmed under UBSan/ASan on every release tag: division by zero in `lfs_mount_()`. The `block_count = 0` mode (block count read from the superblock) first appeared in v2.8.0 (commits `be681221` and `9c23329d`, 2023-08/09).
