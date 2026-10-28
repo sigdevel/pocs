@@ -1,0 +1,28 @@
+Input File: /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/ansilove/1/1_drawchar_src_drawchar_c_32.xb
+Output File: /home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/ansilove/1/1_drawchar_src_drawchar_c_32.xb.png
+/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8: runtime error: applying non-zero offset 96 to null pointer
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8 
+/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8: runtime error: load of address 0x000000000060 with insufficient space for an object of type 'const uint8_t' (aka 'const unsigned char')
+0x000000000060: note: pointer points here
+<memory cannot be printed>
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1493892==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000060 (pc 0x55ff30be0b52 bp 0x7fff87c5a970 sp 0x7fff87c5a8f0 T0)                                                                                                                   
+==1493892==The signal is caused by a READ memory access.                                                                    
+==1493892==Hint: address points to the zero page.
+    #0 0x55ff30be0b52 in drawchar /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8
+    #1 0x55ff30bdeba3 in ansilove_xbin /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/loaders/xbin.c
+    #2 0x55ff30bcb0d3 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/third_party/ansilove_src/src/ansilove.c:380:7
+    #3 0x7fc6dca6afb9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #4 0x7fc6dca6b0d6 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x55ff30ae06a0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/third_party/ansilove_build/ansilove_asan+0x3f6a0) (BuildId: 7a3be989ffce9394cec0a6ada487fd3ade4a81dd)
+
+==1493892==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000060  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007fff87c59c48  rsi = 0x0000000000000000  rbp = 0x00007fff87c5a970  rsp = 0x00007fff87c5a8f0  
+ r8 = 0xffffff0000000000   r9 = 0x000000000000007c  r10 = 0xafffff00000fffff  r11 = 0x0000000000000246  
+r12 = 0x000000000000000c  r13 = 0x0000000000000000  r14 = 0x0000000000000010  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/libansilove/libansilove_asan/src/drawchar.c:32:8 in drawchar
+==1493892==ABORTING
