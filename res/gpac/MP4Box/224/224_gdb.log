@@ -1,0 +1,29 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+[31m[Core] Cannot load dynamic module gsm_validator from static build.
+[0m[31m[Core] Cannot load library gsm_validator
+[0m[32mTrack Importing RawVideo - Width 320 Height 240 FPS 25/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |==                  | (13/100)XMT Parsing: |=====               | (27/100)[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 327)
+[0mXMT Parsing: |========            | (40/100)XMT Parsing: |==========          | (54/100)XMT Parsing: |=============       | (67/100)XMT Parsing: |================    | (81/100)XMT Parsing: |=================== | (95/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   [31m[JS] [0m[31mSyntaxError: expecting ','[0m[31m
+[0m[31m    at inline_script:2:1
+
+[0m[31mService gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[31mService gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/auxiliary_files/logo.jpg Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[31mService ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[0mImport: |                    | (00/100)
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000001275da8 in __memmove_avx_unaligned_erms_rtm ()
+#0  0x0000000001275da8 in __memmove_avx_unaligned_erms_rtm ()
+#1  0x000000000051f681 in gf_sg_command_apply (graph=<optimized out>, com=com@entry=0x19a6280, time_offset=0) at scenegraph/commands.c:346
+#2  0x0000000000b7f7bd in ctxload_process (filter=0x1992c20) at filters/load_bt_xmt.c:646
+#3  0x00000000009db752 in gf_filter_process_task (task=0x19e0180) at filter_core/filter.c:3257
+#4  0x00000000009bb006 in gf_fs_thread_proc (sess_thread=sess_thread@entry=0x1978698) at filter_core/filter_session.c:2420
+#5  0x00000000009b9f9f in gf_fs_run (fsess=fsess@entry=0x1978600) at filter_core/filter_session.c:2728
+#6  0x0000000000846c66 in gf_media_import (importer=importer@entry=0x1974e20) at media_tools/media_import.c:1639
+#7  0x0000000000843529 in gf_media_import_chapters (file=0x1970a20, chap_file=0x7fffffffdb8b "/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/inputs/0d5290573249cc61", import_fps=..., use_qt=GF_FALSE) at media_tools/media_import.c:1183
+#8  0x000000000041ee85 in mp4box_main (argc=<optimized out>, argv=0x7fffffffd688) at mp4box.c:6990
+#9  0x000000000123cf96 in __libc_start_call_main ()
+#10 0x000000000123edad in __libc_start_main_impl ()
+#11 0x0000000000406c41 in _start ()

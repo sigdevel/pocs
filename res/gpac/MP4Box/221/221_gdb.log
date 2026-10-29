@@ -1,0 +1,49 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+[31m[Core] Cannot load dynamic module gsm_validator from static build.
+[0m[31m[Core] Cannot load library gsm_validator
+[0m[32mTrack Importing RawVideo - Width 320 Height 240 FPS 25/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[0m[33m[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)
+[0mXMT Parsing: |==                  | (14/100)XMT Parsing: |=====               | (28/100)[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 300)
+[0mXMT Parsing: |========            | (43/100)XMT Parsing: |===========         | (57/100)[33m[XMT Parsing] Warning: Node type VisibilitySensor doesn't match type Script of node N28 (line 548)
+[0mXMT Parsing: |==============      | (72/100)XMT Parsing: |================    | (84/100)[33m[XMT Parsing] Warning: Unknown field "binaryID" for node Material2D - skipping (line 672)
+[0m[31m[XMT Parsing] Warning: Strealogo.jpg" is not a valid node - skipping (line 673)
+[0m[31m[XMT Parsing] Warning: closing element EnvironmentTest doesn't match created node Material2D (line 699)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Material2D (line 701)
+[0m[31m[XMT Parsing] Warning: closing element Background2D doesn't match created node Material2D (line 708)
+[0m[31m[XMT Parsing] Warning: closing element EnvironmentTest doesn't match created node Material2D (line 716)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Material2D (line 718)
+[0m[31m[XMT Parsing] Warning: closing element LineProperties doesn't match created node Material2D (line 724)
+[0m[31m[XMT Parsing] Warning: closing element Coordinate2D doesn't match created node Shape (line 758)
+[0m[31m[XMT Parsing] Warning: closing element IndexedFaceSet2D doesn't match created node Shape (line 760)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Transform (line 764)
+[0mXMT Parsing: |=================== | (98/100)XMT Parsing: |====================| (100/100)                                                   [33m[XMT Parsing] WARNING: OD ID 1 not assigned (line 778)
+[0m[33m[XMT Parsing] WARNING: OD ID 10 not assigned (line 778)
+[0m[31mService ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m
+Program received signal SIGSEGV, Segmentation fault.
+ab_apply (st=0x197c230, space=-1, group_idx=group_idx@entry=0x7fffffffb780, count=count@entry=2) at compositor/mpeg4_form.c:627
+627		min_y = rc->y - rc->height;
+#0  ab_apply (st=0x197c230, space=-1, group_idx=group_idx@entry=0x7fffffffb780, count=count@entry=2) at compositor/mpeg4_form.c:627
+#1  0x00000000010f9e16 in form_apply (st=0x197c230, constraint=0x1985000 "AB", group_idx=0x7fffffffb780, count=2) at compositor/mpeg4_form.c:180
+#2  TraverseForm (n=0x1984f30, rs=0x19ceb00, is_destroy=<optimized out>) at compositor/mpeg4_form.c:309
+#3  0x00000000005176fc in gf_node_traverse (node=0x1984f30, renderStack=<optimized out>, renderStack@entry=0x19ceb00) at scenegraph/base_scenegraph.c:1162
+#4  0x0000000001103ba8 in group_2d_traverse (node=0x19ba560, group=<optimized out>, tr_state=0x19ceb00) at compositor/mpeg4_grouping.c:170
+#5  0x00000000005176fc in gf_node_traverse (node=node@entry=0x19ba560, renderStack=<optimized out>, renderStack@entry=0x19ceb00) at scenegraph/base_scenegraph.c:1162
+#6  0x0000000001141855 in visual_2d_draw_frame (visual=0x197a750, root=0x19ba560, tr_state=0x19ceb00, is_root_visual=GF_TRUE) at compositor/visual_manager_2d.c:887
+#7  0x00000000010cd553 in gf_sc_draw_scene (compositor=compositor@entry=0x19872f0) at compositor/compositor.c:2469
+#8  0x00000000010c3c7e in gf_sc_render_frame (compositor=compositor@entry=0x19872f0) at compositor/compositor.c:2966
+#9  0x00000000010c0c14 in gf_sc_draw_frame (compositor=compositor@entry=0x19872f0, no_flush=no_flush@entry=GF_FALSE, ms_till_next=ms_till_next@entry=0x7fffffffbdac) at compositor/compositor.c:345
+#10 0x0000000000a0d919 in compose_process (filter=0x198b460) at filters/compose.c:111
+#11 0x00000000009db752 in gf_filter_process_task (task=0x1979cb0) at filter_core/filter.c:3257
+#12 0x00000000009bb006 in gf_fs_thread_proc (sess_thread=sess_thread@entry=0x1978698) at filter_core/filter_session.c:2420
+#13 0x00000000009b9f9f in gf_fs_run (fsess=fsess@entry=0x1978600) at filter_core/filter_session.c:2728
+#14 0x0000000000846c66 in gf_media_import (importer=importer@entry=0x1974e20) at media_tools/media_import.c:1639
+#15 0x0000000000843529 in gf_media_import_chapters (file=0x1970a20, chap_file=0x7fffffffdb8b "/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/inputs/0345c83934da81a1", import_fps=..., use_qt=GF_FALSE) at media_tools/media_import.c:1183
+#16 0x000000000041ee85 in mp4box_main (argc=<optimized out>, argv=0x7fffffffd688) at mp4box.c:6990
+#17 0x000000000123cf96 in __libc_start_call_main ()
+#18 0x000000000123edad in __libc_start_main_impl ()
+#19 0x0000000000406c41 in _start ()

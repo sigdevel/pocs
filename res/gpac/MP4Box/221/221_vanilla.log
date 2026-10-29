@@ -1,0 +1,24 @@
+[31m[Core] Cannot load dynamic module gsm_validator from static build.
+[0m[31m[Core] Cannot load library gsm_validator
+[0m[32mTrack Importing RawVideo - Width 320 Height 240 FPS 25/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0m[33m[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[0m[33m[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)
+[0mXMT Parsing: |==                  | (14/100)XMT Parsing: |=====               | (28/100)[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 300)
+[0mXMT Parsing: |========            | (43/100)XMT Parsing: |===========         | (57/100)[33m[XMT Parsing] Warning: Node type VisibilitySensor doesn't match type Script of node N28 (line 548)
+[0mXMT Parsing: |==============      | (72/100)XMT Parsing: |================    | (84/100)[33m[XMT Parsing] Warning: Unknown field "binaryID" for node Material2D - skipping (line 672)
+[0m[31m[XMT Parsing] Warning: Strealogo.jpg" is not a valid node - skipping (line 673)
+[0m[31m[XMT Parsing] Warning: closing element EnvironmentTest doesn't match created node Material2D (line 699)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Material2D (line 701)
+[0m[31m[XMT Parsing] Warning: closing element Background2D doesn't match created node Material2D (line 708)
+[0m[31m[XMT Parsing] Warning: closing element EnvironmentTest doesn't match created node Material2D (line 716)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Material2D (line 718)
+[0m[31m[XMT Parsing] Warning: closing element LineProperties doesn't match created node Material2D (line 724)
+[0m[31m[XMT Parsing] Warning: closing element Coordinate2D doesn't match created node Shape (line 758)
+[0m[31m[XMT Parsing] Warning: closing element IndexedFaceSet2D doesn't match created node Shape (line 760)
+[0m[31m[XMT Parsing] Warning: closing element Transform2D doesn't match created node Transform (line 764)
+[0mXMT Parsing: |=================== | (98/100)XMT Parsing: |====================| (100/100)                                                   [33m[XMT Parsing] WARNING: OD ID 1 not assigned (line 778)
+[0m[33m[XMT Parsing] WARNING: OD ID 10 not assigned (line 778)
+[0m[31mService ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m

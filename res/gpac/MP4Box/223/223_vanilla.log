@@ -1,0 +1,18 @@
+[31m[Core] Cannot load dynamic module gsm_validator from static build.
+[0m[31m[Core] Cannot load library gsm_validator
+[0m[32mTrack Importing RawVideo - Width 320 Height 240 FPS 25/1
+[0m[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |==                  | (13/100)XMT Parsing: |=====               | (27/100)[31mService bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 327)
+[0mXMT Parsing: |========            | (40/100)XMT Parsing: |==========          | (54/100)XMT Parsing: |=============       | (67/100)XMT Parsing: |================    | (81/100)XMT Parsing: |=================== | (95/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   [31m[JS] [0m[31mSyntaxError: unexpected token in expression: ''[0m[31m
+[0m[31m    at inline_script:1:417
+
+[0m[31mService gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/auxiliary_files/logo.jpg Cannot find filter for service: Requested URL is not valid or cannot be found
+[0m[31mService ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+[0mImport: |                    | (00/100)[32mXMT: MPEG-4 (XMT) Scene Parsing
+[0mXMT Parsing: |==                  | (13/100)[33m[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 207)
+[0m[33m[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 208)
+[0m[33m[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 210)
+[0mXMT Parsing: |=====               | (27/100)[33m[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 327)
+[0mXMT Parsing: |========            | (40/100)XMT Parsing: |==========          | (54/100)XMT Parsing: |=============       | (67/100)XMT Parsing: |================    | (81/100)XMT Parsing: |=================== | (95/100)XMT Parsing: |=================== | (99/100)XMT Parsing: |====================| (100/100)                                                   [31mService gpac:///run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/output/mp4box_flag_sweep/run_20261029_131236_cd0551160223/auxiliary_files/logo.jpg Cannot find filter for service: Requested URL is not valid or cannot be found
+[0mImport: |                    | (00/100)
