@@ -1,0 +1,64 @@
+=================================================================
+==403956==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7b72c92fb04a at pc 0x7f72cd8ecb28 bp 0x7ffe4b233020 sp 0x7ffe4b2327e0
+WRITE of size 12 at 0x7b72c92fb04a thread T0
+    #0 0x7f72cd8ecb27 in vsprintf ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1758
+    #1 0x7f72cd8ee2dc in sprintf ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1803
+    #2 0x7f72cbe8a6ed in SDP_IsDynamicPayload ietf/sdp.c:449
+    #3 0x7f72cbe8a6ed in gf_sdp_info_parse ietf/sdp.c:760
+    #4 0x7f72cca8f388 in rtpin_load_sdp filters/in_rtp_sdp.c:330
+    #5 0x7f72cca85338 in rtpin_process filters/in_rtp.c:476
+    #6 0x7f72cc876169 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7f72cc846f03 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7f72cc84bf7c in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7f72cc2c64fb in gf_media_import media_tools/media_import.c:1639
+    #10 0x5568c12dcefd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #11 0x5568c1297b5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #12 0x5568c129a23b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #13 0x7f72cb633fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #14 0x7f72cb6340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x5568c12780c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: d055c5484f27068a8903997f49222289a37b0af7)
+
+Address 0x7b72c92fb04a is located in stack of thread T0 at offset 74 in frame
+    #0 0x7f72cbe894bf in gf_sdp_info_parse ietf/sdp.c:512
+
+  This frame has 5 object(s):
+    [32, 36) 'i' (line 517)
+    [48, 52) 'i' (line 444)
+    [64, 74) 'buf' (line 446) <== Memory access at offset 74 overflows this variable
+    [96, 1097) 'LineBuf' (line 519)
+    [1232, 2233) 'comp' (line 519)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow ietf/sdp.c:449 in SDP_IsDynamicPayload
+Shadow bytes around the buggy address:
+  0x7b72c92fad80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7b72c92fae00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7b72c92fae80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7b72c92faf00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7b72c92faf80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+=>0x7b72c92fb000: f1 f1 f1 f1 04 f2 04 f2 00[02]f2 f2 00 00 00 00
+  0x7b72c92fb080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b72c92fb100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b72c92fb180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b72c92fb200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b72c92fb280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==403956==ABORTING

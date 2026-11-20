@@ -1,0 +1,32 @@
+...
+...
+...
+Invalid CENC IV size 29, must be 8 or 16                                                                                    
+[MP4Mux] Invalid CENC key info                                                                                              
+AddressSanitizer:DEADLYSIGNAL                                                                                               
+=================================================================
+==1814482==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7fadfd586783 bp 0x7d3dfabf5e80 sp 0x7fff1148afe0 T0)                                                                                                                   
+==1814482==The signal is caused by a READ memory access.                                                                    
+==1814482==Hint: address points to the zero page.
+    #0 0x7fadfd586783 in mp4_mux_cenc_update filters/mux_isom.c:4871
+    #1 0x7fadfd58ce87 in mp4_mux_process_sample filters/mux_isom.c:5444
+    #2 0x7fadfd5bb139 in mp4_mux_process filters/mux_isom.c:8180
+    #3 0x7fadfd278ae9 in gf_filter_process_task filter_core/filter.c:3257
+    #4 0x7fadfd249883 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #5 0x7fadfd24e8fc in gf_fs_run filter_core/filter_session.c:2728
+    #6 0x7fadfccc85cb in gf_media_import media_tools/media_import.c:1639
+    #7 0x5560a7396efd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #8 0x5560a7351b5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #9 0x5560a735423b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #10 0x7fadfc033fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #11 0x7fadfc0340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x5560a73320c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: 1884c6a450f56e37d0a24ccf04377942ba241575)
+
+==1814482==Register values:
+rax = 0x0000000000000000  rbx = 0x00007badf9824580  rcx = 0x0000000000000000  rdx = 0x0000000000000001  
+rdi = 0x00007d1dfabf4b14  rsi = 0x00007cfdfabf7500  rbp = 0x00007d3dfabf5e80  rsp = 0x00007fff1148afe0  
+ r8 = 0x00007d0dfabe0f80   r9 = 0x0000000053414953  r10 = 0x00007c8dfabe1da0  r11 = 0x0000000000000000  
+r12 = 0x00000f75bf3048b0  r13 = 0x0000000000000010  r14 = 0x00007d1dfabf4980  r15 = 0x00007bddfabeb6b0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV filters/mux_isom.c:4871 in mp4_mux_cenc_update
+==1814482==ABORTING

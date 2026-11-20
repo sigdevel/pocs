@@ -1,0 +1,33 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1865465==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f707217cfd9 bp 0x7ffe04297e40 sp 0x7ffe042975f8 T0)
+==1865465==The signal is caused by a READ memory access.
+==1865465==Hint: address points to the zero page.
+    #0 0x7f707217cfd9 in __strlen_avx2_rtm ../sysdeps/x86_64/multiarch/strlen-avx2.S:76
+    #1 0x7f7074285937 in strlen ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:423
+    #2 0x7f7072893337 in payt_set_param ietf/rtp_depacketizer.c:1290
+    #3 0x7f7072893337 in gf_rtp_payt_setup ietf/rtp_depacketizer.c:1402
+    #4 0x7f707289a61d in gf_rtp_depacketizer_new ietf/rtp_depacketizer.c:2010
+    #5 0x7f707349dcb4 in rtpin_stream_new filters/in_rtp_stream.c:455
+    #6 0x7f70734927ca in rtpin_setup_sdp filters/in_rtp_sdp.c:78
+    #7 0x7f70734927ca in rtpin_load_sdp filters/in_rtp_sdp.c:332
+    #8 0x7f7073488178 in rtpin_process filters/in_rtp.c:476
+    #9 0x7f7073278ae9 in gf_filter_process_task filter_core/filter.c:3257
+    #10 0x7f7073249883 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #11 0x7f707324e8fc in gf_fs_run filter_core/filter_session.c:2728
+    #12 0x7f7072cc85cb in gf_media_import media_tools/media_import.c:1639
+    #13 0x55a5dcc03efd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #14 0x55a5dcbbeb5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #15 0x55a5dcbc123b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #16 0x7f7072033fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #17 0x7f70720340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x55a5dcb9f0c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: 1884c6a450f56e37d0a24ccf04377942ba241575)
+
+==1865465==Register values:
+rax = 0x0000000000000000  rbx = 0x0000000000000000  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x0000000000000000  rsi = 0x00007b9070be25d0  rbp = 0x00007ffe04297e40  rsp = 0x00007ffe042975f8  
+ r8 = 0x00000fee0e776bf8   r9 = 0x000000000001f5d9  r10 = 0x0000000000000006  r11 = 0x0000000000000007  
+r12 = 0x00007b706fcfe040  r13 = 0x00007b706fcfeb00  r14 = 0x00007b706fcfe660  r15 = 0x00007ca070be03c0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ../sysdeps/x86_64/multiarch/strlen-avx2.S:76 in __strlen_avx2_rtm
+==1865465==ABORTING

@@ -1,0 +1,80 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+XMT Parsing: |==                  | (12/100)XMT Parsing: |====                | (24/100)Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 302)
+XMT Parsing: |=======             | (37/100)[XMT Parsing] Warning: Unknown field "expiratrepeatS" for node CacheTexture - skipping (line 430)
+[XMT Parsing] Warning: Unknown field "expiratrepeatS" for node CacheTexture - skipping (line 430)
+XMT Parsing: |==========          | (50/100)XMT Parsing: |============        | (62/100)[XMT Parsing] Warning: Node N0 has been defined several times - IDs may get corrupted (line 697)
+[XMT Parsing] Warning: Node N1 has been defined several times - IDs may get corrupted (line 698)
+[XMT Parsing] Warning: Node N2 has been defined several times - IDs may get corrupted (line 700)
+XMT Parsing: |===============     | (75/100)Service bifs-externproto-noƒod-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 817)
+XMT Parsing: |=================   | (87/100)XMT Parsing: |==================  | (94/100)XMT Parsing: |====================| (100/100)                                                   Service gpac:///home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+Service gpac:///home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+=================================================================
+==403823==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c058b9e31fc at pc 0x7fc58dd95d1a bp 0x7ffcc775e370 sp 0x7ffcc775e368
+READ of size 4 at 0x7c058b9e31fc thread T0
+    #0 0x7fc58dd95d19 in pointset2d_check_changes compositor/mpeg4_geometry_2d.c:687
+    #1 0x7fc58dd95d19 in TraversePointSet2D compositor/mpeg4_geometry_2d.c:743
+    #2 0x7fc58d47a384 in gf_node_traverse scenegraph/base_scenegraph.c:1164
+    #3 0x7fc58dd94696 in TraverseShape compositor/mpeg4_geometry_2d.c:129
+    #4 0x7fc58dd94696 in TraverseShape compositor/mpeg4_geometry_2d.c:59
+    #5 0x7fc58d47a384 in gf_node_traverse scenegraph/base_scenegraph.c:1164
+    #6 0x7fc58dda9be3 in group_2d_traverse compositor/mpeg4_grouping.c:170
+    #7 0x7fc58d47a384 in gf_node_traverse scenegraph/base_scenegraph.c:1164
+    #8 0x7fc58de3abf4 in visual_2d_draw_frame compositor/visual_manager_2d.c:891
+    #9 0x7fc58dd18b90 in gf_sc_draw_scene compositor/compositor.c:2469
+    #10 0x7fc58dd24d04 in gf_sc_render_frame compositor/compositor.c:2966
+    #11 0x7fc58dd2a97b in gf_sc_draw_frame compositor/compositor.c:345
+    #12 0x7fc58e0daaba in compose_process filters/compose.c:111
+    #13 0x7fc58e076169 in gf_filter_process_task filter_core/filter.c:3257
+    #14 0x7fc58e046f03 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #15 0x7fc58e04bf7c in gf_fs_run filter_core/filter_session.c:2728
+    #16 0x7fc58dac64fb in gf_media_import media_tools/media_import.c:1639
+    #17 0x55647cd80efd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #18 0x55647cd3bb5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #19 0x55647cd3e23b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #20 0x7fc58ce33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #21 0x7fc58ce340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0x55647cd1c0c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: d055c5484f27068a8903997f49222289a37b0af7)
+
+0x7c058b9e31fc is located 4 bytes after 40-byte region [0x7c058b9e31d0,0x7c058b9e31f8)
+allocated by thread T0 here:
+    #0 0x7fc58f12435f in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:67
+    #1 0x7fc58d4efd9a in XCurve2D_Create scenegraph/mpeg4_nodes.c:32059
+    #2 0x7fc58d4efd9a in gf_sg_mpeg4_node_new scenegraph/mpeg4_nodes.c:37044
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow compositor/mpeg4_geometry_2d.c:687 in pointset2d_check_changes
+Shadow bytes around the buggy address:
+  0x7c058b9e2f00: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 fa
+  0x7c058b9e2f80: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 00
+  0x7c058b9e3000: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fd
+  0x7c058b9e3080: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 00
+  0x7c058b9e3100: fa fa 00 00 00 00 04 fa fa fa 00 00 00 00 00 00
+=>0x7c058b9e3180: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00[fa]
+  0x7c058b9e3200: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 00
+  0x7c058b9e3280: fa fa 00 00 00 00 00 fa fa fa 00 00 00 00 00 fa
+  0x7c058b9e3300: fa fa 00 00 00 00 00 fa fa fa 00 00 00 00 00 fa
+  0x7c058b9e3380: fa fa 00 00 00 00 00 fa fa fa 00 00 00 00 00 fa
+  0x7c058b9e3400: fa fa 00 00 00 00 00 fa fa fa 00 00 00 00 00 fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==403823==ABORTING

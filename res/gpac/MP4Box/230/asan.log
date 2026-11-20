@@ -1,0 +1,64 @@
+Track Importing MPEG-4 Visual Part 2 - Width 320 Height 240 FPS 25000/1000 SAR 1/1
+[MP4Mux] Sample with no DTS/CTS, cannot add (last DTS 18446744073709551615, last size 0)
+Import: |=                   | (06/100)Import: |=                   | (07/100)Import: |=                   | (08/100)Import: |=                   | (09/100)Import: |==                  | (10/100)Import: |==                  | (11/100)Import: |==                  | (12/100)Import: |==                  | (13/100)Import: |==                  | (14/100)Import: |===                 | (15/100)Import: |===                 | (16/100)Import: |===                 | (17/100)Import: |===                 | (18/100)Import: |===                 | (19/100)Import: |====                | (20/100)Import: |====                | (21/100)Import: |====                | (22/100)Import: |====                | (23/100)Import: |====                | (24/100)Import: |=====               | (25/100)Import: |=====               | (26/100)Import: |=====               | (27/100)Import: |=====               | (28/100)Import: |=====               | (29/100)Import: |======              | (30/100)Import: |======              | (31/100)Import: |======              | (32/100)Import: |======              | (33/100)Import: |======              | (34/100)Import: |=======             | (35/100)Import: |=======             | (36/100)Import: |=======             | (37/100)Import: |=======             | (38/100)Import: |=======             | (39/100)Import: |========            | (40/100)Import: |========            | (41/100)Import: |========            | (42/100)Import: |========            | (43/100)Import: |========            | (44/100)Import: |=========           | (45/100)Import: |=========           | (46/100)Import: |=========           | (47/100)Import: |=========           | (48/100)Import: |=========           | (49/100)[MP4Mux] Sample with no DTS/CTS, cannot add (last DTS 157000, last size 449)
+[MP4Mux] PID 230_stbl_AddCTS_isomedia_stbl_write_c_343.mp4 ID 1 Sample 159 with DTS 158000 less than previous sample DTS 18446744073709551615, patching DTS
+Import: |==========          | (50/100)Import: |==========          | (51/100)Import: |==========          | (52/100)Import: |==========          | (53/100)Import: |==========          | (54/100)Import: |===========         | (55/100)Import: |===========         | (56/100)Import: |===========         | (57/100)Import: |===========         | (58/100)Import: |===========         | (59/100)Import: |============        | (60/100)Import: |============        | (61/100)Import: |============        | (62/100)[MP4Mux] Sample with no DTS/CTS, cannot add (last DTS 51999, last size 948)
+[MP4Mux] PID 230_stbl_AddCTS_isomedia_stbl_write_c_343.mp4 ID 1 Sample 212 with DTS 52999 less than previous sample DTS 18446744073709551615, patching DTS
+=================================================================
+==403892==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7d22debeebb0 at pc 0x7fa2e08d1b13 bp 0x7ffcd7321590 sp 0x7ffcd7321588
+WRITE of size 4 at 0x7d22debeebb0 thread T0
+    #0 0x7fa2e08d1b12 in stbl_AddCTS isomedia/stbl_write.c:343
+    #1 0x7fa2e088731b in Media_AddSample isomedia/media.c:1076
+    #2 0x7fa2e08482e8 in trak_add_sample isomedia/isom_write.c:1109
+    #3 0x7fa2e084916b in gf_isom_add_sample isomedia/isom_write.c:1181
+    #4 0x7fa2e1389ef6 in mp4_mux_process_sample filters/mux_isom.c:5431
+    #5 0x7fa2e13b8289 in mp4_mux_process filters/mux_isom.c:8173
+    #6 0x7fa2e1076169 in gf_filter_process_task filter_core/filter.c:3257
+    #7 0x7fa2e1046f03 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #8 0x7fa2e104bf7c in gf_fs_run filter_core/filter_session.c:2728
+    #9 0x7fa2e0ac64fb in gf_media_import media_tools/media_import.c:1639
+    #10 0x55eeffb3aefd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #11 0x55eeffaf5b5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #12 0x55eeffaf823b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #13 0x7fa2dfe33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #14 0x7fa2dfe340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x55eeffad60c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: d055c5484f27068a8903997f49222289a37b0af7)
+
+0x7d22debeebb0 is located 0 bytes after 816-byte region [0x7d22debee880,0x7d22debeebb0)
+allocated by thread T0 here:
+    #0 0x7fa2e212365f in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:81
+    #1 0x7fa2e08d18e3 in stbl_AddCTS isomedia/stbl_write.c:328
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow isomedia/stbl_write.c:343 in stbl_AddCTS
+Shadow bytes around the buggy address:
+  0x7d22debee900: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d22debee980: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d22debeea00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d22debeea80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7d22debeeb00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7d22debeeb80: 00 00 00 00 00 00[fa]fa fa fa fa fa fa fa fa fa
+  0x7d22debeec00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d22debeec80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d22debeed00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d22debeed80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7d22debeee00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==403892==ABORTING

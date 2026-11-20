@@ -1,0 +1,11 @@
+[Core] Cannot load dynamic module gsm_validator from static build.
+[Core] Cannot load library gsm_validator
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 27)
+[XMT Parsing] Warning: descriptor ES_Descriptor defined outside scene scope - skipping (line 37)
+XMT Parsing: |=====               | (25/100)XMT Parsing: |=========           | (49/100)Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 302)
+XMT Parsing: |===============     | (75/100)[XMT Parsing] Warning: closing element Shape doesn't match created node PointSet2D (line 413)
+XMT Parsing: |================    | (82/100)XMT Parsing: |====================| (100/100)                                                   Service gpac:///home/user/Documents/GitHub/CVE_bug_Tracker/triaging_data/Gpac/Mp4box/in_progress_vendor/auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found
+Service ../auxiliary_files/logo.png Cannot find filter for service: Requested URL is not valid or cannot be found

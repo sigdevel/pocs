@@ -1,0 +1,49 @@
+Track Importing RawVideo - Width 320 Height 240 FPS 30/1
+XMT: MPEG-4 (XMT) Scene Parsing
+[XMT Parsing] Invalid child descriptor (line 91)
+XMT Parsing: |=                   | (09/100)[XMT Parsing] Warning: Node type Rectangle doesn't match type Proto1 of node N5 (line 147)
+[XMT Parsing] Warning: Unknown proto field _field1 - skipping (line 161)
+[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 189)
+XMT Parsing: |===                 | (19/100)XMT Parsing: |=====               | (29/100)XMT Parsing: |=======             | (39/100)XMT Parsing: |=========           | (49/100)Service bifs-externproto-nood-lib.bt#GEOMETRY_PROTO Cannot find filter for service: Requested URL is not valid or cannot be found
+[XMT Parsing] Warning: Unknown proto field _field1 - skipping (line 659)
+XMT Parsing: |============        | (60/100)[XMT Parsing] Warning: Node N13 has been defined several times - IDs may get corrupted (line 687)
+XMT Parsing: |==============      | (70/100)XMT Parsing: |================    | (80/100)AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==403873==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f5514350dc4 bp 0x7cb5127e8180 sp 0x7fff5d19e3c0 T0)
+==403873==The signal is caused by a READ memory access.
+==403873==Hint: address points to the zero page.
+    #0 0x7f5514350dc4 in gf_vrml_node_clone scenegraph/vrml_proto.c:455
+    #1 0x7f5514350dda in gf_vrml_node_clone scenegraph/vrml_proto.c:455
+    #2 0x7f5514350bf7 in gf_vrml_node_clone scenegraph/vrml_proto.c:462
+    #3 0x7f551434a376 in gf_sg_proto_instantiate scenegraph/vrml_proto.c:699
+    #4 0x7f551434c5f4 in gf_sg_proto_load_code scenegraph/vrml_proto.c:853
+    #5 0x7f5514a2daf8 in xmt_parse_element scene_manager/loader_xmt.c:2188
+    #6 0x7f5514a32ded in xmt_node_start scene_manager/loader_xmt.c:2984
+    #7 0x7f551419e4dc in xml_sax_node_start utils/xml_parser.c:308
+    #8 0x7f55141a2c76 in xml_sax_parse_attribute utils/xml_parser.c:397
+    #9 0x7f55141a2c76 in xml_sax_parse utils/xml_parser.c:940
+    #10 0x7f551419ef80 in gf_xml_sax_parse_intern utils/xml_parser.c:1110
+    #11 0x7f55141a40b7 in gf_xml_sax_parse utils/xml_parser.c:1138
+    #12 0x7f55141a4462 in xml_sax_read_file utils/xml_parser.c:1225
+    #13 0x7f55141a4ffb in gf_xml_sax_parse_file utils/xml_parser.c:1354
+    #14 0x7f5514a21644 in load_xmt_run scene_manager/loader_xmt.c:3712
+    #15 0x7f55151375e0 in ctxload_process filters/load_bt_xmt.c:544
+    #16 0x7f5514e76169 in gf_filter_process_task filter_core/filter.c:3257
+    #17 0x7f5514e46f03 in gf_fs_thread_proc filter_core/filter_session.c:2420
+    #18 0x7f5514e4bf7c in gf_fs_run filter_core/filter_session.c:2728
+    #19 0x7f55148c64fb in gf_media_import media_tools/media_import.c:1639
+    #20 0x5627a8216efd in import_file /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/fileimport.c:1733
+    #21 0x5627a81d1b5c in do_add_cat /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:4679
+    #22 0x5627a81d423b in mp4box_main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/applications/mp4box/mp4box.c:6447
+    #23 0x7f5513c33fb9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #24 0x7f5513c340d6 in __libc_start_main_impl ../csu/libc-start.c:360
+    #25 0x5627a81b20c0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/gpac/runtime/gpac_asan/bin/gcc/MP4Box+0x4e0c0) (BuildId: d055c5484f27068a8903997f49222289a37b0af7)
+
+==403873==Register values:
+rax = 0x0000000000000000  rbx = 0x00007bb5127f15a0  rcx = 0x0000000000000000  rdx = 0x000000000000000a  
+rdi = 0x00007b55116bbe88  rsi = 0x0000000000000000  rbp = 0x00007cb5127e8180  rsp = 0x00007fff5d19e3c0  
+ r8 = 0x0000000000000000   r9 = 0x00000000000000f3  r10 = 0x0000000000000024  r11 = 0x00007b55116bbed4  
+r12 = 0x00007b55116bbf40  r13 = 0x00007f551577f3c0  r14 = 0x00007b55116bbed8  r15 = 0x00007f5514cc0580  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV scenegraph/vrml_proto.c:455 in gf_vrml_node_clone
+==403873==ABORTING
