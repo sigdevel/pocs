@@ -1,0 +1,27 @@
+ error: member call on null pointer of type 'vvdec::PicHeader'                                                              
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:465:83 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==790150==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000002c (pc 0x55c85f928ce4 bp 0x7ffd1d36c690 sp 0x7ffd1d36c4e0 T0)                                                                                                                    
+==790150==The signal is caused by a READ memory access.                                                                     
+==790150==Hint: address points to the zero page.
+    #0 0x55c85f928ce4 in vvdec::PicHeader::getPPSId() const /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/../CommonLib/Slice.h:2339:98
+    #1 0x55c85f928ce4 in vvdec::DecLibParser::xDecodeSliceHead(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:465:83
+    #2 0x55c85f92656c in vvdec::DecLibParser::parse(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLibParser.cpp:155:12
+    #3 0x55c85f9100cd in vvdec::DecLib::decode(vvdec::InputNALUnit&) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/DecoderLib/DecLib.cpp:189:29
+    #4 0x55c85f6eb5ef in vvdec::VVDecImpl::decode(vvdecAccessUnit&, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.cpp:434:30
+    #5 0x55c85f6e0808 in auto vvdec::VVDecImpl::catchExceptions<int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**>(int (vvdec::VVDecImpl::*)(vvdecAccessUnit&, vvdecFrame**), vvdecAccessUnit, vvdecFrame**) /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdecimpl.h:249:12
+    #6 0x55c85f6e0317 in vvdec_decode /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/vvdec.cpp:293:13
+    #7 0x55c85f6afbc8 in main /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/App/vvdecapp/vvdecapp.cpp:741:16
+    #8 0x7fae7d433fb9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+    #9 0x7fae7d4340d6 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x55c85f5b79a0 in _start (/run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/build/bin/vvdecapp+0x5589a0) (BuildId: 48777acbe435718c31d2b833ef52056a7b9ceffb)
+
+==790150==Register values:
+rax = 0x0000000000000000  rbx = 0x00007ffd1d36c4e0  rcx = 0x0000000000000000  rdx = 0x0000000000000000  
+rdi = 0x00007ffd1d36b838  rsi = 0x0000000000000000  rbp = 0x00007ffd1d36c690  rsp = 0x00007ffd1d36c4e0  
+ r8 = 0xffffff0000000000   r9 = 0x000000000000007c  r10 = 0xafffff00000fffff  r11 = 0x0000000000000246  
+r12 = 0x00007e7e7c7e0480  r13 = 0x00007e7e7c7e0878  r14 = 0x000000000000002c  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /run/media/user/8ed8205b-4114-4c2a-b2d0-e2ad6640262d/vvdec/vvdec_asan/source/Lib/vvdec/../CommonLib/Slice.h:2339:98 in vvdec::PicHeader::getPPSId() const
+==790150==ABORTING
