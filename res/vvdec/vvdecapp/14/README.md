@@ -5,9 +5,3 @@
 https://github.com/fraunhoferhhi/vvdec/issues/481
 
 fix: 
-
-advisory: 
-
-publication: 
-
-oss-security: 
