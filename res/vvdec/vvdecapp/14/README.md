@@ -1,0 +1,13 @@
+68032b8060fd5cbdaa9533788803752d2bdd31db
+
+3.4.0
+
+https://github.com/fraunhoferhhi/vvdec/issues/481
+
+fix: 
+
+advisory: 
+
+publication: 
+
+oss-security: 
